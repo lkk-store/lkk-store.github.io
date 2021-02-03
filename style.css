@@ -50,3 +50,39 @@ img {
 	padding: 20px;
 	margin-bottom: 20px;
 }
+
+.g-store {
+	margin-top: 50px;
+}
+
+.g-store-each {
+	margin-bottom: 25px;
+}
+
+@media screen and (min-width: 600px) {
+	
+	.g-store-each {
+		display: inline-block;
+		width: 33%;
+	}
+}
+
+.g-meta {
+	padding: 10px 20px;
+	font-family: "arial";
+}
+
+.g-name {
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.g-desc, .g-agate {
+	font-style: italic;
+	color: #777;
+	font-size: 13px;
+}
+
+.g-agate {
+
+}
