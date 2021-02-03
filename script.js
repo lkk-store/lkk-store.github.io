@@ -1,3 +1,5 @@
+d3.select(".g-buy-popup").style("width", innerWidth).style("height", innerHeight)
+
 d3.select("#g-x").on("click", function(){
 	d3.select(".g-buy-popup").classed("g-active", false);
 

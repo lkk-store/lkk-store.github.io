@@ -177,6 +177,8 @@ input,select {
 	width: 100px;
 	border: 1px solid #ddd;
 	padding: 1px;
+	font-size: 16px;
+	opacity: 0.7;
 }
 
 input {
@@ -201,6 +203,7 @@ input {
 
 .g-buy-popup {
 	position: fixed;
+	-webkit-transform: translateZ(0);
 	top: 0;
 	width: 100vw;
 	height: 100vh;
