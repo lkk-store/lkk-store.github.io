@@ -1,0 +1,51 @@
+html,body {
+	margin: 0;
+}
+
+body {
+	background: #fff;
+}
+
+img {
+	max-width: 460px;
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.g-nav-list {
+	width: 120%;
+}
+
+.g-nav-inner {
+	font-family: blackoak-std, serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 5vw;
+	padding: 0 20px;
+	transform: scaleX(0.8);
+	margin-left: -10%;
+	margin-bottom: 3px;
+}
+
+@media screen and (min-width: 600px) {
+	.g-nav-list {
+		
+	}
+
+	.g-nav-inner {
+		margin-left: -14%;
+		font-size: 2.2vw;
+	}
+}
+
+.g-nav {
+	max-width: 460px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.g-logo-cont {
+	padding: 20px;
+	margin-bottom: 20px;
+}
