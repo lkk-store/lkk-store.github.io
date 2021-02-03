@@ -6,16 +6,17 @@ body {
 	background: #fff;
 }
 
-img {
-	max-width: 460px;
-	display: block;
+.g-body-inner {
+	max-width: 1050px;
 	margin: 0 auto;
+}
+
+img {
 	width: 100%;
-	image-orientation: from-image;
 }
 
 .g-nav-list {
-	width: 120%;
+	/*width: 120%;*/
 }
 
 .g-nav-inner {
@@ -35,13 +36,13 @@ img {
 	}
 
 	.g-nav-inner {
-		margin-left: -14%;
+		/*margin-left: -14%;*/
 		font-size: 2.2vw;
 	}
 }
 
 .g-nav {
-	max-width: 460px;
+	max-width: 1050px;
 	margin: 0 auto;
 	overflow: hidden;
 }
@@ -51,8 +52,12 @@ img {
 	margin-bottom: 20px;
 }
 
+.g-logo-cont img {
+	max-width: 460px;
+}
+
 .g-store {
-	margin-top: 50px;
+	margin: 30px auto;
 }
 
 .g-store-each {
@@ -61,20 +66,38 @@ img {
 
 @media screen and (min-width: 600px) {
 	
+	.g-store {
+		padding: 20px;
+	}
+
 	.g-store-each {
 		display: inline-block;
-		width: 33%;
+		vertical-align: top;
+		width: calc(33% - 10px);
+		margin-right: 10px;
+	}
+
+	.g-store-each:last-child {
+		margin-right: 0;
 	}
 }
 
 .g-meta {
-	padding: 10px 20px;
+	padding: 5px 15px;
 	font-family: "arial";
+}
+
+@media screen and (min-width: 600px) {
+
+	.g-meta {
+		padding: 0;
+	}
+
 }
 
 .g-name {
 	font-weight: 700;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .g-desc, .g-agate {
@@ -83,6 +106,25 @@ img {
 	font-size: 13px;
 }
 
-.g-agate {
+.g-price {
+	margin-top: 2px;
+}
 
+.g-price-num {
+	
+}
+
+.g-agate {
+	font-size: 11px;
+	vertical-align: top; 
+}
+
+
+footer {
+	font-family: "arial";
+	font-size: 12px;
+	padding: 20px;
+	color: #999;
+	text-align: center;
+	padding-top: 100px;
 }
