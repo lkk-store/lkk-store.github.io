@@ -141,6 +141,28 @@ a:hover {
 .g-size {
   margin-bottom: 10px;
 }
+.g-volume-cont {
+  display: inline;
+}
+.g-volume-cont div {
+  display: inline-block;
+  width: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+.g-volume-cont .g-count {
+  border: 1px solid #ddd;
+  width: 30px;
+  padding: 4px 0;
+  text-align: center;
+  font-size: 14px;
+}
+.g-volume-cont .g-count-button {
+  user-select: none;
+}
+.g-volume-cont .g-count-button:hover {
+  cursor: pointer;
+}
 .g-label {
   margin-right: 10px;
   vertical-align: middle;
@@ -309,7 +331,7 @@ input {
 				</div>
 				<div class="g-volume">
 					<span class="g-label">數量</span>
-					<input type="text" id="fname" name="fname" value="1">
+					<div class="g-volume-cont"><div class="g-count-button" data-type="minus">–</div><div class="g-count">1</div><div class="g-count-button" data-type="add">+</div></div>
 				</div>
 				<button class="g-button">買佢老味</button>
 			</div>
@@ -328,7 +350,7 @@ input {
 			<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
 			<div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div>
 			<div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div>
-			<div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div>
+			<!-- <div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div> -->
 
 			<button type="submit" id="submit" class="g-buy-button">真係 BUY!</button>
 		</form>
@@ -354,22 +376,43 @@ d3.select("#g-x").on("click", function(){
 
 })
 
+d3.selectAll(".g-count-button").on("click", function(){
+	var el = d3.select(this);
+	var type = el.attr("data-type");
+
+	console.log(type)
+	var count = +d3.select(".g-count").text();
+
+	if (type == "minus") {
+		count -= 1;
+	} else if (type == "add") {
+		count += 1;
+	}
+
+	count = count < 1 ? 1 : count;
+
+	d3.select(".g-count").text(count);
+
+})
+
 d3.select(".g-button").on("click", function(){
 	d3.select(".g-buy-popup").classed("g-active", true);
 
 	var stockid = d3.select("#stock-name").attr("data-id");
 	var size = d3.select("#size").property("value");
 
-	d3.select(".g-bought").property("value", d3.select("#stock-name").text() + " " + stockid + " x " + d3.select("#fname").property("value") + " x " + size)
+	var name = d3.select("#stock-name").text().replace("(起碼三月先有貨)", "");
+
+	d3.select(".g-bought").property("value", name + " " + stockid + " x " + +d3.select(".g-count").text() + " x " + size)
 
 	if (stockid == "003") {
 
 		var amount = size == "小小心意" ? 10 : size == "多多益善" ? 50 : 100;
-		d3.select("#price").property("value", amount*d3.select("#fname").property("value"))
+		d3.select("#price").property("value", "$" + amount*+d3.select(".g-count").text())
 
 	} else {
 
-		d3.select("#price").property("value", d3.select("#fname").property("value")*280)	
+		d3.select("#price").property("value", "$" + d3.select(".g-count").text()*280)	
 	}
 	
 })
@@ -380,24 +423,36 @@ $( document ).ready( function(){
 	    url = 'https://script.google.com/macros/s/AKfycbzyYUxhWKsfDJlVt6JP0Y6A-DB_YBFfTbnyBqAkd9-fWjkfpAxEZVPX/exec'
 
 	$('#submit').on('click', function(e) {
-	  e.preventDefault();
 
-	  d3.select("#submit").classed("g-loading", true);
+		  e.preventDefault();
 
-	  var jqxhr = $.ajax({
-	    url: url,
-	    method: "GET",
-	    dataType: "json",
-	    data: $form.serialize(),
-	    success: function(){ 
+		  var name = d3.select("#name").property("value");
+		  var phone = d3.select("#phone").property("value");
 
-	    	$('#my-form').trigger("reset");
+		  if (phone == "") {
+		  	d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+		  }
 
-	    	d3.select("#submit").classed("g-loading", false);
-	    	d3.select("#my-form").classed("g-hide", true)
-	    	d3.select(".g-submitted").classed("g-hide", false)
-	    }
-	  })
+		  if (name == "") {
+		  	d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+		  }
+
+		  d3.select("#submit").classed("g-loading", true);
+
+		  var jqxhr = $.ajax({
+		    url: url,
+		    method: "GET",
+		    dataType: "json",
+		    data: $form.serialize(),
+		    success: function(){ 
+
+		    	$('#my-form').trigger("reset");
+
+		    	d3.select("#submit").classed("g-loading", false);
+		    	d3.select("#my-form").classed("g-hide", true)
+		    	d3.select(".g-submitted").classed("g-hide", false)
+		    }
+		  })
 	})
 })
 
