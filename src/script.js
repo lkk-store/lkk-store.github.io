@@ -61,29 +61,34 @@ $( document ).ready( function(){
 		  var name = d3.select("#name").property("value");
 		  var phone = d3.select("#phone").property("value");
 
-		  if (phone == "") {
-		  	d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+		  if (phone == "" || name == "") {
+		  	if (phone == "") {
+		  		d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+		  	}
+
+		  	if (name == "") {
+		  		d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+		  	}
+		  } else {
+
+		  	d3.select("#submit").classed("g-loading", true);
+
+		  	var jqxhr = $.ajax({
+		  	  url: url,
+		  	  method: "GET",
+		  	  dataType: "json",
+		  	  data: $form.serialize(),
+		  	  success: function(){ 
+
+		  	  	$('#my-form').trigger("reset");
+
+		  	  	d3.select("#submit").classed("g-loading", false);
+		  	  	d3.select("#my-form").classed("g-hide", true)
+		  	  	d3.select(".g-submitted").classed("g-hide", false)
+		  	  }
+		  	})
+		  	
 		  }
 
-		  if (name == "") {
-		  	d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
-		  }
-
-		  d3.select("#submit").classed("g-loading", true);
-
-		  var jqxhr = $.ajax({
-		    url: url,
-		    method: "GET",
-		    dataType: "json",
-		    data: $form.serialize(),
-		    success: function(){ 
-
-		    	$('#my-form').trigger("reset");
-
-		    	d3.select("#submit").classed("g-loading", false);
-		    	d3.select("#my-form").classed("g-hide", true)
-		    	d3.select(".g-submitted").classed("g-hide", false)
-		    }
-		  })
 	})
 })
