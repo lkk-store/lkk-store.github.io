@@ -313,3 +313,13 @@ input {
 .g-details {
 	margin-top: 20px;
 }
+
+#submit.g-loading {
+	background-color: rgba(255,255,255,0.7);
+	background-image: url(loading-gif-png-5.gif);
+	background-size: 30%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	color: rgba(255,255,255,0.3);
+
+}

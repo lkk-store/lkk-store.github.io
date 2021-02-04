@@ -35,12 +35,16 @@ $( document ).ready( function(){
 
 	$('#submit').on('click', function(e) {
 	  e.preventDefault();
+
+	  d3.select("#submit").classed("g-loading", true);
+
 	  var jqxhr = $.ajax({
 	    url: url,
 	    method: "GET",
 	    dataType: "json",
 	    data: $form.serialize(),
 	    success: function(){ 
+	    	d3.select("#submit").classed("g-loading", false);
 	    	d3.select("#my-form").classed("g-hide", true)
 	    	d3.select(".g-submitted").classed("g-hide", false)
 	    }
