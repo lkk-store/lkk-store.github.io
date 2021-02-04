@@ -1,0 +1,71 @@
+
+<div class="g-store">
+	<div class="g-store-each g-store-buy">
+		<img src="img/lkk-<%= page.page %>.png">
+		<div class="g-meta">
+			<div class="g-hed">
+				<span class="g-name" id="stock-name" data-id="<%= page.page %>"><%= page.name %> <% if (page.name != '止蝕基金') { %>(起碼三月先有貨)<% } %></span>
+			</div>
+			<div class="g-desc"><%= page.text %></div>
+			<div class="g-price">
+				<sup class="g-agate">HKD</sup>
+				<span class="g-price-num"><%= page.price %></span>
+			</div>
+
+			<% if (page.name != '止蝕基金') { %>
+			<div class="g-details">
+			<p>from LKK</p>
+			<p>T-Shirt/Apparel</p>
+			<p><%= page.name %></p>
+			<p> available on lkk-store.com</p>
+			<p> Silk Screen by @LKK </p>
+			<p>Design by @LKK  </p>
+			<p>Hand Made Silk Screen Printing on 100% Cotton Tee </p>
+			<p>Standard Asia Fit Size* XS/S/M/L</p>
+			<br>
+			<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i><b></p>
+			</div>
+			<% } %>
+
+			<div class="g-buy">
+				<div class="g-size">
+					<span class="g-label">尺碼</span>
+					<select id="size" name="size">
+						<% var sizes = page.sizes.split(",") %>
+						<% sizes.forEach(function(s){ %>
+						<option value="<%= s %>"><%= s %></option>
+						<% }) %>
+					</select>
+				</div>
+				<div class="g-volume">
+					<span class="g-label">數量</span>
+					<input type="text" id="fname" name="fname" value="1">
+				</div>
+				<button class="g-button">買佢老味</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="g-buy-popup">
+	<div class="g-buy-popup-inner">
+		<div class="g-x" id="g-x">X</div>
+
+		<div class="g-cashier">CAHSIER</div>
+
+		<form name="my-form" id="my-form">
+			<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
+			<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
+			<div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div>
+			<div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div>
+			<div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div>
+
+			<button type="submit" id="submit" class="g-buy-button">真係 BUY!</button>
+		</form>
+
+		<div class="g-submitted g-hide">
+			<div class="g-thanks-text">payme完先會正式落單！</div>
+			<img src="img/IMG_0412.JPG">
+		</div>		
+	</div>
+</div>

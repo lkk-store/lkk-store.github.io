@@ -1,0 +1,23 @@
+<div class="g-store">
+
+	<% pages.filter(d => d != "index").forEach(function(page){ %>
+
+	<a href="lkk-<%= page.page %>.html">
+		<div class="g-store-each">
+			<img src="img/lkk-<%= page.page %>.png">
+			<div class="g-meta">
+				<div class="g-hed">
+					<span class="g-name"><%= page.name %></span>
+					<span class="g-desc"><%= page.text %></span>
+				</div>
+				<div class="g-price">
+					<sup class="g-agate">HKD</sup>
+					<span class="g-price-num"><%= page.price %></span>
+				</div>
+			</div>
+		</div>
+	</a>
+
+	<% }) %>
+
+</div>
