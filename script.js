@@ -11,10 +11,21 @@ d3.select("#g-x").on("click", function(){
 d3.select(".g-button").on("click", function(){
 	d3.select(".g-buy-popup").classed("g-active", true);
 
+	var stockid = d3.select("#stock-name").attr("data-id");
+	var size = d3.select("#size").property("value");
 
+	d3.select(".g-bought").property("value", d3.select("#stock-name").text() + " " + stockid + " x " + d3.select("#fname").property("value") + " x " + size)
 
-	d3.select(".g-bought").property("value", d3.select("#stock-name").text() + " " + d3.select("#stock-name").attr("data-id") + " x " + d3.select("#fname").property("value") + " x " + d3.select("#size").property("value"))
-	d3.select("#price").property("value", d3.select("#fname").property("value")*280)
+	if (stockid == "003") {
+
+		var amount = size == "小小心意" ? 10 : size == "多多益善" ? 50 : 100;
+		d3.select("#price").property("value", amount*d3.select("#fname").property("value"))
+
+	} else {
+
+		d3.select("#price").property("value", d3.select("#fname").property("value")*280)	
+	}
+	
 })
 
 
