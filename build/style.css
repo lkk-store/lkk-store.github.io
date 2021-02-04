@@ -75,6 +75,9 @@ img {
   .g-meta {
     padding: 0;
   }
+  .g-store-buy .g-meta {
+    width: calc(50% - 30px);
+  }
 }
 .g-name {
   font-weight: 700;
@@ -124,6 +127,7 @@ a:hover {
   .g-store-buy img {
     max-width: 460px;
     margin-right: 20px;
+    width: 50%;
   }
 }
 .g-store-buy .g-buy {

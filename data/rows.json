@@ -1,9 +1,10 @@
 [
   {
     "page": "003",
-    "name": "止蝕基金",
+    "name": "人人有蕉吔基金",
     "text": "唔睇都買下呀喂",
     "category": "",
+    "description": "首先你要明白，// 其實啲錢唔係我收，係捐畀茶果嶺村民，// 使到人人唔只有書讀，仲可以人人有蕉吔",
     "price": "10up",
     "sizes": "小小心意,多多益善,大手入股"
   },
@@ -12,6 +13,7 @@
     "name": "舊青年 tee",
     "text": "屌你啦屌你啦屌你啦",
     "category": "Tee",
+    "description": "",
     "price": "280",
     "sizes": "small,medium,large"
   },
@@ -20,6 +22,7 @@
     "name": "舊青年 tee",
     "text": "壽終正寢 version",
     "category": "Tee",
+    "description": "",
     "price": "280",
     "sizes": "small,medium,large"
   },
@@ -28,6 +31,7 @@
     "name": "DVYMVMW tee",
     "text": "mum crying",
     "category": "Tee",
+    "description": "",
     "price": "280",
     "sizes": "small,medium,large"
   }
