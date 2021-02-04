@@ -80,15 +80,14 @@
 
 			<div class="g-cashier">CAHSIER</div>
 	
-			<form id="my-form" action="https://formspree.io/f/mzbkwvpd" method="POST">
+			<form name="my-form" id="my-form">
 				<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
 				<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
-				<div class="g-buy-each"><span class="g-lab">貨物</span><input class="g-bought" type="text" name="bought"></div>
+				<div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div>
 				<div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div>
 				<div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div>
 
-
-				<button type="submit" class="g-buy-button">真係 BUY!</button>
+				<button type="submit" id="submit" class="g-buy-button">真係 BUY!</button>
 			</form>
 			<div class="g-submitted g-hide">
 				<div class="g-thanks-text">payme完先會正式落單！</div>
@@ -102,6 +101,7 @@
 	</footer>
 
 	<script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="script.js"></script>
 
 

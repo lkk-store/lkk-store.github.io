@@ -29,58 +29,86 @@ d3.select(".g-button").on("click", function(){
 })
 
 
-window.addEventListener("DOMContentLoaded", function() {
+$( document ).ready( function(){
+	var $form = $('form#my-form'),
+	    url = 'https://script.google.com/macros/s/AKfycbzyYUxhWKsfDJlVt6JP0Y6A-DB_YBFfTbnyBqAkd9-fWjkfpAxEZVPX/exec'
 
-	// get the form elements defined in your form HTML above
+	$('#submit').on('click', function(e) {
+	  e.preventDefault();
+	  var jqxhr = $.ajax({
+	    url: url,
+	    method: "GET",
+	    dataType: "json",
+	    data: $form.serialize(),
+	    success: function(){ 
+	    	d3.select("#my-form").classed("g-hide", true)
+	    	d3.select(".g-submitted").classed("g-hide", false)
+	    }
+	  })
+	})
+})
 
-	var form = document.getElementById("my-form");
-	var button = document.getElementById("my-form-button");
-	var status = document.getElementById("my-form-status");
 
-	if (form) {
-		// Success and Error functions for after the form is submitted
+// window.addEventListener("DOMContentLoaded", function() {
 
-		function success() {
-		  // form.reset();
-		  // button.style = "display: none ";
-		  // status.innerHTML = "Thanks!";
+// 	var form = document.getElementById("my-form");
+// 	var button = document.getElementById("my-form-button");
+// 	var status = document.getElementById("my-form-status");
 
-		  d3.select("#my-form").classed("g-hide", true)
-		  d3.select(".g-submitted").classed("g-hide", false)
+// 	if (form) {
+// // 		// Success and Error functions for after the form is submitted
 
-		}
+// 		function success() {
+// 		  form.reset();
+// 		  // button.style = "display: none ";
+// 		  // status.innerHTML = "Thanks!";
 
-		function error() {
-		  // status.innerHTML = "Oops! There was a problem.";
-		}
 
-		// handle the form submission event
+// 		  d3.select("#my-form").classed("g-hide", true)
+// 		  d3.select(".g-submitted").classed("g-hide", false)
 
-		form.addEventListener("submit", function(ev) {
-		  ev.preventDefault();
-		  var data = new FormData(form);
-		  data.append("_subject","New order from " + d3.select("#name").property("value") + " " + d3.select("#phone").property("value"));
-		  ajax(form.method, form.action, data, success, error);
-		});
-	}
+// 		}
+
+// 		function error() {
+// 		  // status.innerHTML = "Oops! There was a problem.";
+// 		}
+
+// // 		// handle the form submission event
+
+// 		form.addEventListener("submit", function(ev) {
+// 		  ev.preventDefault();
+// 		  var data = new FormData(form);
+// 		  data.append("_subject","New order from " + d3.select("#name").property("value") + " " + d3.select("#phone").property("value"));
+// 		  ajax({
+// 		  	url: 'https://script.google.com/macros/s/AKfycbzyYUxhWKsfDJlVt6JP0Y6A-DB_YBFfTbnyBqAkd9-fWjkfpAxEZVPX/exec',
+// 		  	method: 'GET',
+// 		  	dataType: 'json',
+// 		  	data: data,
+// 		  	success: success,
+// 		  	error: error
+// 		  	// orm.method, form.action, data, success, error);
+// 		  });
+// 		});
+// 	}
 	
-});
+// });
 
-// helper function for sending an AJAX request
+// // // helper function for sending an AJAX request
 
-function ajax(method, url, data, success, error) {
-var xhr = new XMLHttpRequest();
-xhr.open(method, url);
-xhr.setRequestHeader("Accept", "application/json");
-xhr.onreadystatechange = function() {
-  if (xhr.readyState !== XMLHttpRequest.DONE) return;
-  if (xhr.status === 200) {
-    success(xhr.response, xhr.responseType);
-  } else {
-    error(xhr.status, xhr.response, xhr.responseType);
-  }
-};
+// function ajax({method, url, data, success, error}) {
+// var xhr = new XMLHttpRequest();
 
-console.log(data)
-xhr.send(data);
-}
+// xhr.open(method, url);
+// xhr.setRequestHeader("Accept", "application/json");
+// xhr.onreadystatechange = function() {
+//   if (xhr.readyState !== XMLHttpRequest.DONE) return;
+//   if (xhr.status === 200) {
+//     success(xhr.response, xhr.responseType);
+//   } else {
+//     error(xhr.status, xhr.response, xhr.responseType);
+//   }
+// };
+
+// console.log(data)
+// xhr.send(data);
+// }
