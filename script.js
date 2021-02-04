@@ -44,6 +44,9 @@ $( document ).ready( function(){
 	    dataType: "json",
 	    data: $form.serialize(),
 	    success: function(){ 
+
+	    	$('#my-form').trigger("reset");
+
 	    	d3.select("#submit").classed("g-loading", false);
 	    	d3.select("#my-form").classed("g-hide", true)
 	    	d3.select(".g-submitted").classed("g-hide", false)
