@@ -59,6 +59,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		form.addEventListener("submit", function(ev) {
 		  ev.preventDefault();
 		  var data = new FormData(form);
+		  data.append("_subject","New order from " + d3.select("#name").property("value") + " " + d3.select("#phone").property("value"));
 		  ajax(form.method, form.action, data, success, error);
 		});
 	}
@@ -79,5 +80,7 @@ xhr.onreadystatechange = function() {
     error(xhr.status, xhr.response, xhr.responseType);
   }
 };
+
+console.log(data)
 xhr.send(data);
 }
