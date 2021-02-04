@@ -3,6 +3,7 @@
     "page": "003",
     "name": "止蝕基金",
     "text": "唔睇都買下呀喂",
+    "category": "",
     "price": "up to you",
     "sizes": "小小心意,多多益善,大手入股"
   },
@@ -10,6 +11,7 @@
     "page": "001",
     "name": "舊青年 tee",
     "text": "屌你啦屌你啦屌你啦",
+    "category": "Tee",
     "price": "280",
     "sizes": "small,medium,large"
   },
@@ -17,6 +19,7 @@
     "page": "002",
     "name": "舊青年 tee",
     "text": "壽終正寢 version",
+    "category": "Tee",
     "price": "280",
     "sizes": "small,medium,large"
   },
@@ -24,6 +27,7 @@
     "page": "004",
     "name": "DVYMVMW tee",
     "text": "mum crying",
+    "category": "Tee",
     "price": "280",
     "sizes": "small,medium,large"
   }

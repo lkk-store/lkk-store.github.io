@@ -14,14 +14,16 @@
 
 			<% if (page.name != '止蝕基金') { %>
 			<div class="g-details">
-			<p>from LKK</p>
-			<p>T-Shirt/Apparel</p>
+			<p><%= page.category %></p>
 			<p><%= page.name %></p>
 			<p> available on lkk-store.com</p>
+			<% if (page.category == "Tee") { %>
 			<p> Silk Screen by @LKK </p>
 			<p>Design by @LKK  </p>
 			<p>Hand Made Silk Screen Printing on 100% Cotton Tee </p>
 			<p>Standard Asia Fit Size* XS/S/M/L</p>
+			<% } %>
+			
 			<br>
 			<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i><b></p>
 			</div>
