@@ -2,6 +2,7 @@
   "dependencies": {
     "chokidar": "^3.5.1",
     "d3v4": "^4.2.2",
+    "debug": "^2.6.9",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "googleapis": "^67.0.0",
