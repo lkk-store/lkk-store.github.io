@@ -1,6 +1,6 @@
 [
   {
-    "stock_id": "003",
+    "stock_id": "001",
     "name": "人人有蕉吔基金",
     "text": "純純粹粹俾錢店主",
     "category": "",
@@ -9,7 +9,7 @@
     "sizes": "小小心意,多多益善,大手入股"
   },
   {
-    "stock_id": "001",
+    "stock_id": "002",
     "name": "舊青年 tee",
     "text": "NO MORE NEW YOUTH",
     "category": "Tee",
@@ -18,7 +18,7 @@
     "sizes": "small,medium,large"
   },
   {
-    "stock_id": "002",
+    "stock_id": "003",
     "name": "舊青年 tee",
     "text": "壽終正寢 version",
     "category": "Tee",
@@ -30,6 +30,15 @@
     "stock_id": "004",
     "name": "DVYMVMW tee",
     "text": "mum crying",
+    "category": "Tee",
+    "description": "",
+    "price": "280",
+    "sizes": "small,medium,large"
+  },
+  {
+    "stock_id": "005",
+    "name": "sad banana tee",
+    "text": "don't be sad.",
     "category": "Tee",
     "description": "",
     "price": "280",
