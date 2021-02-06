@@ -16,19 +16,35 @@ img {
 	width: 100%;
 }
 
-.g-nav-list {
-	/*width: 120%;*/
+.g-about {
+	padding: 10px 20px 20px 25px;
+	margin: 0;
+	// font-family: 'Noto Sans HK', sans-serif;
 }
 
-.g-nav-inner {
+.g-nav-list {
+	/*width: 120%;*/
+	margin-bottom: 3px;
+	overflow: hidden;
+}
+
+.g-nav-name {
 	font-family: blackoak-std, serif;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 5vw;
-	padding: 0 20px;
+	font-size: 3.8vw;
+	padding: 0 0 0 20px;
 	transform: scaleX(0.8);
 	margin-left: -10%;
-	margin-bottom: 3px;
+	padding-bottom: 3px;
+}
+
+.g-nav-name:hover {
+	cursor: pointer;
+}
+
+.g-nav-content {
+	// display: none;
 }
 
 @media screen and (min-width: 600px) {
@@ -36,7 +52,7 @@ img {
 		
 	}
 
-	.g-nav-inner {
+	.g-nav-name {
 		/*margin-left: -14%;*/
 		font-size: 2.2vw;
 	}
@@ -58,17 +74,28 @@ img {
 }
 
 .g-store {
-	margin: 30px auto;
+	padding: 25px 0;
 }
 
 .g-store-each {
 	margin-bottom: 25px;
+
+	.g-img {
+		padding-bottom: 100%;
+		position: relative;
+		img {
+			position: absolute;
+			top: 0;
+		}
+	}
 }
+
+
 
 @media screen and (min-width: 600px) {
 	
 	.g-store {
-		padding: 20px;
+		padding: 5px 25px;
 	}
 
 	.g-store-each {
@@ -152,6 +179,10 @@ a:hover {
 	width: 100%;
 }
 
+.g-store-each:hover {
+	cursor: pointer;
+}
+
 @media screen and (min-width: 600px) {
 	.g-store-buy img, .g-store-buy .g-meta.g-meta {
 		display: inline-block;
@@ -210,8 +241,6 @@ a:hover {
 	vertical-align: middle;
 	font-size: 13px;
 }
-
-
 
 input,select {
 	width: 100px;
@@ -362,4 +391,27 @@ input {
 	background-position: 50% 50%;
 	color: rgba(255,255,255,0.3);
 
+}
+
+
+.g-hide {
+	display: none;
+}
+
+.g-back {
+	// display: inline;
+	font-weight: 100;
+	font-family: "arial", sans-serif;
+	font-size: 16px;
+	margin-bottom: 10px;
+	line-height: 1;
+	.g-tri {
+		display: inline-block;
+		font-size: 20px;
+		margin-right: 5px;
+	}
+}
+
+.g-back:hover {
+	cursor: pointer;
 }

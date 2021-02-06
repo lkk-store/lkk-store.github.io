@@ -27,21 +27,30 @@ footer,
 img {
   width: 100%;
 }
+.g-about {
+  padding: 10px 20px 20px 25px;
+  margin: 0;
+}
 .g-nav-list {
   /*width: 120%;*/
+  margin-bottom: 3px;
+  overflow: hidden;
 }
-.g-nav-inner {
+.g-nav-name {
   font-family: blackoak-std, serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 5vw;
-  padding: 0 20px;
+  font-size: 3.8vw;
+  padding: 0 0 0 20px;
   transform: scaleX(0.8);
   margin-left: -10%;
-  margin-bottom: 3px;
+  padding-bottom: 3px;
+}
+.g-nav-name:hover {
+  cursor: pointer;
 }
 @media screen and (min-width: 600px) {
-  .g-nav-inner {
+  .g-nav-name {
     /*margin-left: -14%;*/
     font-size: 2.2vw;
   }
@@ -59,14 +68,22 @@ img {
   max-width: 460px;
 }
 .g-store {
-  margin: 30px auto;
+  padding: 25px 0;
 }
 .g-store-each {
   margin-bottom: 25px;
 }
+.g-store-each .g-img {
+  padding-bottom: 100%;
+  position: relative;
+}
+.g-store-each .g-img img {
+  position: absolute;
+  top: 0;
+}
 @media screen and (min-width: 600px) {
   .g-store {
-    padding: 20px;
+    padding: 5px 25px;
   }
   .g-store-each {
     display: inline-block;
@@ -127,6 +144,9 @@ a:hover {
 }
 .g-store-each.g-store-buy {
   width: 100%;
+}
+.g-store-each:hover {
+  cursor: pointer;
 }
 @media screen and (min-width: 600px) {
   .g-store-buy img,
@@ -301,187 +321,546 @@ input {
   background-position: 50% 50%;
   color: rgba(255, 255, 255, 0.3);
 }
+.g-hide {
+  display: none;
+}
+.g-back {
+  font-weight: 100;
+  font-family: "arial", sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.g-back .g-tri {
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 5px;
+}
+.g-back:hover {
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
-<a href="index.html"><div class="g-logo-cont"><img src="img/laikankee.png"></div></a><div class="g-nav"><div class="g-nav-list"><div class="g-nav-inner">LKK</div></div><div class="g-nav-list"><div class="g-nav-inner">STORE</div></div></div><div class="g-store">
+<a href="index.html"><div class="g-logo-cont"><img src="img/laikankee.png"></div></a><div class="g-nav">
 	
 
-	<a href="lkk-003.html">
-		<div class="g-store-each">
-			<img src="img/lkk-003.png">
-			<div class="g-meta">
-				<div class="g-hed">
-					<span class="g-name">人人有蕉吔基金</span>
-					<span class="g-desc">純純粹粹俾錢店主</span>
-				</div>
-				<div class="g-price">
-					<sup class="g-agate">HKD</sup>
-					<span class="g-price-num">10up</span>
-				</div>
-			</div>
+	<div class="g-nav-list" data-state="hidden">
+		<div class="g-nav-name">LKK</div>
+		<div class="g-nav-content">
+			
+			<div class="g-about">吔蕉啦你</div>
+				
+
+			
 		</div>
-	</a>
-
+	</div>
 	
 
-	<a href="lkk-001.html">
-		<div class="g-store-each">
-			<img src="img/lkk-001.png">
-			<div class="g-meta">
-				<div class="g-hed">
-					<span class="g-name">舊青年 tee</span>
-					<span class="g-desc">NO MORE NEW YOUTH</span>
+	<div class="g-nav-list" data-state="hidden">
+		<div class="g-nav-name">STORE</div>
+		<div class="g-nav-content">
+				
+
+			
+			<div class="g-store g-stock-list">
+				
+				<div class="g-store-each" data-id="003">
+					<div class="g-img"><img src="img/lkk-003.png"></div>
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name">人人有蕉吔基金</span>
+							<span class="g-desc">純純粹粹俾錢店主</span>
+						</div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">10up</span>
+						</div>
+					</div>
 				</div>
-				<div class="g-price">
-					<sup class="g-agate">HKD</sup>
-					<span class="g-price-num">280</span>
+				
+				<div class="g-store-each" data-id="001">
+					<div class="g-img"><img src="img/lkk-001.png"></div>
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name">舊青年 tee</span>
+							<span class="g-desc">NO MORE NEW YOUTH</span>
+						</div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">280</span>
+						</div>
+					</div>
 				</div>
+				
+				<div class="g-store-each" data-id="002">
+					<div class="g-img"><img src="img/lkk-002.png"></div>
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name">舊青年 tee</span>
+							<span class="g-desc">壽終正寢 version</span>
+						</div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">280</span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="g-store-each" data-id="004">
+					<div class="g-img"><img src="img/lkk-004.png"></div>
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name">DVYMVMW tee</span>
+							<span class="g-desc">mum crying</span>
+						</div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">280</span>
+						</div>
+					</div>
+				</div>
+				
 			</div>
-		</div>
-	</a>
 
-	
+			<div class="g-store g-stock-cont">
+				
+				<div class="g-stock-each g-store-buy g-hide g-stock-003" data-id="003">
 
-	<a href="lkk-002.html">
-		<div class="g-store-each">
-			<img src="img/lkk-002.png">
-			<div class="g-meta">
-				<div class="g-hed">
-					<span class="g-name">舊青年 tee</span>
-					<span class="g-desc">壽終正寢 version</span>
+					<div class="g-back"><div class="g-tri">◂</div>BACK</div>
+
+					<img src="img/lkk-003.png">
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="003">人人有蕉吔基金 </span>
+						</div>
+						<div class="g-desc">純純粹粹俾錢店主</div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">10up</span>
+						</div>
+
+						<div class="g-details">
+						
+
+						
+						
+						<p>【DONT THINK, JUST DONATE!】</p><p> 黎根記®有一個願望：「人人都可以有蕉吔！」</p><p> 如果您都認同我哋，</p><p> 事不宜遲，請立即捐款到"人人有蕉吔基金" </p><p> 你將會收到香蕉.png一條</p>
+						</div>
+
+						<div class="g-buy">
+							<div class="g-size">
+								<span class="g-label">尺碼</span>
+								<select id="size" name="size">
+									
+									
+									<option value="小小心意">小小心意</option>
+									
+									<option value="多多益善">多多益善</option>
+									
+									<option value="大手入股">大手入股</option>
+									
+								</select>
+							</div>
+							<div class="g-volume">
+								<span class="g-label">數量</span>
+								<div class="g-volume-cont"><div class="g-count-button" data-type="minus">–</div><div class="g-count">1</div><div class="g-count-button" data-type="add">+</div></div>
+							</div>
+							<button class="g-button">買佢老味</button>
+						</div>
+					</div>
 				</div>
-				<div class="g-price">
-					<sup class="g-agate">HKD</sup>
-					<span class="g-price-num">280</span>
+
+				
+				<div class="g-stock-each g-store-buy g-hide g-stock-001" data-id="001">
+
+					<div class="g-back"><div class="g-tri">◂</div>BACK</div>
+
+					<img src="img/lkk-001.png">
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="001">舊青年 tee (起碼三月先有貨)</span>
+						</div>
+						<div class="g-desc">NO MORE NEW YOUTH</div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">280</span>
+						</div>
+
+						<div class="g-details">
+						
+						
+						<p>Tee</p>
+						<p>舊青年 tee</p>
+						<p> available on lkk-store.com</p>
+						
+							<p> Silk Screen by @LKK </p>
+							<p>Design by @LKK  </p>
+							<p>Hand Made Silk Screen Printing on 100% Cotton Tee </p>
+							<p>Standard Asia Fit Size* XS/S/M/L</p>
+						
+						
+						<br>
+						<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i><b></p>
+						
+
+						
+						
+						</div>
+
+						<div class="g-buy">
+							<div class="g-size">
+								<span class="g-label">尺碼</span>
+								<select id="size" name="size">
+									
+									
+									<option value="small">small</option>
+									
+									<option value="medium">medium</option>
+									
+									<option value="large">large</option>
+									
+								</select>
+							</div>
+							<div class="g-volume">
+								<span class="g-label">數量</span>
+								<div class="g-volume-cont"><div class="g-count-button" data-type="minus">–</div><div class="g-count">1</div><div class="g-count-button" data-type="add">+</div></div>
+							</div>
+							<button class="g-button">買佢老味</button>
+						</div>
+					</div>
 				</div>
+
+				
+				<div class="g-stock-each g-store-buy g-hide g-stock-002" data-id="002">
+
+					<div class="g-back"><div class="g-tri">◂</div>BACK</div>
+
+					<img src="img/lkk-002.png">
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="002">舊青年 tee (起碼三月先有貨)</span>
+						</div>
+						<div class="g-desc">壽終正寢 version</div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">280</span>
+						</div>
+
+						<div class="g-details">
+						
+						
+						<p>Tee</p>
+						<p>舊青年 tee</p>
+						<p> available on lkk-store.com</p>
+						
+							<p> Silk Screen by @LKK </p>
+							<p>Design by @LKK  </p>
+							<p>Hand Made Silk Screen Printing on 100% Cotton Tee </p>
+							<p>Standard Asia Fit Size* XS/S/M/L</p>
+						
+						
+						<br>
+						<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i><b></p>
+						
+
+						
+						
+						</div>
+
+						<div class="g-buy">
+							<div class="g-size">
+								<span class="g-label">尺碼</span>
+								<select id="size" name="size">
+									
+									
+									<option value="small">small</option>
+									
+									<option value="medium">medium</option>
+									
+									<option value="large">large</option>
+									
+								</select>
+							</div>
+							<div class="g-volume">
+								<span class="g-label">數量</span>
+								<div class="g-volume-cont"><div class="g-count-button" data-type="minus">–</div><div class="g-count">1</div><div class="g-count-button" data-type="add">+</div></div>
+							</div>
+							<button class="g-button">買佢老味</button>
+						</div>
+					</div>
+				</div>
+
+				
+				<div class="g-stock-each g-store-buy g-hide g-stock-004" data-id="004">
+
+					<div class="g-back"><div class="g-tri">◂</div>BACK</div>
+
+					<img src="img/lkk-004.png">
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="004">DVYMVMW tee (起碼三月先有貨)</span>
+						</div>
+						<div class="g-desc">mum crying</div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">280</span>
+						</div>
+
+						<div class="g-details">
+						
+						
+						<p>Tee</p>
+						<p>DVYMVMW tee</p>
+						<p> available on lkk-store.com</p>
+						
+							<p> Silk Screen by @LKK </p>
+							<p>Design by @LKK  </p>
+							<p>Hand Made Silk Screen Printing on 100% Cotton Tee </p>
+							<p>Standard Asia Fit Size* XS/S/M/L</p>
+						
+						
+						<br>
+						<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i><b></p>
+						
+
+						
+						
+						</div>
+
+						<div class="g-buy">
+							<div class="g-size">
+								<span class="g-label">尺碼</span>
+								<select id="size" name="size">
+									
+									
+									<option value="small">small</option>
+									
+									<option value="medium">medium</option>
+									
+									<option value="large">large</option>
+									
+								</select>
+							</div>
+							<div class="g-volume">
+								<span class="g-label">數量</span>
+								<div class="g-volume-cont"><div class="g-count-button" data-type="minus">–</div><div class="g-count">1</div><div class="g-count-button" data-type="add">+</div></div>
+							</div>
+							<button class="g-button">買佢老味</button>
+						</div>
+					</div>
+				</div>
+
+				
 			</div>
-		</div>
-	</a>
 
+			
+		</div>
+	</div>
 	
 
-	<a href="lkk-004.html">
-		<div class="g-store-each">
-			<img src="img/lkk-004.png">
-			<div class="g-meta">
-				<div class="g-hed">
-					<span class="g-name">DVYMVMW tee</span>
-					<span class="g-desc">mum crying</span>
-				</div>
-				<div class="g-price">
-					<sup class="g-agate">HKD</sup>
-					<span class="g-price-num">280</span>
-				</div>
-			</div>
-		</div>
-	</a>
+	<div class="g-nav-list" data-state="hidden">
+		<div class="g-nav-name">PROJECT UPCOMING</div>
+		<div class="g-nav-content">
+				
 
+			
+		</div>
+	</div>
 	
 
+	<div class="g-nav-list" data-state="hidden">
+		<div class="g-nav-name">BUY ME LUNCH</div>
+		<div class="g-nav-content">
+				
+
+			
+		</div>
+	</div>
+	
 </div>
 
+<div class="g-buy-popup">
+	<div class="g-buy-popup-inner">
+		<div class="g-x" id="g-x">X</div>
 
+		<div class="g-cashier">CAHSIER</div>
 
-<footer>© 2021 黎根記. All rights reserved.</footer>
+		<form name="my-form" id="my-form">
+			<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
+			<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
+			<div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div>
+			<div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div>
+			<!-- <div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div> -->
+
+			<button type="submit" id="submit" class="g-buy-button">真係 BUY!</button>
+		</form>
+
+		<div class="g-submitted g-hide">
+			<div class="g-thanks-text">payme完先會正式落單！</div>
+			<img src="img/IMG_0412.JPG">
+		</div>		
+	</div>
+</div><footer>© 2021 黎根記. All rights reserved.</footer>
 <script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-d3.select(".g-buy-popup").style("width", innerWidth).style("height", innerHeight)
+document.addEventListener("DOMContentLoaded", function(e) {
+   	
+   	function resize() {
+   		d3.selectAll(".g-nav-list").each(function(){
 
-d3.select("#g-x").on("click", function(){
-	d3.select(".g-buy-popup").classed("g-active", false);
+   			var el = d3.select(this);
+   			var nameheight = el.select(".g-nav-name").node().getBoundingClientRect().height;
+   			var contentheight = el.select(".g-nav-content").node() ? el.select(".g-nav-content").node().getBoundingClientRect().height : nameheight;
+   			el.attr("data-h1", nameheight)
+   			el.attr("data-h2", nameheight + contentheight)
+   			el.style("height", nameheight + "px")
+   		})
+   	}
 
-	d3.select("#my-form").classed("g-hide", false)
-	d3.select(".g-submitted").classed("g-hide", true)	
+   	resize();
+   	var containerWidthChanged = false;
+   	var ow = innerWidth;
 
-})
+   	window.addEventListener("resize", function(){
+   	    if (innerWidth != ow) {
+   	        containerWidthChanged = true;
+   	        ow = innerWidth;
+   	        resize();
+   	      }
+   	});
 
-d3.selectAll(".g-count-button").on("click", function(){
-	var el = d3.select(this);
-	var type = el.attr("data-type");
+	d3.selectAll(".g-nav-name").on("click", function(){
+		var el = d3.select(d3.select(this).node().parentNode);
+		var state = el.attr("data-state");
 
-	console.log(type)
-	var count = +d3.select(".g-count").text();
+		if (state == "hidden") {
+			el.attr("data-state", "show")
+			el.transition().style("height", el.attr("data-h2") + "px")
+		} else {
+			el.attr("data-state", "hidden")
+			el.transition().style("height", el.attr("data-h1") + "px")
+		}
+	})
 
-	if (type == "minus") {
-		count -= 1;
-	} else if (type == "add") {
-		count += 1;
-	}
+	d3.selectAll(".g-store-each").on("click", function(){
 
-	count = count < 1 ? 1 : count;
+		var el = d3.select(this);
 
-	d3.select(".g-count").text(count);
-
-})
-
-d3.select(".g-button").on("click", function(){
-	d3.select(".g-buy-popup").classed("g-active", true);
-
-	var stockid = d3.select("#stock-name").attr("data-id");
-	var size = d3.select("#size").property("value");
-
-	var name = d3.select("#stock-name").text().replace("(起碼三月先有貨)", "");
-
-	d3.select(".g-bought").property("value", name + " " + stockid + " x " + +d3.select(".g-count").text() + " x " + size)
-
-	if (stockid == "003") {
-
-		var amount = size == "小小心意" ? 10 : size == "多多益善" ? 50 : 100;
-		d3.select("#price").property("value", "$" + amount*+d3.select(".g-count").text())
-
-	} else {
-
-		d3.select("#price").property("value", "$" + d3.select(".g-count").text()*280)	
-	}
-	
-})
-
-
-$( document ).ready( function(){
-	var $form = $('form#my-form'),
-	    url = 'https://script.google.com/macros/s/AKfycbzyYUxhWKsfDJlVt6JP0Y6A-DB_YBFfTbnyBqAkd9-fWjkfpAxEZVPX/exec'
-
-	$('#submit').on('click', function(e) {
-
-		  e.preventDefault();
-
-		  var name = d3.select("#name").property("value");
-		  var phone = d3.select("#phone").property("value");
-
-		  if (phone == "" || name == "") {
-		  	if (phone == "") {
-		  		d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
-		  	}
-
-		  	if (name == "") {
-		  		d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
-		  	}
-		  } else {
-
-		  	d3.select("#submit").classed("g-loading", true);
-
-		  	var jqxhr = $.ajax({
-		  	  url: url,
-		  	  method: "GET",
-		  	  dataType: "json",
-		  	  data: $form.serialize(),
-		  	  success: function(){ 
-
-		  	  	$('#my-form').trigger("reset");
-
-		  	  	d3.select("#submit").classed("g-loading", false);
-		  	  	d3.select("#my-form").classed("g-hide", true)
-		  	  	d3.select(".g-submitted").classed("g-hide", false)
-		  	  }
-		  	})
-		  	
-		  }
+		d3.select(".g-stock-list").classed("g-hide", true);
+		d3.select(".g-stock-" + el.attr("data-id")).classed("g-hide", false);
 
 	})
+
+	d3.selectAll(".g-back").on("click", function(){
+
+		d3.select(".g-stock-list").classed("g-hide", false);
+		d3.selectAll(".g-store-buy").classed("g-hide", true);
+
+	})
+
+
+	d3.select(".g-buy-popup").style("width", innerWidth).style("height", innerHeight)
+
+	d3.select("#g-x").on("click", function(){
+		d3.select(".g-buy-popup").classed("g-active", false);
+
+		d3.select("#my-form").classed("g-hide", false)
+		d3.select(".g-submitted").classed("g-hide", true)	
+
+	})
+
+	d3.selectAll(".g-count-button").on("click", function(){
+		var el = d3.select(this);
+		var type = el.attr("data-type");
+
+		console.log(type)
+		var count = +d3.select(".g-count").text();
+
+		if (type == "minus") {
+			count -= 1;
+		} else if (type == "add") {
+			count += 1;
+		}
+
+		count = count < 1 ? 1 : count;
+
+		d3.select(".g-count").text(count);
+
+	})
+
+	d3.select(".g-button").on("click", function(){
+		d3.select(".g-buy-popup").classed("g-active", true);
+
+		var stockid = d3.select("#stock-name").attr("data-id");
+		var size = d3.select("#size").property("value");
+
+		var name = d3.select("#stock-name").text().replace("(起碼三月先有貨)", "");
+
+		d3.select(".g-bought").property("value", name + " " + stockid + " x " + +d3.select(".g-count").text() + " x " + size)
+
+		if (stockid == "003") {
+
+			var amount = size == "小小心意" ? 10 : size == "多多益善" ? 50 : 100;
+			d3.select("#price").property("value", "$" + amount*+d3.select(".g-count").text())
+
+		} else {
+
+			d3.select("#price").property("value", "$" + d3.select(".g-count").text()*280)	
+		}
+		
+	})
+
+
+	$( document ).ready( function(){
+		var $form = $('form#my-form'),
+		    url = 'https://script.google.com/macros/s/AKfycbzyYUxhWKsfDJlVt6JP0Y6A-DB_YBFfTbnyBqAkd9-fWjkfpAxEZVPX/exec'
+
+		$('#submit').on('click', function(e) {
+
+			  e.preventDefault();
+
+			  var name = d3.select("#name").property("value");
+			  var phone = d3.select("#phone").property("value");
+
+			  if (phone == "" || name == "") {
+			  	if (phone == "") {
+			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  	}
+
+			  	if (name == "") {
+			  		d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  	}
+			  } else {
+
+			  	d3.select("#submit").classed("g-loading", true);
+
+			  	var jqxhr = $.ajax({
+			  	  url: url,
+			  	  method: "GET",
+			  	  dataType: "json",
+			  	  data: $form.serialize(),
+			  	  success: function(){ 
+
+			  	  	$('#my-form').trigger("reset");
+
+			  	  	d3.select("#submit").classed("g-loading", false);
+			  	  	d3.select("#my-form").classed("g-hide", true)
+			  	  	d3.select(".g-submitted").classed("g-hide", false)
+			  	  }
+			  	})
+			  	
+			  }
+
+		})
+	})
+
+/* Your D3.js here */
 })
+
+
 
 </script>
 </body>

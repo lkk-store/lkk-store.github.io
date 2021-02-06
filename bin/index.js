@@ -15,9 +15,17 @@ var d3 = require("d3v4");
 
 function compile() {
 
-	var pages = fs.readFileSync("data/rows.json");
-	pages = JSON.parse(pages);
-	pages.push("index");
+	var data = {};
+
+	var datafolder = fs.readdirSync("data");
+
+	datafolder.forEach(function(d){
+		var dat = fs.readFileSync("data/" + d, "utf8");
+		dat = JSON.parse(dat)
+		data[d.replace(".json", "")] = dat
+	});
+
+	var pages = ["index"]
 
 	var script = fs.readFileSync("src/script.js", "utf8");
 
@@ -40,7 +48,7 @@ function compile() {
 
 			var html = page == "index" ? fs.readFileSync("src/index.jst.html", "utf8") : fs.readFileSync("src/page.jst.html", "utf8");;
 
-			var ejs_rendered = ejs.render(html, {pages: pages, page: page, d3: d3});
+			var ejs_rendered = ejs.render(html, {pages: pages, page: page, data: data, d3: d3});
 				// , partials: partials});
 
 			var out = "";
@@ -54,6 +62,8 @@ function compile() {
 			out += '<link rel="shortcut icon" href="img/lkk-logo-06.png" />\n';
 			out += '<link rel="apple-touch-icon" sizes="128x128" href="app-icon.png">\n'
 			out += '<link rel="stylesheet" href="https://use.typekit.net/nri5irx.css">\n';
+			// out += '<link rel="preconnect" href="https://fonts.gstatic.com">\n'
+			// out += '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;700&display=swap" rel="stylesheet">\n'
 
 			var style = fs.readFileSync("build/style.css", "utf8");
 			out += "<style>\n";
@@ -64,8 +74,6 @@ function compile() {
 			out += '<body>\n';
 
 			out += '<a href="index.html"><div class="g-logo-cont"><img src="img/laikankee.png"></div></a>';
-
-			out += '<div class="g-nav"><div class="g-nav-list"><div class="g-nav-inner">LKK</div></div><div class="g-nav-list"><div class="g-nav-inner">STORE</div></div></div>';
 
 			out += ejs_rendered;
 
@@ -134,7 +142,8 @@ if (arg == "make") {
 		err.errno == 'EADDRINUSE' ? server.listen(++port) : 0)) //inc port if in use
 
 	// append websocket/injecter script to all html pages served
-	var wsInject = fs.readFileSync(__dirname + '/bin/ws-inject.html', 'utf8')
+	var wsInject = fs.readFileSync('bin/ws-inject.html', 'utf8')
+
 	function injectHTML(req, res, next){
 		try{
 			var path = req.params[0].slice(1)

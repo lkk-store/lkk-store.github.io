@@ -1,25 +1,125 @@
-<div class="g-store">
-	<% pages.filter(d => d != "index").forEach(function(page){ %>
+<div class="g-nav">
+	<% data.pages.forEach(function(d){ %>
 
-	<a href="lkk-<%= page.page %>.html">
-		<div class="g-store-each">
-			<img src="img/lkk-<%= page.page %>.png">
-			<div class="g-meta">
-				<div class="g-hed">
-					<span class="g-name"><%= page.name %></span>
-					<span class="g-desc"><%= page.text %></span>
+	<div class="g-nav-list" data-state="hidden">
+		<div class="g-nav-name"><%= d.page %></div>
+		<div class="g-nav-content">
+			<% if (d.text) { %>
+			<div class="g-about"><%= d.text %></div>
+			<% } %>	
+
+			<% if (d.content == "store") { %>
+			<div class="g-store g-stock-list">
+				<% data.stock.forEach(function(stock){ %>
+				<div class="g-store-each" data-id="<%= stock.stock_id %>">
+					<div class="g-img"><img src="img/lkk-<%= stock.stock_id %>.png"></div>
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name"><%= stock.name %></span>
+							<span class="g-desc"><%= stock.text %></span>
+						</div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num"><%= stock.price %></span>
+						</div>
+					</div>
 				</div>
-				<div class="g-price">
-					<sup class="g-agate">HKD</sup>
-					<span class="g-price-num"><%= page.price %></span>
-				</div>
+				<% }) %>
 			</div>
+
+			<div class="g-store g-stock-cont">
+				<% data.stock.forEach(function(stock){ %>
+				<div class="g-stock-each g-store-buy g-hide g-stock-<%= stock.stock_id %>" data-id="<%= stock.stock_id %>">
+
+					<div class="g-back"><div class="g-tri">◂</div>BACK</div>
+
+					<img src="img/lkk-<%= stock.stock_id %>.png">
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="<%= stock.stock_id %>"><%= stock.name %> <% if (stock.stock_id != '003') { %>(起碼三月先有貨)<% } %></span>
+						</div>
+						<div class="g-desc"><%= stock.text %></div>
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num"><%= stock.price %></span>
+						</div>
+
+						<div class="g-details">
+						<% if (stock.stock_id != '003') { %>
+						
+						<p><%= stock.category %></p>
+						<p><%= stock.name %></p>
+						<p> available on lkk-store.com</p>
+						<% if (stock.category == "Tee") { %>
+							<p> Silk Screen by @LKK </p>
+							<p>Design by @LKK  </p>
+							<p>Hand Made Silk Screen Printing on 100% Cotton Tee </p>
+							<p>Standard Asia Fit Size* XS/S/M/L</p>
+						<% } %>
+						
+						<br>
+						<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i><b></p>
+						<% } %>
+
+						<% if (stock.description) { 
+
+						var str = "";
+						var split = stock.description.split("//")
+						split.forEach(function(a){
+							str += "<p>" + a + "</p>"
+						})
+						%>
+						<% } %>
+						<%- str %>
+						</div>
+
+						<div class="g-buy">
+							<div class="g-size">
+								<span class="g-label">尺碼</span>
+								<select id="size" name="size">
+									<% var sizes = stock.sizes.split(",") %>
+									<% sizes.forEach(function(s){ %>
+									<option value="<%= s %>"><%= s %></option>
+									<% }) %>
+								</select>
+							</div>
+							<div class="g-volume">
+								<span class="g-label">數量</span>
+								<div class="g-volume-cont"><div class="g-count-button" data-type="minus">–</div><div class="g-count">1</div><div class="g-count-button" data-type="add">+</div></div>
+							</div>
+							<button class="g-button">買佢老味</button>
+						</div>
+					</div>
+				</div>
+
+				<% }) %>
+			</div>
+
+			<% } %>
 		</div>
-	</a>
-
+	</div>
 	<% }) %>
-
 </div>
 
+<div class="g-buy-popup">
+	<div class="g-buy-popup-inner">
+		<div class="g-x" id="g-x">X</div>
 
+		<div class="g-cashier">CAHSIER</div>
 
+		<form name="my-form" id="my-form">
+			<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
+			<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
+			<div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div>
+			<div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div>
+			<!-- <div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div> -->
+
+			<button type="submit" id="submit" class="g-buy-button">真係 BUY!</button>
+		</form>
+
+		<div class="g-submitted g-hide">
+			<div class="g-thanks-text">payme完先會正式落單！</div>
+			<img src="img/IMG_0412.JPG">
+		</div>		
+	</div>
+</div>
