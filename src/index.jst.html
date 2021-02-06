@@ -36,7 +36,7 @@
 					<img src="img/lkk-<%= stock.stock_id %>.png">
 					<div class="g-meta">
 						<div class="g-hed">
-							<span class="g-name" id="stock-name" data-id="<%= stock.stock_id %>"><%= stock.name %> <% if (stock.stock_id != '003') { %>(起碼三月先有貨)<% } %></span>
+							<span class="g-name" id="stock-name" data-id="<%= stock.stock_id %>"><%= stock.name %> <% if (stock.stock_id != '001') { %>(起碼三月先有貨)<% } %></span>
 						</div>
 						<div class="g-desc"><%= stock.text %></div>
 						<div class="g-price">
@@ -45,7 +45,7 @@
 						</div>
 
 						<div class="g-details">
-						<% if (stock.stock_id != '003') { %>
+						<% if (stock.stock_id != '001') { %>
 						
 						<p><%= stock.category %></p>
 						<p><%= stock.name %></p>
@@ -58,7 +58,7 @@
 						<% } %>
 						
 						<br>
-						<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i><b></p>
+						<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i></b></p>
 						<% } %>
 
 						<% if (stock.description) { 
