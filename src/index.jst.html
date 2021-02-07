@@ -9,56 +9,58 @@
 	        ;
 	} %>
 
-	<div class="g-nav-list g-nav-list-<%= convertToSlug(d.page) %>" data-id="<%= convertToSlug(d.page) %>" data-state="hidden">
+	<div class="g-nav-list g-nav-list-<%= d.slug %>" data-id="<%= d.slug %>" data-state="hidden">
 		<div class="g-nav-name"><%= d.page %></div>
 		<div class="g-nav-content">
 			<% if (d.text) { %>
 			<div class="g-about"><%= d.text %></div>
-			<% } %>	
-
-			<% if (d.content == "store") { %>
-			<div class="g-store g-stock-list">
-				<% data.stock.forEach(function(stock){ %>
-				<div class="g-store-each" data-id="<%= stock.stock_id %>">
-					<div class="g-img"><img src="img/lkk-<%= stock.stock_id %>.png"></div>
+			<% } %>
+			<% if (d.content == "store" || d.content == "upcoming") { %>
+			<% var list = d.content == "store" ? data.store : d.content == "upcoming" ? data.upcoming : []; %>
+			<div class="g-store g-stock-list g-<%= d.content %>-list">
+				<% list.forEach(function(l){ %>
+				<div class="g-store-each" data-id="<%= l.id %>" data-page="<%= d.content %>">
+					<div class="g-img"><img src="img/<%= d.content %>-<%= l.id %>.png"></div>
 					<div class="g-meta">
 						<div class="g-hed">
-							<span class="g-name"><%= stock.name %></span>
-							<span class="g-desc"><%= stock.text %></span>
+							<span class="g-name"><%= l.name %></span>
+							<span class="g-desc"><%= l.text %></span>
 						</div>
+						<% if (l.price) { %>
 						<div class="g-price">
 							<sup class="g-agate">HKD</sup>
-							<span class="g-price-num"><%= stock.price %></span>
+							<span class="g-price-num"><%= l.price %></span>
 						</div>
+						<% } %>
 					</div>
 				</div>
 				<% }) %>
 			</div>
 
 			<div class="g-store g-stock-cont">
-				<% data.stock.forEach(function(stock){ %>
-				<div class="g-stock-each g-store-buy g-hide g-stock-<%= stock.stock_id %>" data-id="<%= stock.stock_id %>">
+				<% list.forEach(function(l){ %>
+				<div class="g-stock-each g-store-buy g-hide g-<%= d.content %>-<%= l.id %>" data-id="<%= l.id %>">
 
-					<div class="g-back"><div class="g-tri">◂</div>BACK</div>
+					<div class="g-back" data-page="<%= d.content %>"><div class="g-tri">◂</div>BACK</div>
 
-					<img src="img/lkk-<%= stock.stock_id %>.png">
+					<div class="g-img"><img src="img/<%= d.content %>-<%= l.id %>.png"></div>
 					<div class="g-meta">
 						<div class="g-hed">
-							<span class="g-name" id="stock-name" data-id="<%= stock.stock_id %>"><%= stock.name %> <% if (stock.stock_id != '001') { %>(起碼三月先有貨)<% } %></span>
+							<span class="g-name" id="stock-name" data-id="<%= l.id %>"><%= l.name %> <% if (l.category == 'Tee') { %>(起碼三月先有貨)<% } %></span>
 						</div>
-						<div class="g-desc"><%= stock.text %></div>
-						<div class="g-price">
+						<% if (l.text) { %><div class="g-desc"><%= l.text %></div><% } %>
+						<% if (l.price) { %><div class="g-price">
 							<sup class="g-agate">HKD</sup>
-							<span class="g-price-num"><%= stock.price %></span>
-						</div>
+							<span class="g-price-num"><%= l.price %></span>
+						</div><% } %>
 
 						<div class="g-details">
-						<% if (stock.stock_id != '001') { %>
+						<% if (l.category == "Tee") { %>
 						
-						<p><%= stock.category %></p>
-						<p><%= stock.name %></p>
+						<p><%= l.category %></p>
+						<p><%= l.name %></p>
 						<p> available on lkk-store.com</p>
-						<% if (stock.category == "Tee") { %>
+						<% if (l.category == "Tee") { %>
 							<p> Silk Screen by @LKK </p>
 							<p>Design by @LKK  </p>
 							<p>Hand Made Silk Screen Printing on 100% Cotton Tee </p>
@@ -69,10 +71,10 @@
 						<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i></b></p>
 						<% } %>
 
-						<% if (stock.description) { 
+						<% if (l.description) { 
 
 						var str = "";
-						var split = stock.description.split("//")
+						var split = l.description.split("//")
 						split.forEach(function(a){
 							str += "<p>" + a + "</p>"
 						})
@@ -81,11 +83,12 @@
 						<%- str %>
 						</div>
 
+						<% if (d.content == "store") { %>
 						<div class="g-buy">
 							<div class="g-size">
 								<span class="g-label">尺碼</span>
 								<select id="size" name="size">
-									<% var sizes = stock.sizes.split(",") %>
+									<% var sizes = l.sizes.split(",") %>
 									<% sizes.forEach(function(s){ %>
 									<option value="<%= s %>"><%= s %></option>
 									<% }) %>
@@ -97,6 +100,7 @@
 							</div>
 							<button class="g-button">買佢老味</button>
 						</div>
+						<% } %>
 					</div>
 				</div>
 

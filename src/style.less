@@ -79,14 +79,14 @@ img {
 
 .g-store-each {
 	margin-bottom: 25px;
+}
 
-	.g-img {
-		padding-bottom: 100%;
-		position: relative;
-		img {
-			position: absolute;
-			top: 0;
-		}
+.g-img {
+	padding-bottom: 100%;
+	position: relative;
+	img {
+		position: absolute;
+		top: 0;
 	}
 }
 
@@ -102,7 +102,7 @@ img {
 		display: inline-block;
 		vertical-align: top;
 		width: calc(33% - 10px);
-		margin-right: 10px;
+		margin-right: 9px;
 	}
 
 	.g-store-each:last-child {
@@ -175,8 +175,9 @@ a:hover {
 	opacity: 0.6;
 }
 
-.g-store-each.g-store-buy {
+.g-store-buy {
 	width: 100%;
+	padding-bottom: 50px;
 }
 
 .g-store-each:hover {
@@ -184,15 +185,16 @@ a:hover {
 }
 
 @media screen and (min-width: 600px) {
-	.g-store-buy img, .g-store-buy .g-meta.g-meta {
+	.g-store-buy .g-img, .g-store-buy .g-meta.g-meta {
 		display: inline-block;
 		vertical-align: top;
 	}
 
-	.g-store-buy img {
+	.g-store-buy .g-img {
 		max-width: 460px;
 		margin-right: 20px;
 		width: 50%;
+		padding-bottom: 50%;
 	}
 
 }

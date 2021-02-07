@@ -1,13 +1,10 @@
-var curid = "";
-
-
 document.addEventListener("DOMContentLoaded", function(e) {
    	
    	function resize() {
    		d3.selectAll(".g-nav-list").each(function(){
    			var el = d3.select(this);
    			var nameheight = el.select(".g-nav-name").node().getBoundingClientRect().height;
-   			var contentheight = el.select(".g-nav-content").node() ? el.select(".g-nav-content").node().getBoundingClientRect().height : nameheight;
+   			var contentheight = el.select(".g-stock-list").node() ? el.select(".g-stock-list").node().getBoundingClientRect().height : nameheight;
    			el.attr("data-h1", nameheight)
    			el.attr("data-h2", nameheight + contentheight)
    			el.style("height", nameheight + "px")
@@ -24,107 +21,125 @@ document.addEventListener("DOMContentLoaded", function(e) {
    	        ow = innerWidth;
    	        resize();
    	      }
-   	});
+   	});	
 
 
-   	function showThing(slug) {
+   	// hash function
+   	function showThing(slug, hash) {
    		var el = d3.select(".g-nav-list-" + slug);
    		el.attr("data-state", "show");
    		el.classed("g-show", true);
-   		el.transition().style("height", el.attr("data-h2") + "px")
+
+   		if (hash.indexOf("-") > -1 && hash != "#project-upcoming") {
+   			var id = hash.replace("#", "")
+   			d3.selectAll(".g-" + name + "-list").classed("g-hide", true);
+   			d3.select(".g-" + id).classed("g-hide", false);	
+
+   			d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
+   			d3.select(".g-" + id).classed("g-cur-stock", true);
+
+   			console.log(d3.select(".g-" + id))
+   			console.log((+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height))
+   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + "px")
+   		} else {
+   			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
+   		}
    	}
 
+   	if (document.location.hash != "") {
+   		if (document.location.hash.indexOf("lkk") == -1) {
+   			var hash = document.location.hash
+   			var page = hash.split("-")[0].replace("#", "");
+   			var cont = page == "project" ? "project-upcoming" : page;
+  			var name = page == "project" ? "upcoming" : page;
+   			
+   			showThing(cont, hash);
+   		} else if (document.location.hash != "") {
+   			showThing(document.location.hash.replace("#", ""));
+   		}	
+   	} 
 
-   	if (document.location.hash.indexOf("lkk-") > -1) {
-   		showThing("store");
-   		d3.select(".g-stock-list").classed("g-hide", true);
-   		d3.select(".g-stock-" + document.location.hash.replace("#lkk-", "")).classed("g-hide", false);	
+   	function back(page) {
+   		d3.selectAll(".g-stock-list").classed("g-hide", false);
+   		d3.selectAll(".g-store-buy").classed("g-hide", true);
 
-   		d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
-   		d3.select(".g-stock-" + document.location.hash.replace("#lkk-", "")).classed("g-cur-stock", true);
-   	} else if (document.location.hash) {
-   		showThing(document.location.hash.replace("#", ""));
-   		curid = document.location.hash.replace("#", "")
+   		var nav = d3.select(".g-nav-list-" + page);
+   		nav.attr("data-instore", "false");
+   		nav
+   			.transition()
+   			.style("height", (+nav.attr("data-h1") + +nav.attr("data-h2")) + "px")
+
+   		document.location.hash = page;
    	}
 
+   	// nav click function
 	d3.selectAll(".g-nav-name").on("click", function(){
-
-		// d3.selectAll(".g-nav-list").each(function(){
-		// 	var el = d3.select(this);
-		// 	el.attr("data-state", "hidden")
-		// 	el.transition().style("height", el.attr("data-h1") + "px")
-		// })
-
-
 		var el = d3.select(d3.select(this).node().parentNode);
 		var state = el.attr("data-state");
+		var instore = el.attr("data-instore") == "true";
+		console.log(state, instore)
 		var id = el.attr("data-id");
 
-
-		// if (curid != id) {
-		// 	console.log({curid, id})
+		if (instore) {
+			back(el.attr("data-id"));
+		} else {
 			var hide = d3.select(".g-show")
 			hide.classed("g-show", false)
 			hide.attr("data-state", "hidden")
 			hide.transition().style("height", el.attr("data-h1") + "px")
-		// 	curid = id;
-		// }
+		}
 
-
-		if (state == "hidden") {
-			el.attr("data-state", "show")
-			el.transition().style("height", el.attr("data-h2") + "px")
+		if (instore) {
+		} else if (state == "hidden") {
+			el.attr("data-state", "show");
+			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
 			el.classed("g-show", true);
-
 			document.location.hash = el.attr("data-id");
-
 		} else {
 			el.attr("data-state", "hidden")
 			el.transition().style("height", el.attr("data-h1") + "px")
 			el.classed("g-show", false);
-
 			document.location.hash = "";
 		}
 	})
 
+	// stock click function
 	d3.selectAll(".g-store-each").on("click", function(){
-
 		var el = d3.select(this);
+		var nav = d3.select(".g-nav-list-" + el.attr("data-page"));
+		var list = d3.select(".g-" + el.attr("data-page") + "-list");
+		var item = d3.select(".g-" + el.attr("data-page") + "-" + el.attr("data-id"));
 
-		d3.select(".g-stock-list").classed("g-hide", true);
-		d3.select(".g-stock-" + el.attr("data-id")).classed("g-hide", false);
+		list.classed("g-hide", true);
+		item.classed("g-hide", false);
 
 		d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
-		d3.select(".g-stock-" + el.attr("data-id")).classed("g-cur-stock", true);
+		item.classed("g-cur-stock", true);
 
-		document.location.hash = "lkk-" + el.attr("data-id");
+		var nameheight = nav.attr("data-h1");
+		var stockheight = item.node().getBoundingClientRect().height;
+
+		nav.transition().style("height", (+nameheight + +stockheight) + "px");
+		nav.attr("data-instore", "true");
+
+		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
 
 	})
 
 	d3.selectAll(".g-back").on("click", function(){
-
-		d3.select(".g-stock-list").classed("g-hide", false);
-		d3.selectAll(".g-store-buy").classed("g-hide", true);
-
-		document.location.hash = "store";		
-
+		back(d3.select(this).attr("data-page"))
 	})
-
 
 	d3.select(".g-buy-popup").style("width", innerWidth).style("height", innerHeight)
-
 	d3.select("#g-x").on("click", function(){
 		d3.select(".g-buy-popup").classed("g-active", false);
-
-		d3.select("#my-form").classed("g-hide", false)
-		d3.select(".g-submitted").classed("g-hide", true)	
-
-	})
+		d3.select("#my-form").classed("g-hide", false);
+		d3.select(".g-submitted").classed("g-hide", true);
+	});
 
 	d3.selectAll(".g-count-button").on("click", function(){
 		var el = d3.select(this);
 		var type = el.attr("data-type");
-
 		var count = +d3.select(".g-count").text();
 
 		if (type == "minus") {
@@ -134,9 +149,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		}
 
 		count = count < 1 ? 1 : count;
-
 		d3.select(".g-count").text(count);
-
 	})
 
 	d3.selectAll(".g-button").on("click", function(){

@@ -1,20 +1,24 @@
 [
   {
+    "slug": "lkk",
     "page": "LKK",
     "text": "吔蕉啦你",
     "content": ""
   },
   {
+    "slug": "store",
     "page": "STORE",
     "text": "",
     "content": "store"
   },
   {
+    "slug": "upcoming",
     "page": "PROJECT UPCOMING",
     "text": "",
-    "content": ""
+    "content": "upcoming"
   },
   {
+    "slug": "lunch",
     "page": "BUY ME LUNCH",
     "text": "",
     "content": ""
