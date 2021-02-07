@@ -55,6 +55,16 @@
 						</div><% } %>
 
 						<div class="g-details">
+						<% if (l.description) { 
+
+						var str = "";
+						var split = l.description.split("//")
+						split.forEach(function(a){
+							str += "<p>" + a + "</p>"
+						})
+						%>
+						<% } %>
+						<%- str %>
 						<% if (l.category == "Tee") { %>
 						
 						<p><%= l.category %></p>
@@ -70,17 +80,6 @@
 						<br>
 						<p><b><i>未識印衫，而家開始學整，起碼三月先有貨</i></b></p>
 						<% } %>
-
-						<% if (l.description) { 
-
-						var str = "";
-						var split = l.description.split("//")
-						split.forEach(function(a){
-							str += "<p>" + a + "</p>"
-						})
-						%>
-						<% } %>
-						<%- str %>
 						</div>
 
 						<% if (d.content == "store") { %>
