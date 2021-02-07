@@ -71,9 +71,9 @@
 						<p><%= l.name %></p>
 						<p> available on lkk-store.com</p>
 						<% if (l.category == "Tee") { %>
-							<p> Silk Screen by @LKK </p>
+							<% if (l.type == "Screen") { %><p> Silk Screen by @LKK </p><% } %>
 							<p>Design by @LKK  </p>
-							<p>Hand Made Silk Screen Printing on 100% Cotton Tee </p>
+							<% if (l.type == "Screen") { %><p>Hand Made Silk Screen Printing on 100% Cotton Tee </p><% } %>
 							<p>Standard Asia Fit Size* XS/S/M/L</p>
 						<% } %>
 						

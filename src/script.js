@@ -16,9 +16,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
    				el.attr("data-h2", nameheight + contentheight)
    				el.style("height", nameheight + "px")
    			}
-   			
-   			
-
    		})
    	}
 
@@ -151,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.select(".g-submitted").classed("g-hide", true);
 	});
 
+	// count button
 	d3.selectAll(".g-count-button").on("click", function(){
 		var el = d3.select(this);
 		var type = el.attr("data-type");
@@ -166,17 +164,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.select(".g-count").text(count);
 	})
 
+	// buy popup
 	d3.selectAll(".g-button").on("click", function(){
 		d3.select(".g-buy-popup").classed("g-active", true);
 
-		var curstockid = d3.select(".g-cur-stock").attr("data-id");
-		var curstockel = d3.select(".g-store-" + curstockid);
-
-		var stockid = curstockel.select("#stock-name").attr("data-id");
+		var stockid = d3.select(".g-cur-stock").attr("data-id");
+		var curstockel = d3.select(".g-store-" + stockid);
 		var size = curstockel.select("#size").property("value");
-
 		var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
-
 		d3.select(".g-bought").property("value", name + " " + stockid + " x " + +d3.select(".g-count").text() + " x " + size)
 
 		if (stockid == "001") {
@@ -187,10 +182,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			d3.select("#price").property("value", "$" + d3.select(".g-count").text()*280)
 			d3.select(".g-note").style("display", "block")
 		}
-	
 	})
 
-
+	// form submission
 	$( document ).ready( function(){
 		var $form = $('form#my-form'),
 		    url = 'https://script.google.com/macros/s/AKfycbzyYUxhWKsfDJlVt6JP0Y6A-DB_YBFfTbnyBqAkd9-fWjkfpAxEZVPX/exec'
@@ -206,7 +200,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  	if (phone == "") {
 			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
-
 			  	if (name == "") {
 			  		d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}

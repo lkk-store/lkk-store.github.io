@@ -4,6 +4,7 @@
     "name": "人人有蕉吔基金",
     "text": "純純粹粹俾錢店主",
     "category": "",
+    "type": "",
     "description": "【DONT THINK, JUST DONATE!】// 黎根記®有一個願望：「人人都可以有蕉吔！」// 如果您都認同我哋，// 事不宜遲，請立即捐款到\"人人有蕉吔基金\" // 你將會收到香蕉.png一條",
     "price": "10up",
     "sizes": "小小心意,多多益善,大手入股"
@@ -13,6 +14,7 @@
     "name": "舊青年 tee",
     "text": "NO MORE NEW YOUTH",
     "category": "Tee",
+    "type": "Screen",
     "description": "",
     "price": "280",
     "sizes": "small,medium,large"
@@ -22,6 +24,7 @@
     "name": "舊青年 tee",
     "text": "壽終正寢 version",
     "category": "Tee",
+    "type": "Screen",
     "description": "",
     "price": "280",
     "sizes": "small,medium,large"
@@ -31,6 +34,7 @@
     "name": "員工 tee",
     "text": "非賣品",
     "category": "Tee",
+    "type": "Print",
     "description": "Inspired by @rubielism",
     "price": "280",
     "sizes": "small,medium,large"
@@ -40,6 +44,7 @@
     "name": "sad banana tee",
     "text": "don't be sad.",
     "category": "Tee",
+    "type": "Print",
     "description": "",
     "price": "280",
     "sizes": "small,medium,large"
