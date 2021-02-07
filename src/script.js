@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.select(".g-buy-popup").classed("g-active", true);
 
 		var curstockid = d3.select(".g-cur-stock").attr("data-id");
-		var curstockel = d3.select(".g-stock-" + curstockid);
+		var curstockel = d3.select(".g-store-" + curstockid);
 
 		var stockid = curstockel.select("#stock-name").attr("data-id");
 		var size = curstockel.select("#size").property("value");
