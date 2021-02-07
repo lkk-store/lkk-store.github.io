@@ -6,8 +6,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			var nameheight = el.select(".g-nav-name").node().getBoundingClientRect().height;
    			var contentheight = el.select(".g-stock-list").node() ? el.select(".g-stock-list").node().getBoundingClientRect().height : nameheight;
    			el.attr("data-h1", nameheight)
-   			el.attr("data-h2", nameheight + contentheight)
-   			el.style("height", nameheight + "px")
+   			
+   			if (el.attr("data-instore") == "true") {
+   				el.style("height", (+el.attr("data-h1") + el.select(".g-cur-stock").node().getBoundingClientRect().height) + "px")
+   			} else if (el.attr("data-state") == "show") {
+   				el.attr("data-h2", nameheight + contentheight)
+   				el.style("height", el.attr("data-h2") + "px")
+   			} else {
+   				el.attr("data-h2", nameheight + contentheight)
+   				el.style("height", nameheight + "px")
+   			}
+   			
+   			
+
    		})
    	}
 
@@ -31,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		el.classed("g-show", true);
 
    		if (hash.indexOf("-") > -1 && hash != "#project-upcoming") {
+
+   			el.attr("data-instore", "true")
+
    			var id = hash.replace("#", "")
    			d3.selectAll(".g-" + name + "-list").classed("g-hide", true);
    			d3.select(".g-" + id).classed("g-hide", false);	
