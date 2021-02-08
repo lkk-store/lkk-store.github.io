@@ -151,8 +151,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	// count button
 	d3.selectAll(".g-count-button").on("click", function(){
 		var el = d3.select(this);
+		var id = d3.select(el.node().parentNode).attr("data-id");
 		var type = el.attr("data-type");
-		var count = +d3.select(".g-count").text();
+
+		var parentel = d3.select(el.node().parentNode);
+
+		var count = +parentel.select(".g-count").text();
 
 		if (type == "minus") {
 			count -= 1;
@@ -161,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		}
 
 		count = count < 1 ? 1 : count;
-		d3.select(".g-count").text(count);
+		parentel.select(".g-count").text(count);
 	})
 
 	// buy popup
@@ -172,14 +176,15 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var curstockel = d3.select(".g-store-" + stockid);
 		var size = curstockel.select("#size").property("value");
 		var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
-		d3.select(".g-bought").property("value", name + " " + stockid + " x " + +d3.select(".g-count").text() + " x " + size)
+		var count = curstockel.select(".g-count").text();
+		d3.select(".g-bought").property("value", "").property("value", name + " " + stockid + " x " + count + " x " + size)
 
 		if (stockid == "001") {
 			var amount = size == "小小心意" ? 10 : size == "多多益善" ? 50 : 100;
-			d3.select("#price").property("value", "$" + amount*+d3.select(".g-count").text())
+			d3.select("#price").property("value", "$" + amount*+count)
 			d3.select(".g-note").style("display", "none")
 		} else {
-			d3.select("#price").property("value", "$" + d3.select(".g-count").text()*280)
+			d3.select("#price").property("value", "$" + +count*280)
 			d3.select(".g-note").style("display", "block")
 		}
 	})
