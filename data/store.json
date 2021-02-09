@@ -17,7 +17,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "small,medium,large"
+    "sizes": "small,medium,large,extra large"
   },
   {
     "id": "003",
@@ -27,7 +27,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "small,medium,large"
+    "sizes": "small,medium,large,extra large"
   },
   {
     "id": "004",
@@ -37,7 +37,7 @@
     "type": "Print",
     "description": "Inspired by @rubielism",
     "price": "280",
-    "sizes": "small,medium,large"
+    "sizes": "small,medium,large,extra large"
   },
   {
     "id": "005",
@@ -47,6 +47,16 @@
     "type": "Print",
     "description": "",
     "price": "280",
-    "sizes": "small,medium,large"
+    "sizes": "small,medium,large,extra large"
+  },
+  {
+    "id": "006",
+    "name": "我愛常餐 tee",
+    "text": "沙嗲牛麵烘底炒蛋凍檸茶款甜",
+    "category": "Tee",
+    "type": "Screen",
+    "description": "",
+    "price": "280",
+    "sizes": "small,medium,large,extra large"
   }
 ]
