@@ -134,6 +134,24 @@ footer {
   text-align: center;
   padding-top: 100px;
 }
+footer .g-social {
+  margin-bottom: 5px;
+  opacity: 0.8;
+}
+footer .g-social-icon {
+  width: 22px;
+  height: 22px;
+  background-size: 100%;
+  display: inline-block;
+  margin-right: 10px;
+}
+footer .g-social-icon.g-ig {
+  background-image: url(img/ig.png);
+}
+footer .g-social-icon.g-whatsapp {
+  background-image: url(img/whatsapp.png);
+  margin-right: 0;
+}
 a {
   text-decoration: none;
   color: #000;
@@ -317,7 +335,7 @@ input {
 }
 #submit.g-loading {
   background-color: rgba(255, 255, 255, 0.7);
-  background-image: url(loading-gif-png-5.gif);
+  background-image: url(img/loading-gif-png-5.gif);
   background-size: 30%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -960,8 +978,14 @@ input {
 			<img src="img/IMG_0412.JPG">
 		</div>		
 	</div>
-</div><footer>© 2021 黎根記. All rights reserved.</footer>
-<script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
+</div>
+
+<footer>
+	<div class="g-social">
+		<a href="https://www.instagram.com/lkk.store/"><div class="g-social-icon g-ig"></div></a>
+		<a href="https://wa.me/85257280149"><div class="g-social-icon g-whatsapp"></div></div></a>
+	<div class="g-tm">© 2021 黎根記.<br>All rights reserved.</div>
+</footer>;<script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
@@ -1165,6 +1189,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  e.preventDefault();
 
+			  var now = new Date();
+			  var formatTime = d3.timeFormat("%Y-%m-%d %H:%M");
+
+			  console.log("hi")
+
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
 
@@ -1179,11 +1208,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  	d3.select("#submit").classed("g-loading", true);
 
+			  	var formdata = $form.serialize();
+
+			  	console.log(formdata)
+			  	formdata += "&date=" + formatTime(now);
+
 			  	var jqxhr = $.ajax({
 			  	  url: url,
 			  	  method: "GET",
 			  	  dataType: "json",
-			  	  data: $form.serialize(),
+			  	  data: formdata,
 			  	  success: function(){ 
 
 			  	  	$('#my-form').trigger("reset");

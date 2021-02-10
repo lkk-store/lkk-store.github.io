@@ -198,6 +198,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  e.preventDefault();
 
+			  var now = new Date();
+			  var formatTime = d3.timeFormat("%Y-%m-%d %H:%M");
+
+			  console.log("hi")
+
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
 
@@ -212,11 +217,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  	d3.select("#submit").classed("g-loading", true);
 
+			  	var formdata = $form.serialize();
+
+			  	console.log(formdata)
+			  	formdata += "&date=" + formatTime(now);
+
 			  	var jqxhr = $.ajax({
 			  	  url: url,
 			  	  method: "GET",
 			  	  dataType: "json",
-			  	  data: $form.serialize(),
+			  	  data: formdata,
 			  	  success: function(){ 
 
 			  	  	$('#my-form').trigger("reset");

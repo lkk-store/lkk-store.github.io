@@ -163,6 +163,28 @@ footer {
 	color: #999;
 	text-align: center;
 	padding-top: 100px;
+
+	.g-social {
+		margin-bottom: 5px;
+		opacity: 0.8;
+	}
+
+	.g-social-icon {
+		width: 22px;
+		height: 22px;
+		background-size: 100%;
+		display: inline-block;
+		margin-right: 10px;
+
+		&.g-ig {
+			background-image: url(img/ig.png);
+		}
+
+		&.g-whatsapp {
+			background-image: url(img/whatsapp.png);
+			margin-right: 0;
+		}
+	}
 }
 
 a {
@@ -387,7 +409,7 @@ input {
 
 #submit.g-loading {
 	background-color: rgba(255,255,255,0.7);
-	background-image: url(loading-gif-png-5.gif);
+	background-image: url(img/loading-gif-png-5.gif);
 	background-size: 30%;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;

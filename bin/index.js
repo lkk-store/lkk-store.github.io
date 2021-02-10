@@ -77,7 +77,6 @@ function compile() {
 
 			out += ejs_rendered;
 
-			out += '<footer>© 2021 黎根記. All rights reserved.</footer>\n';
 			out += '<script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>\n';
 			out += '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>\n';
 
