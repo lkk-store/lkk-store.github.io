@@ -71,6 +71,49 @@ img {
   position: absolute;
   top: 0;
 }
+.g-store-buy .g-img.g-img-slideshow-cont {
+  padding-bottom: calc(100% + 70px);
+}
+@media screen and (min-width: 600px) {
+  .g-store-buy .g-img.g-img-slideshow-cont {
+    position: relative;
+    display: inline-block;
+    padding-bottom: calc(50% + 70px);
+  }
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-img:first-child {
+  position: relative;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-img-slideshow {
+  z-index: 0;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-img-slideshow.g-on-top {
+  z-index: 1;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
+  position: absolute;
+  top: calc(100% - 60px);
+  left: 10px;
+}
+@media screen and (min-width: 600px) {
+  .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
+    top: calc(100% - 60px);
+    left: 0;
+  }
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
+  position: relative;
+  width: 50px;
+  margin-right: 5px;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail:hover {
+  cursor: pointer;
+}
 @media screen and (min-width: 600px) {
   .g-store {
     padding: 5px 25px;
@@ -146,9 +189,6 @@ a {
   text-decoration: none;
   color: #000;
   transition: opacity 0.5s;
-}
-a:hover {
-  opacity: 0.6;
 }
 .g-store-buy {
   width: 100%;

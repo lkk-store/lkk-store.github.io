@@ -25,6 +25,20 @@ function compile() {
 		data[d.replace(".json", "")] = dat
 	});
 
+	// look for other images
+	var imgdir = fs.readdirSync("img");
+
+	data.store.forEach(function(d){
+		// console.log(d)
+
+		var match = imgdir.filter(a => a.indexOf("store-" + d.id) > -1);
+
+		if (match.length > 1) {
+			d.img = match
+		}
+
+	})
+
 	var pages = ["index"]
 
 	var script = fs.readFileSync("src/script.js", "utf8");

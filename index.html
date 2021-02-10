@@ -81,6 +81,49 @@ img {
   position: absolute;
   top: 0;
 }
+.g-store-buy .g-img.g-img-slideshow-cont {
+  padding-bottom: calc(100% + 70px);
+}
+@media screen and (min-width: 600px) {
+  .g-store-buy .g-img.g-img-slideshow-cont {
+    position: relative;
+    display: inline-block;
+    padding-bottom: calc(50% + 70px);
+  }
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-img:first-child {
+  position: relative;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-img-slideshow {
+  z-index: 0;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-img-slideshow.g-on-top {
+  z-index: 1;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
+  position: absolute;
+  top: calc(100% - 60px);
+  left: 10px;
+}
+@media screen and (min-width: 600px) {
+  .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
+    top: calc(100% - 60px);
+    left: 0;
+  }
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
+  position: relative;
+  width: 50px;
+  margin-right: 5px;
+}
+.g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail:hover {
+  cursor: pointer;
+}
 @media screen and (min-width: 600px) {
   .g-store {
     padding: 5px 25px;
@@ -156,9 +199,6 @@ a {
   text-decoration: none;
   color: #000;
   transition: opacity 0.5s;
-}
-a:hover {
-  opacity: 0.6;
 }
 .g-store-buy {
   width: 100%;
@@ -498,7 +538,10 @@ input {
 
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
-					<div class="g-img"><img src="img/store-001.png"></div>
+					
+						<div class="g-img"><img src="img/store-001.png"></div>
+					 
+					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="001">人人有蕉吔基金 </span>
@@ -550,7 +593,10 @@ input {
 
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
-					<div class="g-img"><img src="img/store-002.png"></div>
+					
+						<div class="g-img"><img src="img/store-002.png"></div>
+					 
+					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="002">舊青年 tee (起碼三月先有貨)</span>
@@ -617,7 +663,10 @@ input {
 
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
-					<div class="g-img"><img src="img/store-003.png"></div>
+					
+						<div class="g-img"><img src="img/store-003.png"></div>
+					 
+					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="003">舊青年 tee (起碼三月先有貨)</span>
@@ -684,7 +733,10 @@ input {
 
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
-					<div class="g-img"><img src="img/store-004.png"></div>
+					
+						<div class="g-img"><img src="img/store-004.png"></div>
+					 
+					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="004">員工 tee (起碼三月先有貨)</span>
@@ -752,7 +804,10 @@ input {
 
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
-					<div class="g-img"><img src="img/store-005.png"></div>
+					
+						<div class="g-img"><img src="img/store-005.png"></div>
+					 
+					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="005">sad banana tee (起碼三月先有貨)</span>
@@ -819,7 +874,10 @@ input {
 
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
-					<div class="g-img"><img src="img/store-006.png"></div>
+					
+						<div class="g-img"><img src="img/store-006.png"></div>
+					 
+					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="006">我♥常餐 tee (起碼三月先有貨)</span>
@@ -919,7 +977,10 @@ input {
 
 					<div class="g-back" data-page="upcoming"><div class="g-tri">◂</div>BACK</div>
 
-					<div class="g-img"><img src="img/upcoming-001.png"></div>
+					
+						<div class="g-img"><img src="img/upcoming-001.png"></div>
+					 
+					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="001">zine【阿霞~我要飛鵝山上】 </span>
@@ -1158,6 +1219,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		count = count < 1 ? 1 : count;
 		parentel.select(".g-count").text(count);
 	})
+
+
+	// img slideshow 
+	d3.selectAll(".g-img-thumbnail").on("click", function(){
+
+		var el = d3.select(this);
+		var id = el.attr("data-id");
+		var item = el.attr("data-item");
+		console.log(id)
+
+		d3.selectAll(".g-img-slideshow-group-store-" + id).classed("g-on-top", false);
+		d3.select(".g-img-slideshow-" + item).classed("g-on-top", true);
+
+	})
+
 
 	// buy popup
 	d3.selectAll(".g-button").on("click", function(){

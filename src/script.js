@@ -168,6 +168,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		parentel.select(".g-count").text(count);
 	})
 
+
+	// img slideshow 
+	d3.selectAll(".g-img-thumbnail").on("click", function(){
+
+		var el = d3.select(this);
+		var id = el.attr("data-id");
+		var item = el.attr("data-item");
+		console.log(id)
+
+		d3.selectAll(".g-img-slideshow-group-store-" + id).classed("g-on-top", false);
+		d3.select(".g-img-slideshow-" + item).classed("g-on-top", true);
+
+	})
+
+
 	// buy popup
 	d3.selectAll(".g-button").on("click", function(){
 		d3.select(".g-buy-popup").classed("g-active", true);
