@@ -104,22 +104,20 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		}
 
 		if (instore) {
+		} else if (id == "lunch") {
+			dropbananas();
 		} else if (state == "hidden") {
+			stopbananas();
 			el.attr("data-state", "show");
 			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
 			el.classed("g-show", true);
 			document.location.hash = el.attr("data-id");
 		} else if (id != "lunch") {
+			stopbananas();
 			el.attr("data-state", "hidden")
 			el.transition().style("height", el.attr("data-h1") + "px")
 			el.classed("g-show", false);
 			document.location.hash = "";
-		}
-
-		if (id == "lunch") {
-			dropbananas();
-		} else {
-			stopbananas();
 		}
 	})
 
