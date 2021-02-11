@@ -20,7 +20,11 @@
 			<div class="g-store g-stock-list g-<%= d.content %>-list">
 				<% list.forEach(function(l){ %>
 				<div class="g-store-each" data-id="<%= l.id %>" data-page="<%= d.content %>">
+					<% if (l.img) { %>
+					<div class="g-img"><img src="img/<%= l.img[0] %>"></div>
+					<% } else { %>
 					<div class="g-img"><img src="img/<%= d.content %>-<%= l.id %>.png"></div>
+					<% } %>
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name"><%= l.name %></span>
