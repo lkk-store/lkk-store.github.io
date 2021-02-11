@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var el = d3.select(d3.select(this).node().parentNode);
 		var state = el.attr("data-state");
 		var instore = el.attr("data-instore") == "true";
-		console.log(state, instore)
 		var id = el.attr("data-id");
 
 		if (instore) {
@@ -111,6 +110,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			el.transition().style("height", el.attr("data-h1") + "px")
 			el.classed("g-show", false);
 			document.location.hash = "";
+		}
+
+		if (id == "lunch") {
+			dropbananas();
+		} else {
+			stopbananas();
 		}
 	})
 
@@ -256,6 +261,67 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		})
 	})
+
+
+	// drop bananas 
+
+	function stopbananas() {
+		if (window.bananatimer) {
+			window.bananatimer.stop();
+			d3.select(".g-drop-banana").html("").classed("g-active", false);
+		}
+	}
+
+	function dropbananas() {
+
+		if (window.bananatimer) {
+			window.bananatimer.stop();
+		}
+
+		var sel = d3.select(".g-drop-banana").html("");
+		sel.classed("g-active", true);
+
+		sel.on("click", stopbananas);
+
+		var canvas = sel.append("canvas").attr("width", innerWidth).attr("height", innerHeight)
+
+		var qrcode = sel.append("div.g-img").append("img").attr("src", "img/IMG_0412.JPG")
+		qrcode.style("top", (innerHeight/2 - qrcode.node().getBoundingClientRect().height/2) + "px")
+
+
+		var ctx = canvas.node().getContext("2d");
+
+		var img = new Image();
+		img.src = "img/LKK-logo.png"
+
+		img.onload = function(){
+
+			var bs = d3.range(0,100);
+			var imgs = [];
+
+			bs.forEach(function(b){
+				imgs.push([Math.random()*(innerWidth-30), Math.random()*innerHeight*-1]);
+			})
+
+			function run() {
+				ctx.clearRect(0, 0, innerWidth, innerHeight);
+				imgs.forEach(function(d){
+					ctx.drawImage(img, d[0], d[1], 30, 30);
+					d[1] += Math.random()*10;
+
+					if (d[1] > innerHeight) {
+						d[1] = Math.random()*innerHeight*-1;
+					}
+				})
+			}
+
+			window.bananatimer = d3.timer(function(){
+				run();
+			})
+		}
+	}
+
+
 
 /* Your D3.js here */
 })

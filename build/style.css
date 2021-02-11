@@ -395,3 +395,26 @@ input {
 .g-back:hover {
   cursor: pointer;
 }
+.g-drop-banana {
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+.g-drop-banana.g-active {
+  pointer-events: auto;
+}
+.g-drop-banana .g-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.g-drop-banana .g-img img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 460px;
+  position: relative;
+}
