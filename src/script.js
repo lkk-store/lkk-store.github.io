@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			console.log(d3.select(".g-" + id))
    			console.log((+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height))
    			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + "px")
+   		} else if (hash.indexOf("lunch") > -1) {
+   			dropbananas();
    		} else {
    			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
    		}
@@ -285,9 +287,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		var canvas = sel.append("canvas").attr("width", innerWidth).attr("height", innerHeight)
 
-		var qrcode = sel.append("div.g-img").append("img").attr("src", "img/IMG_0412.JPG")
-		qrcode.style("top", (innerHeight/2 - qrcode.node().getBoundingClientRect().height/2) + "px")
+		var qrcode = sel.append("div.g-img").append("img").attr("src", "img/IMG_0412.JPG");
 
+		var qrw = innerWidth*.8;
+		qrw = qrw > 460 ? 460 : qrw;
+
+		qrcode.style("top", (innerHeight/2 - qrw/2) + "px")
 
 		var ctx = canvas.node().getContext("2d");
 
@@ -306,12 +311,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			function run() {
 				ctx.clearRect(0, 0, innerWidth, innerHeight);
 				imgs.forEach(function(d){
-					ctx.drawImage(img, d[0], d[1], 30, 30);
 					d[1] += Math.random()*10;
 
 					if (d[1] > innerHeight) {
 						d[1] = Math.random()*innerHeight*-1;
 					}
+
+					ctx.drawImage(img, d[0], d[1], 30, 30);
+
 				})
 			}
 
