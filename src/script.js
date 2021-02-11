@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		el.attr("data-state", "show");
    		el.classed("g-show", true);
 
+   		var hash = document.location.hash;
+
    		if (hash.indexOf("-") > -1 && hash != "#project-upcoming") {
 
    			el.attr("data-instore", "true")
