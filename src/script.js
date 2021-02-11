@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
 			el.classed("g-show", true);
 			document.location.hash = el.attr("data-id");
-		} else {
+		} else if (id != "lunch") {
 			el.attr("data-state", "hidden")
 			el.transition().style("height", el.attr("data-h1") + "px")
 			el.classed("g-show", false);
