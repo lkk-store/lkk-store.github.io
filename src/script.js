@@ -131,6 +131,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		list.classed("g-hide", true);
 		item.classed("g-hide", false);
 
+		d3.selectAll(".g-img-slideshow").classed("g-on-top", false);
+		d3.selectAll(".g-img-slideshow:first-child").classed("g-on-top", true);
 		d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
 		item.classed("g-cur-stock", true);
 

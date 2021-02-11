@@ -49,12 +49,12 @@
 
 					<% if (l.img) { %>
 					<div class="g-img g-img-slideshow-cont">
-						<% l.img.forEach(function(a){ %>
-							<img class="g-img-slideshow g-img-slideshow-group-store-<%= l.id %> g-img-slideshow-<%= a.replace('.png', '') %>" src="img/<%= a %>">
+						<% l.img.forEach(function(a,ai){ %>
+							<img class="g-img-slideshow g-img-slideshow-group-store-<%= l.id %> g-img-slideshow-<%= a.replace('.png', '') %> <% if (ai == 0) { %>g-on-top<% } %>" src="img/<%= a %>">
 						<% }) %>
 
 						<div class="g-thumbnail-cont">
-							<% l.img.reverse().forEach(function(a){ %>
+							<% l.img.forEach(function(a){ %>
 								<img class="g-img-thumbnail" data-id="<%= l.id %>" data-item="<%= a.replace('.png', '') %>" src="img/<%= a %>">
 							<% }) %>
 						</div>

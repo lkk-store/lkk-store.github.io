@@ -917,16 +917,24 @@ input {
 					
 					<div class="g-img g-img-slideshow-cont">
 						
-							<img class="g-img-slideshow g-img-slideshow-group-store-006 g-img-slideshow-store-006-001" src="img/store-006-001.png">
+							<img class="g-img-slideshow g-img-slideshow-group-store-006 g-img-slideshow-store-006-001 g-on-top" src="img/store-006-001.png">
 						
-							<img class="g-img-slideshow g-img-slideshow-group-store-006 g-img-slideshow-store-006" src="img/store-006.png">
+							<img class="g-img-slideshow g-img-slideshow-group-store-006 g-img-slideshow-store-006-002 " src="img/store-006-002.png">
+						
+							<img class="g-img-slideshow g-img-slideshow-group-store-006 g-img-slideshow-store-006-003 " src="img/store-006-003.png">
+						
+							<img class="g-img-slideshow g-img-slideshow-group-store-006 g-img-slideshow-store-006-004 " src="img/store-006-004.png">
 						
 
 						<div class="g-thumbnail-cont">
 							
-								<img class="g-img-thumbnail" data-id="006" data-item="store-006" src="img/store-006.png">
-							
 								<img class="g-img-thumbnail" data-id="006" data-item="store-006-001" src="img/store-006-001.png">
+							
+								<img class="g-img-thumbnail" data-id="006" data-item="store-006-002" src="img/store-006-002.png">
+							
+								<img class="g-img-thumbnail" data-id="006" data-item="store-006-003" src="img/store-006-003.png">
+							
+								<img class="g-img-thumbnail" data-id="006" data-item="store-006-004" src="img/store-006-004.png">
 							
 						</div>
 
@@ -1242,6 +1250,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		list.classed("g-hide", true);
 		item.classed("g-hide", false);
 
+		d3.selectAll(".g-img-slideshow").classed("g-on-top", false);
+		d3.selectAll(".g-img-slideshow:first-child").classed("g-on-top", true);
 		d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
 		item.classed("g-cur-stock", true);
 
