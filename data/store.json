@@ -20,6 +20,16 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "id": "008",
+    "name": "ok sad tee",
+    "text": "it's okay to feel sad",
+    "category": "Tee",
+    "type": "Screen",
+    "description": "",
+    "price": "",
+    "sizes": ""
+  },
+  {
     "id": "005",
     "name": "sad banana tee",
     "text": "don't be sad.",
