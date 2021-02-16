@@ -20,9 +20,19 @@
     "sizes": "XS,S,M,L,XL"
   },
   {
+    "id": "009",
+    "name": "ok old tee",
+    "text": "it’s okay to get old",
+    "category": "Tee",
+    "type": "Screen",
+    "description": "",
+    "price": "280",
+    "sizes": "XS,S,M,L,XL"
+  },
+  {
     "id": "008",
     "name": "ok sad tee",
-    "text": "it's okay to feel sad",
+    "text": "it’s okay to feel sad",
     "category": "Tee",
     "type": "Screen",
     "description": "",
@@ -32,11 +42,11 @@
   {
     "id": "005",
     "name": "sad banana tee",
-    "text": "don't be sad.",
+    "text": "don't be sad",
     "category": "Tee",
     "type": "Print",
     "description": "",
-    "price": "280",
+    "price": "250",
     "sizes": "XS,S,M,L,XL"
   },
   {
@@ -46,17 +56,17 @@
     "category": "Tee",
     "type": "Print",
     "description": "伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該！",
-    "price": "280",
+    "price": "250",
     "sizes": "XS,S,M,L,XL"
   },
   {
     "id": "007",
     "name": "good-looking tee",
-    "text": "it's all 9ood.",
+    "text": "it's all 9ood",
     "category": "Tee",
-    "type": "Screen",
+    "type": "Print",
     "description": "",
-    "price": "280",
+    "price": "250",
     "sizes": "XS,S,M,L,XL"
   },
   {
@@ -66,7 +76,7 @@
     "category": "Tee",
     "type": "Print",
     "description": "Inspired by @rubielism",
-    "price": "280",
+    "price": "250",
     "sizes": "XS,S,M,L,XL"
   },
   {
