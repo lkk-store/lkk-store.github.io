@@ -113,7 +113,7 @@
 								<select id="size" name="size">
 									<% var sizes = l.sizes.split(",") %>
 									<% sizes.forEach(function(s){ %>
-									<option value="<%= s %>"><%= s %></option>
+									<option value="<%= s %>" <% if (s == 'S') { %>selected="selected"<% } %>><%= s %></option>
 									<% }) %>
 								</select>
 							</div>

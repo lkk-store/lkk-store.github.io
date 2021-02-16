@@ -7,7 +7,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "XS,S,M,L,XL"
   },
   {
     "id": "003",
@@ -17,7 +17,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "XS,S,M,L,XL"
   },
   {
     "id": "008",
@@ -27,7 +27,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "XS,S,M,L,XL"
   },
   {
     "id": "005",
@@ -37,7 +37,7 @@
     "type": "Print",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "XS,S,M,L,XL"
   },
   {
     "id": "006",
@@ -47,7 +47,7 @@
     "type": "Print",
     "description": "伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該！",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "XS,S,M,L,XL"
   },
   {
     "id": "007",
@@ -57,7 +57,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "XS,S,M,L,XL"
   },
   {
     "id": "004",
@@ -67,7 +67,7 @@
     "type": "Print",
     "description": "Inspired by @rubielism",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "XS,S,M,L,XL"
   },
   {
     "id": "001",
