@@ -57,9 +57,6 @@ img {
 .g-logo-cont img {
   max-width: 460px;
 }
-.g-store {
-  padding: 25px 0;
-}
 .g-store-each {
   margin-bottom: 25px;
 }
@@ -120,7 +117,9 @@ img {
   cursor: pointer;
 }
 @media screen and (min-width: 600px) {
-  .g-store {
+  .g-store,
+  .g-shopping-cart-inner,
+  #my-form {
     padding: 5px 25px;
   }
   .g-store-each {
@@ -133,8 +132,11 @@ img {
     margin-right: 0;
   }
 }
-.g-meta {
-  padding: 5px 15px;
+.g-meta,
+.g-shopping-cart-inner,
+#my-form,
+.g-shopping-cart .g-back {
+  padding: 5px 20px;
 }
 @media screen and (min-width: 600px) {
   .g-meta {
@@ -235,7 +237,7 @@ a {
   width: 30px;
   padding: 4px 0;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
 }
 .g-volume-cont .g-count-button {
   user-select: none;
@@ -253,7 +255,7 @@ select {
   width: 100px;
   border: 1px solid #ddd;
   padding: 1px;
-  font-size: 16px;
+  font-size: 13px;
   opacity: 0.7;
 }
 input {
@@ -283,15 +285,12 @@ input {
   background: rgba(0, 0, 0, 0.8);
   display: none;
   color: #fff;
+  z-index: 10;
 }
 .g-buy-popup-inner {
   width: calc(100% - 20px);
   margin: 25px auto;
   max-width: 600px;
-}
-.g-buy-popup .g-lab {
-  margin-right: 10px;
-  display: inline-block;
 }
 .g-buy-each {
   margin-bottom: 10px;
@@ -333,8 +332,8 @@ input {
 }
 .g-buy-button {
   background: rgba(255, 255, 255, 0.5);
-  font-weight: 700;
-  color: #fff;
+  margin: 0 auto;
+  display: block;
 }
 .g-buy-button:hover {
   background: #ddd;
@@ -353,11 +352,18 @@ input {
   text-align: center;
   font-size: 20px;
   margin-bottom: 10px;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.g-submitted {
+  padding: 40px 0;
 }
 .g-submitted img {
   max-width: 460px;
   margin: 0 auto;
   display: block;
+  width: 80%;
 }
 .g-meta p {
   margin: 5px 0 0 0;
@@ -383,7 +389,7 @@ input {
   font-weight: 100;
   font-family: "arial", sans-serif;
   font-size: 16px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   line-height: 1;
   padding-left: 20px;
 }
@@ -403,6 +409,7 @@ input {
 .g-drop-banana {
   position: fixed;
   top: 0;
+  left: 0;
   pointer-events: none;
   z-index: 10;
 }
@@ -422,4 +429,138 @@ input {
   width: 80%;
   max-width: 460px;
   position: relative;
+}
+.g-drop-banana.g-inside-form {
+  z-index: -1;
+}
+.g-drop-banana.g-inside-form .g-img {
+  display: none;
+}
+.g-shopping-cart-icon {
+  background: url(img/cart.png);
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: -22px 22px 10px auto;
+  position: relative;
+}
+@media screen and (min-width: 600px) {
+  .g-shopping-cart-icon {
+    margin: -30px 40px 10px auto;
+    width: 25px;
+    height: 25px;
+  }
+}
+.g-shopping-cart-icon:hover {
+  cursor: pointer;
+}
+.g-shopping-cart-icon .g-cart-count {
+  position: absolute;
+  right: -8px;
+  top: -1px;
+  border-radius: 100%;
+  background: #fff;
+  width: 13px;
+  height: 13px;
+  font-size: 9px;
+  line-height: 1.6;
+  text-align: center;
+  display: none;
+}
+.g-shopping-cart-icon .g-cart-count.g-active {
+  display: block;
+}
+.g-shopping-cart {
+  min-height: 500px;
+}
+.g-shopping-cart .g-shopping-cart-inner .g-back {
+  padding-left: 0;
+}
+.g-shopping-cart #my-form.g-hide,
+.g-shopping-cart .g-shopping-cart-inner.g-hide {
+  display: none;
+}
+.g-shopping-cart .g-submitted-form input {
+  border: none;
+  user-select: none;
+  pointer-events: none;
+}
+.g-shopping-cart .g-tr {
+  width: 100%;
+}
+.g-shopping-cart .g-th,
+.g-shopping-cart .g-tbody {
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 5px;
+}
+.g-shopping-cart .g-empty {
+  padding: 30px 0;
+  color: #333;
+  text-align: center;
+}
+.g-shopping-cart .g-lab {
+  margin-right: 10px;
+  display: inline-block;
+}
+.g-shopping-cart .g-td {
+  display: inline-block;
+  font-size: 14px;
+  padding: 5px 0;
+}
+.g-shopping-cart .g-td.g-item {
+  width: 64%;
+}
+.g-shopping-cart .g-td.g-item .g-item-img {
+  width: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.g-shopping-cart .g-td.g-item .g-item-inner {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 55px);
+}
+.g-shopping-cart .g-td.g-quantity {
+  width: 18%;
+  text-align: center;
+}
+.g-shopping-cart .g-td.g-quantity .g-minus,
+.g-shopping-cart .g-td.g-quantity .g-count,
+.g-shopping-cart .g-td.g-quantity .g-add {
+  display: inline-block;
+}
+.g-shopping-cart .g-td.g-quantity .g-count {
+  padding: 0 5px;
+}
+.g-shopping-cart .g-td.g-quantity .g-minus:hover,
+.g-shopping-cart .g-td.g-quantity .g-add:hover {
+  cursor: pointer;
+}
+.g-shopping-cart .g-td.g-price {
+  width: 18%;
+  text-align: right;
+}
+.g-shopping-cart .g-tbody {
+  min-height: 100px;
+  margin-bottom: 10px;
+}
+.g-shopping-cart .g-submit {
+  text-align: right;
+  margin-top: 30px;
+}
+.g-shopping-cart .g-submit .g-button {
+  display: inline;
+}
+#my-form {
+  padding-top: 20px;
+}
+#my-form .g-purchase-summary {
+  margin-bottom: 30px;
+}
+#my-form .g-purchase-summary .g-add,
+#my-form .g-purchase-summary .g-minus,
+#my-form .g-purchase-summary .g-submit {
+  display: none;
 }

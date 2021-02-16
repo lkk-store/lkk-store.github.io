@@ -67,9 +67,6 @@ img {
 .g-logo-cont img {
   max-width: 460px;
 }
-.g-store {
-  padding: 25px 0;
-}
 .g-store-each {
   margin-bottom: 25px;
 }
@@ -130,7 +127,9 @@ img {
   cursor: pointer;
 }
 @media screen and (min-width: 600px) {
-  .g-store {
+  .g-store,
+  .g-shopping-cart-inner,
+  #my-form {
     padding: 5px 25px;
   }
   .g-store-each {
@@ -143,8 +142,11 @@ img {
     margin-right: 0;
   }
 }
-.g-meta {
-  padding: 5px 15px;
+.g-meta,
+.g-shopping-cart-inner,
+#my-form,
+.g-shopping-cart .g-back {
+  padding: 5px 20px;
 }
 @media screen and (min-width: 600px) {
   .g-meta {
@@ -245,7 +247,7 @@ a {
   width: 30px;
   padding: 4px 0;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
 }
 .g-volume-cont .g-count-button {
   user-select: none;
@@ -263,7 +265,7 @@ select {
   width: 100px;
   border: 1px solid #ddd;
   padding: 1px;
-  font-size: 16px;
+  font-size: 13px;
   opacity: 0.7;
 }
 input {
@@ -293,15 +295,12 @@ input {
   background: rgba(0, 0, 0, 0.8);
   display: none;
   color: #fff;
+  z-index: 10;
 }
 .g-buy-popup-inner {
   width: calc(100% - 20px);
   margin: 25px auto;
   max-width: 600px;
-}
-.g-buy-popup .g-lab {
-  margin-right: 10px;
-  display: inline-block;
 }
 .g-buy-each {
   margin-bottom: 10px;
@@ -343,8 +342,8 @@ input {
 }
 .g-buy-button {
   background: rgba(255, 255, 255, 0.5);
-  font-weight: 700;
-  color: #fff;
+  margin: 0 auto;
+  display: block;
 }
 .g-buy-button:hover {
   background: #ddd;
@@ -363,11 +362,18 @@ input {
   text-align: center;
   font-size: 20px;
   margin-bottom: 10px;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.g-submitted {
+  padding: 40px 0;
 }
 .g-submitted img {
   max-width: 460px;
   margin: 0 auto;
   display: block;
+  width: 80%;
 }
 .g-meta p {
   margin: 5px 0 0 0;
@@ -393,7 +399,7 @@ input {
   font-weight: 100;
   font-family: "arial", sans-serif;
   font-size: 16px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   line-height: 1;
   padding-left: 20px;
 }
@@ -413,6 +419,7 @@ input {
 .g-drop-banana {
   position: fixed;
   top: 0;
+  left: 0;
   pointer-events: none;
   z-index: 10;
 }
@@ -432,6 +439,140 @@ input {
   width: 80%;
   max-width: 460px;
   position: relative;
+}
+.g-drop-banana.g-inside-form {
+  z-index: -1;
+}
+.g-drop-banana.g-inside-form .g-img {
+  display: none;
+}
+.g-shopping-cart-icon {
+  background: url(img/cart.png);
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: -22px 22px 10px auto;
+  position: relative;
+}
+@media screen and (min-width: 600px) {
+  .g-shopping-cart-icon {
+    margin: -30px 40px 10px auto;
+    width: 25px;
+    height: 25px;
+  }
+}
+.g-shopping-cart-icon:hover {
+  cursor: pointer;
+}
+.g-shopping-cart-icon .g-cart-count {
+  position: absolute;
+  right: -8px;
+  top: -1px;
+  border-radius: 100%;
+  background: #fff;
+  width: 13px;
+  height: 13px;
+  font-size: 9px;
+  line-height: 1.6;
+  text-align: center;
+  display: none;
+}
+.g-shopping-cart-icon .g-cart-count.g-active {
+  display: block;
+}
+.g-shopping-cart {
+  min-height: 500px;
+}
+.g-shopping-cart .g-shopping-cart-inner .g-back {
+  padding-left: 0;
+}
+.g-shopping-cart #my-form.g-hide,
+.g-shopping-cart .g-shopping-cart-inner.g-hide {
+  display: none;
+}
+.g-shopping-cart .g-submitted-form input {
+  border: none;
+  user-select: none;
+  pointer-events: none;
+}
+.g-shopping-cart .g-tr {
+  width: 100%;
+}
+.g-shopping-cart .g-th,
+.g-shopping-cart .g-tbody {
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 5px;
+}
+.g-shopping-cart .g-empty {
+  padding: 30px 0;
+  color: #333;
+  text-align: center;
+}
+.g-shopping-cart .g-lab {
+  margin-right: 10px;
+  display: inline-block;
+}
+.g-shopping-cart .g-td {
+  display: inline-block;
+  font-size: 14px;
+  padding: 5px 0;
+}
+.g-shopping-cart .g-td.g-item {
+  width: 64%;
+}
+.g-shopping-cart .g-td.g-item .g-item-img {
+  width: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.g-shopping-cart .g-td.g-item .g-item-inner {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 55px);
+}
+.g-shopping-cart .g-td.g-quantity {
+  width: 18%;
+  text-align: center;
+}
+.g-shopping-cart .g-td.g-quantity .g-minus,
+.g-shopping-cart .g-td.g-quantity .g-count,
+.g-shopping-cart .g-td.g-quantity .g-add {
+  display: inline-block;
+}
+.g-shopping-cart .g-td.g-quantity .g-count {
+  padding: 0 5px;
+}
+.g-shopping-cart .g-td.g-quantity .g-minus:hover,
+.g-shopping-cart .g-td.g-quantity .g-add:hover {
+  cursor: pointer;
+}
+.g-shopping-cart .g-td.g-price {
+  width: 18%;
+  text-align: right;
+}
+.g-shopping-cart .g-tbody {
+  min-height: 100px;
+  margin-bottom: 10px;
+}
+.g-shopping-cart .g-submit {
+  text-align: right;
+  margin-top: 30px;
+}
+.g-shopping-cart .g-submit .g-button {
+  display: inline;
+}
+#my-form {
+  padding-top: 20px;
+}
+#my-form .g-purchase-summary {
+  margin-bottom: 30px;
+}
+#my-form .g-purchase-summary .g-add,
+#my-form .g-purchase-summary .g-minus,
+#my-form .g-purchase-summary .g-submit {
+  display: none;
 }
 </style>
 </head>
@@ -460,7 +601,11 @@ input {
 			
 			
 			
-			<div class="g-store g-stock-list g-store-list">
+			
+			<div class="g-shopping-cart-icon"><div class="g-cart-count"></div></div>
+			
+			<div class="g-store g-stock-list g-store-list">				
+
 				
 				<div class="g-store-each" data-id="002" data-page="store">
 					
@@ -506,6 +651,11 @@ input {
 						<div class="g-hed">
 							<span class="g-name">ok sad tee</span>
 							<span class="g-desc">it&#39;s okay to feel sad</span>
+						</div>
+						
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">280</span>
 						</div>
 						
 					</div>
@@ -668,7 +818,8 @@ input {
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button">買佢老味</button>
+							<button class="g-button" data-action="add-to-cart">加入手推車</button>
+							<button class="g-button" data-action="add-to-cart-checkout">直接埋單</button>
 						</div>
 						
 					</div>
@@ -738,7 +889,8 @@ input {
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button">買佢老味</button>
+							<button class="g-button" data-action="add-to-cart">加入手推車</button>
+							<button class="g-button" data-action="add-to-cart-checkout">直接埋單</button>
 						</div>
 						
 					</div>
@@ -758,7 +910,10 @@ input {
 							<span class="g-name" id="stock-name" data-id="008">ok sad tee (起碼三月先有貨)</span>
 						</div>
 						<div class="g-desc">it&#39;s okay to feel sad</div>
-						
+						<div class="g-price">
+							<sup class="g-agate">HKD</sup>
+							<span class="g-price-num">280</span>
+						</div>
 
 						<div class="g-details">
 						
@@ -787,7 +942,13 @@ input {
 								<select id="size" name="size">
 									
 									
-									<option value=""></option>
+									<option value="S">S</option>
+									
+									<option value="M">M</option>
+									
+									<option value="L">L</option>
+									
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -799,7 +960,8 @@ input {
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button">買佢老味</button>
+							<button class="g-button" data-action="add-to-cart">加入手推車</button>
+							<button class="g-button" data-action="add-to-cart-checkout">直接埋單</button>
 						</div>
 						
 					</div>
@@ -869,7 +1031,8 @@ input {
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button">買佢老味</button>
+							<button class="g-button" data-action="add-to-cart">加入手推車</button>
+							<button class="g-button" data-action="add-to-cart-checkout">直接埋單</button>
 						</div>
 						
 					</div>
@@ -963,7 +1126,8 @@ input {
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button">買佢老味</button>
+							<button class="g-button" data-action="add-to-cart">加入手推車</button>
+							<button class="g-button" data-action="add-to-cart-checkout">直接埋單</button>
 						</div>
 						
 					</div>
@@ -1033,7 +1197,8 @@ input {
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button">買佢老味</button>
+							<button class="g-button" data-action="add-to-cart">加入手推車</button>
+							<button class="g-button" data-action="add-to-cart-checkout">直接埋單</button>
 						</div>
 						
 					</div>
@@ -1104,7 +1269,8 @@ input {
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button">買佢老味</button>
+							<button class="g-button" data-action="add-to-cart">加入手推車</button>
+							<button class="g-button" data-action="add-to-cart-checkout">直接埋單</button>
 						</div>
 						
 					</div>
@@ -1159,7 +1325,8 @@ input {
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button">買佢老味</button>
+							<button class="g-button" data-action="add-to-cart">加入手推車</button>
+							<button class="g-button" data-action="add-to-cart-checkout">直接埋單</button>
 						</div>
 						
 					</div>
@@ -1167,6 +1334,38 @@ input {
 
 				
 			</div>
+
+			
+			<div class="g-shopping-cart">
+				<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
+
+				<div class="g-drop-banana g-inside-form"></div>
+
+				<div class="g-shopping-cart-inner">
+					<div class="g-tr g-th"><div class="g-td g-item">貨物</div><div class="g-td g-quantity">數量</div><div class="g-td g-price">價錢</div></div>
+					<div class="g-tbody"><div class="g-empty">唔睇都買下野啦喂</div></div>
+					<div class="g-tr"><div class="g-td g-item"></div><div class="g-td g-quantity"></div><div class="g-td g-price g-total-price">$0</div></div>
+					<div class="g-submit"><div class="g-button" data-action="buy">埋單</div></div>
+				</div>
+
+				<div class="g-submitted g-hide">
+					<div class="g-thanks-text">payme 完 cap 圖 send 去 +85257280149 先會正式落單！</div>
+					<img src="img/IMG_0412.JPG">
+				</div>
+
+				<form class="g-hide" name="my-form" id="my-form">
+					<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
+					<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
+
+					<div class="g-purchase-summary"></div>
+					<!-- <div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div> -->
+					<!-- <div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div> -->
+					<!-- <div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div> -->
+
+					<button type="submit" id="submit" class="g-buy-button">真係 BUY</button>
+				</form>
+			</div>
+			
 
 			
 		</div>
@@ -1181,7 +1380,9 @@ input {
 			
 			
 			
-			<div class="g-store g-stock-list g-upcoming-list">
+			
+			<div class="g-store g-stock-list g-upcoming-list">				
+
 				
 				<div class="g-store-each" data-id="003" data-page="upcoming">
 					
@@ -1307,6 +1508,8 @@ input {
 			</div>
 
 			
+
+			
 		</div>
 	</div>
 	
@@ -1323,30 +1526,7 @@ input {
 	
 </div>
 
-<div class="g-buy-popup">
-	<div class="g-buy-popup-inner">
-		<div class="g-x" id="g-x">X</div>
-
-		<div class="g-cashier">CAHSIER</div>
-
-		<form name="my-form" id="my-form">
-			<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
-			<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
-			<div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div>
-			<div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div>
-			<div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div>
-
-			<button type="submit" id="submit" class="g-buy-button">真係 BUY!</button>
-		</form>
-
-		<div class="g-submitted g-hide">
-			<div class="g-thanks-text">payme完先會正式落單！</div>
-			<img src="img/IMG_0412.JPG">
-		</div>		
-	</div>
-</div>
-
-<div class="g-drop-banana"></div>
+<div class="g-drop-banana g-outside-form"></div>
 
 <footer>
 	<div class="g-social">
@@ -1357,6 +1537,10 @@ input {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
+var shoppingcart = {};
+var doneshopping = false;
+
+
 document.addEventListener("DOMContentLoaded", function(e) {
    	
    	function resize() {
@@ -1399,7 +1583,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
    		var hash = document.location.hash;
 
-   		if (hash.indexOf("-") > -1 && hash != "#project-upcoming") {
+   		if (hash == "#cart") {
+   			var el = d3.select(".g-nav-list-store")
+   			el.classed("g-hide", false);
+   			el.attr("data-state", "show");
+   			el.select(".g-store-list").classed("g-hide", true);
+   			el.selectAll(".g-store-buy").classed("g-hide", true);
+   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+   		} else if ((hash.indexOf("-") > -1 && hash != "#project-upcoming")) {
 
    			el.attr("data-instore", "true")
 
@@ -1410,9 +1601,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
    			d3.select(".g-" + id).classed("g-cur-stock", true);
 
-   			console.log(d3.select(".g-" + id))
-   			console.log((+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height))
-   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + "px")
+   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + "px");
    		} else if (hash.indexOf("lunch") > -1) {
    			dropbananas();
    		} else {
@@ -1420,6 +1609,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		}
    	}
 
+   	updateCartNum();
+   	updateCart();
    	if (document.location.hash != "") {
    		if (document.location.hash.indexOf("lkk") == -1) {
    			var hash = document.location.hash
@@ -1433,16 +1624,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		}	
    	} 
 
+
+
    	function back(page) {
    		d3.selectAll(".g-stock-list").classed("g-hide", false);
    		d3.selectAll(".g-store-buy").classed("g-hide", true);
-
    		var nav = d3.select(".g-nav-list-" + page);
    		nav.attr("data-instore", "false");
-   		nav
-   			.transition()
-   			.style("height", (+nav.attr("data-h1") + +nav.attr("data-h2")) + "px")
-
+   		nav.transition().style("height", (+nav.attr("data-h1") + +nav.attr("data-h2")) + "px")
    		document.location.hash = page;
    	}
 
@@ -1503,18 +1692,25 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
 
+		if (doneshopping) {
+			shoppingreset();
+			doneshopping = false;
+		}
+
 	})
+
+	function shoppingreset() {
+		stopbananas();
+		d3.select(".g-submitted").classed("g-hide", true);
+		$('#my-form').trigger("reset");
+		d3.select("#my-form").classed("g-submitted-form", false);
+		d3.select(".g-buy-button").classed("g-hide", false);
+	}
 
 	d3.selectAll(".g-back").on("click", function(){
 		back(d3.select(this).attr("data-page"))
+		shoppingreset();
 	})
-
-	d3.select(".g-buy-popup").style("width", innerWidth).style("height", innerHeight)
-	d3.select("#g-x").on("click", function(){
-		d3.select(".g-buy-popup").classed("g-active", false);
-		d3.select("#my-form").classed("g-hide", false);
-		d3.select(".g-submitted").classed("g-hide", true);
-	});
 
 	// count button
 	d3.selectAll(".g-count-button").on("click", function(){
@@ -1551,24 +1747,154 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	})
 
 
+	// d3.select(".g-buy-popup").style("width", innerWidth).style("height", innerHeight)
+	// d3.select("#g-x").on("click", function(){
+	// 	d3.select(".g-buy-popup").classed("g-active", false);
+	// 	d3.select("#my-form").classed("g-hide", false);
+	// 	d3.select(".g-submitted").classed("g-hide", true);
+	// 	stopbananas();
+	// });
+
 	// buy popup
-	d3.selectAll(".g-button").on("click", function(){
-		d3.select(".g-buy-popup").classed("g-active", true);
 
-		var stockid = d3.select(".g-cur-stock").attr("data-id");
-		var curstockel = d3.select(".g-store-" + stockid);
-		var size = curstockel.select("#size").property("value");
-		var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
-		var count = curstockel.select(".g-count").text();
-		d3.select(".g-bought").property("value", "").property("value", name + " " + stockid + " x " + count + " x " + size)
+	function updateCartNum(slug, count) {
+		shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
 
-		if (stockid == "001") {
-			var amount = size == "小小心意" ? 10 : size == "多多益善" ? 50 : 100;
-			d3.select("#price").property("value", "$" + amount*+count)
-			d3.select(".g-note").style("display", "none")
+		if (!shoppingcart) {
+			localStorage.setItem('shoppingcart', '{}');
+			shoppingcart = {};	
+		}
+
+		if (slug) { 
+			if (!shoppingcart[slug]) {
+				shoppingcart[slug] = 0;
+			}
+			shoppingcart[slug] += +count;
+		}
+			
+		var totalcount = d3.sum(Object.values(shoppingcart));
+		var cartel = d3.select(".g-shopping-cart-icon .g-cart-count");
+		if (totalcount == 0) {
+			cartel.classed("g-active", false);
 		} else {
-			d3.select("#price").property("value", "$" + +count*280)
-			d3.select(".g-note").style("display", "block")
+			cartel.classed("g-active", true);
+			totalcount = totalcount > 9 ? "9+" : totalcount;
+			cartel.text(totalcount)
+		}
+
+		localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
+	}
+
+	function updateCart() {
+
+		shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
+
+		var keys = Object.keys(shoppingcart);
+		keys.sort();
+
+		var tbody = d3.select(".g-tbody").html("");
+		var totalprice = 0;
+
+		keys.forEach(function(d){
+
+			var tr = tbody.append("div.g-tr");
+			var split = d.split("_");
+
+			var item = tr.append("div.g-td.g-item")
+			item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img").attr("src"));
+			item.append("div.g-item-inner").text(d.split("_")[1] + " " + d.split("_")[0] + " x " + d.split("_")[2]);
+			
+			var quantity = tr.append("div.g-td.g-quantity")
+			var minus = quantity.append("div.g-minus").text("-");
+			var count = quantity.append("div.g-count").text(shoppingcart[d])
+			var add = quantity.append("div.g-add").text("+");
+
+			minus.on("click", function(){
+				console.log(shoppingcart[d])
+				if (shoppingcart[d] > 1) {
+					shoppingcart[d] -= 1;
+					localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
+					updateCart();
+					updateCartNum();
+				} else {
+					delete shoppingcart[d];
+					localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
+					updateCart();
+					updateCartNum();
+				}
+			})
+
+			add.on("click", function(){
+				console.log(shoppingcart[d])
+				shoppingcart[d] += 1;
+				count.text(shoppingcart[d])
+				localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
+				updateCart();
+				updateCartNum();
+			})
+
+			var price = 280;
+			if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; }
+			tr.append("div.g-td.g-price").text("$" + shoppingcart[d]*price);
+
+			totalprice += shoppingcart[d]*price;
+
+		})
+
+		d3.select(".g-total-price").text("$" + totalprice);
+
+	}
+
+
+	d3.selectAll(".g-button").on("click", function(){
+
+		var el = d3.select(this);
+		var action = el.attr("data-action");
+		var cart = d3.select(".g-shopping-cart-inner");
+
+		if (action == "add-to-cart") {
+
+			var stockid = d3.select(".g-cur-stock").attr("data-id");
+			var curstockel = d3.select(".g-store-" + stockid);
+			var size = curstockel.select("#size").property("value");
+			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
+			var count = curstockel.select(".g-count").text();
+			var slug = stockid + "_" + name + "_" + size;
+
+			updateCartNum(slug, count);
+			updateCart();
+
+		} else if (action == "add-to-cart-checkout") {
+
+			var stockid = d3.select(".g-cur-stock").attr("data-id");
+			var curstockel = d3.select(".g-store-" + stockid);
+			var size = curstockel.select("#size").property("value");
+			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
+			var count = curstockel.select(".g-count").text();
+			var slug = stockid + "_" + name + "_" + size;
+
+			updateCartNum(slug, count);
+			updateCart();
+
+			goToCart();
+
+			cart.classed("g-hide", true);
+			d3.select("#my-form").classed("g-hide", false);
+			var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+
+
+		} else if (action == "buy") {
+
+			if (localStorage.shoppingcart == "{}") {
+
+				d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+
+			} else {
+				cart.classed("g-hide", true);
+				d3.select("#my-form").classed("g-hide", false);
+				var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+			}
+
 		}
 	})
 
@@ -1581,10 +1907,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  e.preventDefault();
 
+
 			  var now = new Date();
 			  var formatTime = d3.timeFormat("%Y-%m-%d %H:%M");
-
-			  console.log("hi")
 
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
@@ -1602,28 +1927,101 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  	var formdata = $form.serialize();
 
-			  	console.log(formdata)
-			  	formdata += "&date=" + formatTime(now);
+			  	shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
 
-			  	var jqxhr = $.ajax({
-			  	  url: url,
-			  	  method: "GET",
-			  	  dataType: "json",
-			  	  data: formdata,
-			  	  success: function(){ 
+			  	var keys = Object.keys(shoppingcart);
+			  	keys.sort();
 
-			  	  	$('#my-form').trigger("reset");
+			  	var successcount = [];
+			  	console.log(keys.length)
 
-			  	  	d3.select("#submit").classed("g-loading", false);
-			  	  	d3.select("#my-form").classed("g-hide", true)
-			  	  	d3.select(".g-submitted").classed("g-hide", false)
-			  	  }
+			  	keys.forEach(function(d,i){
+
+			  		var split = d.split("_");
+			  		item = split[1] + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
+
+			  		var price = 280;
+			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
+
+			  		var totalprice = price*shoppingcart[d]
+
+			  		var formdata = "name=" + name + "&phone=" + phone + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice;
+
+			  		//name	phone	item	price
+
+			  		var jqxhr = $.ajax({
+			  		  url: url,
+			  		  method: "GET",
+			  		  dataType: "json",
+			  		  data: formdata,
+			  		  success: function(){ 
+
+			  		  	successcount.push(i)
+
+			  		  	console.log(successcount)
+
+			  		  	if (successcount.length == keys.length) {
+			  		  		localStorage.setItem('shoppingcart', '{}')
+							// $('#my-form').trigger("reset");
+							d3.select("#submit").classed("g-loading", false);
+							// d3.select("#my-form").classed("g-hide", true);
+							d3.select(".g-submitted").classed("g-hide", false)
+							d3.select(".g-buy-button").classed("g-hide", true);
+							d3.select("#my-form").classed("g-submitted-form", true);
+
+
+							var navel = d3.select(".g-nav-list-store")
+							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
+
+							dropbananas(".g-drop-banana.g-inside-form");
+							updateCartNum();
+							updateCart();
+
+							doneshopping = true;
+			  		  	}
+
+			  		  }
+			  		})
+
 			  	})
-			  	
 			  }
 
 		})
 	})
+
+	// shopping cart
+
+	d3.select(".g-submitted").on("click", function(){
+		d3.select(".g-submitted").classed("g-hide", true);
+		d3.select(".g-drop-banana.g-inside-form").html("");
+		showThing("store", "#store")
+	})
+
+
+	d3.selectAll(".g-shopping-cart-icon").on("click", function(){
+
+		if (doneshopping == true) {
+			shoppingreset();
+			doneshopping = false;
+		}
+
+		goToCart();
+	})
+
+	function goToCart() {
+		d3.select(".g-store-list").classed("g-hide", true);
+		d3.selectAll(".g-store-buy").classed("g-hide", true);
+		d3.select(".g-shopping-cart-inner").classed("g-hide", false);
+		d3.select(".g-nav-list-store").attr("data-instore", true);
+		d3.select("#my-form").classed("g-hide", true);
+
+		var el = d3.select(".g-nav-list-store");
+		el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+
+		document.location.hash = "cart";
+
+		showThing("store", "#cart")
+	}
 
 
 	// drop bananas 
@@ -1631,17 +2029,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	function stopbananas() {
 		if (window.bananatimer) {
 			window.bananatimer.stop();
-			d3.select(".g-drop-banana").html("").classed("g-active", false);
+			d3.selectAll(".g-drop-banana").html("").classed("g-active", false);
 		}
 	}
 
-	function dropbananas() {
+	function dropbananas(sel) {
+
+		if (!sel) {
+			sel = ".g-drop-banana.g-outside-form";
+		}
 
 		if (window.bananatimer) {
 			window.bananatimer.stop();
 		}
 
-		var sel = d3.select(".g-drop-banana").html("");
+		var sel = d3.select(sel).html("");
 		sel.classed("g-active", true);
 
 		sel.on("click", stopbananas);

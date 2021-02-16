@@ -17,7 +17,11 @@
 			<% } %>
 			<% if (d.content == "store" || d.content == "upcoming") { %>
 			<% var list = d.content == "store" ? data.store : d.content == "upcoming" ? data.upcoming : []; %>
-			<div class="g-store g-stock-list g-<%= d.content %>-list">
+			<% if (d.content == "store") { %>
+			<div class="g-shopping-cart-icon"><div class="g-cart-count"></div></div>
+			<% } %>
+			<div class="g-store g-stock-list g-<%= d.content %>-list">				
+
 				<% list.forEach(function(l){ %>
 				<div class="g-store-each" data-id="<%= l.id %>" data-page="<%= d.content %>">
 					<% if (l.img) { %>
@@ -121,7 +125,8 @@
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button">買佢老味</button>
+							<button class="g-button" data-action="add-to-cart">加入手推車</button>
+							<button class="g-button" data-action="add-to-cart-checkout">直接埋單</button>
 						</div>
 						<% } %>
 					</div>
@@ -130,36 +135,45 @@
 				<% }) %>
 			</div>
 
+			<% if (d.content == "store") { %>
+			<div class="g-shopping-cart">
+				<div class="g-back" data-page="<%= d.content %>"><div class="g-tri">◂</div>BACK</div>
+
+				<div class="g-drop-banana g-inside-form"></div>
+
+				<div class="g-shopping-cart-inner">
+					<div class="g-tr g-th"><div class="g-td g-item">貨物</div><div class="g-td g-quantity">數量</div><div class="g-td g-price">價錢</div></div>
+					<div class="g-tbody"><div class="g-empty">唔睇都買下野啦喂</div></div>
+					<div class="g-tr"><div class="g-td g-item"></div><div class="g-td g-quantity"></div><div class="g-td g-price g-total-price">$0</div></div>
+					<div class="g-submit"><div class="g-button" data-action="buy">埋單</div></div>
+				</div>
+
+				<div class="g-submitted g-hide">
+					<div class="g-thanks-text">payme 完 cap 圖 send 去 +85257280149 先會正式落單！</div>
+					<img src="img/IMG_0412.JPG">
+				</div>
+
+				<form class="g-hide" name="my-form" id="my-form">
+					<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
+					<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
+
+					<div class="g-purchase-summary"></div>
+					<!-- <div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div> -->
+					<!-- <div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div> -->
+					<!-- <div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div> -->
+
+					<button type="submit" id="submit" class="g-buy-button">真係 BUY</button>
+				</form>
+			</div>
+			<% } %>
+
 			<% } %>
 		</div>
 	</div>
 	<% }) %>
 </div>
 
-<div class="g-buy-popup">
-	<div class="g-buy-popup-inner">
-		<div class="g-x" id="g-x">X</div>
-
-		<div class="g-cashier">CAHSIER</div>
-
-		<form name="my-form" id="my-form">
-			<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
-			<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
-			<div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div>
-			<div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div>
-			<div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div>
-
-			<button type="submit" id="submit" class="g-buy-button">真係 BUY!</button>
-		</form>
-
-		<div class="g-submitted g-hide">
-			<div class="g-thanks-text">payme完先會正式落單！</div>
-			<img src="img/IMG_0412.JPG">
-		</div>		
-	</div>
-</div>
-
-<div class="g-drop-banana"></div>
+<div class="g-drop-banana g-outside-form"></div>
 
 <footer>
 	<div class="g-social">

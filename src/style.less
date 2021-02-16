@@ -74,7 +74,7 @@ img {
 }
 
 .g-store {
-	padding: 25px 0;
+	// padding: 25px 0;
 }
 
 .g-store-each {
@@ -151,7 +151,7 @@ img {
 
 @media screen and (min-width: 600px) {
 	
-	.g-store {
+	.g-store, .g-shopping-cart-inner, #my-form {
 		padding: 5px 25px;
 	}
 
@@ -167,8 +167,8 @@ img {
 	}
 }
 
-.g-meta {
-	padding: 5px 15px;
+.g-meta, .g-shopping-cart-inner, #my-form, .g-shopping-cart .g-back {
+	padding: 5px 20px;
 	
 }
 
@@ -305,7 +305,7 @@ a {
 		width: 30px;
 		padding: 4px 0;
 		text-align: center;
-		font-size: 14px;
+		font-size: 13px;
 	}
 
 	.g-count-button {
@@ -327,7 +327,7 @@ input,select {
 	width: 100px;
 	border: 1px solid #ddd;
 	padding: 1px;
-	font-size: 16px;
+	font-size: 13px;
 	opacity: 0.7;
 }
 
@@ -361,17 +361,14 @@ input {
 
 	display: none;
 	color: #fff;
+	z-index: 10;
+
 }
 
 .g-buy-popup-inner {
 	width: calc(100% - 20px);
 	margin: 25px auto;
 	max-width: 600px;
-}
-
-.g-buy-popup .g-lab {
-	margin-right: 10px;
-	display: inline-block;
 }
 
 .g-buy-each {
@@ -421,8 +418,8 @@ input {
 
 .g-buy-button {
 	background: rgba(255,255,255,0.5);
-	font-weight: 700;
-	color: #fff;
+	margin: 0 auto;
+	display: block;
 }
 
 .g-buy-button:hover {
@@ -445,12 +442,20 @@ input {
 	text-align: center;
 	font-size: 20px;
 	margin-bottom: 10px;
+	max-width: 360px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.g-submitted {
+	padding: 40px 0;
 }
 
 .g-submitted img {
 	max-width: 460px;
 	margin: 0 auto;
 	display: block;
+	width: 80%;
 }
 
 .g-meta p {
@@ -484,7 +489,7 @@ input {
 	font-weight: 100;
 	font-family: "arial", sans-serif;
 	font-size: 16px;
-	margin-bottom: 10px;
+	padding-bottom: 10px;
 	line-height: 1;
 	padding-left: 20px;
 
@@ -506,6 +511,7 @@ input {
 .g-drop-banana {
 	position: fixed;
 	top: 0;
+	left: 0;
 	pointer-events: none;
 	z-index: 10;
 
@@ -525,6 +531,166 @@ input {
 			width: 80%;
 			max-width: 460px;
 			position: relative;
+		}
+	}
+}
+
+.g-drop-banana.g-inside-form {
+	z-index: -1;
+	.g-img {
+		display: none;
+	}
+}
+
+.g-shopping-cart-icon {
+	background: url(img/cart.png);
+	width: 20px;
+	height: 20px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	margin: -22px 22px 10px auto;
+
+	@media screen and (min-width: 600px) {
+		margin: -30px 40px 10px auto;
+		width: 25px;
+		height: 25px;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	position: relative;
+	.g-cart-count {
+		position: absolute;
+	    right: -8px;
+	    top: -1px;
+	    border-radius: 100%;
+	    background: #fff;
+	    width: 13px;
+	    height: 13px;
+	    font-size: 9px;
+	    line-height: 1.6;
+	    text-align: center;
+		display: none;
+		&.g-active {
+			display: block;
+		}
+	}
+}
+
+.g-shopping-cart {
+	min-height: 500px;
+
+	.g-shopping-cart-inner .g-back {
+		padding-left: 0;
+	}
+
+	#my-form, .g-shopping-cart-inner {
+		&.g-hide {
+			display: none;
+		}
+	}
+
+	.g-submitted-form {
+		input {
+			border: none;
+			user-select: none;
+			pointer-events: none;
+		}
+	}
+
+	.g-tr {
+		width: 100%;
+	}
+
+	.g-th, .g-tbody {
+		border-bottom: 1px solid #ececec;
+		padding-bottom: 5px;
+	}
+
+	.g-empty {
+		padding: 30px 0;
+		color: #333;
+		text-align: center;
+	}
+
+	.g-lab {
+		margin-right: 10px;
+		display: inline-block;
+	}
+
+	.g-td {
+		display: inline-block;
+		font-size: 14px;
+		padding: 5px 0;
+
+		&.g-item {
+			width: 64%;
+
+			.g-item-img {
+				width: 50px;
+			    display: inline-block;
+			    vertical-align: middle;
+			    margin-right: 5px;
+			}
+
+			.g-item-inner {
+				display: inline-block;
+				vertical-align: middle;
+				width: calc(100% - 55px);
+			}
+		}
+
+		&.g-quantity {
+			width: 18%;
+			text-align: center;
+
+			.g-minus, .g-count, .g-add  {
+				display: inline-block;
+			}
+
+			.g-count {
+				padding: 0 5px;
+			}
+
+			.g-minus, .g-add {
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+
+		&.g-price {
+			width: 18%;
+			text-align: right;
+		}
+	}
+
+	.g-tbody {
+		min-height: 100px;
+		margin-bottom: 10px;
+	}
+
+	.g-submit {
+		text-align: right;
+		margin-top: 30px;
+
+		.g-button {
+			display: inline;
+		}
+	}
+}
+
+#my-form {
+
+	padding-top: 20px;
+	// background: rgba(255,255,255,0.9);
+
+	.g-purchase-summary {
+		margin-bottom: 30px;
+		.g-add, .g-minus, .g-submit {
+			display: none;
 		}
 	}
 }

@@ -1,3 +1,7 @@
+var shoppingcart = {};
+var doneshopping = false;
+
+
 document.addEventListener("DOMContentLoaded", function(e) {
    	
    	function resize() {
@@ -40,7 +44,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
    		var hash = document.location.hash;
 
-   		if (hash.indexOf("-") > -1 && hash != "#project-upcoming") {
+   		if (hash == "#cart") {
+   			var el = d3.select(".g-nav-list-store")
+   			el.classed("g-hide", false);
+   			el.attr("data-state", "show");
+   			el.select(".g-store-list").classed("g-hide", true);
+   			el.selectAll(".g-store-buy").classed("g-hide", true);
+   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+   		} else if ((hash.indexOf("-") > -1 && hash != "#project-upcoming")) {
 
    			el.attr("data-instore", "true")
 
@@ -51,9 +62,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
    			d3.select(".g-" + id).classed("g-cur-stock", true);
 
-   			console.log(d3.select(".g-" + id))
-   			console.log((+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height))
-   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + "px")
+   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + "px");
    		} else if (hash.indexOf("lunch") > -1) {
    			dropbananas();
    		} else {
@@ -61,6 +70,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		}
    	}
 
+   	updateCartNum();
+   	updateCart();
    	if (document.location.hash != "") {
    		if (document.location.hash.indexOf("lkk") == -1) {
    			var hash = document.location.hash
@@ -74,16 +85,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		}	
    	} 
 
+
+
    	function back(page) {
    		d3.selectAll(".g-stock-list").classed("g-hide", false);
    		d3.selectAll(".g-store-buy").classed("g-hide", true);
-
    		var nav = d3.select(".g-nav-list-" + page);
    		nav.attr("data-instore", "false");
-   		nav
-   			.transition()
-   			.style("height", (+nav.attr("data-h1") + +nav.attr("data-h2")) + "px")
-
+   		nav.transition().style("height", (+nav.attr("data-h1") + +nav.attr("data-h2")) + "px")
    		document.location.hash = page;
    	}
 
@@ -144,18 +153,25 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
 
+		if (doneshopping) {
+			shoppingreset();
+			doneshopping = false;
+		}
+
 	})
+
+	function shoppingreset() {
+		stopbananas();
+		d3.select(".g-submitted").classed("g-hide", true);
+		$('#my-form').trigger("reset");
+		d3.select("#my-form").classed("g-submitted-form", false);
+		d3.select(".g-buy-button").classed("g-hide", false);
+	}
 
 	d3.selectAll(".g-back").on("click", function(){
 		back(d3.select(this).attr("data-page"))
+		shoppingreset();
 	})
-
-	d3.select(".g-buy-popup").style("width", innerWidth).style("height", innerHeight)
-	d3.select("#g-x").on("click", function(){
-		d3.select(".g-buy-popup").classed("g-active", false);
-		d3.select("#my-form").classed("g-hide", false);
-		d3.select(".g-submitted").classed("g-hide", true);
-	});
 
 	// count button
 	d3.selectAll(".g-count-button").on("click", function(){
@@ -192,24 +208,154 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	})
 
 
+	// d3.select(".g-buy-popup").style("width", innerWidth).style("height", innerHeight)
+	// d3.select("#g-x").on("click", function(){
+	// 	d3.select(".g-buy-popup").classed("g-active", false);
+	// 	d3.select("#my-form").classed("g-hide", false);
+	// 	d3.select(".g-submitted").classed("g-hide", true);
+	// 	stopbananas();
+	// });
+
 	// buy popup
-	d3.selectAll(".g-button").on("click", function(){
-		d3.select(".g-buy-popup").classed("g-active", true);
 
-		var stockid = d3.select(".g-cur-stock").attr("data-id");
-		var curstockel = d3.select(".g-store-" + stockid);
-		var size = curstockel.select("#size").property("value");
-		var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
-		var count = curstockel.select(".g-count").text();
-		d3.select(".g-bought").property("value", "").property("value", name + " " + stockid + " x " + count + " x " + size)
+	function updateCartNum(slug, count) {
+		shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
 
-		if (stockid == "001") {
-			var amount = size == "小小心意" ? 10 : size == "多多益善" ? 50 : 100;
-			d3.select("#price").property("value", "$" + amount*+count)
-			d3.select(".g-note").style("display", "none")
+		if (!shoppingcart) {
+			localStorage.setItem('shoppingcart', '{}');
+			shoppingcart = {};	
+		}
+
+		if (slug) { 
+			if (!shoppingcart[slug]) {
+				shoppingcart[slug] = 0;
+			}
+			shoppingcart[slug] += +count;
+		}
+			
+		var totalcount = d3.sum(Object.values(shoppingcart));
+		var cartel = d3.select(".g-shopping-cart-icon .g-cart-count");
+		if (totalcount == 0) {
+			cartel.classed("g-active", false);
 		} else {
-			d3.select("#price").property("value", "$" + +count*280)
-			d3.select(".g-note").style("display", "block")
+			cartel.classed("g-active", true);
+			totalcount = totalcount > 9 ? "9+" : totalcount;
+			cartel.text(totalcount)
+		}
+
+		localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
+	}
+
+	function updateCart() {
+
+		shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
+
+		var keys = Object.keys(shoppingcart);
+		keys.sort();
+
+		var tbody = d3.select(".g-tbody").html("");
+		var totalprice = 0;
+
+		keys.forEach(function(d){
+
+			var tr = tbody.append("div.g-tr");
+			var split = d.split("_");
+
+			var item = tr.append("div.g-td.g-item")
+			item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img").attr("src"));
+			item.append("div.g-item-inner").text(d.split("_")[1] + " " + d.split("_")[0] + " x " + d.split("_")[2]);
+			
+			var quantity = tr.append("div.g-td.g-quantity")
+			var minus = quantity.append("div.g-minus").text("-");
+			var count = quantity.append("div.g-count").text(shoppingcart[d])
+			var add = quantity.append("div.g-add").text("+");
+
+			minus.on("click", function(){
+				console.log(shoppingcart[d])
+				if (shoppingcart[d] > 1) {
+					shoppingcart[d] -= 1;
+					localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
+					updateCart();
+					updateCartNum();
+				} else {
+					delete shoppingcart[d];
+					localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
+					updateCart();
+					updateCartNum();
+				}
+			})
+
+			add.on("click", function(){
+				console.log(shoppingcart[d])
+				shoppingcart[d] += 1;
+				count.text(shoppingcart[d])
+				localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
+				updateCart();
+				updateCartNum();
+			})
+
+			var price = 280;
+			if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; }
+			tr.append("div.g-td.g-price").text("$" + shoppingcart[d]*price);
+
+			totalprice += shoppingcart[d]*price;
+
+		})
+
+		d3.select(".g-total-price").text("$" + totalprice);
+
+	}
+
+
+	d3.selectAll(".g-button").on("click", function(){
+
+		var el = d3.select(this);
+		var action = el.attr("data-action");
+		var cart = d3.select(".g-shopping-cart-inner");
+
+		if (action == "add-to-cart") {
+
+			var stockid = d3.select(".g-cur-stock").attr("data-id");
+			var curstockel = d3.select(".g-store-" + stockid);
+			var size = curstockel.select("#size").property("value");
+			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
+			var count = curstockel.select(".g-count").text();
+			var slug = stockid + "_" + name + "_" + size;
+
+			updateCartNum(slug, count);
+			updateCart();
+
+		} else if (action == "add-to-cart-checkout") {
+
+			var stockid = d3.select(".g-cur-stock").attr("data-id");
+			var curstockel = d3.select(".g-store-" + stockid);
+			var size = curstockel.select("#size").property("value");
+			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
+			var count = curstockel.select(".g-count").text();
+			var slug = stockid + "_" + name + "_" + size;
+
+			updateCartNum(slug, count);
+			updateCart();
+
+			goToCart();
+
+			cart.classed("g-hide", true);
+			d3.select("#my-form").classed("g-hide", false);
+			var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+
+
+		} else if (action == "buy") {
+
+			if (localStorage.shoppingcart == "{}") {
+
+				d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+
+			} else {
+				cart.classed("g-hide", true);
+				d3.select("#my-form").classed("g-hide", false);
+				var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+			}
+
 		}
 	})
 
@@ -222,10 +368,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  e.preventDefault();
 
+
 			  var now = new Date();
 			  var formatTime = d3.timeFormat("%Y-%m-%d %H:%M");
-
-			  console.log("hi")
 
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
@@ -243,28 +388,101 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  	var formdata = $form.serialize();
 
-			  	console.log(formdata)
-			  	formdata += "&date=" + formatTime(now);
+			  	shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
 
-			  	var jqxhr = $.ajax({
-			  	  url: url,
-			  	  method: "GET",
-			  	  dataType: "json",
-			  	  data: formdata,
-			  	  success: function(){ 
+			  	var keys = Object.keys(shoppingcart);
+			  	keys.sort();
 
-			  	  	$('#my-form').trigger("reset");
+			  	var successcount = [];
+			  	console.log(keys.length)
 
-			  	  	d3.select("#submit").classed("g-loading", false);
-			  	  	d3.select("#my-form").classed("g-hide", true)
-			  	  	d3.select(".g-submitted").classed("g-hide", false)
-			  	  }
+			  	keys.forEach(function(d,i){
+
+			  		var split = d.split("_");
+			  		item = split[1] + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
+
+			  		var price = 280;
+			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
+
+			  		var totalprice = price*shoppingcart[d]
+
+			  		var formdata = "name=" + name + "&phone=" + phone + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice;
+
+			  		//name	phone	item	price
+
+			  		var jqxhr = $.ajax({
+			  		  url: url,
+			  		  method: "GET",
+			  		  dataType: "json",
+			  		  data: formdata,
+			  		  success: function(){ 
+
+			  		  	successcount.push(i)
+
+			  		  	console.log(successcount)
+
+			  		  	if (successcount.length == keys.length) {
+			  		  		localStorage.setItem('shoppingcart', '{}')
+							// $('#my-form').trigger("reset");
+							d3.select("#submit").classed("g-loading", false);
+							// d3.select("#my-form").classed("g-hide", true);
+							d3.select(".g-submitted").classed("g-hide", false)
+							d3.select(".g-buy-button").classed("g-hide", true);
+							d3.select("#my-form").classed("g-submitted-form", true);
+
+
+							var navel = d3.select(".g-nav-list-store")
+							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
+
+							dropbananas(".g-drop-banana.g-inside-form");
+							updateCartNum();
+							updateCart();
+
+							doneshopping = true;
+			  		  	}
+
+			  		  }
+			  		})
+
 			  	})
-			  	
 			  }
 
 		})
 	})
+
+	// shopping cart
+
+	d3.select(".g-submitted").on("click", function(){
+		d3.select(".g-submitted").classed("g-hide", true);
+		d3.select(".g-drop-banana.g-inside-form").html("");
+		showThing("store", "#store")
+	})
+
+
+	d3.selectAll(".g-shopping-cart-icon").on("click", function(){
+
+		if (doneshopping == true) {
+			shoppingreset();
+			doneshopping = false;
+		}
+
+		goToCart();
+	})
+
+	function goToCart() {
+		d3.select(".g-store-list").classed("g-hide", true);
+		d3.selectAll(".g-store-buy").classed("g-hide", true);
+		d3.select(".g-shopping-cart-inner").classed("g-hide", false);
+		d3.select(".g-nav-list-store").attr("data-instore", true);
+		d3.select("#my-form").classed("g-hide", true);
+
+		var el = d3.select(".g-nav-list-store");
+		el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+
+		document.location.hash = "cart";
+
+		showThing("store", "#cart")
+	}
 
 
 	// drop bananas 
@@ -272,17 +490,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	function stopbananas() {
 		if (window.bananatimer) {
 			window.bananatimer.stop();
-			d3.select(".g-drop-banana").html("").classed("g-active", false);
+			d3.selectAll(".g-drop-banana").html("").classed("g-active", false);
 		}
 	}
 
-	function dropbananas() {
+	function dropbananas(sel) {
+
+		if (!sel) {
+			sel = ".g-drop-banana.g-outside-form";
+		}
 
 		if (window.bananatimer) {
 			window.bananatimer.stop();
 		}
 
-		var sel = d3.select(".g-drop-banana").html("");
+		var sel = d3.select(sel).html("");
 		sel.classed("g-active", true);
 
 		sel.on("click", stopbananas);
