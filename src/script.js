@@ -584,11 +584,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		if (chart.attr("class").indexOf("g-active") == -1) {
 			buttonthingy.classed("g-collapsed", false)
-			buttonthingy.html("-");
+			buttonthingy.html("▲");
 			chart.classed("g-active", true);
 		} else {
 			buttonthingy.classed("g-collapsed", true)
-			buttonthingy.html("+");
+			buttonthingy.html("▼");
 			chart.classed("g-active", false);
 		}
 

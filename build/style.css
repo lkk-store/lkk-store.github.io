@@ -378,6 +378,9 @@ input {
 .g-details {
   margin-top: 20px;
 }
+.g-details .g-dotted {
+  border-bottom: 1px dotted #d3d3d3;
+}
 .g-details .g-expand-size-chart {
   border: 1px solid #ececec;
   color: #444;
@@ -390,10 +393,11 @@ input {
   text-align: center;
   vertical-align: middle;
   margin-top: -1px;
-  line-height: 0.9;
+  font-size: 7px;
+  line-height: 1.7;
 }
 .g-details .g-expand-size-chart.g-collapsed {
-  line-height: 1.1;
+  line-height: 2;
 }
 .g-details .g-expand-size-chart:hover {
   background: #f7f7f7;
