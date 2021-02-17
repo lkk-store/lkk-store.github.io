@@ -44,6 +44,7 @@ img {
 }
 
 .g-nav-content {
+	position: relative;
 	// display: none;
 }
 
@@ -544,25 +545,26 @@ input {
 }
 
 .g-shopping-cart-icon {
-	background: url(img/cart.png);
-	width: 20px;
-	height: 20px;
-	background-size: 100%;
-	background-repeat: no-repeat;
-	margin: -22px 22px 10px auto;
-	cursor: pointer;
 
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: -21px;
+	right: 22px;
+
+	
 	@media screen and (min-width: 600px) {
-		margin: -30px 40px 10px auto;
-		width: 25px;
-		height: 25px;
+		width: 20px;
+		height: 20px;
+		top: -23px;
+		right: 40px;
 	}
+
 
 	&:hover {
 		cursor: pointer;
 	}
 
-	position: relative;
 	.g-cart-count {
 		position: absolute;
 	    right: -8px;

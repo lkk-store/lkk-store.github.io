@@ -49,6 +49,9 @@ img {
 .g-nav-name:hover {
   cursor: pointer;
 }
+.g-nav-content {
+  position: relative;
+}
 @media screen and (min-width: 600px) {
   .g-nav-name {
     /*margin-left: -14%;*/
@@ -448,20 +451,18 @@ input {
   display: none;
 }
 .g-shopping-cart-icon {
-  background: url(img/cart.png);
-  width: 20px;
-  height: 20px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  margin: -22px 22px 10px auto;
-  cursor: pointer;
-  position: relative;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -21px;
+  right: 22px;
 }
 @media screen and (min-width: 600px) {
   .g-shopping-cart-icon {
-    margin: -30px 40px 10px auto;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
+    top: -23px;
+    right: 40px;
   }
 }
 .g-shopping-cart-icon:hover {
@@ -604,7 +605,7 @@ input {
 			
 			
 			
-			<div class="g-shopping-cart-icon"><div class="g-cart-count"></div></div>
+			<div class="g-shopping-cart-icon"><img src="img/cart.png"><div class="g-cart-count"></div></div>
 			
 			<div class="g-store g-stock-list g-store-list">				
 

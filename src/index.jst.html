@@ -18,7 +18,7 @@
 			<% if (d.content == "store" || d.content == "upcoming") { %>
 			<% var list = d.content == "store" ? data.store : d.content == "upcoming" ? data.upcoming : []; %>
 			<% if (d.content == "store") { %>
-			<div class="g-shopping-cart-icon"><div class="g-cart-count"></div></div>
+			<div class="g-shopping-cart-icon"><img src="img/cart.png"><div class="g-cart-count"></div></div>
 			<% } %>
 			<div class="g-store g-stock-list g-<%= d.content %>-list">				
 
