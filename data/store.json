@@ -55,7 +55,7 @@
     "text": "alldaymealh♥lic",
     "category": "Tee",
     "type": "Print",
-    "description": "同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“",
+    "description": "同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“",
     "price": "250",
     "sizes": "S,M,L,XL"
   },
@@ -63,6 +63,16 @@
     "id": "007",
     "name": "good-looking tee",
     "text": "it's all 9ood",
+    "category": "Tee",
+    "type": "Print",
+    "description": "",
+    "price": "250",
+    "sizes": "S,M,L,XL"
+  },
+  {
+    "id": "010",
+    "name": "唔好問路 tee",
+    "text": "唔好啦",
     "category": "Tee",
     "type": "Print",
     "description": "",
