@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		} else if ((hash.indexOf("-") > -1 && hash != "#project-upcoming")) {
 
    			el.attr("data-instore", "true")
+   			el.attr("data-incart", "false");
 
    			var id = hash.replace("#", "")
    			d3.selectAll(".g-" + name + "-list").classed("g-hide", true);
@@ -95,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		d3.selectAll(".g-store-buy").classed("g-hide", true);
    		var nav = d3.select(".g-nav-list-" + page);
    		nav.attr("data-instore", "false");
+   		nav.attr("data-incart", "false");
    		nav.transition().style("height", (+nav.attr("data-h1") + +nav.attr("data-h2")) + "px")
    		document.location.hash = page;
    	}
@@ -158,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		nav.transition().style("height", (+nameheight + +stockheight) + "px");
 		nav.attr("data-instore", "true");
+		nav.attr("data-incart", "false");
 
 		if (doneshopping) {
 			shoppingreset();
@@ -489,7 +492,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.select(".g-store-list").classed("g-hide", true);
 		d3.selectAll(".g-store-buy").classed("g-hide", true);
 		d3.select(".g-shopping-cart-inner").classed("g-hide", false);
-		d3.select(".g-nav-list-store").attr("data-instore", true);
+		d3.select(".g-nav-list-store").attr("data-instore", false);
+		d3.select(".g-nav-list-store").attr("data-incart", true);
 		d3.select("#my-form").classed("g-hide", true);
 
 		var el = d3.select(".g-nav-list-store");
