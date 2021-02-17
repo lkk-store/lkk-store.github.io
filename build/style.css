@@ -264,7 +264,7 @@ a {
 .g-label {
   margin-right: 10px;
   vertical-align: middle;
-  font-size: 13px;
+  font-size: 12px;
 }
 input,
 select {
@@ -389,6 +389,11 @@ input {
 }
 .g-details {
   margin-top: 20px;
+}
+.g-details .g-highlight-text {
+  font-weight: 700;
+  font-style: italic;
+  color: #777;
 }
 .g-details .g-dotted {
   border-bottom: 1px dotted #d3d3d3;

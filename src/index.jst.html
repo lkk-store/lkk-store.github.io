@@ -76,7 +76,7 @@
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="<%= l.id %>"><%= l.name %> <% if (l.category == 'Tee') { %>(起碼三月先有貨)<% } %></span>
 						</div>
-						<% if (l.text) { %><div class="g-desc"><%= l.text %></div><% } %>
+						<% if (l.type != '') { %><div class="g-desc"><p><% if (l.type == "Screen") { %>handmade  silkscreen tee<% } else { %>9-print tee<% } %></p></div><% } %>
 						<% if (l.price) { %><div class="g-price">
 							<sup class="g-agate">HKD</sup>
 							<% if (l.price == "10up") { %>
@@ -99,14 +99,14 @@
 						<%- str %>
 						<% if (l.category == "Tee") { %>
 						
-						<p><%= l.category %></p>
+						<p class="g-highlight-text"><%= l.text %></p>
 						<p><%= l.name %></p>
 						<p> available on lkk-store.com</p>
 						<% if (l.category == "Tee") { %>
-							<% if (l.type == "Screen") { %><p> Silk Screen by @LKK </p><% } %>
-							<p>Design by @LKK  </p>
-							<% if (l.type == "Screen") { %><p>Hand Made Silk Screen Printing on 100% Cotton Tee </p><% } %>
-							<p>Standard Asia Fit Size* <span class="g-expand-button"><span class="g-dotted">S/M/L/XL</span> <span class="g-expand-size-chart g-collapsed">▼</span></span></p>
+							<% if (l.type == "Screen") { %><p> silk screen by @lkk </p><% } %>
+							<p>design by @lkk  </p>
+							<% if (l.type == "Screen") { %><p>hand made silk screen printing on 100% cotton tee </p><% } %>
+							<p>standard asia fit size* <span class="g-expand-button"><span class="g-dotted">S/M/L/XL</span> <span class="g-expand-size-chart g-collapsed">▼</span></span></p>
 
 							<div class="g-size-chart" data-state="hidden">
 								<table>
