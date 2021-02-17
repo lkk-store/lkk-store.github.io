@@ -378,6 +378,46 @@ input {
 .g-details {
   margin-top: 20px;
 }
+.g-details .g-expand-size-chart {
+  border: 1px solid #ececec;
+  color: #444;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: -1px;
+  line-height: 0.9;
+}
+.g-details .g-expand-size-chart.g-collapsed {
+  line-height: 1.1;
+}
+.g-details .g-expand-size-chart:hover {
+  background: #f7f7f7;
+}
+.g-details .g-size-chart {
+  font-size: 11px;
+  height: 0;
+  overflow: hidden;
+  transition: 0.2s height;
+}
+.g-details .g-size-chart.g-active {
+  height: 102px;
+}
+.g-details .g-size-chart table {
+  width: 100%;
+  max-width: 192px;
+  padding-top: 15px;
+}
+.g-details .g-size-chart table td {
+  border-bottom: 1px solid #f7f7f7;
+}
+.g-details .g-size-chart table tr:last-child td {
+  border-bottom: none;
+}
 #submit.g-loading {
   background-color: rgba(255, 255, 255, 0.7);
   background-image: url(img/loading-gif-png-5.gif);

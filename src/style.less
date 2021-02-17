@@ -469,6 +469,65 @@ input {
 
 .g-details {
 	margin-top: 20px;
+
+	.g-expand-size-chart {
+		border: 1px solid #ececec;
+		color: #444;
+		border-radius: 100%;
+		width: 12px;
+		height: 12px;
+		cursor: pointer;
+		user-select: none;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+		margin-top: -1px;
+
+		line-height: 0.9;
+
+		&.g-collapsed {
+			line-height: 1.1;
+		}
+
+
+		&:hover {
+			background: #f7f7f7;
+		}
+	}
+
+	.g-size-chart {
+
+		font-size: 11px;
+
+		height: 0;
+		overflow: hidden;
+		transition: 0.2s height;
+
+		&.g-active {
+			height: 102px;
+		}
+
+		table {
+			width: 100%;
+		    max-width: 192px;
+		    padding-top: 15px;
+
+			td {
+				border-bottom: 1px solid #f7f7f7;
+			}
+
+			tr:first-child {
+				// color: #d3d3d3;
+			}
+
+			tr:last-child {
+				td {
+					border-bottom: none;
+				}
+			}
+		}
+
+	}
 }
 
 #submit.g-loading {
