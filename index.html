@@ -106,6 +106,7 @@ img {
   position: absolute;
   top: calc(100% - 60px);
   left: 10px;
+  cursor: pointer;
 }
 @media screen and (min-width: 600px) {
   .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
@@ -453,6 +454,7 @@ input {
   background-size: 100%;
   background-repeat: no-repeat;
   margin: -22px 22px 10px auto;
+  cursor: pointer;
   position: relative;
 }
 @media screen and (min-width: 600px) {
@@ -1668,7 +1670,9 @@ input {
 		<a href="https://www.instagram.com/lkk.store/"><div class="g-social-icon g-ig"></div></a>
 		<a href="https://wa.me/85257280149"><div class="g-social-icon g-whatsapp"></div></div></a>
 	<div class="g-tm">© 2021 黎根記.<br>All rights reserved.</div>
-</footer><script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
+</footer>
+
+<script>var stocklist = [{"id":"002","name":"舊青年 tee","text":"NO MORE NEW YOUTH","category":"Tee","type":"Screen","description":"","price":"280","sizes":"XS,S,M,L,XL"},{"id":"003","name":"舊青年 tee","text":"壽終正寢 version","category":"Tee","type":"Screen","description":"","price":"280","sizes":"XS,S,M,L,XL"},{"id":"009","name":"ok old tee","text":"it’s okay to get old","category":"Tee","type":"Screen","description":"","price":"280","sizes":"XS,S,M,L,XL","img":["store-009-001.png","store-009-002.png"]},{"id":"008","name":"ok sad tee","text":"it’s okay to feel sad","category":"Tee","type":"Screen","description":"","price":"280","sizes":"XS,S,M,L,XL","img":["store-008-001.png","store-008-002.png"]},{"id":"005","name":"sad banana tee","text":"don't be sad","category":"Tee","type":"Print","description":"","price":"250","sizes":"XS,S,M,L,XL"},{"id":"006","name":"我♥常餐 tee","text":"alldaymealh♥lic","category":"Tee","type":"Print","description":"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該！","price":"250","sizes":"XS,S,M,L,XL","img":["store-006-001.png","store-006-002.png","store-006-003.png","store-006-004.png"]},{"id":"007","name":"good-looking tee","text":"it's all 9ood","category":"Tee","type":"Print","description":"","price":"250","sizes":"XS,S,M,L,XL"},{"id":"004","name":"員工 tee","text":"非賣品","category":"Tee","type":"Print","description":"Inspired by @rubielism","price":"250","sizes":"XS,S,M,L,XL"},{"id":"001","name":"人人有蕉吔基金","text":"純純粹粹俾錢店主","category":"","type":"","description":"【DONT THINK, JUST DONATE!】// 黎根記®有一個願望：「人人都可以有蕉吔！」// 如果您都認同我哋，// 事不宜遲，請立即捐款到\"人人有蕉吔基金\" // 你將會收到香蕉.png一條","price":"10up","sizes":"小小心意,多多益善,大手入股"}]</script><script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
@@ -1685,7 +1689,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			var contentheight = el.select(".g-stock-list").node() ? el.select(".g-stock-list").node().getBoundingClientRect().height : nameheight;
    			el.attr("data-h1", nameheight)
    			
-   			if (el.attr("data-instore") == "true") {
+   			if (el.attr("data-incart") == "true") {
+   				el.style("height", (+el.attr("data-h1") + el.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
+   			} else if (el.attr("data-instore") == "true") {
    				el.style("height", (+el.attr("data-h1") + el.select(".g-cur-stock").node().getBoundingClientRect().height) + "px")
    			} else if (el.attr("data-state") == "show") {
    				el.attr("data-h2", nameheight + contentheight)
@@ -1725,6 +1731,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.select(".g-store-list").classed("g-hide", true);
    			el.selectAll(".g-store-buy").classed("g-hide", true);
    			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+   			el.attr("data-incart", true);
    		} else if ((hash.indexOf("-") > -1 && hash != "#project-upcoming")) {
 
    			el.attr("data-instore", "true")
@@ -1777,6 +1784,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var instore = el.attr("data-instore") == "true";
 		var id = el.attr("data-id");
 
+		if (doneshopping) {
+			shoppingreset();
+			doneshopping = false;
+		}
+
 		if (instore) {
 			back(el.attr("data-id"));
 		} else {
@@ -1825,13 +1837,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		nav.transition().style("height", (+nameheight + +stockheight) + "px");
 		nav.attr("data-instore", "true");
 
-		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
-
 		if (doneshopping) {
 			shoppingreset();
 			doneshopping = false;
 		}
 
+		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
 	})
 
 	function shoppingreset() {
@@ -1969,7 +1980,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			})
 
 			var price = 280;
-			if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; }
+			if (split[0] == "001") {  }
+
+			var pricecheck = stocklist.filter(d => d.id == split[0])[0];
+			if (pricecheck && pricecheck.price == "10up") {
+				price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100;
+			} else if (pricecheck) {
+				price = +pricecheck.price;
+			}
+
+
 			tr.append("div.g-td.g-price").text("$" + shoppingcart[d]*price);
 
 			totalprice += shoppingcart[d]*price;
@@ -2156,6 +2176,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		document.location.hash = "cart";
 
 		showThing("store", "#cart")
+		d3.select(".g-nav-list-store").attr("data-incart", true);
 	}
 
 

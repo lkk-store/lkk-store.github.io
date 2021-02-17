@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			var contentheight = el.select(".g-stock-list").node() ? el.select(".g-stock-list").node().getBoundingClientRect().height : nameheight;
    			el.attr("data-h1", nameheight)
    			
-   			if (el.attr("data-instore") == "true") {
+   			if (el.attr("data-incart") == "true") {
+   				el.style("height", (+el.attr("data-h1") + el.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
+   			} else if (el.attr("data-instore") == "true") {
    				el.style("height", (+el.attr("data-h1") + el.select(".g-cur-stock").node().getBoundingClientRect().height) + "px")
    			} else if (el.attr("data-state") == "show") {
    				el.attr("data-h2", nameheight + contentheight)
@@ -51,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.select(".g-store-list").classed("g-hide", true);
    			el.selectAll(".g-store-buy").classed("g-hide", true);
    			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+   			el.attr("data-incart", true);
    		} else if ((hash.indexOf("-") > -1 && hash != "#project-upcoming")) {
 
    			el.attr("data-instore", "true")
@@ -103,6 +106,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var instore = el.attr("data-instore") == "true";
 		var id = el.attr("data-id");
 
+		if (doneshopping) {
+			shoppingreset();
+			doneshopping = false;
+		}
+
 		if (instore) {
 			back(el.attr("data-id"));
 		} else {
@@ -151,13 +159,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		nav.transition().style("height", (+nameheight + +stockheight) + "px");
 		nav.attr("data-instore", "true");
 
-		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
-
 		if (doneshopping) {
 			shoppingreset();
 			doneshopping = false;
 		}
 
+		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
 	})
 
 	function shoppingreset() {
@@ -295,7 +302,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			})
 
 			var price = 280;
-			if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; }
+			if (split[0] == "001") {  }
+
+			var pricecheck = stocklist.filter(d => d.id == split[0])[0];
+			if (pricecheck && pricecheck.price == "10up") {
+				price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100;
+			} else if (pricecheck) {
+				price = +pricecheck.price;
+			}
+
+
 			tr.append("div.g-td.g-price").text("$" + shoppingcart[d]*price);
 
 			totalprice += shoppingcart[d]*price;
@@ -482,6 +498,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		document.location.hash = "cart";
 
 		showThing("store", "#cart")
+		d3.select(".g-nav-list-store").attr("data-incart", true);
 	}
 
 

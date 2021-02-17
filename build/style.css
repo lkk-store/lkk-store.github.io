@@ -96,6 +96,7 @@ img {
   position: absolute;
   top: calc(100% - 60px);
   left: 10px;
+  cursor: pointer;
 }
 @media screen and (min-width: 600px) {
   .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
@@ -443,6 +444,7 @@ input {
   background-size: 100%;
   background-repeat: no-repeat;
   margin: -22px 22px 10px auto;
+  cursor: pointer;
   position: relative;
 }
 @media screen and (min-width: 600px) {
