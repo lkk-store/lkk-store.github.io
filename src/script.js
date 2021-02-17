@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.classed("g-hide", false);
    			el.attr("data-state", "show");
    			el.select(".g-store-list").classed("g-hide", true);
+   			el.select(".g-shopping-cart").classed("g-hide", false);
    			el.selectAll(".g-store-buy").classed("g-hide", true);
    			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
    			el.attr("data-incart", true);
