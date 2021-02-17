@@ -166,6 +166,18 @@ img {
 .g-price {
   margin-top: 2px;
 }
+.g-price-num .g-price-old {
+  position: relative;
+}
+.g-price-num .g-price-old:before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 2px;
+  background: #444;
+  top: 50%;
+  left: -5%;
+}
 .g-agate {
   font-size: 11px;
   vertical-align: top;

@@ -37,7 +37,11 @@
 						<% if (l.price) { %>
 						<div class="g-price">
 							<sup class="g-agate">HKD</sup>
-							<span class="g-price-num"><%= l.price %></span>
+							<% if (l.price == "10up") { %>
+							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
+							<% } else { %>
+							<span class="g-price-num"><span class="g-price-old"><%= (+l.price+40) %></span> <span class="g-price-new"><%= l.price %></span></span>
+							<% } %>
 						</div>
 						<% } %>
 					</div>
@@ -75,7 +79,11 @@
 						<% if (l.text) { %><div class="g-desc"><%= l.text %></div><% } %>
 						<% if (l.price) { %><div class="g-price">
 							<sup class="g-agate">HKD</sup>
-							<span class="g-price-num"><%= l.price %></span>
+							<% if (l.price == "10up") { %>
+							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
+							<% } else { %>
+							<span class="g-price-num"><span class="g-price-old"><%= (+l.price+40) %></span> <span class="g-price-new"><%= l.price %></span></span>
+							<% } %>
 						</div><% } %>
 
 						<div class="g-details">
