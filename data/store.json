@@ -7,7 +7,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "XS,S,M,L,XL"
+    "sizes": "S,M,L,XL"
   },
   {
     "id": "003",
@@ -17,7 +17,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "XS,S,M,L,XL"
+    "sizes": "S,M,L,XL"
   },
   {
     "id": "009",
@@ -25,9 +25,9 @@
     "text": "it’s okay to get old",
     "category": "Tee",
     "type": "Screen",
-    "description": "",
+    "description": "啱啱畢業22歲嘅同事：唉，我老啦// 我：😬🚬",
     "price": "280",
-    "sizes": "XS,S,M,L,XL"
+    "sizes": "S,M,L,XL"
   },
   {
     "id": "008",
@@ -37,7 +37,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "XS,S,M,L,XL"
+    "sizes": "S,M,L,XL"
   },
   {
     "id": "005",
@@ -47,7 +47,7 @@
     "type": "Print",
     "description": "",
     "price": "250",
-    "sizes": "XS,S,M,L,XL"
+    "sizes": "S,M,L,XL"
   },
   {
     "id": "006",
@@ -55,9 +55,9 @@
     "text": "alldaymealh♥lic",
     "category": "Tee",
     "type": "Print",
-    "description": "伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該！",
+    "description": "同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“",
     "price": "250",
-    "sizes": "XS,S,M,L,XL"
+    "sizes": "S,M,L,XL"
   },
   {
     "id": "007",
@@ -67,7 +67,7 @@
     "type": "Print",
     "description": "",
     "price": "250",
-    "sizes": "XS,S,M,L,XL"
+    "sizes": "S,M,L,XL"
   },
   {
     "id": "004",
@@ -77,7 +77,7 @@
     "type": "Print",
     "description": "Inspired by @rubielism",
     "price": "250",
-    "sizes": "XS,S,M,L,XL"
+    "sizes": "S,M,L,XL"
   },
   {
     "id": "001",
