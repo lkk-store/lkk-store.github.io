@@ -1,5 +1,6 @@
 [
   {
+    "hide": "",
     "id": "002",
     "name": "舊青年 tee",
     "text": "NO MORE NEW YOUTH",
@@ -10,6 +11,7 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "hide": "",
     "id": "003",
     "name": "舊青年 tee",
     "text": "壽終正寢 version",
@@ -20,6 +22,7 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "hide": "",
     "id": "009",
     "name": "ok old tee",
     "text": "it’s okay to get old",
@@ -30,6 +33,7 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "hide": "",
     "id": "008",
     "name": "ok sad tee",
     "text": "it’s okay to feel sad",
@@ -40,6 +44,7 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "hide": "",
     "id": "005",
     "name": "sad banana tee",
     "text": "don't be sad",
@@ -50,6 +55,7 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "hide": "",
     "id": "006",
     "name": "我♥常餐 tee",
     "text": "alldaymealh♥lic",
@@ -60,6 +66,7 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "hide": "1",
     "id": "007",
     "name": "good-looking tee",
     "text": "it's all 9ood",
@@ -70,6 +77,7 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "hide": "",
     "id": "010",
     "name": "唔好問路 tee",
     "text": "唔好啦",
@@ -80,6 +88,7 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "hide": "",
     "id": "004",
     "name": "員工 tee",
     "text": "非賣品",
@@ -90,6 +99,7 @@
     "sizes": "S,M,L,XL"
   },
   {
+    "hide": "",
     "id": "001",
     "name": "人人有蕉吔基金",
     "text": "純純粹粹俾錢店主",

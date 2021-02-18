@@ -39,6 +39,8 @@ function compile() {
 
 	})
 
+	data.store = data.store.filter(d => d.hide != "1");
+
 	var pages = ["index"]
 
 	var script = fs.readFileSync("src/script.js", "utf8");
