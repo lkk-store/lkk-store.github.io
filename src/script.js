@@ -581,6 +581,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.select(".g-nav-list-lkk").style("height", d3.select(".g-nav-list-lkk").attr("data-h1") + "px")
 		d3.select(".g-nav-list-upcoming").style("height", d3.select(".g-nav-list-upcoming").attr("data-h1") + "px")
 
+		d3.select(".g-submit").classed("g-hide", false)
+
 		goToCart();
 	})
 
