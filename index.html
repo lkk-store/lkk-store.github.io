@@ -458,6 +458,8 @@ input {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  user-select: none;
 }
 .g-hide {
   display: none;
@@ -1780,6 +1782,7 @@ input {
 				<form class="g-hide" name="my-form" id="my-form">
 					<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
 					<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
+					<div class="g-buy-each"><span class="g-lab">留言</span><input id="comment" type="text" name="comment"></div>
 
 					<div class="g-purchase-summary"></div>
 					<!-- <div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div> -->
@@ -1969,7 +1972,6 @@ input {
 var shoppingcart = {};
 var doneshopping = false;
 
-
 document.addEventListener("DOMContentLoaded", function(e) {
    	
    	function resize() {
@@ -1985,29 +1987,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
    				el.style("height", (+el.attr("data-h1") + el.select(".g-cur-stock").node().getBoundingClientRect().height + 120) + "px")
    			} else if (el.attr("data-state") == "show") {
    				el.attr("data-h2", nameheight + contentheight)
-   				el.style("height", el.attr("data-h2") + "px")
+   				el.style("height", el.attr("data-h2") + "px");
    			} else {
-   				el.attr("data-h2", nameheight + contentheight)
-   				el.style("height", nameheight + "px")
+   				el.attr("data-h2", nameheight + contentheight);
+   				el.style("height", nameheight + "px");
    			}
    		})
    	}
 
-   	resize();
-   	var containerWidthChanged = false;
-   	var ow = innerWidth;
-
-   	window.addEventListener("resize", function(){
-   	    if (innerWidth != ow) {
-   	        containerWidthChanged = true;
-   	        ow = innerWidth;
-   	        resize();
-   	      }
-   	});	
-
-
    	// hash function
-   	function showThing(slug, hash) {
+   	function show(slug, hash) {
    		var el = d3.select(".g-nav-list-" + slug);
    		el.attr("data-state", "show");
    		el.classed("g-show", true);
@@ -2043,26 +2032,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		}
    	}
 
-   	updateCartNum();
-   	updateCart();
-   	if (document.location.hash != "") {
-   		if (document.location.hash.indexOf("lkk") == -1) {
-   			var hash = document.location.hash
-   			var page = hash.split("-")[0].replace("#", "");
-   			var cont = page == "project" ? "project-upcoming" : page;
-  			var name = page == "project" ? "upcoming" : page;
-   			
-   			showThing(cont, hash);
-   		} else if (document.location.hash != "") {
-   			showThing(document.location.hash.replace("#", ""));
-   		}	
-   	} 
-
-
-
+   	// back function
    	function back(page) {
    		d3.selectAll(".g-stock-list").classed("g-hide", false);
    		d3.selectAll(".g-store-buy").classed("g-hide", true);
+   		d3.selectAll(".g-shopping-cart").classed("g-hide", true);
    		var nav = d3.select(".g-nav-list-" + page);
    		nav.attr("data-instore", "false");
    		nav.attr("data-incart", "false");
@@ -2070,77 +2044,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		document.location.hash = page;
    	}
 
-   	// nav click function
-	d3.selectAll(".g-nav-name").on("click", function(){
-		var el = d3.select(d3.select(this).node().parentNode);
-		var state = el.attr("data-state");
-		var instore = el.attr("data-instore") == "true";
-		var id = el.attr("data-id");
-
-		if (doneshopping) {
-			shoppingreset();
-			doneshopping = false;
-		}
-
-		if (instore) {
-			back(el.attr("data-id"));
-		} else {
-			var hide = d3.select(".g-show")
-			hide.classed("g-show", false)
-			hide.attr("data-state", "hidden")
-			hide.transition().style("height", el.attr("data-h1") + "px")
-		}
-
-		if (instore) {
-		} else if (id == "lunch") {
-			dropbananas();
-		} else if (state == "hidden") {
-			stopbananas();
-			el.attr("data-state", "show");
-			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
-			el.classed("g-show", true);
-			document.location.hash = el.attr("data-id");
-		} else if (id != "lunch") {
-			stopbananas();
-			el.attr("data-state", "hidden")
-			el.transition().style("height", el.attr("data-h1") + "px")
-			el.classed("g-show", false);
-			document.location.hash = "";
-		}
-	})
-
-	// stock click function
-	d3.selectAll(".g-store-each").on("click", function(){
-		var el = d3.select(this);
-		var nav = d3.select(".g-nav-list-" + el.attr("data-page"));
-		var list = d3.select(".g-" + el.attr("data-page") + "-list");
-		var item = d3.select(".g-" + el.attr("data-page") + "-" + el.attr("data-id"));
-
-		list.classed("g-hide", true);
-		item.classed("g-hide", false);
-
-		d3.selectAll(".g-img-slideshow").classed("g-on-top", false);
-		d3.selectAll(".g-img-slideshow:first-child").classed("g-on-top", true);
-		d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
-		item.classed("g-cur-stock", true);
-
-		var nameheight = nav.attr("data-h1");
-		var stockheight = item.node().getBoundingClientRect().height;
-
-		nav.transition().style("height", (+nameheight + +stockheight + 120) + "px");
-		nav.attr("data-instore", "true");
-		window.scrollTo(0,0);
-		nav.attr("data-incart", "false");
-
-		if (doneshopping) {
-			shoppingreset();
-			doneshopping = false;
-		}
-
-		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
-	})
-
-	function shoppingreset() {
+   	// shopping reset function
+   	function shoppingreset() {
 		stopbananas();
 		d3.select(".g-submitted").classed("g-hide", true);
 		$('#my-form').trigger("reset");
@@ -2148,56 +2053,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.select(".g-buy-button").classed("g-hide", false);
 	}
 
-	d3.selectAll(".g-back").on("click", function(){
-		back(d3.select(this).attr("data-page"))
-		shoppingreset();
-	})
-
-	// count button
-	d3.selectAll(".g-count-button").on("click", function(){
-		var el = d3.select(this);
-		var id = d3.select(el.node().parentNode).attr("data-id");
-		var type = el.attr("data-type");
-
-		var parentel = d3.select(el.node().parentNode);
-
-		var count = +parentel.select(".g-count").text();
-
-		if (type == "minus") {
-			count -= 1;
-		} else if (type == "add") {
-			count += 1;
-		}
-
-		count = count < 1 ? 1 : count;
-		parentel.select(".g-count").text(count);
-	})
-
-
-	// img slideshow 
-	d3.selectAll(".g-img-thumbnail").on("click", function(){
-
-		var el = d3.select(this);
-		var id = el.attr("data-id");
-		var item = el.attr("data-item");
-		console.log(id)
-
-		d3.selectAll(".g-img-slideshow-group-store-" + id).classed("g-on-top", false);
-		d3.select(".g-img-slideshow-" + item).classed("g-on-top", true);
-
-	})
-
-
-	// d3.select(".g-buy-popup").style("width", innerWidth).style("height", innerHeight)
-	// d3.select("#g-x").on("click", function(){
-	// 	d3.select(".g-buy-popup").classed("g-active", false);
-	// 	d3.select("#my-form").classed("g-hide", false);
-	// 	d3.select(".g-submitted").classed("g-hide", true);
-	// 	stopbananas();
-	// });
-
-	// buy popup
-
+	// shopoing car functions
 	function updateCartNum(slug, count) {
 		shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
 
@@ -2251,7 +2107,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var add = quantity.append("div.g-add").text("+");
 
 			minus.on("click", function(){
-				console.log(shoppingcart[d])
 				if (shoppingcart[d] > 1) {
 					shoppingcart[d] -= 1;
 					localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
@@ -2266,7 +2121,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			})
 
 			add.on("click", function(){
-				console.log(shoppingcart[d])
 				shoppingcart[d] += 1;
 				count.text(shoppingcart[d])
 				localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
@@ -2295,169 +2149,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 	}
 
-
-	d3.selectAll(".g-button").on("click", function(){
-
-		var el = d3.select(this);
-		var action = el.attr("data-action");
-		var cart = d3.select(".g-shopping-cart-inner");
-
-		if (action == "add-to-cart") {
-
-			var stockid = d3.select(".g-cur-stock").attr("data-id");
-			var curstockel = d3.select(".g-store-" + stockid);
-			var size = curstockel.select("#size").property("value");
-			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
-			var count = curstockel.select(".g-count").text();
-			var slug = stockid + "_" + name + "_" + size;
-
-			updateCartNum(slug, count);
-			updateCart();
-
-		} else if (action == "add-to-cart-checkout") {
-
-			var stockid = d3.select(".g-cur-stock").attr("data-id");
-			var curstockel = d3.select(".g-store-" + stockid);
-			var size = curstockel.select("#size").property("value");
-			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
-			var count = curstockel.select(".g-count").text();
-			var slug = stockid + "_" + name + "_" + size;
-
-			updateCartNum(slug, count);
-			updateCart();
-
-			goToCart();
-
-			cart.classed("g-hide", true);
-			d3.select("#my-form").classed("g-hide", false);
-			var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
-
-
-		} else if (action == "buy") {
-
-			if (localStorage.shoppingcart == "{}") {
-
-				d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
-
-			} else {
-				cart.classed("g-hide", true);
-				d3.select("#my-form").classed("g-hide", false);
-				var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
-			}
-
-		}
-	})
-
-	// form submission
-	$( document ).ready( function(){
-		var $form = $('form#my-form'),
-		    url = 'https://script.google.com/macros/s/AKfycbzyYUxhWKsfDJlVt6JP0Y6A-DB_YBFfTbnyBqAkd9-fWjkfpAxEZVPX/exec'
-
-		$('#submit').on('click', function(e) {
-
-			  e.preventDefault();
-
-
-			  var now = new Date();
-			  var formatTime = d3.timeFormat("%Y-%m-%d %H:%M");
-
-			  var name = d3.select("#name").property("value");
-			  var phone = d3.select("#phone").property("value");
-
-			  if (phone == "" || name == "") {
-			  	if (phone == "") {
-			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
-			  	}
-			  	if (name == "") {
-			  		d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
-			  	}
-			  } else {
-
-			  	d3.select("#submit").classed("g-loading", true);
-
-			  	var formdata = $form.serialize();
-
-			  	shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
-
-			  	var keys = Object.keys(shoppingcart);
-			  	keys.sort();
-
-			  	var successcount = [];
-			  	console.log(keys.length)
-
-			  	keys.forEach(function(d,i){
-
-			  		var split = d.split("_");
-			  		item = split[1] + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
-
-			  		var price = 280;
-			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
-
-			  		var totalprice = price*shoppingcart[d]
-
-			  		var formdata = "name=" + name + "&phone=" + phone + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice;
-
-			  		//name	phone	item	price
-
-			  		var jqxhr = $.ajax({
-			  		  url: url,
-			  		  method: "GET",
-			  		  dataType: "json",
-			  		  data: formdata,
-			  		  success: function(){ 
-
-			  		  	successcount.push(i)
-
-			  		  	console.log(successcount)
-
-			  		  	if (successcount.length == keys.length) {
-			  		  		localStorage.setItem('shoppingcart', '{}')
-							// $('#my-form').trigger("reset");
-							d3.select("#submit").classed("g-loading", false);
-							// d3.select("#my-form").classed("g-hide", true);
-							d3.select(".g-submitted").classed("g-hide", false)
-							d3.select(".g-buy-button").classed("g-hide", true);
-							d3.select("#my-form").classed("g-submitted-form", true);
-
-
-							var navel = d3.select(".g-nav-list-store")
-							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
-
-							dropbananas(".g-drop-banana.g-inside-form");
-							updateCartNum();
-							updateCart();
-
-							doneshopping = true;
-			  		  	}
-
-			  		  }
-			  		})
-
-			  	})
-			  }
-
-		})
-	})
-
-	// shopping cart
-
-	d3.select(".g-submitted").on("click", function(){
-		d3.select(".g-submitted").classed("g-hide", true);
-		d3.select(".g-drop-banana.g-inside-form").html("");
-		showThing("store", "#store")
-	})
-
-
-	d3.selectAll(".g-shopping-cart-icon").on("click", function(){
-
-		if (doneshopping == true) {
-			shoppingreset();
-			doneshopping = false;
-		}
-
-		goToCart();
-	})
-
+	// go to cart function
 	function goToCart() {
 		d3.select(".g-store-list").classed("g-hide", true);
 		d3.selectAll(".g-store-buy").classed("g-hide", true);
@@ -2471,13 +2163,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		document.location.hash = "cart";
 
-		showThing("store", "#cart")
+		show("store", "#cart")
 		d3.select(".g-nav-list-store").attr("data-incart", true);
 	}
 
 
-	// drop bananas 
-
+	// drop bananas
 	function stopbananas() {
 		if (window.bananatimer) {
 			window.bananatimer.stop();
@@ -2544,13 +2235,303 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	}
 
 
-	d3.selectAll(".g-expand-button").on("click", function(){
+	////////////////////////////// THINGS BEING CALLED //////////////////////////////
 
+   	// onload functions
+   	resize();
+   	updateCartNum();
+   	updateCart();
+ 	if (document.location.hash != "") {
+ 		if (document.location.hash.indexOf("lkk") == -1) {
+ 			var hash = document.location.hash
+ 			var page = hash.split("-")[0].replace("#", "");
+ 			var cont = page == "project" ? "project-upcoming" : page;
+			var name = page == "project" ? "upcoming" : page;
+ 			
+ 			show(cont, hash);
+ 		} else if (document.location.hash != "") {
+ 			show(document.location.hash.replace("#", ""));
+ 		}	
+ 	} 
+
+   	var containerWidthChanged = false;
+   	var ow = innerWidth;
+   	window.addEventListener("resize", function(){
+   	    if (innerWidth != ow) {
+   	        containerWidthChanged = true;
+   	        ow = innerWidth;
+   	        resize();
+   	      }
+   	});
+
+   	// nav click function
+	d3.selectAll(".g-nav-name").on("click", function(){
+		var el = d3.select(d3.select(this).node().parentNode);
+		var state = el.attr("data-state");
+		var instore = el.attr("data-instore") == "true";
+		var id = el.attr("data-id");
+
+		if (doneshopping) {
+			shoppingreset();
+			doneshopping = false;
+		}
+
+		if (instore) {
+			back(el.attr("data-id"));
+		} else {
+			var hide = d3.select(".g-show")
+			hide.classed("g-show", false)
+			hide.attr("data-state", "hidden")
+			hide.transition().style("height", el.attr("data-h1") + "px")
+		}
+
+		if (instore) {
+		} else if (id == "lunch") {
+			dropbananas();
+		} else if (state == "hidden") {
+			stopbananas();
+			el.attr("data-state", "show");
+			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
+			el.classed("g-show", true);
+			document.location.hash = el.attr("data-id");
+		} else if (id != "lunch") {
+			stopbananas();
+			el.attr("data-state", "hidden")
+			el.transition().style("height", el.attr("data-h1") + "px")
+			el.classed("g-show", false);
+			document.location.hash = "";
+		}
+	})
+
+	// stock click function
+	d3.selectAll(".g-store-each").on("click", function(){
+		var el = d3.select(this);
+		var nav = d3.select(".g-nav-list-" + el.attr("data-page"));
+		var list = d3.select(".g-" + el.attr("data-page") + "-list");
+		var item = d3.select(".g-" + el.attr("data-page") + "-" + el.attr("data-id"));
+
+		list.classed("g-hide", true);
+		item.classed("g-hide", false);
+
+		d3.selectAll(".g-img-slideshow").classed("g-on-top", false);
+		d3.selectAll(".g-img-slideshow:first-child").classed("g-on-top", true);
+		d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
+		item.classed("g-cur-stock", true);
+
+		var nameheight = nav.attr("data-h1");
+		var stockheight = item.node().getBoundingClientRect().height;
+
+		nav.transition().style("height", (+nameheight + +stockheight + 120) + "px");
+		nav.attr("data-instore", "true");
+
+		window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
+		nav.attr("data-incart", "false");
+
+		if (doneshopping) {
+			shoppingreset();
+			doneshopping = false;
+		}
+
+		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
+	})
+
+	d3.selectAll(".g-back").on("click", function(){
+		back(d3.select(this).attr("data-page"))
+		shoppingreset();
+	})
+
+	// count button
+	d3.selectAll(".g-count-button").on("click", function(){
+		var el = d3.select(this);
+		var id = d3.select(el.node().parentNode).attr("data-id");
+		var type = el.attr("data-type");
+
+		var parentel = d3.select(el.node().parentNode);
+
+		var count = +parentel.select(".g-count").text();
+
+		if (type == "minus") {
+			count -= 1;
+		} else if (type == "add") {
+			count += 1;
+		}
+
+		count = count < 1 ? 1 : count;
+		parentel.select(".g-count").text(count);
+	})
+
+
+	// img slideshow 
+	d3.selectAll(".g-img-thumbnail").on("click", function(){
+		var el = d3.select(this);
+		var id = el.attr("data-id");
+		var item = el.attr("data-item");
+		d3.selectAll(".g-img-slideshow-group-store-" + id).classed("g-on-top", false);
+		d3.select(".g-img-slideshow-" + item).classed("g-on-top", true);
+	})
+
+	d3.selectAll(".g-button").on("click", function(){
+
+		var el = d3.select(this);
+		var action = el.attr("data-action");
+		var cart = d3.select(".g-shopping-cart-inner");
+
+		if (action == "add-to-cart") {
+
+			var stockid = d3.select(".g-cur-stock").attr("data-id");
+			var curstockel = d3.select(".g-store-" + stockid);
+			var size = curstockel.select("#size").property("value");
+			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
+			var count = curstockel.select(".g-count").text();
+			var slug = stockid + "_" + name + "_" + size;
+
+			updateCartNum(slug, count);
+			updateCart();
+
+		} else if (action == "add-to-cart-checkout") {
+
+			var stockid = d3.select(".g-cur-stock").attr("data-id");
+			var curstockel = d3.select(".g-store-" + stockid);
+			var size = curstockel.select("#size").property("value");
+			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
+			var count = curstockel.select(".g-count").text();
+			var slug = stockid + "_" + name + "_" + size;
+
+			updateCartNum(slug, count);
+			updateCart();
+
+			goToCart();
+
+			cart.classed("g-hide", true);
+			d3.select("#my-form").classed("g-hide", false);
+			var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+
+
+		} else if (action == "buy") {
+
+			if (localStorage.shoppingcart == "{}") {
+
+				d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+
+			} else {
+				cart.classed("g-hide", true);
+				d3.select("#my-form").classed("g-hide", false);
+				var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+			}
+
+		}
+	})
+
+	// form submission
+	$( document ).ready( function(){
+		var $form = $('form#my-form'),
+		    url = 'https://script.google.com/macros/s/AKfycbzyYUxhWKsfDJlVt6JP0Y6A-DB_YBFfTbnyBqAkd9-fWjkfpAxEZVPX/exec'
+
+		$('#submit').on('click', function(e) {
+
+			  e.preventDefault();
+
+			  var now = new Date();
+			  var formatTime = d3.timeFormat("%Y-%m-%d %H:%M");
+
+			  var name = d3.select("#name").property("value");
+			  var phone = d3.select("#phone").property("value");
+
+			  if (phone == "" || name == "") {
+			  	if (phone == "") {
+			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  	}
+			  	if (name == "") {
+			  		d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  	}
+			  } else {
+
+			  	d3.select("#submit").classed("g-loading", true);
+
+			  	var formdata = $form.serialize();
+
+			  	shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
+
+			  	var keys = Object.keys(shoppingcart);
+			  	keys.sort();
+
+			  	var successcount = [];
+
+			  	keys.forEach(function(d,i){
+
+			  		var split = d.split("_");
+			  		item = split[1] + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
+
+			  		var price = 280;
+			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
+
+			  		var totalprice = price*shoppingcart[d];
+			  		var comment = d3.select("#comment").property("value");
+
+			  		var formdata = "name=" + name + "&phone=" + phone + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice + "&comment=" + comment;
+
+			  		//name	phone	item	price
+
+			  		var jqxhr = $.ajax({
+			  		  url: url,
+			  		  method: "GET",
+			  		  dataType: "json",
+			  		  data: formdata,
+			  		  success: function(){ 
+
+			  		  	successcount.push(i)
+
+			  		  	if (successcount.length == keys.length) {
+			  		  		localStorage.setItem('shoppingcart', '{}')
+							// $('#my-form').trigger("reset");
+							d3.select("#submit").classed("g-loading", false);
+							// d3.select("#my-form").classed("g-hide", true);
+							d3.select(".g-submitted").classed("g-hide", false)
+							d3.select(".g-buy-button").classed("g-hide", true);
+							d3.select("#my-form").classed("g-submitted-form", true);
+
+
+							var navel = d3.select(".g-nav-list-store")
+							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
+
+							dropbananas(".g-drop-banana.g-inside-form");
+							updateCartNum();
+							updateCart();
+
+							doneshopping = true;
+			  		  	}
+
+			  		  }
+			  		})
+
+			  	})
+			  }
+
+		})
+	})
+
+	// shopping cart
+	d3.select(".g-submitted").on("click", function(){
+		d3.select(".g-submitted").classed("g-hide", true);
+		d3.select(".g-drop-banana.g-inside-form").html("");
+		show("store", "#store")
+	})
+
+	// shopping cart icon
+	d3.selectAll(".g-shopping-cart-icon").on("click", function(){
+		if (doneshopping == true) {
+			shoppingreset();
+			doneshopping = false;
+		}
+		goToCart();
+	})
+
+	// size chart expand button
+	d3.selectAll(".g-expand-button").on("click", function(){
 		var el = d3.select(this);
 		var parent = d3.select(d3.select(d3.select(this).node().parentNode).node().parentNode);
 		var chart = parent.select(".g-size-chart");
 		var buttonthingy = el.select(".g-expand-size-chart");
-
 		if (chart.attr("class").indexOf("g-active") == -1) {
 			buttonthingy.classed("g-collapsed", false)
 			buttonthingy.html("▲");
@@ -2560,9 +2541,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			buttonthingy.html("▼");
 			chart.classed("g-active", false);
 		}
-
-
 	})
+
+	// back forward button compatibility
+	// Vanilla javascript
+	window.addEventListener('popstate', function (e) {
+		var state = e.state;
+	    if (state !== null) {
+	        //load content with ajax
+	    }
+	});
+
 
 
 /* Your D3.js here */
