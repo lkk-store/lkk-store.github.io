@@ -28,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
    	// hash function
    	function show(slug, hash) {
 
-   		d3.selectAll(".g-nav-list").each(function(){
-   			var el = d3.select(this);
-   			if (el.attr("class").indexOf(".g-nav-list-" + slug) == -1) {
-   				el.attr("data-state", "hidden");
-   				el.classed("g-show", false);
-   				el.style("height", +el.attr("data-h1") + "px")
-   			}
-   		})
+   		// d3.selectAll(".g-nav-list").each(function(){
+   		// 	var el = d3.select(this);
+   		// 	if (el.attr("class").indexOf("g-nav-list-" + slug) == -1) {
+   		// 		el.attr("data-state", "hidden");
+   		// 		el.classed("g-show", false);
+   		// 		el.style("height", +el.attr("data-h1") + "px")
+   		// 	}
+   		// })
 
    		var el = d3.select(".g-nav-list-" + slug);
    		el.attr("data-state", "show");
