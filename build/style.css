@@ -622,6 +622,7 @@ input {
 }
 #my-form {
   padding-top: 20px;
+  padding-bottom: 50px;
 }
 #my-form .g-purchase-summary {
   margin-bottom: 30px;

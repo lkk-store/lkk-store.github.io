@@ -437,6 +437,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			d3.select("#my-form").classed("g-hide", false);
 			var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
 
+			var navel = d3.select(".g-nav-list-store");
+			navel.transition().style("height", (+navel.attr("data-h1") + navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
 
 		} else if (action == "buy") {
 
@@ -448,6 +450,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				cart.classed("g-hide", true);
 				d3.select("#my-form").classed("g-hide", false);
 				var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+
+				var navel = d3.select(".g-nav-list-store");
+				navel.transition().style("height", (+navel.attr("data-h1") + navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
+
 			}
 
 		}
