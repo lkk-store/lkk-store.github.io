@@ -629,13 +629,23 @@ input {
 .g-shopping-cart .g-td.g-quantity .g-count,
 .g-shopping-cart .g-td.g-quantity .g-add {
   display: inline-block;
+  vertical-align: middle;
 }
 .g-shopping-cart .g-td.g-quantity .g-count {
   padding: 0 5px;
 }
+.g-shopping-cart .g-td.g-quantity .g-minus,
+.g-shopping-cart .g-td.g-quantity .g-add {
+  font-size: 19px;
+  color: #777;
+}
 .g-shopping-cart .g-td.g-quantity .g-minus:hover,
 .g-shopping-cart .g-td.g-quantity .g-add:hover {
   cursor: pointer;
+}
+.g-shopping-cart .g-td.g-quantity .g-minus {
+  margin-top: -4px;
+  font-size: 24px;
 }
 .g-shopping-cart .g-td.g-price {
   width: 18%;

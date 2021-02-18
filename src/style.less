@@ -785,6 +785,7 @@ input {
 
 			.g-minus, .g-count, .g-add  {
 				display: inline-block;
+				vertical-align: middle;
 			}
 
 			.g-count {
@@ -792,9 +793,20 @@ input {
 			}
 
 			.g-minus, .g-add {
+				font-size: 19px;
+				color: #777;
 				&:hover {
 					cursor: pointer;
 				}
+			}
+
+			.g-minus {
+				margin-top: -4px;
+				font-size: 24px;
+			}
+
+			.g-add {
+				// margin-top: 3px;
 			}
 		}
 
