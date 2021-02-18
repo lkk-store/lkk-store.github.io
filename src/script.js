@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.select(".g-submit").classed("g-hide", false);
 		$('#my-form').trigger("reset");
 		d3.select("#my-form").classed("g-submitted-form", false);
+		d3.select(".g-form-options").classed("g-hide", true);
 		d3.select(".g-buy-button").classed("g-hide", false);
 	}
 
@@ -585,7 +586,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 							// $('#my-form').trigger("reset");
 							d3.select("#submit").classed("g-loading", false);
 							// d3.select("#my-form").classed("g-hide", true);
-							d3.select(".g-submitted").classed("g-hide", false)
+							d3.select(".g-submitted").classed("g-hide", false);
 							d3.select(".g-buy-button").classed("g-hide", true);
 							d3.select("#my-form").classed("g-submitted-form", true);
 
@@ -610,6 +611,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	d3.select(".g-submitted").on("click", function(){
 		d3.select(".g-submitted").classed("g-hide", true);
 		d3.select(".g-drop-banana.g-inside-form").html("");
+		if (doneshopping == true) {
+			shoppingreset();
+			buying = false;
+			doneshopping = false;
+		}
 		show("store", "#store")
 	})
 
