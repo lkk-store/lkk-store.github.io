@@ -557,6 +557,10 @@ input {
   user-select: none;
   pointer-events: none;
 }
+.g-shopping-cart .g-submitted-form .g-minus,
+.g-shopping-cart .g-submitted-form .g-add {
+  display: none !important;
+}
 .g-shopping-cart .g-tr {
   width: 100%;
 }
