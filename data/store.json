@@ -8,7 +8,8 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "S,M,L,XL",
+    "colors": ""
   },
   {
     "hide": "",
@@ -19,7 +20,8 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "S,M,L,XL",
+    "colors": ""
   },
   {
     "hide": "",
@@ -30,7 +32,8 @@
     "type": "Screen",
     "description": "啱啱畢業22歲嘅同事：唉，我老啦// 我：😬🚬",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "S,M,L,XL",
+    "colors": ""
   },
   {
     "hide": "",
@@ -41,7 +44,8 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL"
+    "sizes": "S,M,L,XL",
+    "colors": ""
   },
   {
     "hide": "",
@@ -52,7 +56,8 @@
     "type": "Print",
     "description": "",
     "price": "250",
-    "sizes": "S,M,L,XL"
+    "sizes": "S,M,L,XL",
+    "colors": ""
   },
   {
     "hide": "",
@@ -63,10 +68,11 @@
     "type": "Print",
     "description": "同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“",
     "price": "250",
-    "sizes": "S,M,L,XL"
+    "sizes": "S,M,L,XL",
+    "colors": ""
   },
   {
-    "hide": "1",
+    "hide": "",
     "id": "007",
     "name": "good-looking tee",
     "text": "it's all 9ood",
@@ -74,7 +80,8 @@
     "type": "Print",
     "description": "",
     "price": "250",
-    "sizes": "S,M,L,XL"
+    "sizes": "S,M,L,XL",
+    "colors": "#b32b2b,#843bfe"
   },
   {
     "hide": "",
@@ -85,7 +92,8 @@
     "type": "Print",
     "description": "",
     "price": "250",
-    "sizes": "S,M,L,XL"
+    "sizes": "S,M,L,XL",
+    "colors": ""
   },
   {
     "hide": "",
@@ -96,7 +104,8 @@
     "type": "Print",
     "description": "Inspired by @rubielism",
     "price": "250",
-    "sizes": "S,M,L,XL"
+    "sizes": "S,M,L,XL",
+    "colors": ""
   },
   {
     "hide": "",
@@ -107,6 +116,7 @@
     "type": "",
     "description": "【DONT THINK, JUST DONATE!】// 黎根記®有一個願望：「人人都可以有蕉吔！」// 如果您都認同我哋，// 事不宜遲，請立即捐款到\"人人有蕉吔基金\" // 你將會收到香蕉.png一條",
     "price": "10up",
-    "sizes": "小小心意,多多益善,大手入股"
+    "sizes": "小小心意,多多益善,大手入股",
+    "colors": ""
   }
 ]
