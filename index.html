@@ -1765,6 +1765,11 @@ input {
 
 				<div class="g-drop-banana g-inside-form"></div>
 
+				<div class="g-submitted g-hide">
+					<div class="g-thanks-text">payme 完 cap 圖 send 去 +85257280149 先會正式落單！</div>
+					<img src="img/IMG_0412.JPG">
+				</div>
+
 				<form class="" name="my-form" id="my-form">
 					<div class="g-form-options g-hide">
 						<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
@@ -1784,11 +1789,6 @@ input {
 
 					<button type="submit" id="submit" class="g-buy-button g-hide">真係 BUY</button>
 				</form>
-
-				<div class="g-submitted g-hide">
-					<div class="g-thanks-text">payme 完 cap 圖 send 去 +85257280149 先會正式落單！</div>
-					<img src="img/IMG_0412.JPG">
-				</div>
 
 			</div>
 			
@@ -1970,6 +1970,7 @@ input {
 <script>
 var shoppingcart = {};
 var doneshopping = false;
+var buying = false;
 
 document.addEventListener("DOMContentLoaded", function(e) {
    	
@@ -2302,6 +2303,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		if (doneshopping) {
 			shoppingreset();
+			buying = false;
 			doneshopping = false;
 		}
 
@@ -2359,6 +2361,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		if (doneshopping) {
 			shoppingreset();
+			buying = false;
 			doneshopping = false;
 		}
 
@@ -2476,6 +2479,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  e.preventDefault();
 
+			  buying = true;
+
 			  var now = new Date();
 			  var formatTime = d3.timeFormat("%Y-%m-%d %H:%M");
 
@@ -2568,6 +2573,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	d3.selectAll(".g-shopping-cart-icon").on("click", function(){
 		if (doneshopping == true) {
 			shoppingreset();
+			buying = false;
 			doneshopping = false;
 		}
 		show("store", "#store");
@@ -2598,7 +2604,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	// Vanilla javascript
 	window.addEventListener('popstate', function (e) {
 
-		readHash();
+		if (!buying) {
+			readHash();
+		}
 
 		// var state = e.state;
 	 //    if (state !== null) {

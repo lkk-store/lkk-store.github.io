@@ -1,5 +1,6 @@
 var shoppingcart = {};
 var doneshopping = false;
+var buying = false;
 
 document.addEventListener("DOMContentLoaded", function(e) {
    	
@@ -332,6 +333,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		if (doneshopping) {
 			shoppingreset();
+			buying = false;
 			doneshopping = false;
 		}
 
@@ -389,6 +391,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		if (doneshopping) {
 			shoppingreset();
+			buying = false;
 			doneshopping = false;
 		}
 
@@ -506,6 +509,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  e.preventDefault();
 
+			  buying = true;
+
 			  var now = new Date();
 			  var formatTime = d3.timeFormat("%Y-%m-%d %H:%M");
 
@@ -598,6 +603,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	d3.selectAll(".g-shopping-cart-icon").on("click", function(){
 		if (doneshopping == true) {
 			shoppingreset();
+			buying = false;
 			doneshopping = false;
 		}
 		show("store", "#store");
@@ -628,7 +634,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	// Vanilla javascript
 	window.addEventListener('popstate', function (e) {
 
-		readHash();
+		if (!buying) {
+			readHash();
+		}
 
 		// var state = e.state;
 	 //    if (state !== null) {
