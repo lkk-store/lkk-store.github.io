@@ -26,6 +26,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
    	// hash function
    	function show(slug, hash) {
+
+   		d3.selectAll(".g-nav-list").each(function(){
+   			var el = d3.select(this);
+   			if (el.attr("class").indexOf(".g-nav-list-" + slug) == -1) {
+   				el.attr("data-state", "hidden");
+   				el.classed("g-show", false);
+   				el.transition().style("height", +el.attr("data-h1") + "px")
+   			}
+   		})
+
+
    		var el = d3.select(".g-nav-list-" + slug);
    		el.attr("data-state", "show");
    		el.classed("g-show", true);
@@ -42,9 +53,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
    			el.attr("data-incart", true);
    		} else if ((hash.indexOf("-") > -1 && hash != "#project-upcoming")) {
-
    			el.attr("data-instore", "true")
    			el.attr("data-incart", "false");
+
+   			el.select(".g-store-list").classed("g-hide", true);
 
    			var id = hash.replace("#", "")
    			d3.selectAll(".g-" + name + "-list").classed("g-hide", true);
@@ -56,6 +68,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.transition().style("height", ((+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + 120) + "px");
    		} else if (hash.indexOf("lunch") > -1) {
    			dropbananas();
+   		}  else if (hash == "#store") {
+   			el.select(".g-store-list").classed("g-hide", false)
+   			el.select(".g-shopping-cart").classed("g-hide", true);
+   			el.attr("data-incart", false);
+   			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
    		} else {
    			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
    		}
@@ -275,18 +292,26 @@ document.addEventListener("DOMContentLoaded", function(e) {
    	resize();
    	updateCartNum();
    	updateCart();
- 	if (document.location.hash != "") {
- 		if (document.location.hash.indexOf("lkk") == -1) {
- 			var hash = document.location.hash
- 			var page = hash.split("-")[0].replace("#", "");
- 			var cont = page == "project" ? "project-upcoming" : page;
-			var name = page == "project" ? "upcoming" : page;
- 			
- 			show(cont, hash);
- 		} else if (document.location.hash != "") {
- 			show(document.location.hash.replace("#", ""));
- 		}	
- 	} 
+   	readHash();
+
+   	function readHash() {
+	 	if (document.location.hash != "") {
+	 		if (document.location.hash.indexOf("lkk") == -1) {
+	 			var hash = document.location.hash
+	 			var page = hash.split("-")[0].replace("#", "");
+	 			var cont = page == "project" ? "project-upcoming" : page;
+				var name = page == "project" ? "upcoming" : page;
+	 			show(cont, hash);
+	 		} else {
+	 			show(document.location.hash.replace("#", ""));
+	 		}	
+	 	} else {
+	 		d3.selectAll(".g-nav-list").each(function(){
+	 			var el = d3.select(this);
+	 			el.style("height", el.attr("data-h1") + "px");
+	 		})
+	 	}
+   	}
 
    	var containerWidthChanged = false;
    	var ow = innerWidth;
@@ -577,12 +602,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			doneshopping = false;
 		}
 		show("store", "#store");
-
-		d3.select(".g-nav-list-lkk").style("height", d3.select(".g-nav-list-lkk").attr("data-h1") + "px")
-		d3.select(".g-nav-list-upcoming").style("height", d3.select(".g-nav-list-upcoming").attr("data-h1") + "px")
-
-		d3.select(".g-submit").classed("g-hide", false)
-
+		d3.select(".g-nav-list-lkk").style("height", d3.select(".g-nav-list-lkk").attr("data-h1") + "px");
+		d3.select(".g-nav-list-upcoming").style("height", d3.select(".g-nav-list-upcoming").attr("data-h1") + "px");
+		d3.select(".g-submit").classed("g-hide", false);
 		goToCart();
 	})
 
@@ -606,10 +628,15 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	// back forward button compatibility
 	// Vanilla javascript
 	window.addEventListener('popstate', function (e) {
-		var state = e.state;
-	    if (state !== null) {
-	        //load content with ajax
-	    }
+
+		readHash();
+
+		// var state = e.state;
+	 //    if (state !== null) {
+	 //        if (state.urlPath == "#cart") {
+	 //        	shoppingcartclick();
+	 //        }
+	 //    }
 	});
 
 
