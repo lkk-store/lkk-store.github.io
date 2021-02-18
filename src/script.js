@@ -25,17 +25,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		})
    	}
 
-   	// hash function
+   	// hash function show function
    	function show(slug, hash) {
 
-   		// d3.selectAll(".g-nav-list").each(function(){
-   		// 	var el = d3.select(this);
-   		// 	if (el.attr("class").indexOf("g-nav-list-" + slug) == -1) {
-   		// 		el.attr("data-state", "hidden");
-   		// 		el.classed("g-show", false);
-   		// 		el.style("height", +el.attr("data-h1") + "px")
-   		// 	}
-   		// })
+   		d3.selectAll(".g-nav-list").each(function(){
+   			var el = d3.select(this);
+   			if (el.attr("class").indexOf("g-nav-list-" + slug) == -1) {
+   				el.attr("data-state", "hidden");
+   				el.classed("g-show", false);
+   				el.style("height", +el.attr("data-h1") + "px")
+   			}
+   		})
 
    		var el = d3.select(".g-nav-list-" + slug);
    		el.attr("data-state", "show");
@@ -49,13 +49,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.attr("data-state", "show");
    			el.select(".g-store-list").classed("g-hide", true);
    			el.select(".g-shopping-cart").classed("g-hide", false);
+   			el.select(".g-buy-button").classed("g-hide", true);
    			el.selectAll(".g-store-buy").classed("g-hide", true);
    			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
    			el.attr("data-incart", true);
+
+   			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
    		} else if ((hash.indexOf("-") > -1 && hash != "#project-upcoming")) {
    			el.attr("data-instore", "true")
    			el.attr("data-incart", "false");
 
+   			el.select(".g-shopping-cart").classed("g-hide", true);
    			el.select(".g-store-list").classed("g-hide", true);
 
    			var id = hash.replace("#", "")
@@ -66,6 +70,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			d3.select(".g-" + id).classed("g-cur-stock", true);
 
    			el.transition().style("height", ((+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + 120) + "px");
+
+   			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
    		} else if (hash.indexOf("lunch") > -1) {
    			dropbananas();
    		}  else if (hash == "#store") {
@@ -73,7 +79,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.select(".g-shopping-cart").classed("g-hide", true);
    			el.attr("data-incart", false);
    			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
+   			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
    		} else {
+   			el.select(".g-shopping-cart").classed("g-hide", true);
    			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
    		}
    	}
@@ -216,6 +224,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		show("store", "#cart")
 		d3.select(".g-nav-list-store").attr("data-incart", true);
+
+		window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
 	}
 
 
@@ -355,6 +365,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
 			el.classed("g-show", true);
 			document.location.hash = el.attr("data-id");
+			window.scrollTo(0,el.node().getBoundingClientRect().top + window.scrollY - 5);
+
 		} else if (id != "lunch") {
 			stopbananas();
 			el.attr("data-state", "hidden")
@@ -384,6 +396,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		nav.transition().style("height", (+nameheight + +stockheight + 120) + "px");
 		nav.attr("data-instore", "true");
+
+		nav.select(".g-shopping-cart").classed("g-hide", true);
 
 		window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
 		nav.attr("data-incart", "false");
