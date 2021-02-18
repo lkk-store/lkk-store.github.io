@@ -497,9 +497,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
 
 			  		var totalprice = price*shoppingcart[d];
-			  		var comment = d3.select("#comment").property("value");
+			  		// var comment = d3.select("#comment").property("value");
 
-			  		var formdata = "name=" + name + "&phone=" + phone + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice + "&comment=" + comment;
+			  		var formdata = "name=" + name + "&phone=" + phone + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice 
+			  		// + "&comment=" + comment;
 
 			  		//name	phone	item	price
 
