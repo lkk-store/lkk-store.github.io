@@ -75,8 +75,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
    	// shopping reset function
    	function shoppingreset() {
+   		updateCartNum();
+   		updateCart();
 		stopbananas();
+		d3.select(".g-button-adc").attr("data-clicked", "");
 		d3.select(".g-submitted").classed("g-hide", true);
+		d3.select(".g-submit").classed("g-hide", false);
 		$('#my-form').trigger("reset");
 		d3.select("#my-form").classed("g-submitted-form", false);
 		d3.select(".g-buy-button").classed("g-hide", false);
@@ -182,10 +186,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	function goToCart() {
 		d3.select(".g-store-list").classed("g-hide", true);
 		d3.selectAll(".g-store-buy").classed("g-hide", true);
-		d3.select(".g-shopping-cart-inner").classed("g-hide", false);
+		d3.select("#my-form").classed("g-hide", false);
 		d3.select(".g-nav-list-store").attr("data-instore", false);
 		d3.select(".g-nav-list-store").attr("data-incart", true);
-		d3.select("#my-form").classed("g-hide", true);
+		d3.select(".g-form-options").classed("g-hide", true);
+		d3.select(".g-buy-button").classed("g-hide", true);
 
 		var el = d3.select(".g-nav-list-store");
 		el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
@@ -419,6 +424,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			updateCartNum(slug, count);
 			updateCart();
 
+			el.attr("data-clicked", "true");
+
 		} else if (action == "add-to-cart-checkout") {
 
 			var stockid = d3.select(".g-cur-stock").attr("data-id");
@@ -428,14 +435,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var count = curstockel.select(".g-count").text();
 			var slug = stockid + "_" + name + "_" + size;
 
-			updateCartNum(slug, count);
-			updateCart();
+			var is_adc_clicked = curstockel.select(".g-button-adc").attr("data-clicked") == "true";
+			curstockel.select(".g-button-adc").attr("data-clicked", "");
+
+			if (!is_adc_clicked) {
+				updateCartNum(slug, count);
+				updateCart();
+			}
 
 			goToCart();
 
-			cart.classed("g-hide", true);
+			// cart.classed("g-hide", true);
 			d3.select("#my-form").classed("g-hide", false);
-			var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+			// var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
 
 			var navel = d3.select(".g-nav-list-store");
 			navel.transition().style("height", (+navel.attr("data-h1") + navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
@@ -447,9 +459,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 
 			} else {
-				cart.classed("g-hide", true);
-				d3.select("#my-form").classed("g-hide", false);
-				var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+				// cart.classed("g-hide", true);
+				d3.select(".g-form-options").classed("g-hide", false);
+				d3.select(".g-buy-button").classed("g-hide", false);
+				d3.select(".g-submit").classed("g-hide", true);
+				// var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
 
 				var navel = d3.select(".g-nav-list-store");
 				navel.transition().style("height", (+navel.attr("data-h1") + navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
@@ -474,13 +488,18 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
 
-			  if (phone == "" || name == "") {
+			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}") {
 			  	if (phone == "") {
 			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
 			  	if (name == "") {
 			  		d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
+
+			  	if (localStorage.shoppingcart == "{}") {
+			  		d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  	}
+
 			  } else {
 
 			  	d3.select("#submit").classed("g-loading", true);
@@ -503,10 +522,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
 
 			  		var totalprice = price*shoppingcart[d];
-			  		// var comment = d3.select("#comment").property("value");
+			  		var comment = d3.select("#comment").property("value");
 
-			  		var formdata = "name=" + name + "&phone=" + phone + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice 
-			  		// + "&comment=" + comment;
+			  		var formdata = "name=" + name + "&phone=" + phone + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice + "&comment=" + comment;
 
 			  		//name	phone	item	price
 
@@ -528,13 +546,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 							d3.select(".g-buy-button").classed("g-hide", true);
 							d3.select("#my-form").classed("g-submitted-form", true);
 
-
 							var navel = d3.select(".g-nav-list-store")
 							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
 
 							dropbananas(".g-drop-banana.g-inside-form");
-							updateCartNum();
-							updateCart();
 
 							doneshopping = true;
 			  		  	}
@@ -562,6 +577,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			doneshopping = false;
 		}
 		show("store", "#store");
+
+		d3.select(".g-nav-list-lkk").style("height", d3.select(".g-nav-list-lkk").attr("data-h1") + "px")
+		d3.select(".g-nav-list-upcoming").style("height", d3.select(".g-nav-list-upcoming").attr("data-h1") + "px")
+
 		goToCart();
 	})
 

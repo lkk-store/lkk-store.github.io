@@ -137,7 +137,6 @@ img {
   }
 }
 .g-meta,
-.g-shopping-cart-inner,
 #my-form,
 .g-shopping-cart .g-back {
   padding: 5px 20px;
@@ -627,8 +626,6 @@ input {
 #my-form .g-purchase-summary {
   margin-bottom: 30px;
 }
-#my-form .g-purchase-summary .g-add,
-#my-form .g-purchase-summary .g-minus,
 #my-form .g-purchase-summary .g-submit {
   display: none;
 }
