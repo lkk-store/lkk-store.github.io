@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			if (el.attr("data-incart") == "true") {
    				el.style("height", (+el.attr("data-h1") + el.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
    			} else if (el.attr("data-instore") == "true") {
-   				el.style("height", (+el.attr("data-h1") + el.select(".g-cur-stock").node().getBoundingClientRect().height + 105) + "px")
+   				el.style("height", (+el.attr("data-h1") + el.select(".g-cur-stock").node().getBoundingClientRect().height + 120) + "px")
    			} else if (el.attr("data-state") == "show") {
    				el.attr("data-h2", nameheight + contentheight)
    				el.style("height", el.attr("data-h2") + "px")
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
    			d3.select(".g-" + id).classed("g-cur-stock", true);
 
-   			el.transition().style("height", ((+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + 105) + "px");
+   			el.transition().style("height", ((+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + 120) + "px");
    		} else if (hash.indexOf("lunch") > -1) {
    			dropbananas();
    		} else {
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var nameheight = nav.attr("data-h1");
 		var stockheight = item.node().getBoundingClientRect().height;
 
-		nav.transition().style("height", (+nameheight + +stockheight + 105) + "px");
+		nav.transition().style("height", (+nameheight + +stockheight + 120) + "px");
 		nav.attr("data-instore", "true");
 		nav.attr("data-incart", "false");
 
