@@ -2010,7 +2010,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.select(".g-store-list").classed("g-hide", true);
    			el.select(".g-shopping-cart").classed("g-hide", false);
    			el.selectAll(".g-store-buy").classed("g-hide", true);
-   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
    			el.attr("data-incart", true);
    		} else if ((hash.indexOf("-") > -1 && hash != "#project-upcoming")) {
 
@@ -2269,6 +2269,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var el = d3.select(d3.select(this).node().parentNode);
 		var state = el.attr("data-state");
 		var instore = el.attr("data-instore") == "true";
+		var incart = el.attr("data-incart") == "true";
 		var id = el.attr("data-id");
 
 		if (doneshopping) {
@@ -2276,7 +2277,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			doneshopping = false;
 		}
 
-		if (instore) {
+		if (instore || incart) {
 			back(el.attr("data-id"));
 		} else {
 			var hide = d3.select(".g-show")
@@ -2285,7 +2286,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			hide.transition().style("height", el.attr("data-h1") + "px")
 		}
 
-		if (instore) {
+		if (instore || incart) {
 		} else if (id == "lunch") {
 			dropbananas();
 		} else if (state == "hidden") {
@@ -2326,6 +2327,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
 		nav.attr("data-incart", "false");
+		d3.select(".g-shopping-cart").classed("g-hide", true);
 
 		if (doneshopping) {
 			shoppingreset();
@@ -2523,6 +2525,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			shoppingreset();
 			doneshopping = false;
 		}
+		show("store", "#store");
 		goToCart();
 	})
 
