@@ -32,10 +32,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			if (el.attr("class").indexOf(".g-nav-list-" + slug) == -1) {
    				el.attr("data-state", "hidden");
    				el.classed("g-show", false);
-   				el.transition().style("height", +el.attr("data-h1") + "px")
+   				el.style("height", +el.attr("data-h1") + "px")
    			}
    		})
-
 
    		var el = d3.select(".g-nav-list-" + slug);
    		el.attr("data-state", "show");
