@@ -159,23 +159,25 @@ img {
   color: #777;
   font-size: 13px;
 }
-.g-desc {
-  margin-bottom: 6px;
+.g-desc p {
+  margin: 0 !important;
 }
 .g-price {
   margin-top: 2px;
 }
 .g-price-num .g-price-old {
   position: relative;
+  color: #777;
 }
 .g-price-num .g-price-old:before {
   content: "";
   position: absolute;
   width: 110%;
-  height: 2px;
-  background: #444;
+  height: 1.1px;
+  background: #555;
   top: 49%;
   left: -5%;
+  transform: rotate(-13deg);
 }
 .g-agate {
   font-size: 11px;
@@ -435,6 +437,10 @@ input {
 }
 .g-details .g-size-chart table td {
   border-bottom: 1px solid #f7f7f7;
+  text-align: center;
+}
+.g-details .g-size-chart table td:first-child {
+  text-align: left;
 }
 .g-details .g-size-chart table tr:last-child td {
   border-bottom: none;

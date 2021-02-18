@@ -199,7 +199,11 @@ img {
 }
 
 .g-desc {
-	margin-bottom: 6px;
+	// margin-bottom: 6px;
+
+	p {
+		margin: 0 !important;
+	}
 }
 
 .g-price {
@@ -210,14 +214,16 @@ img {
 
 	.g-price-old {
 		position: relative;
+		color: #777;
 		&:before {
 			content: "";
 			position: absolute;
 			width: 110%;
-			height: 2px;
-			background: #444;
+			height: 1.1px;
+			background: #555;
 			top: 49%;
 			left: -5%;
+			transform: rotate(-13deg);
 		}
 	}
 	
@@ -542,6 +548,11 @@ input {
 
 			td {
 				border-bottom: 1px solid #f7f7f7;
+				text-align: center;
+			}
+
+			td:first-child {
+				text-align: left;
 			}
 
 			tr:first-child {
