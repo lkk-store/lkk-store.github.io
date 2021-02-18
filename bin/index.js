@@ -77,7 +77,7 @@ function compile() {
 			out += '<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">\n';
 			out += '<link rel="shortcut icon" href="img/lkk-logo-06.png" />\n';
 			out += '<link rel="apple-touch-icon" sizes="128x128" href="app-icon.png">\n'
-			out += '<meta name="apple-mobile-web-app-capable" content="yes" />\n'
+			// out += '<meta name="apple-mobile-web-app-capable" content="yes" />\n'
 			out += '<link rel="stylesheet" href="https://use.typekit.net/nri5irx.css">\n';
 			// out += '<link rel="preconnect" href="https://fonts.gstatic.com">\n'
 			// out += '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;700&display=swap" rel="stylesheet">\n'

@@ -149,6 +149,15 @@
 									<% }) %>
 								</select>
 							</div>
+							<% if (l.colors) { %>
+							<div class="g-colors">
+								<span class="g-label">顏色</span>
+									<% var colors = l.colors.split(",") %>
+									<% colors.forEach(function(s,si){ %>
+									<div class="g-color-circle <% if (si == 0) { %>g-picked<% } %>" data-color="<%= (si+1) %>-<%= s.split('#')[0] %>" style="background-color: <%= '#' + s.split('#')[1] %>;"></div>
+									<% }) %>
+							</div>
+							<% } %>
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-<%= l.id %>" data-id="<%= l.id %>">

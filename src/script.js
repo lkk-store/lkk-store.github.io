@@ -157,7 +157,13 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var split = d.split("_");
 
 			var item = tr.append("div.g-td.g-item")
-			item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img").attr("src"));
+
+			if (split.length == 4) {
+				item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img:nth-child(" + split[3].split("-")[0] + ")").attr("src"));
+			} else {
+				item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img").attr("src"));
+			}
+
 			item.append("div.g-item-inner").text(d.split("_")[1] + " " + d.split("_")[0] + " x " + d.split("_")[2]);
 			
 			var quantity = tr.append("div.g-td.g-quantity")
@@ -446,6 +452,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var item = el.attr("data-item");
 		d3.selectAll(".g-img-slideshow-group-store-" + id).classed("g-on-top", false);
 		d3.select(".g-img-slideshow-" + item).classed("g-on-top", true);
+
+		var parent = d3.select(el.node().parentNode.parentNode.parentNode);
+		parent.selectAll(".g-color-circle").classed("g-picked", false);
+		parent.select(".g-color-circle:nth-child(" + ((+item.split("-")[2])+1) +")").classed("g-picked", true);
+
 	})
 
 	d3.selectAll(".g-button").on("click", function(){
@@ -461,7 +472,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var size = curstockel.select("#size").property("value");
 			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
 			var count = curstockel.select(".g-count").text();
+			var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
 			var slug = stockid + "_" + name + "_" + size;
+
+			if (color) {
+				slug += "_" + color;
+			}
 
 			updateCartNum(slug, count);
 			updateCart();
@@ -475,7 +491,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var size = curstockel.select("#size").property("value");
 			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
 			var count = curstockel.select(".g-count").text();
+			var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
 			var slug = stockid + "_" + name + "_" + size;
+
+			if (color) {
+				slug += "_" + color;
+			}
 
 			var is_adc_clicked = curstockel.select(".g-button-adc").attr("data-clicked") == "true";
 			curstockel.select(".g-button-adc").attr("data-clicked", "");
@@ -561,6 +582,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  		var split = d.split("_");
 			  		item = split[1] + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
+
+			  		if (split[3]) {
+			  			item += " x " + split[3].split("-")[1];
+			  		}
+
 
 			  		var price = 280;
 			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
@@ -649,6 +675,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			chart.classed("g-active", false);
 		}
 	})
+
+
+	// color picker
+	d3.selectAll(".g-color-circle").on("click", function(){
+
+		var el = d3.select(this);
+		var parent = d3.select(el.node().parentNode);
+		parent.selectAll(".g-color-circle").classed("g-picked", false);
+
+		el.classed("g-picked", true);
+
+	})
+
 
 	// back forward button compatibility
 	// Vanilla javascript

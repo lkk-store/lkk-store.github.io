@@ -239,6 +239,30 @@ a {
 .g-size {
   margin-bottom: 10px;
 }
+.g-colors {
+  margin: 5px 0 8px 0;
+}
+.g-colors .g-label {
+  vertical-align: middle;
+  display: inline-block;
+}
+.g-colors .g-color-circle {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.g-colors .g-color-circle.g-picked:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 0;
+  border-color: #999 transparent transparent transparent;
+  position: absolute;
+}
 .g-volume-cont {
   display: inline;
 }

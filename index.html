@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 <link rel="shortcut icon" href="img/lkk-logo-06.png" />
 <link rel="apple-touch-icon" sizes="128x128" href="app-icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes" />
 <link rel="stylesheet" href="https://use.typekit.net/nri5irx.css">
 <style>
 html,
@@ -249,6 +248,30 @@ a {
 }
 .g-size {
   margin-bottom: 10px;
+}
+.g-colors {
+  margin: 5px 0 8px 0;
+}
+.g-colors .g-label {
+  vertical-align: middle;
+  display: inline-block;
+}
+.g-colors .g-color-circle {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.g-colors .g-color-circle.g-picked:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 0;
+  border-color: #999 transparent transparent transparent;
+  position: absolute;
 }
 .g-volume-cont {
   display: inline;
@@ -958,6 +981,7 @@ input {
 									
 								</select>
 							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-002" data-id="002">
@@ -1046,6 +1070,7 @@ input {
 									
 								</select>
 							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-003" data-id="003">
@@ -1150,6 +1175,7 @@ input {
 									
 								</select>
 							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-009" data-id="009">
@@ -1253,6 +1279,7 @@ input {
 									
 								</select>
 							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-008" data-id="008">
@@ -1340,6 +1367,7 @@ input {
 									
 								</select>
 							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-005" data-id="005">
@@ -1451,6 +1479,7 @@ input {
 									
 								</select>
 							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-006" data-id="006">
@@ -1553,6 +1582,17 @@ input {
 									
 								</select>
 							</div>
+							
+							<div class="g-colors">
+								<span class="g-label">顏色</span>
+									
+									
+									<div class="g-color-circle g-picked" data-color="1-232C" style="background-color: #7868a7;"></div>
+									
+									<div class="g-color-circle " data-color="2-20C" style="background-color: #e2b2c5;"></div>
+									
+							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-007" data-id="007">
@@ -1640,6 +1680,7 @@ input {
 									
 								</select>
 							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-010" data-id="010">
@@ -1728,6 +1769,7 @@ input {
 									
 								</select>
 							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-004" data-id="004">
@@ -1787,6 +1829,7 @@ input {
 									
 								</select>
 							</div>
+							
 							<div class="g-volume">
 								<span class="g-label">數量</span>
 								<div class="g-volume-cont g-volume-count-001" data-id="001">
@@ -2010,7 +2053,7 @@ input {
 	<div class="g-tm">© 2021 黎根記.<br>All rights reserved.</div>
 </footer>
 
-<script>var stocklist = [{"hide":"","id":"002","name":"舊青年 tee","text":"NO MORE NEW YOUTH","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"003","name":"舊青年 tee","text":"壽終正寢 version","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"009","name":"ok old tee","text":"it’s okay to get old","category":"Tee","type":"Screen","description":"啱啱畢業22歲嘅同事：唉，我老啦// 我：😬🚬","price":"280","sizes":"S,M,L,XL","colors":"","img":["store-009-001.png","store-009-002.png"]},{"hide":"","id":"008","name":"ok sad tee","text":"it’s okay to feel sad","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL","colors":"","img":["store-008-001.png","store-008-002.png"]},{"hide":"","id":"005","name":"sad banana tee","text":"don't be sad","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"006","name":"我♥常餐 tee","text":"alldaymealh♥lic","category":"Tee","type":"Print","description":"同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“","price":"250","sizes":"S,M,L,XL","colors":"","img":["store-006-001.png","store-006-002.png","store-006-003.png","store-006-004.png"]},{"hide":"","id":"007","name":"good-looking tee","text":"it's all 9ood","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL","colors":"#9e9da1,#e2b2c5","img":["store-007-001.png","store-007-002.png"]},{"hide":"","id":"010","name":"唔好問路 tee","text":"唔好啦","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"004","name":"員工 tee","text":"非賣品","category":"Tee","type":"Print","description":"Inspired by @rubielism","price":"250","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"001","name":"人人有蕉吔基金","text":"純純粹粹俾錢店主","category":"","type":"","description":"【DONT THINK, JUST DONATE!】// 黎根記®有一個願望：「人人都可以有蕉吔！」// 如果您都認同我哋，// 事不宜遲，請立即捐款到\"人人有蕉吔基金\" // 你將會收到香蕉.png一條","price":"10up","sizes":"小小心意,多多益善,大手入股","colors":""}]</script><script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
+<script>var stocklist = [{"hide":"","id":"002","name":"舊青年 tee","text":"NO MORE NEW YOUTH","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"003","name":"舊青年 tee","text":"壽終正寢 version","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"009","name":"ok old tee","text":"it’s okay to get old","category":"Tee","type":"Screen","description":"啱啱畢業22歲嘅同事：唉，我老啦// 我：😬🚬","price":"280","sizes":"S,M,L,XL","colors":"","img":["store-009-001.png","store-009-002.png"]},{"hide":"","id":"008","name":"ok sad tee","text":"it’s okay to feel sad","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL","colors":"","img":["store-008-001.png","store-008-002.png"]},{"hide":"","id":"005","name":"sad banana tee","text":"don't be sad","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"006","name":"我♥常餐 tee","text":"alldaymealh♥lic","category":"Tee","type":"Print","description":"同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“","price":"250","sizes":"S,M,L,XL","colors":"","img":["store-006-001.png","store-006-002.png","store-006-003.png","store-006-004.png"]},{"hide":"","id":"007","name":"good-looking tee","text":"it's all 9ood","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL","colors":"232C#7868a7,20C#e2b2c5","img":["store-007-001.png","store-007-002.png"]},{"hide":"","id":"010","name":"唔好問路 tee","text":"唔好啦","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"004","name":"員工 tee","text":"非賣品","category":"Tee","type":"Print","description":"Inspired by @rubielism","price":"250","sizes":"S,M,L,XL","colors":""},{"hide":"","id":"001","name":"人人有蕉吔基金","text":"純純粹粹俾錢店主","category":"","type":"","description":"【DONT THINK, JUST DONATE!】// 黎根記®有一個願望：「人人都可以有蕉吔！」// 如果您都認同我哋，// 事不宜遲，請立即捐款到\"人人有蕉吔基金\" // 你將會收到香蕉.png一條","price":"10up","sizes":"小小心意,多多益善,大手入股","colors":""}]</script><script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
@@ -2173,7 +2216,13 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var split = d.split("_");
 
 			var item = tr.append("div.g-td.g-item")
-			item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img").attr("src"));
+
+			if (split.length == 4) {
+				item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img:nth-child(" + split[3].split("-")[0] + ")").attr("src"));
+			} else {
+				item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img").attr("src"));
+			}
+
 			item.append("div.g-item-inner").text(d.split("_")[1] + " " + d.split("_")[0] + " x " + d.split("_")[2]);
 			
 			var quantity = tr.append("div.g-td.g-quantity")
@@ -2462,6 +2511,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var item = el.attr("data-item");
 		d3.selectAll(".g-img-slideshow-group-store-" + id).classed("g-on-top", false);
 		d3.select(".g-img-slideshow-" + item).classed("g-on-top", true);
+
+		var parent = d3.select(el.node().parentNode.parentNode.parentNode);
+		parent.selectAll(".g-color-circle").classed("g-picked", false);
+		parent.select(".g-color-circle:nth-child(" + ((+item.split("-")[2])+1) +")").classed("g-picked", true);
+
 	})
 
 	d3.selectAll(".g-button").on("click", function(){
@@ -2477,7 +2531,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var size = curstockel.select("#size").property("value");
 			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
 			var count = curstockel.select(".g-count").text();
+			var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
 			var slug = stockid + "_" + name + "_" + size;
+
+			if (color) {
+				slug += "_" + color;
+			}
 
 			updateCartNum(slug, count);
 			updateCart();
@@ -2491,7 +2550,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var size = curstockel.select("#size").property("value");
 			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
 			var count = curstockel.select(".g-count").text();
+			var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
 			var slug = stockid + "_" + name + "_" + size;
+
+			if (color) {
+				slug += "_" + color;
+			}
 
 			var is_adc_clicked = curstockel.select(".g-button-adc").attr("data-clicked") == "true";
 			curstockel.select(".g-button-adc").attr("data-clicked", "");
@@ -2577,6 +2641,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  		var split = d.split("_");
 			  		item = split[1] + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
+
+			  		if (split[3]) {
+			  			item += " x " + split[3].split("-")[1];
+			  		}
+
 
 			  		var price = 280;
 			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
@@ -2665,6 +2734,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			chart.classed("g-active", false);
 		}
 	})
+
+
+	// color picker
+	d3.selectAll(".g-color-circle").on("click", function(){
+
+		var el = d3.select(this);
+		var parent = d3.select(el.node().parentNode);
+		parent.selectAll(".g-color-circle").classed("g-picked", false);
+
+		el.classed("g-picked", true);
+
+	})
+
 
 	// back forward button compatibility
 	// Vanilla javascript
