@@ -69,6 +69,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
    			d3.select(".g-" + id).classed("g-cur-stock", true);
 
+   			loadImages(d3.select(".g-" + id))
+
    			el.transition().style("height", ((+el.attr("data-h1") + d3.select(".g-" + id).node().getBoundingClientRect().height) + 120) + "px");
 
    			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
@@ -80,11 +82,13 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.attr("data-incart", false);
    			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
 
+   			loadImages(el, true)
 
    			el.selectAll(".g-stock-each").classed("g-hide", true)
    			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
    		} else {
    			el.select(".g-shopping-cart").classed("g-hide", true);
+   			loadImages(el);
    			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
    		}
    	}
@@ -305,6 +309,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		}
 	}
 
+	function loadImages(el, loadfirst) {
+
+		var sel = loadfirst ? "img.g-load-first" : "img";
+
+		el.selectAll(sel).each(function(){
+			var im = d3.select(this);
+
+			if (!im.attr("src")) {
+				im.attr("src", im.attr("data-src"));
+			}
+		})
+	}
+
 
 	////////////////////////////// THINGS BEING CALLED //////////////////////////////
 
@@ -350,6 +367,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var instore = el.attr("data-instore") == "true";
 		var incart = el.attr("data-incart") == "true";
 		var id = el.attr("data-id");
+
+		if (id == "store" || id == "upcoming") {
+			loadImages(el.select(".g-store-list"));
+		}
 
 		if (doneshopping) {
 			shoppingreset();
@@ -400,6 +421,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.selectAll(".g-img-slideshow:first-child").classed("g-on-top", true);
 		d3.selectAll(".g-store-buy").classed("g-cur-stock", false);
 		item.classed("g-cur-stock", true);
+
+		loadImages(item);
 
 		var nameheight = nav.attr("data-h1");
 		var stockheight = item.node().getBoundingClientRect().height;
@@ -459,7 +482,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var parent = d3.select(el.node().parentNode.parentNode.parentNode);
 		parent.selectAll(".g-color-circle").classed("g-picked", false);
 		parent.select(".g-color-circle:nth-child(" + ((+item.split("-")[2])+1) +")").classed("g-picked", true);
-
 	})
 
 	d3.selectAll(".g-button").on("click", function(){
@@ -688,6 +710,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		parent.selectAll(".g-color-circle").classed("g-picked", false);
 
 		el.classed("g-picked", true);
+
+		var curstockel = d3.select(".g-store-" + el.attr("data-store"));
+		curstockel.selectAll(".g-img-slideshow").classed("g-on-top", false);
+		curstockel.select(".g-img-slideshow:nth-child(" + el.attr("data-order") + ")").classed("g-on-top", true);
 
 	})
 

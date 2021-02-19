@@ -68,6 +68,7 @@ img {
   position: relative;
 }
 .g-img img {
+  background: #f7f7f7;
   position: absolute;
   top: 0;
 }
