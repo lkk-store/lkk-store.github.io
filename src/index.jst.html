@@ -76,7 +76,7 @@
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="<%= l.id %>"><%= l.name %> <% if (l.category == 'Tee') { %>(起碼三月先有貨)<% } %></span>
 						</div>
-						<% if (l.type != '') { %><div class="g-desc"><p><% if (l.type == "Screen") { %>handmade  silkscreen tee<% } else { %>9-print tee<% } %></p></div><% } %>
+						<% if (l.type != '') { %><div class="g-desc"><p><% if (l.type == "Screen") { %>handmade  silkscreen tee<% } else if (l.type == "Print") { %>9-print tee<% } %></p></div><% } %>
 						<% if (l.price) { %><div class="g-price">
 							<sup class="g-agate">HKD</sup>
 							<% if (l.price == "10up") { %>
