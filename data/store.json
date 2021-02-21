@@ -63,13 +63,25 @@
     "hide": "",
     "id": "007",
     "name": "good-looking tee",
-    "text": "it's all 9ood",
+    "text": "初號9ood",
     "category": "Tee",
     "type": "Print",
-    "description": "",
+    "description": "it's all 9ood",
     "price": "250",
     "sizes": "S,M,L,XL",
-    "colors": "232C#7868a7,20C#e2b2c5"
+    "colors": "232C#7868a7"
+  },
+  {
+    "hide": "",
+    "id": "013",
+    "name": "good-looking tee",
+    "text": "姣婆9ood",
+    "category": "Tee",
+    "type": "Print",
+    "description": "it's all 9ood",
+    "price": "250",
+    "sizes": "S,M,L,XL",
+    "colors": "20C#e2b2c5"
   },
   {
     "hide": "",
@@ -138,7 +150,7 @@
     "text": "非賣品",
     "category": "Tee",
     "type": "Print",
-    "description": "Inspired by @rubielism",
+    "description": "Print",
     "price": "250",
     "sizes": "S,M,L,XL",
     "colors": ""
