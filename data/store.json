@@ -1,6 +1,7 @@
 [
   {
     "hide": "",
+    "slug": "舊青年 tee 002",
     "id": "002",
     "name": "舊青年 tee",
     "text": "NO MORE NEW YOUTH",
@@ -13,6 +14,7 @@
   },
   {
     "hide": "",
+    "slug": "舊青年 tee 003",
     "id": "003",
     "name": "舊青年 tee",
     "text": "壽終正寢 version",
@@ -25,6 +27,7 @@
   },
   {
     "hide": "",
+    "slug": "ok love tee 011",
     "id": "011",
     "name": "ok love tee",
     "text": "it’s okay to love",
@@ -37,6 +40,20 @@
   },
   {
     "hide": "",
+    "slug": "healthy horse tee 015",
+    "id": "015",
+    "name": "healthy horse tee",
+    "text": "嘟！嘟！嘟！",
+    "category": "Tee",
+    "type": "Print",
+    "description": "",
+    "price": "250",
+    "sizes": "S,M,L,XL",
+    "colors": ""
+  },
+  {
+    "hide": "",
+    "slug": "sad banana tee 005",
     "id": "005",
     "name": "sad banana tee",
     "text": "don't be a sad banana",
@@ -49,6 +66,7 @@
   },
   {
     "hide": "",
+    "slug": "ok sad tee 008",
     "id": "008",
     "name": "ok sad tee",
     "text": "it’s okay to feel sad",
@@ -61,6 +79,7 @@
   },
   {
     "hide": "",
+    "slug": "大茄tee 014",
     "id": "014",
     "name": "大茄tee",
     "text": "長而大的茄子，我有",
@@ -73,6 +92,7 @@
   },
   {
     "hide": "",
+    "slug": "good-looking tee 007",
     "id": "007",
     "name": "good-looking tee",
     "text": "初號9ood",
@@ -85,6 +105,7 @@
   },
   {
     "hide": "",
+    "slug": "good-looking tee 013",
     "id": "013",
     "name": "good-looking tee",
     "text": "姣婆9ood",
@@ -97,6 +118,7 @@
   },
   {
     "hide": "",
+    "slug": "ok old tee 009",
     "id": "009",
     "name": "ok old tee",
     "text": "it’s okay to get old",
@@ -109,6 +131,7 @@
   },
   {
     "hide": "",
+    "slug": "我♥常餐 tee 006",
     "id": "006",
     "name": "我♥常餐 tee",
     "text": "alldaymealh♥lic",
@@ -121,6 +144,7 @@
   },
   {
     "hide": "",
+    "slug": "歡迎問路 tee 012",
     "id": "012",
     "name": "歡迎問路 tee",
     "text": "Konnichi wa!",
@@ -133,6 +157,7 @@
   },
   {
     "hide": "",
+    "slug": "唔好問路 tee 010",
     "id": "010",
     "name": "唔好問路 tee",
     "text": "唔好啦",
@@ -145,6 +170,7 @@
   },
   {
     "hide": "",
+    "slug": "人人有蕉吔基金 001",
     "id": "001",
     "name": "人人有蕉吔基金",
     "text": "純純粹粹俾錢店主",
@@ -157,6 +183,7 @@
   },
   {
     "hide": "",
+    "slug": "員工 tee 004",
     "id": "004",
     "name": "員工 tee",
     "text": "非賣品",
