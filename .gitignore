@@ -3,3 +3,5 @@ credentials.json
 node_modules
 node_modules/*
 filters/
+ai/
+documents/

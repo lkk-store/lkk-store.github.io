@@ -2815,13 +2815,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var split = d.split("_");
 
 			var item = tr.append("div.g-td.g-item")
+			var sourceimg;
 
 			if (split.length == 4) {
-				item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img:nth-child(" + split[3].split("-")[0] + ")").attr("src"));
+				sourceimg = d3.select(".g-store-" + split[0]).select("img:nth-child(" + split[3].split("-")[0] + ")");
 			} else {
-				item.append("div.g-item-img").append("img").attr("src", d3.select(".g-store-" + split[0]).select("img").attr("src"));
+				sourceimg = d3.select(".g-store-" + split[0]).select("img");
 			}
 
+			if (!sourceimg.attr("src")) {
+				sourceimg = sourceimg.attr("data-src");
+			} else {
+				sourceimg = sourceimg.attr("src");
+			}
+
+			item.append("div.g-item-img").append("img").attr("src", sourceimg);
 			item.append("div.g-item-inner").text(d.split("_")[1] + " " + d.split("_")[0] + " x " + d.split("_")[2]);
 			
 			var quantity = tr.append("div.g-td.g-quantity")
@@ -3265,6 +3273,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 
 			  		var price = 280;
+			  		var pricecheck = stocklist.filter(d => d.id == split[0])[0];
+
+			  		if (pricecheck) {
+			  			price = +pricecheck.price;
+			  		}
+
 			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
 
 			  		var totalprice = price*shoppingcart[d];
