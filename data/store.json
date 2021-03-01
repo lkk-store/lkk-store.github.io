@@ -33,10 +33,10 @@
     "text": "it’s okay to love",
     "category": "Tee",
     "type": "Print",
-    "description": "",
+    "description": "white/darkgrey",
     "price": "250",
     "sizes": "S,M,L,XL",
-    "colors": "#ffffff,#39373c"
+    "colors": "001#ffffff,129#39373c"
   },
   {
     "hide": "",
@@ -114,7 +114,7 @@
     "description": "it's all 9ood",
     "price": "250",
     "sizes": "S,M,L,XL",
-    "colors": "232C#7868a7"
+    "colors": "188#bd94ca"
   },
   {
     "hide": "",
@@ -127,7 +127,7 @@
     "description": "it's all 9ood",
     "price": "250",
     "sizes": "S,M,L,XL",
-    "colors": "20C#e2b2c5"
+    "colors": "132#fbd4dd"
   },
   {
     "hide": "",
