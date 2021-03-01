@@ -46,23 +46,10 @@
     "text": "嘟！嘟！嘟！",
     "category": "Tee",
     "type": "Print",
-    "description": "著健康馬保健康！// 做個健康香港人🐎🐎🐎",
+    "description": "健康馬/健康黑馬// 著健康馬保健康！// 做個健康香港人🐎🐎🐎",
     "price": "250",
     "sizes": "S,M,L,XL",
-    "colors": ""
-  },
-  {
-    "hide": "",
-    "slug": "healthy black-horse tee 016",
-    "id": "016",
-    "name": "healthy black-horse tee",
-    "text": "嘟！嘟！嘟！",
-    "category": "Tee",
-    "type": "Print",
-    "description": "著健康黑馬保健康！// 做個健康香港人🐎🐎🐎",
-    "price": "250",
-    "sizes": "S,M,L,XL",
-    "colors": ""
+    "colors": "001#ffffff,005#000000"
   },
   {
     "hide": "",
