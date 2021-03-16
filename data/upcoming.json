@@ -2,16 +2,19 @@
   {
     "id": "003",
     "name": "裝修黎根記絲印工場",
-    "text": "待工中"
+    "text": "待工中",
+    "description": ""
   },
   {
     "id": "001",
     "name": "zine【阿霞~我要飛鵝山上】",
-    "text": "coming soon!"
+    "text": "coming soon!",
+    "description": ""
   },
   {
     "id": "002",
     "name": "飛鵝山親善大使 tee",
-    "text": "非賣品"
+    "text": "非賣品",
+    "description": ""
   }
 ]
