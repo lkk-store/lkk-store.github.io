@@ -18,6 +18,12 @@
     "content": "upcoming"
   },
   {
+    "slug": "blog",
+    "page": "SENG WOOD BLOG",
+    "text": "",
+    "content": "sengwood"
+  },
+  {
     "slug": "lunch",
     "page": "BUY ME LUNCH",
     "text": "",

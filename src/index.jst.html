@@ -15,8 +15,8 @@
 			<% if (d.text) { %>
 			<div class="g-about"><%= d.text %></div>
 			<% } %>
-			<% if (d.content == "store" || d.content == "upcoming") { %>
-			<% var list = d.content == "store" ? data.store : d.content == "upcoming" ? data.upcoming : []; %>
+			<% if (d.content == "store" || d.content == "upcoming" || d.content == "sengwood") { %>
+			<% var list = d.content == "store" ? data.store : d.content == "upcoming" ? data.upcoming : d.content == "sengwood" ? data.sengwood : []; %>
 			<% if (d.content == "store") { %>
 			<div class="g-shopping-cart-icon"><img src="img/cart.png"><div class="g-cart-count"></div></div>
 			<% } %>
