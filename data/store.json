@@ -49,7 +49,7 @@
     "description": "",
     "price": "320",
     "sizes": "S,M,L,XL",
-    "colors": ""
+    "colors": "#54ff5b,#ff5b15,#0030ff,#e70000"
   },
   {
     "hide": "",
@@ -179,6 +179,19 @@
     "description": "適合「問路樣」人士穿着",
     "price": "250",
     "sizes": "S,M,L,XL",
+    "colors": ""
+  },
+  {
+    "hide": "",
+    "slug": "黎根記紙袋 017",
+    "id": "017",
+    "name": "黎根記紙袋",
+    "text": "LKK chicken skin paper bag",
+    "category": "",
+    "type": "",
+    "description": "",
+    "price": "30",
+    "sizes": "",
     "colors": ""
   },
   {
