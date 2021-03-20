@@ -37,11 +37,11 @@ img {
   padding-bottom: 3px;
 }
 .g-nav-name svg {
-  width: 38px;
+  width: 32px;
   margin-left: 17px;
   position: absolute;
   top: 6px;
-  transform: scaleX(1.4);
+  transform: scaleX(-1.6);
 }
 .g-nav-list-wood .g-nav-name {
   color: #bf0000;
