@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.select(".g-store-list").classed("g-hide", true);
 
    			var id = hash.replace("#", "")
+   			var name = id.split("-")[0];
    			d3.selectAll(".g-" + name + "-list").classed("g-hide", true);
    			d3.select(".g-" + id).classed("g-hide", false);	
 
@@ -376,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var incart = el.attr("data-incart") == "true";
 		var id = el.attr("data-id");
 
-		if (id == "store" || id == "upcoming") {
+		if (id == "store" || id == "upcoming" || id == "wood" || id == "blog") {
 			loadImages(el.select(".g-store-list"));
 		}
 
@@ -694,6 +695,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		show("store", "#store");
 		d3.select(".g-nav-list-lkk").style("height", d3.select(".g-nav-list-lkk").attr("data-h1") + "px");
 		d3.select(".g-nav-list-upcoming").style("height", d3.select(".g-nav-list-upcoming").attr("data-h1") + "px");
+		d3.select(".g-nav-list-wood").style("height", d3.select(".g-nav-list-wood").attr("data-h1") + "px");
 		d3.select(".g-submit").classed("g-hide", false);
 		goToCart();
 	})

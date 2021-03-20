@@ -18,21 +18,21 @@
     "content": "upcoming"
   },
   {
-    "slug": "wood",
-    "page": "SENG WOOD BLOG",
-    "text": "",
-    "content": "wood"
-  },
-  {
-    "slug": "blog",
-    "page": "CLICK HERE!",
-    "text": "",
-    "content": "blog"
-  },
-  {
     "slug": "lunch",
     "page": "BUY ME LUNCH",
     "text": "",
     "content": ""
+  },
+  {
+    "slug": "blog",
+    "page": "CLICK HERE",
+    "text": "",
+    "content": "blog"
+  },
+  {
+    "slug": "wood",
+    "page": "SENG WOOD BLOG",
+    "text": "",
+    "content": "wood"
   }
 ]

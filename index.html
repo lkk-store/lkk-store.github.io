@@ -46,6 +46,16 @@ img {
   margin-left: -10%;
   padding-bottom: 3px;
 }
+.g-nav-name svg {
+  width: 38px;
+  margin-left: 17px;
+  position: absolute;
+  top: 6px;
+  transform: scaleX(1.4);
+}
+.g-nav-list-wood .g-nav-name {
+  color: #bf0000;
+}
 .g-nav-name:hover {
   cursor: pointer;
 }
@@ -2875,8 +2885,8 @@ input {
 
 	
 
-	<div class="g-nav-list g-nav-list-wood" data-id="wood" data-state="hidden">
-		<div class="g-nav-name">SENG WOOD BLOG</div>
+	<div class="g-nav-list g-nav-list-lunch" data-id="lunch" data-state="hidden">
+		<div class="g-nav-name">BUY ME LUNCH</div>
 		<div class="g-nav-content">
 			
 			
@@ -2887,7 +2897,7 @@ input {
 	
 
 	<div class="g-nav-list g-nav-list-blog" data-id="blog" data-state="hidden">
-		<div class="g-nav-name">CLICK HERE!</div>
+		<div class="g-nav-name">CLICK HERE<svg viewBox="0 0 60.1 34.7"><polygon points="48.3,14.7 48.3,0 11.8,0 11.8,14.7 0,14.7 30.1,34.7 60.1,14.7 "/></svg></div>
 		<div class="g-nav-content">
 			
 			
@@ -3020,7 +3030,7 @@ input {
 「我哋有次執嘢，起身嗰時唔小心咀到(咀埋都仲駛問我意見？)唔係呀，咀到個鼻」</p><p>
 </p><p>
 今日佢話佢表白成功</p><p>
-我好開心</p><p></p>
+我好開心</p><br>
 						
 						</div>
 
@@ -3183,10 +3193,105 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 
 	
 
-	<div class="g-nav-list g-nav-list-lunch" data-id="lunch" data-state="hidden">
-		<div class="g-nav-name">BUY ME LUNCH</div>
+	<div class="g-nav-list g-nav-list-wood" data-id="wood" data-state="hidden">
+		<div class="g-nav-name">SENG WOOD BLOG</div>
 		<div class="g-nav-content">
 			
+			
+			
+			
+			<div class="g-store g-stock-list g-wood-list">				
+
+				
+				<div class="g-store-each" data-id="001" data-page="wood">
+					
+					<div class="g-img"><img class="g-load-first" data-src="img/wood-001.png"></div>
+					
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name">飛鵝山親善大使</span>
+							<span class="g-desc">介紹返</span>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="g-store-each" data-id="002" data-page="wood">
+					
+					<div class="g-img"><img class="g-load-first" data-src="img/wood-002.png"></div>
+					
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name"></span>
+							<span class="g-desc"></span>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="g-store g-stock-cont">
+				
+				<div class="g-stock-each g-store-buy g-hide g-wood-001" data-id="001">
+
+					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
+
+					
+						<div class="g-img"><img data-src="img/wood-001.png"></div>
+					 
+					
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="001">飛鵝山親善大使 </span>
+						</div>
+						<div class="g-desc"><p></p></div>
+						
+
+						<div class="g-details">
+						<p class="g-highlight-text">"介紹返"</p>
+						
+						
+						<p>好中意問人</p><br><p>你最中意香港邊個地方</p><p>其實想引佢問番我同一條問題</p><p>俾我有機會講</p><p>我全香港最中意嘅地方</p><p>係飛鵝山</p><p>八年前第一次心血來潮行</p><p>自此就愛上咗</p><p>經扎山道、自殺崖、飛鵝山道、百花林、慈雲山</p><p>基本上所有上山嘅路都行過</p><p>平均一個星期執一劑</p><p>行山嘅時候 有人問我路</p><p>我都會好開心 詳盡地解釋上落山嘅路</p><p>介紹返</p><p>我係</p><p>飛鵝山親善大使</p>
+						
+						</div>
+
+						
+					</div>
+				</div>
+
+				
+				<div class="g-stock-each g-store-buy g-hide g-wood-002" data-id="002">
+
+					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
+
+					
+						<div class="g-img"><img data-src="img/wood-002.png"></div>
+					 
+					
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="002"> </span>
+						</div>
+						<div class="g-desc"><p></p></div>
+						
+
+						<div class="g-details">
+						<p class="g-highlight-text">""</p>
+						
+						
+						
+						</div>
+
+						
+					</div>
+				</div>
+
+				
+			</div>
+
+			
+
 			
 		</div>
 	</div>
@@ -3271,6 +3376,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.select(".g-store-list").classed("g-hide", true);
 
    			var id = hash.replace("#", "")
+   			var name = id.split("-")[0];
    			d3.selectAll(".g-" + name + "-list").classed("g-hide", true);
    			d3.select(".g-" + id).classed("g-hide", false);	
 
@@ -3584,7 +3690,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var incart = el.attr("data-incart") == "true";
 		var id = el.attr("data-id");
 
-		if (id == "store" || id == "upcoming") {
+		if (id == "store" || id == "upcoming" || id == "wood" || id == "blog") {
 			loadImages(el.select(".g-store-list"));
 		}
 
@@ -3902,6 +4008,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		show("store", "#store");
 		d3.select(".g-nav-list-lkk").style("height", d3.select(".g-nav-list-lkk").attr("data-h1") + "px");
 		d3.select(".g-nav-list-upcoming").style("height", d3.select(".g-nav-list-upcoming").attr("data-h1") + "px");
+		d3.select(".g-nav-list-wood").style("height", d3.select(".g-nav-list-wood").attr("data-h1") + "px");
 		d3.select(".g-submit").classed("g-hide", false);
 		goToCart();
 	})
