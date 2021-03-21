@@ -74,7 +74,7 @@
 					
 					<div class="g-meta">
 						<div class="g-hed">
-							<span class="g-name" id="stock-name" data-id="<%= l.id %>"><%= l.name %> <% if (l.category == 'Tee') { %>(起碼三月先有貨)<% } %></span>
+							<span class="g-name" id="stock-name" data-id="<%= l.id %>"><%= l.name %></span>
 						</div>
 						<% if (l.type != '') { %><div class="g-desc"><p><% if (l.type == "Screen") { %>handmade  silkscreen tee<% } else if (l.type == "Print") { %>9-print tee<% } %></p></div><% } %>
 						<% if (l.price) { %><div class="g-price">
@@ -139,7 +139,7 @@
 						<% } %>
 						
 						<br>
-						<p><b><i><% if (l.type == "Screen") { %>未識印衫，而家開始學整，起碼三月尾先有貨<% } else { %>因店主要番工，放假先得閒做，起碼三月尾先有貨<% } %></i></b></p>
+						<p><b><i>因店主要番工，放假先得閒做，落單後三星期內出貨</i></b></p>
 						<% } %>
 						</div>
 
