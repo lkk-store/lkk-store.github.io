@@ -553,7 +553,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			if (localStorage.shoppingcart == "{}") {
 
-				d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+				d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 
 			} else {
 				// cart.classed("g-hide", true);
@@ -586,17 +586,18 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
+			  var email = d3.select("#email").property("value");
 
 			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}") {
 			  	if (phone == "") {
-			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
 			  	if (name == "") {
-			  		d3.select("#name").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  		d3.select("#name").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
 
 			  	if (localStorage.shoppingcart == "{}") {
-			  		d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  		d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
 
 			  } else {
@@ -634,7 +635,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		var totalprice = price*shoppingcart[d];
 			  		var comment = d3.select("#comment").property("value");
 
-			  		var formdata = "name=" + name + "&phone=" + phone + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice + "&comment=" + comment;
+			  		var formdata = "name=" + name + "&phone=" + phone + "&email=" + email + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice + "&comment=" + comment;
 
 			  		//name	phone	item	price
 

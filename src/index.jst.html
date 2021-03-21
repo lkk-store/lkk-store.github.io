@@ -146,7 +146,7 @@
 						<% if (d.content == "store") { %>
 						<div class="g-buy">
 							<div class="g-size">
-								<span class="g-label">尺碼</span>
+								<span class="g-label">尺碼 size</span>
 								<select id="size" name="size">
 									<% var sizes = l.sizes.split(",") %>
 									<% sizes.forEach(function(s){ %>
@@ -164,15 +164,15 @@
 							</div>
 							<% } %>
 							<div class="g-volume">
-								<span class="g-label">數量</span>
+								<span class="g-label">數量 count</span>
 								<div class="g-volume-cont g-volume-count-<%= l.id %>" data-id="<%= l.id %>">
 									<div class="g-count-button" data-type="minus">-</div>
 									<div class="g-count">1</div>
 									<div class="g-count-button" data-type="add">+</div>
 								</div>
 							</div>
-							<button class="g-button g-button-adc" data-action="add-to-cart">加入手推車</button>
-							<button class="g-button" data-id="<%= l.id %>" data-action="add-to-cart-checkout">直接埋單</button>
+							<button class="g-button g-button-adc" data-action="add-to-cart">加入手推車 add to cart</button>
+							<button class="g-button" data-id="<%= l.id %>" data-action="add-to-cart-checkout">直接埋單 checkout</button>
 						</div>
 						<% } %>
 					</div>
@@ -194,22 +194,23 @@
 
 				<form class="" name="my-form" id="my-form">
 					<div class="g-form-options g-hide">
-						<div class="g-buy-each"><span class="g-lab">名字</span><input id="name" type="text" name="name"></div>
-						<div class="g-buy-each"><span class="g-lab">電話</span><input id="phone" type="text" name="phone"></div>
-						<div class="g-buy-each"><span class="g-lab">留言</span><input id="comment" type="text" name="comment"></div>
+						<div class="g-buy-each"><span class="g-lab">名字<br><i>name</i></span><input id="name" type="text" name="name"></div>
+						<div class="g-buy-each"><span class="g-lab">電話<br><i>phone</i></span><input id="phone" type="text" name="phone"></div>
+						<div class="g-buy-each"><span class="g-lab">電郵<br><i>email</i></span><input id="email" type="text" name="email"></div>
+						<div class="g-buy-each"><span class="g-lab">留言<br><i>comment</i></span><input id="comment" type="text" name="comment"></div>
 					</div>
 
 					<div class="g-shopping-cart-inner">
-						<div class="g-tr g-th"><div class="g-td g-item">貨物</div><div class="g-td g-quantity">數量</div><div class="g-td g-price">價錢</div></div>
+						<div class="g-tr g-th"><div class="g-td g-item">貨物<br><i>item</i></div><div class="g-td g-quantity">數量<br><i>count</i></div><div class="g-td g-price">價錢<br><i>price</i></div></div>
 						<div class="g-tbody"><div class="g-empty">唔睇都買下野啦喂</div></div>
 						<div class="g-tr"><div class="g-td g-item"></div><div class="g-td g-quantity"></div><div class="g-td g-price g-total-price">$0</div></div>
-						<div class="g-submit"><div class="g-button" data-action="buy">埋單</div></div>
+						<div class="g-submit"><div class="g-button" data-action="buy">埋單 checkout</div></div>
 					</div>
 					<!-- <div class="g-buy-each"><span class="g-lab">貨物</span><input id="item" class="g-bought" type="text" name="item"></div> -->
 					<!-- <div class="g-buy-each"><span class="g-lab">價錢</span><input id="price" type="text" name="price"></div> -->
 					<!-- <div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div> -->
 
-					<button type="submit" id="submit" class="g-buy-button g-hide">真係 BUY</button>
+					<button type="submit" id="submit" class="g-buy-button g-hide">真係 REALLY BUY</button>
 				</form>
 
 			</div>
