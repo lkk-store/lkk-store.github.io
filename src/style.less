@@ -38,12 +38,13 @@ img {
 	margin-left: -10%;
 	padding-bottom: 3px;
 
-	svg {
-		 width: 32px;
-		 margin-left: 17px;
-		 position: absolute;
-		 top: 6px;
-		 transform: scaleX(-1.6);
+	#g-clickhere-arrow {
+		height: calc(100% - 9.9px);
+		width: auto;
+		transform: scaleX(1.8);
+		margin-left: 17px;
+		position: absolute;
+		top: 3px;
 	}
 }
 
@@ -63,6 +64,15 @@ img {
 @media screen and (min-width: 600px) {
 	.g-nav-list {
 		
+	}
+
+	.g-nav-name #g-clickhere-arrow {
+		height: calc(100% - 17px);
+		width: auto;
+		transform: scaleX(1.7);
+		margin-left: 17px;
+		position: absolute;
+		top: 7px;
 	}
 
 	.g-nav-name {
