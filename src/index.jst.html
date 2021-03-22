@@ -27,7 +27,7 @@
 					<% if (l.img) { %>
 					<div class="g-img"><img class="g-load-first" <% if (i > 4 || d.content != "store") { %>data-<% } %>src="img/<%= l.img[0] %>"></div>
 					<% } else { %>
-					<div class="g-img"><img class="g-load-first" <% if (i > 4 || d.content != "store") { %>data-<% } %>src="img/<%= d.content %>-<%= l.id %>.png"></div>
+					<div class="g-img"><img class="g-load-first" <% if (i > 4 || d.content != "store") { %>data-<% } %>src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div>
 					<% } %>
 					<div class="g-meta">
 						<div class="g-hed">
@@ -69,7 +69,7 @@
 
 					</div>
 					<% } else { %>
-						<div class="g-img"><img data-src="img/<%= d.content %>-<%= l.id %>.png"></div>
+						<div class="g-img"><img data-src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div>
 					<% } %> 
 					
 					<div class="g-meta">
