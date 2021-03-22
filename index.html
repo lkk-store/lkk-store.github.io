@@ -2767,8 +2767,8 @@ input {
 					<div class="g-form-options g-hide">
 						<div class="g-buy-each"><span class="g-lab">名字<br><i>name</i></span><input id="name" type="text" name="name"></div>
 						<div class="g-buy-each"><span class="g-lab">電話<br><i>phone</i></span><input id="phone" type="text" name="phone"></div>
-						<div class="g-buy-each"><span class="g-lab">電郵<br><i>email</i></span><input id="email" type="text" name="email"></div>
 						<div class="g-buy-each"><span class="g-lab">留言<br><i>comment</i></span><input id="comment" type="text" name="comment"></div>
+						<div class="g-buy-each"><span class="g-lab">電郵<br><i>email</i></span><input id="email" type="text" name="email" placeholder="香港人填電話就得啦！"></div>
 					</div>
 
 					<div class="g-shopping-cart-inner">
@@ -3565,7 +3565,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
    		} else if (hash.indexOf("lunch") > -1) {
    			dropbananas();
-   		}  else if (hash == "#store" || hash == "#upcoming" || hash == "#blog" || hash == "#wood") {
+   		}  else if (hash == "#store" || hash == "#upcoming" || hash == "#blog" || hash == "#woody7777777u                                                                                         ") {
    			el.select(".g-store-list").classed("g-hide", false)
    			el.select(".g-stock-list").classed("g-hide", false)
    			el.select(".g-shopping-cart").classed("g-hide", true);
@@ -4106,7 +4106,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  	keys.forEach(function(d,i){
 
 			  		var split = d.split("_");
-			  		item = split[1] + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
+			  		item = split[1] + " " + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
 
 			  		if (split[3]) {
 			  			item += " x " + split[3].split("-")[1];

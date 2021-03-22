@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
    		} else if (hash.indexOf("lunch") > -1) {
    			dropbananas();
-   		}  else if (hash == "#store" || hash == "#upcoming" || hash == "#blog" || hash == "#wood") {
+   		}  else if (hash == "#store" || hash == "#upcoming" || hash == "#blog" || hash == "#woody7777777u                                                                                         ") {
    			el.select(".g-store-list").classed("g-hide", false)
    			el.select(".g-stock-list").classed("g-hide", false)
    			el.select(".g-shopping-cart").classed("g-hide", true);
@@ -618,7 +618,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  	keys.forEach(function(d,i){
 
 			  		var split = d.split("_");
-			  		item = split[1] + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
+			  		item = split[1] + " " + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
 
 			  		if (split[3]) {
 			  			item += " x " + split[3].split("-")[1];
