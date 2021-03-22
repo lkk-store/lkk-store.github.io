@@ -77,8 +77,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
    		} else if (hash.indexOf("lunch") > -1) {
    			dropbananas();
-   		}  else if (hash == "#store") {
+   		}  else if (hash == "#store" || hash == "#upcoming" || hash == "#blog" || hash == "#wood") {
    			el.select(".g-store-list").classed("g-hide", false)
+   			el.select(".g-stock-list").classed("g-hide", false)
    			el.select(".g-shopping-cart").classed("g-hide", true);
    			el.attr("data-incart", false);
    			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
@@ -96,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
    	// back function
    	function back(page) {
+   		console.log(page)
    		d3.selectAll(".g-stock-list").classed("g-hide", false);
    		d3.selectAll(".g-store-buy").classed("g-hide", true);
    		d3.selectAll(".g-shopping-cart").classed("g-hide", true);

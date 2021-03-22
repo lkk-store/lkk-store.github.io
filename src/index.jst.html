@@ -145,7 +145,7 @@
 
 						<% if (d.content == "store") { %>
 						<div class="g-buy">
-							<div class="g-size">
+							<div class="g-size" style="<% if (!l.sizes) { %>display: none;<% } %>">
 								<span class="g-label">尺碼 size</span>
 								<select id="size" name="size">
 									<% var sizes = l.sizes.split(",") %>
