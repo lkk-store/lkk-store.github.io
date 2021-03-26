@@ -49,7 +49,7 @@
     "description": "",
     "price": "320",
     "sizes": "S,M,L,XL",
-    "colors": "#54ff5b,#ff5b15,#0030ff,#e70000"
+    "colors": "G#54ff5b,O#ff5b15,B#0030ff,R#e70000"
   },
   {
     "hide": "",
