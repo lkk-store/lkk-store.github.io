@@ -9,7 +9,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -22,7 +22,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -35,7 +35,7 @@
     "type": "Print",
     "description": "健康馬/健康黑馬// 著健康馬保健康！// 做個健康香港人🐎🐎🐎",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": "001#ffffff,005#000000"
   },
   {
@@ -48,7 +48,7 @@
     "type": "Screen",
     "description": "",
     "price": "320",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": "G#54ff5b,O#ff5b15,B#0030ff,R#e70000"
   },
   {
@@ -61,7 +61,7 @@
     "type": "Print",
     "description": "it's all 9ood// *print有夜光效果",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": "188#bd94ca"
   },
   {
@@ -74,7 +74,7 @@
     "type": "Print",
     "description": "it's all 9ood",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": "132#fbd4dd"
   },
   {
@@ -87,7 +87,7 @@
     "type": "Screen",
     "description": "",
     "price": "280",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -100,7 +100,7 @@
     "type": "Print",
     "description": "",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -113,7 +113,7 @@
     "type": "Screen",
     "description": "【職場日常】// 啱啱畢業入職嘅22歲新同事：唉，我老啦// 我：😬🚬",
     "price": "280",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -126,7 +126,7 @@
     "type": "Print",
     "description": "",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -139,7 +139,7 @@
     "type": "Print",
     "description": "同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -152,7 +152,7 @@
     "type": "Print",
     "description": "乳房大軍：我正在尋找長而大的茄子，你有嗎💦🍆//我：有",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -165,7 +165,7 @@
     "type": "Print",
     "description": "適合「問路樣」人士穿着",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -178,7 +178,7 @@
     "type": "Print",
     "description": "適合「問路樣」人士穿着",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   },
   {
@@ -217,7 +217,7 @@
     "type": "Print",
     "description": "",
     "price": "250",
-    "sizes": "S,M,L,XL",
+    "sizes": "S,M,L,XL,2XL",
     "colors": ""
   }
 ]

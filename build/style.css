@@ -488,6 +488,7 @@ input {
 .g-details .g-size-chart table td {
   border-bottom: 1px solid #f7f7f7;
   text-align: center;
+  width: 32px;
 }
 .g-details .g-size-chart table td:first-child {
   text-align: left;
