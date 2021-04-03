@@ -40,16 +40,16 @@
   },
   {
     "hide": "",
-    "slug": "Hon9 Kon9 9ulture 016",
-    "id": "016",
-    "name": "Hon9 Kon9 9ulture",
-    "text": "i love Hon9 Kong9",
+    "slug": "ok sad tee 008",
+    "id": "008",
+    "name": "ok sad tee",
+    "text": "it’s okay to feel sad",
     "category": "Tee",
     "type": "Screen",
     "description": "",
-    "price": "320",
+    "price": "280",
     "sizes": "S,M,L,XL,2XL",
-    "colors": "G#54ff5b,O#ff5b15,B#0030ff,R#e70000"
+    "colors": ""
   },
   {
     "hide": "",
@@ -79,16 +79,29 @@
   },
   {
     "hide": "",
-    "slug": "ok sad tee 008",
-    "id": "008",
-    "name": "ok sad tee",
-    "text": "it’s okay to feel sad",
+    "slug": "Hon9 Kon9 9ulture tee 016",
+    "id": "016",
+    "name": "Hon9 Kon9 9ulture tee",
+    "text": "i love Hon9 Kong9",
     "category": "Tee",
     "type": "Screen",
     "description": "",
-    "price": "280",
+    "price": "320",
     "sizes": "S,M,L,XL,2XL",
-    "colors": ""
+    "colors": "G#00ff00,O#ff5900,B#00d5e0,Y#ffff00"
+  },
+  {
+    "hide": "",
+    "slug": "Hon9 Kon9 9ulture tee 018",
+    "id": "018",
+    "name": "Hon9 Kon9 9ulture tee",
+    "text": "Hon99 Kon99",
+    "category": "Tee",
+    "type": "Screen",
+    "description": "",
+    "price": "320",
+    "sizes": "S,M,L,XL,2XL",
+    "colors": "G#00ff00,O#ff5900,B#00d5e0,Y#ffff01"
   },
   {
     "hide": "",
@@ -144,19 +157,6 @@
   },
   {
     "hide": "",
-    "slug": "大茄tee 014",
-    "id": "014",
-    "name": "大茄tee",
-    "text": "長而大的茄子，我有",
-    "category": "Tee",
-    "type": "Print",
-    "description": "乳房大軍：我正在尋找長而大的茄子，你有嗎💦🍆//我：有",
-    "price": "250",
-    "sizes": "S,M,L,XL,2XL",
-    "colors": ""
-  },
-  {
-    "hide": "",
     "slug": "歡迎問路 tee 012",
     "id": "012",
     "name": "歡迎問路 tee",
@@ -177,6 +177,19 @@
     "category": "Tee",
     "type": "Print",
     "description": "適合「問路樣」人士穿着",
+    "price": "250",
+    "sizes": "S,M,L,XL,2XL",
+    "colors": ""
+  },
+  {
+    "hide": "",
+    "slug": "大茄tee 014",
+    "id": "014",
+    "name": "大茄tee",
+    "text": "長而大的茄子，我有",
+    "category": "Tee",
+    "type": "Print",
+    "description": "乳房大軍：我正在尋找長而大的茄子，你有嗎💦🍆//我：有",
     "price": "250",
     "sizes": "S,M,L,XL,2XL",
     "colors": ""
