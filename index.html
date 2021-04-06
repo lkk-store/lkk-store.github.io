@@ -433,6 +433,16 @@ input {
   margin-left: auto;
   margin-right: auto;
 }
+.g-thanks-text .g-item-usd {
+  display: inline;
+}
+.g-thanks-usd {
+  font-size: 11px;
+  line-height: 1.3;
+  opacity: 0.4;
+  margin-top: 20px;
+  max-width: 280px;
+}
 .g-submitted {
   padding: 40px 0;
 }
@@ -677,7 +687,7 @@ input {
 }
 .g-shopping-cart .g-td.g-quantity .g-minus,
 .g-shopping-cart .g-td.g-quantity .g-add {
-  font-size: 19px;
+  font-size: 16px;
   color: #777;
 }
 .g-shopping-cart .g-td.g-quantity .g-minus:hover,
@@ -685,8 +695,8 @@ input {
   cursor: pointer;
 }
 .g-shopping-cart .g-td.g-quantity .g-minus {
-  margin-top: -4px;
-  font-size: 24px;
+  margin-top: -2px;
+  font-size: 18px;
 }
 .g-shopping-cart .g-td.g-price {
   width: 18%;
@@ -2942,8 +2952,9 @@ input {
 				<div class="g-drop-banana g-inside-form"></div>
 
 				<div class="g-submitted g-hide">
-					<div class="g-thanks-text">payme 完 cap 圖 send 去 +85257280149 先會正式落單！</div>
+					<div class="g-thanks-text">payme 完 cap 圖 send 去 +85257280149 先會正式落單！</div>					
 					<img src="img/IMG_0412.JPG">
+					<div class="g-thanks-text g-thanks-usd"><div class="g-text-inner">If you're in the U.S., you can send a payment to welcometolkk@gmail.com through PayPal. Your order total is <div class="g-item-usd"></div> USD (includes 35 USD for shipping).</div></div>
 				</div>
 
 				<form class="" name="my-form" id="my-form">
@@ -4149,6 +4160,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		var tbody = d3.select(".g-tbody").html("");
 		var totalprice = 0;
+		var totalusdprice = 0;
 
 		keys.forEach(function(d){
 
@@ -4201,6 +4213,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			})
 
 			var price = 280;
+			var usdprice = 40;
 			if (split[0] == "001") {  }
 
 			var pricecheck = stocklist.filter(d => d.id == split[0])[0];
@@ -4210,14 +4223,20 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				price = +pricecheck.price;
 			}
 
+			if (price == 250) {
+				usdprice = 35;
+			}
+
 
 			tr.append("div.g-td.g-price").text("$" + shoppingcart[d]*price);
 
 			totalprice += shoppingcart[d]*price;
+			totalusdprice += shoppingcart[d]*usdprice;
 
 		})
 
 		d3.select(".g-total-price").text("$" + totalprice);
+		d3.select(".g-item-usd").text(totalusdprice + 35);
 
 	}
 

@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		var tbody = d3.select(".g-tbody").html("");
 		var totalprice = 0;
+		var totalusdprice = 0;
 
 		keys.forEach(function(d){
 
@@ -212,6 +213,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			})
 
 			var price = 280;
+			var usdprice = 40;
 			if (split[0] == "001") {  }
 
 			var pricecheck = stocklist.filter(d => d.id == split[0])[0];
@@ -221,14 +223,20 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				price = +pricecheck.price;
 			}
 
+			if (price == 250) {
+				usdprice = 35;
+			}
+
 
 			tr.append("div.g-td.g-price").text("$" + shoppingcart[d]*price);
 
 			totalprice += shoppingcart[d]*price;
+			totalusdprice += shoppingcart[d]*usdprice;
 
 		})
 
 		d3.select(".g-total-price").text("$" + totalprice);
+		d3.select(".g-item-usd").text(totalusdprice + 35);
 
 	}
 
