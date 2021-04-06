@@ -81,6 +81,7 @@ function compile() {
 			out += '<link rel="stylesheet" href="https://use.typekit.net/nri5irx.css">\n';
 			// out += '<link rel="preconnect" href="https://fonts.gstatic.com">\n'
 			// out += '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;700&display=swap" rel="stylesheet">\n'
+			out += '<meta property="og:title" content="lkk.store"/>\n<meta property="og:type" content=""/>\n<meta property="og:url" content="http://lkk-store.com"/>\n<meta property="og:image" content="https://www.lkk-store.com/img/twitter.jpg"/>\n<meta property="og:site_name" content="lkk.store"/>\n<meta property="og:description" content="make something 9ood"/>'
 
 			var style = fs.readFileSync("build/style.css", "utf8");
 			out += "<style>\n";
