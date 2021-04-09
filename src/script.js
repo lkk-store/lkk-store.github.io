@@ -574,8 +574,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		}
 
 		if (next == max) {
+			parentel.select(".g-left").classed("g-active", true);
 			parentel.select(".g-right").classed("g-active", false);
 		} else if (next == 0) {
+			parentel.select(".g-right").classed("g-active", false);
 			parentel.select(".g-left").classed("g-active", false);
 		} else if (next) {
 			parentel.select(".g-left").classed("g-active", true);
