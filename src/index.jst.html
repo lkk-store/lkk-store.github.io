@@ -25,10 +25,25 @@
 				<% list.forEach(function(l,i){ %>
 				<div class="g-store-each" data-id="<%= l.id %>" data-page="<%= d.content %>">
 					<% if (l.img) { %>
-					<div class="g-img"><img class="g-load-first" <% if (i > 4 || d.content != "store") { %>data-<% } %>src="img/<%= l.img[0] %>"></div>
+					<div class="g-img g-img-has-nav" id="g-img-<%= l.id %>" data-img="0" data-img-max="<%= l.img.length - 1 %>">
+						<div class="g-img-inner-cont">
+						<% l.img.forEach(function(a,ai){ %>
+							<img class="g-img-<%= ai %> <% if (ai == 0) { %>g-load-first g-active<% } %>" <% if (i > 4 || d.content != "store") { %>data-<% } %>src="img/<%= a %>" style="left: <%= ai*100 %>%;">
+						<% }) %>
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					<% } else { %>
 					<div class="g-img"><img class="g-load-first" <% if (i > 4 || d.content != "store") { %>data-<% } %>src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div>
 					<% } %>
+					<div class="g-img-dots">
+						<% if (l.img) { %>
+							<% l.img.forEach(function(a,ai){ %>
+							<div class="g-dot g-dot-<%= ai %> <% if (ai == 0) { %>g-dot-active<% }%>"></div>
+							<% }) %>
+						<% } %>
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name"><%= l.name %></span>
@@ -234,3 +249,4 @@
 </footer>
 
 <script>var stocklist = <%- JSON.stringify(data.store) -%></script>
+<script src="swiped-events.js"></script>

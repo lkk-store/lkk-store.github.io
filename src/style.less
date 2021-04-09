@@ -102,11 +102,13 @@ img {
 
 .g-store-each {
 	margin-bottom: 25px;
+	position: relative;
 }
 
 .g-img {
 	padding-bottom: 100%;
 	position: relative;
+	overflow: hidden;
 	img {
 		background: #f7f7f7;
 		position: absolute;
@@ -556,6 +558,75 @@ input {
 	font-size: 12px;
 	line-height: 1.4;
 }
+
+
+.g-img-dots {
+	text-align: center;
+
+	@media screen and (min-width: 600px) {
+		margin-top: -4px;
+		height: 20px;
+	}
+
+	.g-dot {
+		width: 5px;
+		height: 5px;
+		border-radius: 100%;
+		background: #ececec;
+		display: inline-block;
+
+		&.g-dot-active {
+			background: #999;
+		}
+	}
+	
+}
+
+.g-img-inner-cont {
+	width: 100%;
+	padding-bottom: 100%;
+	display: block;
+	position: absolute;
+	transition: transform 0.3s;
+}
+
+.g-img-nav {
+	position: absolute;
+	padding-bottom: 100%;
+	width: 60px;
+	left: 0;
+	top: 0;
+
+	.g-img-nav-inner {
+		width: 25px;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		background: url(img/arrow.png);
+		background-size: 200%;
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+		display: none;
+	}
+
+	&.g-active {
+		.g-img-nav-inner {
+
+			display: block;
+		}
+	}
+
+	&.g-right {
+		left: auto;
+		right: 0;
+		.g-img-nav-inner {
+			right: 0;
+			left: auto;
+			background-position: 100%;
+		}
+	}
+}
+
 
 .g-details {
 	margin-top: 14px;

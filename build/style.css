@@ -81,10 +81,12 @@ img {
 }
 .g-store-each {
   margin-bottom: 25px;
+  position: relative;
 }
 .g-img {
   padding-bottom: 100%;
   position: relative;
+  overflow: hidden;
 }
 .g-img img {
   background: #f7f7f7;
@@ -447,6 +449,62 @@ input {
   color: #444;
   font-size: 12px;
   line-height: 1.4;
+}
+.g-img-dots {
+  text-align: center;
+}
+@media screen and (min-width: 600px) {
+  .g-img-dots {
+    margin-top: -4px;
+    height: 20px;
+  }
+}
+.g-img-dots .g-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: #ececec;
+  display: inline-block;
+}
+.g-img-dots .g-dot.g-dot-active {
+  background: #999;
+}
+.g-img-inner-cont {
+  width: 100%;
+  padding-bottom: 100%;
+  display: block;
+  position: absolute;
+  transition: transform 0.3s;
+}
+.g-img-nav {
+  position: absolute;
+  padding-bottom: 100%;
+  width: 60px;
+  left: 0;
+  top: 0;
+}
+.g-img-nav .g-img-nav-inner {
+  width: 25px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: url(img/arrow.png);
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  display: none;
+}
+.g-img-nav.g-active .g-img-nav-inner {
+  display: block;
+}
+.g-img-nav.g-right {
+  left: auto;
+  right: 0;
+}
+.g-img-nav.g-right .g-img-nav-inner {
+  right: 0;
+  left: auto;
+  background-position: 100%;
 }
 .g-details {
   margin-top: 14px;

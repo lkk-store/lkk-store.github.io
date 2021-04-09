@@ -96,10 +96,12 @@ img {
 }
 .g-store-each {
   margin-bottom: 25px;
+  position: relative;
 }
 .g-img {
   padding-bottom: 100%;
   position: relative;
+  overflow: hidden;
 }
 .g-img img {
   background: #f7f7f7;
@@ -463,6 +465,62 @@ input {
   font-size: 12px;
   line-height: 1.4;
 }
+.g-img-dots {
+  text-align: center;
+}
+@media screen and (min-width: 600px) {
+  .g-img-dots {
+    margin-top: -4px;
+    height: 20px;
+  }
+}
+.g-img-dots .g-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: #ececec;
+  display: inline-block;
+}
+.g-img-dots .g-dot.g-dot-active {
+  background: #999;
+}
+.g-img-inner-cont {
+  width: 100%;
+  padding-bottom: 100%;
+  display: block;
+  position: absolute;
+  transition: transform 0.3s;
+}
+.g-img-nav {
+  position: absolute;
+  padding-bottom: 100%;
+  width: 60px;
+  left: 0;
+  top: 0;
+}
+.g-img-nav .g-img-nav-inner {
+  width: 25px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: url(img/arrow.png);
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  display: none;
+}
+.g-img-nav.g-active .g-img-nav-inner {
+  display: block;
+}
+.g-img-nav.g-right {
+  left: auto;
+  right: 0;
+}
+.g-img-nav.g-right .g-img-nav-inner {
+  right: 0;
+  left: auto;
+  background-position: 100%;
+}
 .g-details {
   margin-top: 14px;
 }
@@ -761,6 +819,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" src="img/store-002.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">舊青年 tee</span>
@@ -781,6 +842,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" src="img/store-003.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">舊青年 tee</span>
@@ -799,8 +863,39 @@ input {
 				
 				<div class="g-store-each" data-id="015" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" src="img/store-015-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-015" data-img="0" data-img-max="4">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" src="img/store-015-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " src="img/store-015-002.png" style="left: 100%;">
+						
+							<img class="g-img-2 " src="img/store-015-003.png" style="left: 200%;">
+						
+							<img class="g-img-3 " src="img/store-015-004.png" style="left: 300%;">
+						
+							<img class="g-img-4 " src="img/store-015-005.png" style="left: 400%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+							<div class="g-dot g-dot-2 "></div>
+							
+							<div class="g-dot g-dot-3 "></div>
+							
+							<div class="g-dot g-dot-4 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">healthy horse tee</span>
@@ -819,8 +914,27 @@ input {
 				
 				<div class="g-store-each" data-id="008" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" src="img/store-008-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-008" data-img="0" data-img-max="1">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" src="img/store-008-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " src="img/store-008-002.png" style="left: 100%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">ok sad tee</span>
@@ -839,8 +953,31 @@ input {
 				
 				<div class="g-store-each" data-id="007" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" src="img/store-007-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-007" data-img="0" data-img-max="2">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" src="img/store-007-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " src="img/store-007-002.png" style="left: 100%;">
+						
+							<img class="g-img-2 " src="img/store-007-003.png" style="left: 200%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+							<div class="g-dot g-dot-2 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">good-looking tee</span>
@@ -861,6 +998,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/store-013.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">good-looking tee</span>
@@ -879,8 +1019,35 @@ input {
 				
 				<div class="g-store-each" data-id="016" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-016-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-016" data-img="0" data-img-max="3">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-016-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-016-002.png" style="left: 100%;">
+						
+							<img class="g-img-2 " data-src="img/store-016-003.png" style="left: 200%;">
+						
+							<img class="g-img-3 " data-src="img/store-016-004.png" style="left: 300%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+							<div class="g-dot g-dot-2 "></div>
+							
+							<div class="g-dot g-dot-3 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">Hon9 Kon9 9ulture tee</span>
@@ -899,8 +1066,35 @@ input {
 				
 				<div class="g-store-each" data-id="018" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-018-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-018" data-img="0" data-img-max="3">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-018-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-018-002.png" style="left: 100%;">
+						
+							<img class="g-img-2 " data-src="img/store-018-003.png" style="left: 200%;">
+						
+							<img class="g-img-3 " data-src="img/store-018-004.png" style="left: 300%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+							<div class="g-dot g-dot-2 "></div>
+							
+							<div class="g-dot g-dot-3 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">Hon9 Kon9 9ulture tee</span>
@@ -919,8 +1113,27 @@ input {
 				
 				<div class="g-store-each" data-id="011" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-011-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-011" data-img="0" data-img-max="1">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-011-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-011-002.png" style="left: 100%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">ok love tee</span>
@@ -939,8 +1152,27 @@ input {
 				
 				<div class="g-store-each" data-id="020" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-020-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-020" data-img="0" data-img-max="1">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-020-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-020-002.png" style="left: 100%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">hug hug tee</span>
@@ -959,8 +1191,27 @@ input {
 				
 				<div class="g-store-each" data-id="009" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-009-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-009" data-img="0" data-img-max="1">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-009-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-009-002.png" style="left: 100%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">ok old tee</span>
@@ -979,8 +1230,35 @@ input {
 				
 				<div class="g-store-each" data-id="019" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-019-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-019" data-img="0" data-img-max="3">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-019-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-019-002.png" style="left: 100%;">
+						
+							<img class="g-img-2 " data-src="img/store-019-003.png" style="left: 200%;">
+						
+							<img class="g-img-3 " data-src="img/store-019-004.png" style="left: 300%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+							<div class="g-dot g-dot-2 "></div>
+							
+							<div class="g-dot g-dot-3 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">keep rolling tee</span>
@@ -999,8 +1277,27 @@ input {
 				
 				<div class="g-store-each" data-id="005" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-005-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-005" data-img="0" data-img-max="1">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-005-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-005-002.png" style="left: 100%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">sad banana tee</span>
@@ -1019,8 +1316,35 @@ input {
 				
 				<div class="g-store-each" data-id="006" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-006-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-006" data-img="0" data-img-max="3">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-006-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-006-002.png" style="left: 100%;">
+						
+							<img class="g-img-2 " data-src="img/store-006-003.png" style="left: 200%;">
+						
+							<img class="g-img-3 " data-src="img/store-006-004.png" style="left: 300%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+							<div class="g-dot g-dot-2 "></div>
+							
+							<div class="g-dot g-dot-3 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">我♥常餐 tee</span>
@@ -1039,8 +1363,27 @@ input {
 				
 				<div class="g-store-each" data-id="021" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-021-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-021" data-img="0" data-img-max="1">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-021-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-021-002.png" style="left: 100%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">sun of a beach cap</span>
@@ -1061,6 +1404,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/store-012.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">歡迎問路 tee</span>
@@ -1081,6 +1427,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/store-010.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">唔好問路 tee</span>
@@ -1099,8 +1448,27 @@ input {
 				
 				<div class="g-store-each" data-id="014" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" data-src="img/store-014-001.png"></div>
+					<div class="g-img g-img-has-nav" id="g-img-014" data-img="0" data-img-max="1">
+						<div class="g-img-inner-cont">
+						
+							<img class="g-img-0 g-load-first g-active" data-src="img/store-014-001.png" style="left: 0%;">
+						
+							<img class="g-img-1 " data-src="img/store-014-002.png" style="left: 100%;">
+						
+						</div>
+					</div>
+					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					
+					<div class="g-img-dots">
+						
+							
+							<div class="g-dot g-dot-0 g-dot-active"></div>
+							
+							<div class="g-dot g-dot-1 "></div>
+							
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">大茄tee</span>
@@ -1121,6 +1489,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/store-017.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">黎根記紙袋</span>
@@ -1141,6 +1512,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/store-001.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">人人有蕉吔基金</span>
@@ -1161,6 +1535,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/store-004.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">員工 tee</span>
@@ -3395,6 +3772,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/upcoming-003.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">裝修黎根記絲印工場</span>
@@ -3408,6 +3788,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/upcoming-001.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">zine【阿霞~我要飛鵝山上】</span>
@@ -3421,6 +3804,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/upcoming-002.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">飛鵝山親善大使 tee</span>
@@ -3551,6 +3937,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-012.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">Hon9 Kon9 9ulture</span>
@@ -3564,6 +3953,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-011.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">MICHELSIN</span>
@@ -3577,6 +3969,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-010.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">香港毒L</span>
@@ -3590,6 +3985,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-008.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">無良印品</span>
@@ -3603,6 +4001,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-009.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">keeeep rolling</span>
@@ -3616,6 +4017,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-007.gif"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">keep rolling</span>
@@ -3629,6 +4033,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-006.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">青春就是拖手都有生理反應</span>
@@ -3642,6 +4049,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-003.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">i hate moist</span>
@@ -3655,6 +4065,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-002.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">hapee everyday</span>
@@ -3668,6 +4081,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-001.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">hug hard in hard times</span>
@@ -3681,6 +4097,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-004.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">it&#39;s okay to feel sad</span>
@@ -3694,6 +4113,9 @@ input {
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/blog-005.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">DVYMVMW</span>
@@ -4103,6 +4525,9 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/wood-001.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">飛鵝山親善大使</span>
@@ -4116,6 +4541,9 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/wood-002.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">我在山上感覺良好</span>
@@ -4129,6 +4557,9 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/wood-003.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">五歲的小朋友</span>
@@ -4142,6 +4573,9 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/wood-004.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">帶着舊青年去飛鵝山</span>
@@ -4155,6 +4589,9 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					
 					<div class="g-img"><img class="g-load-first" data-src="img/wood-005.png"></div>
 					
+					<div class="g-img-dots">
+						
+					</div>					
 					<div class="g-meta">
 						<div class="g-hed">
 							<span class="g-name">守得雲開見日落</span>
@@ -4387,7 +4824,8 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 	<div class="g-tm">© 2021 黎根記.<br>All rights reserved.</div>
 </footer>
 
-<script>var stocklist = [{"hide":"","slug":"舊青年 tee 002","id":"002","name":"舊青年 tee","text":"NO MORE NEW YOUTH","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":""},{"hide":"","slug":"舊青年 tee 003","id":"003","name":"舊青年 tee","text":"壽終正寢 version","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":""},{"hide":"","slug":"healthy horse tee 015","id":"015","name":"healthy horse tee","text":"嘟！嘟！嘟！","category":"Tee","type":"Print","description":"健康馬/健康黑馬// 著健康馬保健康！// 做個健康香港人🐎🐎🐎","price":"250","sizes":"S,M,L,XL,2XL","colors":"001#ffffff,005#000000","img":["store-015-001.png","store-015-002.png","store-015-003.png","store-015-004.png","store-015-005.png"]},{"hide":"","slug":"ok sad tee 008","id":"008","name":"ok sad tee","text":"it’s okay to feel sad","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":"","img":["store-008-001.png","store-008-002.png"]},{"hide":"","slug":"good-looking tee 007","id":"007","name":"good-looking tee","text":"初號夜光9ood","category":"Tee","type":"Print","description":"it's all 9ood// *print有夜光效果","price":"250","sizes":"S,M,L,XL,2XL","colors":"188#bd94ca","img":["store-007-001.png","store-007-002.png","store-007-003.png"]},{"hide":"","slug":"good-looking tee 013","id":"013","name":"good-looking tee","text":"姣婆9ood","category":"Tee","type":"Print","description":"it's all 9ood","price":"250","sizes":"S,M,L,XL,2XL","colors":"132#fbd4dd"},{"hide":"","slug":"Hon9 Kon9 9ulture tee 016","id":"016","name":"Hon9 Kon9 9ulture tee","text":"i love Hon9 Kong9","category":"Tee","type":"Screen","description":"","price":"320","sizes":"S,M,L,XL,2XL","colors":"G#00ff00,O#ff5900,B#00d5e0,Y#ffff00","img":["store-016-001.png","store-016-002.png","store-016-003.png","store-016-004.png"]},{"hide":"","slug":"Hon9 Kon9 9ulture tee 018","id":"018","name":"Hon9 Kon9 9ulture tee","text":"Hon99 Kon99","category":"Tee","type":"Screen","description":"","price":"320","sizes":"S,M,L,XL,2XL","colors":"G#00ff00,O#ff5900,B#00d5e0,Y#ffff01","img":["store-018-001.png","store-018-002.png","store-018-003.png","store-018-004.png"]},{"hide":"","slug":"ok love tee 011","id":"011","name":"ok love tee","text":"it’s okay to love","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":"","img":["store-011-001.png","store-011-002.png"]},{"hide":"","slug":"hug hug tee 020","id":"020","name":"hug hug tee","text":"hug hard in hard times","category":"Tee","type":"Print","description":"navy blue","price":"250","sizes":"S,M,L,XL,2XL","colors":"","img":["store-020-001.png","store-020-002.png"]},{"hide":"","slug":"ok old tee 009","id":"009","name":"ok old tee","text":"it’s okay to get old","category":"Tee","type":"Screen","description":"【職場日常】// 啱啱畢業入職嘅22歲新同事：唉，我老啦// 我：😬🚬","price":"280","sizes":"S,M,L,XL,2XL","colors":"","img":["store-009-001.png","store-009-002.png"]},{"hide":"","slug":"keep rolling tee 019","id":"019","name":"keep rolling tee","text":"just keep rolling","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":"025#03653e,001#ffffff,005#000000","img":["store-019-001.png","store-019-002.png","store-019-003.png","store-019-004.png"]},{"hide":"","slug":"sad banana tee 005","id":"005","name":"sad banana tee","text":"don't be a sad banana","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL,2XL","colors":"","img":["store-005-001.png","store-005-002.png"]},{"hide":"","slug":"我♥常餐 tee 006","id":"006","name":"我♥常餐 tee","text":"alldaymealh♥lic","category":"Tee","type":"Print","description":"同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“","price":"250","sizes":"S,M,L,XL,2XL","colors":"","img":["store-006-001.png","store-006-002.png","store-006-003.png","store-006-004.png"]},{"hide":"","slug":"sun of a beach cap 021","id":"021","name":"sun of a beach cap","text":"what the sun!","category":"Cap","type":"","description":"研發中，暫未有售","price":"250","sizes":"","colors":"rice#fae8cb,black#000000","img":["store-021-001.png","store-021-002.png"]},{"hide":"","slug":"歡迎問路 tee 012","id":"012","name":"歡迎問路 tee","text":"Konnichi wa!","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着","price":"250","sizes":"S,M,L,XL,2XL","colors":""},{"hide":"","slug":"唔好問路 tee 010","id":"010","name":"唔好問路 tee","text":"唔好啦","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着","price":"250","sizes":"S,M,L,XL,2XL","colors":""},{"hide":"","slug":"大茄tee 014","id":"014","name":"大茄tee","text":"長而大的茄子，我有","category":"Tee","type":"Print","description":"乳房大軍：我正在尋找長而大的茄子，你有嗎💦🍆//我：有","price":"250","sizes":"S,M,L,XL,2XL","colors":"","img":["store-014-001.png","store-014-002.png"]},{"hide":"","slug":"黎根記紙袋 017","id":"017","name":"黎根記紙袋","text":"LKK chicken skin paper bag","category":"","type":"","description":"","price":"30","sizes":"","colors":""},{"hide":"","slug":"人人有蕉吔基金 001","id":"001","name":"人人有蕉吔基金","text":"純純粹粹俾錢店主","category":"","type":"","description":"【DONT THINK, JUST DONATE!】// 黎根記®有一個願望：「人人都可以有蕉吔！」// 如果您都認同我哋，// 事不宜遲，請立即捐款到\"人人有蕉吔基金\" // 你將會收到香蕉.png一條","price":"10up","sizes":"小小心意,多多益善,大手入股","colors":""},{"hide":"","slug":"員工 tee 004","id":"004","name":"員工 tee","text":"非賣品","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL,2XL","colors":""}]</script><script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
+<script>var stocklist = [{"hide":"","slug":"舊青年 tee 002","id":"002","name":"舊青年 tee","text":"NO MORE NEW YOUTH","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":""},{"hide":"","slug":"舊青年 tee 003","id":"003","name":"舊青年 tee","text":"壽終正寢 version","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":""},{"hide":"","slug":"healthy horse tee 015","id":"015","name":"healthy horse tee","text":"嘟！嘟！嘟！","category":"Tee","type":"Print","description":"健康馬/健康黑馬// 著健康馬保健康！// 做個健康香港人🐎🐎🐎","price":"250","sizes":"S,M,L,XL,2XL","colors":"001#ffffff,005#000000","img":["store-015-001.png","store-015-002.png","store-015-003.png","store-015-004.png","store-015-005.png"]},{"hide":"","slug":"ok sad tee 008","id":"008","name":"ok sad tee","text":"it’s okay to feel sad","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":"","img":["store-008-001.png","store-008-002.png"]},{"hide":"","slug":"good-looking tee 007","id":"007","name":"good-looking tee","text":"初號夜光9ood","category":"Tee","type":"Print","description":"it's all 9ood// *print有夜光效果","price":"250","sizes":"S,M,L,XL,2XL","colors":"188#bd94ca","img":["store-007-001.png","store-007-002.png","store-007-003.png"]},{"hide":"","slug":"good-looking tee 013","id":"013","name":"good-looking tee","text":"姣婆9ood","category":"Tee","type":"Print","description":"it's all 9ood","price":"250","sizes":"S,M,L,XL,2XL","colors":"132#fbd4dd"},{"hide":"","slug":"Hon9 Kon9 9ulture tee 016","id":"016","name":"Hon9 Kon9 9ulture tee","text":"i love Hon9 Kong9","category":"Tee","type":"Screen","description":"","price":"320","sizes":"S,M,L,XL,2XL","colors":"G#00ff00,O#ff5900,B#00d5e0,Y#ffff00","img":["store-016-001.png","store-016-002.png","store-016-003.png","store-016-004.png"]},{"hide":"","slug":"Hon9 Kon9 9ulture tee 018","id":"018","name":"Hon9 Kon9 9ulture tee","text":"Hon99 Kon99","category":"Tee","type":"Screen","description":"","price":"320","sizes":"S,M,L,XL,2XL","colors":"G#00ff00,O#ff5900,B#00d5e0,Y#ffff01","img":["store-018-001.png","store-018-002.png","store-018-003.png","store-018-004.png"]},{"hide":"","slug":"ok love tee 011","id":"011","name":"ok love tee","text":"it’s okay to love","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":"","img":["store-011-001.png","store-011-002.png"]},{"hide":"","slug":"hug hug tee 020","id":"020","name":"hug hug tee","text":"hug hard in hard times","category":"Tee","type":"Print","description":"navy blue","price":"250","sizes":"S,M,L,XL,2XL","colors":"","img":["store-020-001.png","store-020-002.png"]},{"hide":"","slug":"ok old tee 009","id":"009","name":"ok old tee","text":"it’s okay to get old","category":"Tee","type":"Screen","description":"【職場日常】// 啱啱畢業入職嘅22歲新同事：唉，我老啦// 我：😬🚬","price":"280","sizes":"S,M,L,XL,2XL","colors":"","img":["store-009-001.png","store-009-002.png"]},{"hide":"","slug":"keep rolling tee 019","id":"019","name":"keep rolling tee","text":"just keep rolling","category":"Tee","type":"Screen","description":"","price":"280","sizes":"S,M,L,XL,2XL","colors":"025#03653e,001#ffffff,005#000000","img":["store-019-001.png","store-019-002.png","store-019-003.png","store-019-004.png"]},{"hide":"","slug":"sad banana tee 005","id":"005","name":"sad banana tee","text":"don't be a sad banana","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL,2XL","colors":"","img":["store-005-001.png","store-005-002.png"]},{"hide":"","slug":"我♥常餐 tee 006","id":"006","name":"我♥常餐 tee","text":"alldaymealh♥lic","category":"Tee","type":"Print","description":"同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“","price":"250","sizes":"S,M,L,XL,2XL","colors":"","img":["store-006-001.png","store-006-002.png","store-006-003.png","store-006-004.png"]},{"hide":"","slug":"sun of a beach cap 021","id":"021","name":"sun of a beach cap","text":"what the sun!","category":"Cap","type":"","description":"研發中，暫未有售","price":"250","sizes":"","colors":"rice#fae8cb,black#000000","img":["store-021-001.png","store-021-002.png"]},{"hide":"","slug":"歡迎問路 tee 012","id":"012","name":"歡迎問路 tee","text":"Konnichi wa!","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着","price":"250","sizes":"S,M,L,XL,2XL","colors":""},{"hide":"","slug":"唔好問路 tee 010","id":"010","name":"唔好問路 tee","text":"唔好啦","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着","price":"250","sizes":"S,M,L,XL,2XL","colors":""},{"hide":"","slug":"大茄tee 014","id":"014","name":"大茄tee","text":"長而大的茄子，我有","category":"Tee","type":"Print","description":"乳房大軍：我正在尋找長而大的茄子，你有嗎💦🍆//我：有","price":"250","sizes":"S,M,L,XL,2XL","colors":"","img":["store-014-001.png","store-014-002.png"]},{"hide":"","slug":"黎根記紙袋 017","id":"017","name":"黎根記紙袋","text":"LKK chicken skin paper bag","category":"","type":"","description":"","price":"30","sizes":"","colors":""},{"hide":"","slug":"人人有蕉吔基金 001","id":"001","name":"人人有蕉吔基金","text":"純純粹粹俾錢店主","category":"","type":"","description":"【DONT THINK, JUST DONATE!】// 黎根記®有一個願望：「人人都可以有蕉吔！」// 如果您都認同我哋，// 事不宜遲，請立即捐款到\"人人有蕉吔基金\" // 你將會收到香蕉.png一條","price":"10up","sizes":"小小心意,多多益善,大手入股","colors":""},{"hide":"","slug":"員工 tee 004","id":"004","name":"員工 tee","text":"非賣品","category":"Tee","type":"Print","description":"","price":"250","sizes":"S,M,L,XL,2XL","colors":""}]</script>
+<script src="swiped-events.js"></script><script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
@@ -4470,7 +4908,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
    		} else if (hash.indexOf("lunch") > -1) {
    			dropbananas();
-   		}  else if (hash == "#store" || hash == "#upcoming" || hash == "#blog" || hash == "#woody7777777u                                                                                         ") {
+   		}  else if (hash == "#store" || hash == "#upcoming" || hash == "#blog" || hash == "#wood") {
    			el.select(".g-store-list").classed("g-hide", false)
    			el.select(".g-stock-list").classed("g-hide", false)
    			el.select(".g-shopping-cart").classed("g-hide", true);
@@ -4498,6 +4936,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		nav.attr("data-instore", "false");
    		nav.attr("data-incart", "false");
    		nav.transition().style("height", (+nav.attr("data-h1") + +nav.attr("data-h2")) + "px")
+   		resetimgnav();
    		document.location.hash = page;
    	}
 
@@ -4820,8 +5259,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	})
 
 	// stock click function
-	d3.selectAll(".g-store-each").on("click", function(){
+	d3.selectAll(".g-store-each .g-img").on("click", function(){
 		var el = d3.select(this);
+		el = d3.select(el.node().parentNode);
+		storefunc(el);
+	})
+
+	d3.selectAll(".g-store-each .g-meta").on("click", function(){
+		var el = d3.select(this);
+		el = d3.select(el.node().parentNode);
+		storefunc(el);
+	})
+
+	function storefunc(el) {
 		var nav = d3.select(".g-nav-list-" + el.attr("data-page"));
 		var list = d3.select(".g-" + el.attr("data-page") + "-list");
 		var item = d3.select(".g-" + el.attr("data-page") + "-" + el.attr("data-id"));
@@ -4855,7 +5305,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		}
 
 		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
-	})
+		resetimgnav();
+	}
+
 
 	d3.selectAll(".g-back").on("click", function(){
 		back(d3.select(this).attr("data-page"))
@@ -4895,6 +5347,82 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		parent.selectAll(".g-color-circle").classed("g-picked", false);
 		parent.select(".g-color-circle:nth-child(" + ((+item.split("-")[2])+1) +")").classed("g-picked", true);
 	})
+
+
+
+	// img slideshow 
+
+	d3.selectAll(".g-store-each .g-img").each(function(){
+		var el = d3.select(this);
+		var id = el.attr("id");
+		var parentel = d3.select(el.node().parentNode);
+		if (id) {
+			document.getElementById(id).addEventListener('swiped-left', function(e) {
+			    console.log("swiped left");
+			    imgnavfunc(parentel, "right");
+			});
+			document.getElementById(id).addEventListener('swiped-right', function(e) {
+			    console.log("swiped right")
+			    imgnavfunc(parentel, "left");
+			});
+		}
+	})
+
+	d3.selectAll(".g-img-nav").on("click", function(){
+		var el = d3.select(this);
+		var parentel = d3.select(el.node().parentNode);
+		var dir = el.attr("class").indexOf("g-left") > -1 ? "left" : "right";
+		imgnavfunc(parentel, dir);
+	})
+
+	function imgnavfunc(parentel, dir){
+		var img = parentel.select(".g-img");
+		var inner = parentel.select(".g-img-inner-cont");
+		var current = img.attr("data-img");
+		var max = +img.attr("data-img-max");
+		var next;
+
+		img.selectAll("img").each(function(){
+			var imgel = d3.select(this);
+
+			if (!imgel.attr("src")) {
+				imgel.attr("src", imgel.attr("data-src"));
+			}
+		})
+
+
+		if (dir == "left" && current != 0) {
+			next = +current - 1;
+		} else if (dir == "right" && current != max) {
+			next = +current + 1;
+		}
+
+		if (next <= max) {
+			inner.style("transform", "translateX(-" + next*100 + "%)");
+			img.attr("data-img", next);
+			parentel.selectAll(".g-dot").classed("g-dot-active", false);
+			parentel.select(".g-dot-" + next).classed("g-dot-active", true);
+		}
+
+		if (next == max) {
+			parentel.select(".g-right").classed("g-active", false);
+		} else if (next == 0) {
+			parentel.select(".g-left").classed("g-active", false);
+		} else if (next) {
+			parentel.select(".g-left").classed("g-active", true);
+			parentel.select(".g-right").classed("g-active", true);
+		}
+	}
+
+	function resetimgnav() {
+		d3.selectAll(".g-img-has-nav").attr("data-img", 0);
+		d3.selectAll(".g-img-inner-cont").style("transform", "translateX(0)");
+		d3.selectAll(".g-dot").classed("g-dot-active", false);
+		d3.selectAll(".g-dot-0").classed("g-dot-active", true);
+		d3.selectAll(".g-img-nav.g-left").classed("g-active", false);
+		d3.selectAll(".g-img-nav.g-right").classed("g-active", true);
+	}
+
 
 	d3.selectAll(".g-button").on("click", function(){
 
