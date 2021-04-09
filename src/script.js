@@ -515,6 +515,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var parent = d3.select(el.node().parentNode.parentNode.parentNode);
 		parent.selectAll(".g-color-circle").classed("g-picked", false);
 		parent.select(".g-color-circle:nth-child(" + ((+item.split("-")[2])+1) +")").classed("g-picked", true);
+
+
+		var goto = +item.split("-")[2]-1;
+		var parentel = d3.select(el.node().parentNode.parentNode);
+		imgnavfunc(parentel, null, goto);
+
 	})
 
 
@@ -527,11 +533,27 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var parentel = d3.select(el.node().parentNode);
 		if (id) {
 			document.getElementById(id).addEventListener('swiped-left', function(e) {
-			    console.log("swiped left");
+			    // console.log("swiped left");
 			    imgnavfunc(parentel, "right");
 			});
 			document.getElementById(id).addEventListener('swiped-right', function(e) {
-			    console.log("swiped right")
+			    // console.log("swiped right")
+			    imgnavfunc(parentel, "left");
+			});
+		}
+	})
+
+	d3.selectAll(".g-stock-each .g-img").each(function(){
+		var el = d3.select(this);
+		var id = el.attr("id");
+		var parentel = d3.select(el.node().parentNode);
+		if (id) {
+			document.getElementById(id).addEventListener('swiped-left', function(e) {
+			    // console.log("swiped left");
+			    imgnavfunc(parentel, "right");
+			});
+			document.getElementById(id).addEventListener('swiped-right', function(e) {
+			    // console.log("swiped right")
 			    imgnavfunc(parentel, "left");
 			});
 		}
@@ -544,8 +566,15 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		imgnavfunc(parentel, dir);
 	})
 
-	function imgnavfunc(parentel, dir){
-		var img = parentel.select(".g-img");
+	function imgnavfunc(parentel, dir, goto){
+		var img;
+
+		if (parentel.attr("class").indexOf("g-img") > -1) {
+			img = parentel
+		} else {
+			img = parentel.select(".g-img");
+		}
+
 		var inner = parentel.select(".g-img-inner-cont");
 		var current = img.attr("data-img");
 		var max = +img.attr("data-img-max");
@@ -559,8 +588,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			}
 		})
 
-
-		if (dir == "left" && current != 0) {
+		if (goto != undefined) {
+			next = goto;
+		} else if (dir == "left" && current != 0) {
 			next = +current - 1;
 		} else if (dir == "right" && current != max) {
 			next = +current + 1;
@@ -577,7 +607,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			parentel.select(".g-left").classed("g-active", true);
 			parentel.select(".g-right").classed("g-active", false);
 		} else if (next == 0) {
-			parentel.select(".g-right").classed("g-active", false);
+			parentel.select(".g-right").classed("g-active", true);
 			parentel.select(".g-left").classed("g-active", false);
 		} else if (next) {
 			parentel.select(".g-left").classed("g-active", true);

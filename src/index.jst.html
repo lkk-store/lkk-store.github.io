@@ -71,10 +71,15 @@
 					<div class="g-back" data-page="<%= d.content %>"><div class="g-tri">◂</div>BACK</div>
 
 					<% if (l.img) { %>
-					<div class="g-img g-img-slideshow-cont">
+					<div class="g-img g-img-slideshow-cont" id="g-img-store-<%= l.id %>" data-img="0" data-img-max="<%= l.img.length - 1 %>">
+						<div class="g-img-inner-cont">
 						<% l.img.forEach(function(a,ai){ %>
-							<img class="g-img-slideshow g-img-slideshow-group-store-<%= l.id %> g-img-slideshow-<%= a.replace('.png', '') %> <% if (ai == 0) { %>g-on-top<% } %>" data-src="img/<%= a %>">
+							<img class="g-img-<%= ai %>" data-src="img/<%= a %>" style="left: <%= ai*100 %>%;">
 						<% }) %>
+						</div>
+
+						<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
+						<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 
 						<div class="g-thumbnail-cont">
 							<% l.img.forEach(function(a){ %>

@@ -482,6 +482,7 @@ input {
   width: 60px;
   left: 0;
   top: 0;
+  z-index: 10;
 }
 .g-img-nav .g-img-nav-inner {
   width: 25px;
