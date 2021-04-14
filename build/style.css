@@ -768,3 +768,9 @@ input {
 #my-form .g-purchase-summary .g-submit {
   display: none;
 }
+.g-wood-list .g-img-dots {
+  display: none;
+}
+.g-wood-list .g-meta {
+  margin-top: 5px;
+}
