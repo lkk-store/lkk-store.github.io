@@ -1,0 +1,1 @@
+convert img/strd_hamilton-st.png -channel RGB -negate img/strd_hamilton-st-i.png
