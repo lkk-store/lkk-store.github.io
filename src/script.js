@@ -5,16 +5,10 @@ var buying = false;
 document.addEventListener("DOMContentLoaded", function(e) {
 
 	d3.select(".g-popup").style("padding-top", ((innerHeight/2 - (d3.select(".g-popup img").node().getBoundingClientRect().width*800/640)/2)) + "px")
-
-	dropbananas();
-	d3.select(".g-drop-banana .g-img").style("display", "none");
-
 	var popup = d3.select(".g-popup");
 
 	popup.on("click", function(){
 		popup.style("display", "none");
-		stopbananas();
-		d3.select(".g-drop-banana .g-img").style("display", "block");
 	})
    	
    	function resize() {
