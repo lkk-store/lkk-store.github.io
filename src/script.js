@@ -4,9 +4,10 @@ var buying = false;
 
 document.addEventListener("DOMContentLoaded", function(e) {
 
+	d3.select(".g-popup").style("padding-top", (innerHeight/2 - (d3.select(".g-popup").node().getBoundingClientRect().width*640/800)/2) + "px")
+
 	dropbananas();
 	d3.select(".g-drop-banana .g-img").style("display", "none");
-	d3.select(".g-popup img").style("padding-top", (innerHeight/2 - d3.select(".g-popup img").node().getBoundingClientRect().height/2) + "px")
 
 	var popup = d3.select(".g-popup");
 
