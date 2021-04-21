@@ -3,6 +3,18 @@ var doneshopping = false;
 var buying = false;
 
 document.addEventListener("DOMContentLoaded", function(e) {
+
+	dropbananas();
+	d3.select(".g-drop-banana .g-img").style("display", "none");
+	d3.select(".g-popup img").style("padding-top", (innerHeight/2 - d3.select(".g-popup img").node().getBoundingClientRect().height/2) + "px")
+
+	var popup = d3.select(".g-popup");
+
+	popup.on("click", function(){
+		popup.style("display", "none");
+		stopbananas();
+		d3.select(".g-drop-banana .g-img").style("display", "block");
+	})
    	
    	function resize() {
    		d3.selectAll(".g-nav-list").each(function(){
