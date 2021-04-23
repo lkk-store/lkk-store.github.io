@@ -867,9 +867,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		el.classed("g-picked", true);
 
-		var curstockel = d3.select(".g-store-" + el.attr("data-store"));
-		curstockel.selectAll(".g-img-slideshow").classed("g-on-top", false);
-		curstockel.select(".g-img-slideshow:nth-child(" + el.attr("data-order") + ")").classed("g-on-top", true);
+		var parentel = d3.select(".g-store-" + el.attr("data-store") + " .g-img.g-img-slideshow-cont");
+		imgnavfunc(parentel, null, el.attr("data-order")-1);
+
 
 	})
 
