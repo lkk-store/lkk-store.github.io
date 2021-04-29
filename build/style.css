@@ -285,6 +285,11 @@ a {
   border-color: #999 transparent transparent transparent;
   position: absolute;
 }
+.g-colors .g-color-circle.g-color-not-available {
+  opacity: 0.05;
+  user-select: none;
+  cursor: default;
+}
 .g-volume-cont {
   display: inline;
   margin-left: -15px;

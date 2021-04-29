@@ -162,10 +162,11 @@
 						
 						<br>
 						<p><b><i>因屋企工場製作需時，落單後一般要14至20個工作天先有貨</i></b></p>
+						<% if (l.colors == "x") { %><p><b><i>Out of stock</i></b></p><% } %>
 						<% } %>
 						</div>
 
-						<% if (d.content == "store") { %>
+						<% if (d.content == "store" && l.category != "Cap" && l.colors != "x") { %>
 						<div class="g-buy">
 							<div class="g-size" style="<% if (!l.sizes) { %>display: none;<% } %>">
 								<span class="g-label">尺碼 size</span>
@@ -180,8 +181,9 @@
 							<div class="g-colors">
 								<span class="g-label">顏色</span>
 									<% var colors = l.colors.split(",") %>
+									<% var filtered = l.colors.split(",").filter(d => d.charAt(0) != "x") %>
 									<% colors.forEach(function(s,si){ %>
-									<div class="g-color-circle <% if (si == 0) { %>g-picked<% } %>" data-store="<%= l.id %>" data-order="<%= (si+1) %>" data-color="<%= (si+1) %>-<%= s.split('#')[0] %>" style="background-color: <%= '#' + s.split('#')[1] %>;"></div>
+									<div class="g-color-circle <% if (s.charAt(0) == 'x') { %>g-color-not-available<% } %> <% if (filtered.indexOf(s) == 0) { %>g-picked<% } %>" data-store="<%= l.id %>" data-order="<%= (si+1) %>" data-color="<%= (si+1) %>-<%= s.split('#')[0] %>" style="background-color: <%= '#' + s.split('#')[1] %>;"></div>
 									<% }) %>
 							</div>
 							<% } %>

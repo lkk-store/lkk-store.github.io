@@ -864,12 +864,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		var el = d3.select(this);
 		var parent = d3.select(el.node().parentNode);
-		parent.selectAll(".g-color-circle").classed("g-picked", false);
 
-		el.classed("g-picked", true);
+		if (el.attr("class").indexOf("g-color-not-available") == -1) {
+			parent.selectAll(".g-color-circle").classed("g-picked", false);
+			el.classed("g-picked", true);
 
-		var parentel = d3.select(".g-store-" + el.attr("data-store") + " .g-img.g-img-slideshow-cont");
-		imgnavfunc(parentel, null, el.attr("data-order")-1);
+			var parentel = d3.select(".g-store-" + el.attr("data-store") + " .g-img.g-img-slideshow-cont");
+			imgnavfunc(parentel, null, el.attr("data-order")-1);
+		}
 
 
 	})
