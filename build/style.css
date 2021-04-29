@@ -775,6 +775,7 @@ input {
   margin-top: 5px;
 }
 .g-popup {
+  display: none !important;
   position: fixed;
   top: 0;
   left: 0;

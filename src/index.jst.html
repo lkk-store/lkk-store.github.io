@@ -11,7 +11,7 @@
 	} %>
 
 	<div class="g-nav-list g-nav-list-<%= d.slug %>" data-id="<%= d.slug %>" data-state="hidden">
-		<div class="g-nav-name"><%- d.page %><% if (d.page.indexOf("CLICK") > -1) { %><img id="g-clickhere-arrow" src="img/arrow-03.png"><% } %></div>
+		<div class="g-nav-name"><% if (d.page == 'UPCOMING') { %>9OOD PROJECT<% } else { %><%- d.page %><% } %><% if (d.page.indexOf("CLICK") > -1) { %><img id="g-clickhere-arrow" src="img/arrow-03.png"><% } %></div>
 		<div class="g-nav-content">
 			<% if (d.text) { %>
 			<div class="g-about"><%= d.text %></div>

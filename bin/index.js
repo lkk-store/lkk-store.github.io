@@ -39,6 +39,17 @@ function compile() {
 
 	})
 
+	data.upcoming.forEach(function(d){
+		// console.log(d)
+
+		var match = imgdir.filter(a => a.indexOf("upcoming-" + d.id) > -1);
+
+		if (match.length > 1) {
+			d.img = match
+		}
+
+	})
+
 	data.store = data.store.filter(d => d.hide != "1");
 
 	var pages = ["index"]
