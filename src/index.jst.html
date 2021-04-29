@@ -56,7 +56,8 @@
 							<% if (l.price == "10up") { %>
 							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
 							<% } else { %>
-							<span class="g-price-num"><span class="g-price-old"><%= (+l.price+40) %></span> <span class="g-price-new"><%= l.price %></span></span>
+							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
+							<span class="g-price-num"><%= l.price %></span>
 							<% } %>
 						</div>
 						<% } %>
@@ -103,7 +104,8 @@
 							<% if (l.price == "10up") { %>
 							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
 							<% } else { %>
-							<span class="g-price-num"><span class="g-price-old"><%= (+l.price+40) %></span> <span class="g-price-new"><%= l.price %></span></span>
+							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
+							<span class="g-price-num"><%= l.price %></span>
 							<% } %>
 						</div><% } %>
 
