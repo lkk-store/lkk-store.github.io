@@ -3,24 +3,36 @@
     "id": "002",
     "name": "舊青年遇上舊青年",
     "text": "oh you! old youth",
-    "description": ""
+    "description": "\n"
   },
   {
     "id": "001",
     "name": "走鬼面交",
     "text": "出下街見下人講下嘢",
-    "description": ""
+    "description": "好多人問我地有冇得寄貨//\n我地死都唔肯//\n出嚟見下面揸個手講個笑話//\n不好嗎? "
   },
   {
     "id": "003",
     "name": "黎根記工場2.0",
     "text": "身體健康 開工大吉🍌",
-    "description": ""
+    "description": "搬咗新屋之後多咗間房//\n話諗下有咩野玩下//\n就創立咗黎根記//\n本來得一張麻雀枱//\n到一樣一樣野托番嚟//\n到兩個層架放滿哂衫//\n到而家好似俾人打劫完咁//\n因為成間房搬咗去 popup store"
   },
   {
     "id": "004",
     "name": "人人有蕉吔籌款箱",
     "text": "everyone eat banana",
+    "description": "由鳩嗡人人有蕉吔籌款箱//\n到真係有一嚿野出現係我哋面前//\n成個過程都好奇妙//\n多謝兩日揼個箱出嚟//\n多謝刻字刻天光"
+  },
+  {
+    "id": "005",
+    "name": "飛鵝山親善大使",
+    "text": "非賣品",
+    "description": ""
+  },
+  {
+    "id": "006",
+    "name": "阿霞～ 我要飛鵝山上",
+    "text": "coming soon ~ ",
     "description": ""
   }
 ]

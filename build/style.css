@@ -490,6 +490,9 @@ input {
   top: 0;
   z-index: 10;
 }
+.g-img-nav:hover {
+  cursor: pointer;
+}
 .g-img-nav .g-img-nav-inner {
   width: 25px;
   height: 100%;
@@ -805,4 +808,20 @@ input {
   color: rgba(255, 255, 255, 0.45);
   transform: scaleX(1.2);
   cursor: pointer;
+}
+.g-store-buy.g-upcoming-002 .g-img.g-img-slideshow-cont {
+  padding-bottom: calc(125% + 70px);
+}
+@media screen and (min-width: 600px) {
+  .g-store-buy.g-upcoming-002 .g-img.g-img-slideshow-cont {
+    padding-bottom: calc(62% + 70px);
+  }
+}
+.g-store-buy.g-upcoming-002 .g-meta {
+  padding: 20px 10px;
+}
+@media screen and (min-width: 600px) {
+  .g-store-buy.g-upcoming-002 .g-meta {
+    padding: 0;
+  }
 }
