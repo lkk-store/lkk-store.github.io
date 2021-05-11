@@ -3,13 +3,6 @@ var doneshopping = false;
 var buying = false;
 
 document.addEventListener("DOMContentLoaded", function(e) {
-
-	d3.select(".g-popup").style("padding-top", ((innerHeight/2 - (d3.select(".g-popup img").node().getBoundingClientRect().width*800/640)/2)) + "px")
-	var popup = d3.select(".g-popup");
-
-	popup.on("click", function(){
-		popup.style("display", "none");
-	})
    	
    	function resize() {
    		d3.selectAll(".g-nav-list").each(function(){
