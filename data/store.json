@@ -40,19 +40,6 @@
   },
   {
     "hide": "",
-    "slug": "michelsin tee 023",
-    "id": "023",
-    "name": "michelsin tee",
-    "text": "咪痴撚線！",
-    "category": "Tee",
-    "type": "Screen",
-    "description": "",
-    "price": "320",
-    "sizes": "S,M,L,XL,2XL",
-    "colors": "032#004D82,001#ffffff,005#000000"
-  },
-  {
-    "hide": "",
     "slug": "healthy horse tee 015",
     "id": "015",
     "name": "healthy horse tee",
@@ -63,6 +50,19 @@
     "price": "320",
     "sizes": "S,M,L,XL,2XL",
     "colors": "001#ffffff,005#000000"
+  },
+  {
+    "hide": "",
+    "slug": "michelsin tee 023",
+    "id": "023",
+    "name": "michelsin tee",
+    "text": "咪痴撚線！",
+    "category": "Tee",
+    "type": "Screen",
+    "description": "",
+    "price": "320",
+    "sizes": "S,M,L,XL,2XL",
+    "colors": "032#004D82,001#ffffff,005#000000"
   },
   {
     "hide": "",
