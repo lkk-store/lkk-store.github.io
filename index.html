@@ -99,7 +99,6 @@ img {
   position: relative;
 }
 .g-img {
-  padding-bottom: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -107,9 +106,6 @@ img {
   background: #f7f7f7;
   position: absolute;
   top: 0;
-}
-.g-store-buy .g-img.g-img-slideshow-cont {
-  padding-bottom: calc(100% + 70px);
 }
 @media screen and (min-width: 600px) {
   .g-store-buy .g-img.g-img-slideshow-cont {
@@ -133,26 +129,24 @@ img {
   z-index: 1;
 }
 .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
-  position: absolute;
-  top: calc(100% - 60px);
-  left: 10px;
   cursor: pointer;
+  margin-top: 5px;
+  padding: 0 20px;
 }
 @media screen and (min-width: 600px) {
   .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
-    top: calc(100% - 60px);
-    left: 0;
+    padding: 0;
   }
 }
-@media screen and (min-width: 970px) {
-  .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
-    top: calc(100% - 100px);
-  }
+.g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont:focus {
+  outline: none;
 }
 .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
   position: relative;
   width: 50px;
-  margin-right: 5px;
+  height: 50px;
+  margin-right: 1px;
+  margin-bottom: 0px;
 }
 .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail:hover {
   cursor: pointer;
@@ -494,13 +488,12 @@ input {
   width: 100%;
   padding-bottom: 100%;
   display: block;
-  position: absolute;
   transition: transform 0.3s;
 }
 .g-img-nav {
   position: absolute;
   padding-bottom: 100%;
-  width: 60px;
+  width: 30%;
   left: 0;
   top: 0;
   z-index: 10;
@@ -799,20 +792,20 @@ input {
 .g-wood-list .g-meta {
   margin-top: 5px;
 }
-.g-store-buy.g-upcoming-002 .g-img.g-img-slideshow-cont {
-  padding-bottom: calc(125% + 70px);
+#g-img-store-002.g-img.g-img-slideshow-cont .g-img-inner-cont {
+  padding-bottom: 125%;
+  margin-bottom: 6px;
+}
+#g-img-store-002.g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
+  margin-right: 0;
+  height: auto;
+  margin-bottom: 5px;
+  width: calc(11.3% - 0.1px);
+  vertical-align: middle;
 }
 @media screen and (min-width: 600px) {
-  .g-store-buy.g-upcoming-002 .g-img.g-img-slideshow-cont {
-    padding-bottom: calc(62% + 70px);
-  }
-}
-.g-store-buy.g-upcoming-002 .g-meta {
-  padding: 20px 10px;
-}
-@media screen and (min-width: 600px) {
-  .g-store-buy.g-upcoming-002 .g-meta {
-    padding: 0;
+  #g-img-store-002.g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
+    width: calc(11.3% + 1px);
   }
 }
 </style>
@@ -850,7 +843,7 @@ input {
 				
 				<div class="g-store-each" data-id="002" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-002.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-002.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -874,7 +867,7 @@ input {
 				
 				<div class="g-store-each" data-id="003" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-003.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-003.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1386,7 +1379,7 @@ input {
 				
 				<div class="g-store-each" data-id="013" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-013.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-013.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1538,7 +1531,7 @@ input {
 				
 				<div class="g-store-each" data-id="012" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-012.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-012.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1562,7 +1555,7 @@ input {
 				
 				<div class="g-store-each" data-id="010" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-010.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-010.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1626,7 +1619,7 @@ input {
 				
 				<div class="g-store-each" data-id="030" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-030.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-030.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1682,7 +1675,7 @@ input {
 				
 				<div class="g-store-each" data-id="027" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-027.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-027.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1706,7 +1699,7 @@ input {
 				
 				<div class="g-store-each" data-id="026" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-026.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-026.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1762,7 +1755,7 @@ input {
 				
 				<div class="g-store-each" data-id="017" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-017.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-017.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1786,7 +1779,7 @@ input {
 				
 				<div class="g-store-each" data-id="001" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-001.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-001.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1809,7 +1802,7 @@ input {
 				
 				<div class="g-store-each" data-id="004" data-page="store">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/store-004.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/store-004.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -1840,7 +1833,7 @@ input {
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-002.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-002.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -1935,7 +1928,7 @@ input {
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-003.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-003.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -3332,7 +3325,7 @@ hong kong color edition:</p><p>
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-013.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-013.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -3815,7 +3808,7 @@ hong kong color edition:</p><p>
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-012.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-012.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -3911,7 +3904,7 @@ hong kong color edition:</p><p>
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-010.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-010.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -4092,7 +4085,7 @@ hong kong color edition:</p><p>
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-030.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-030.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -4209,7 +4202,7 @@ The theme of this project is “hilly with little flat land”. The design featu
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-027.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-027.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -4247,7 +4240,7 @@ The theme of this project is “hilly with little flat land”. The design featu
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-026.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-026.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -4332,7 +4325,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-017.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-017.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -4388,7 +4381,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-001.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-001.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -4448,7 +4441,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="store"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/store-004.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/store-004.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -4860,7 +4853,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="005" data-page="upcoming">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/upcoming-005.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/upcoming-005.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -4876,7 +4869,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="006" data-page="upcoming">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/upcoming-006.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/upcoming-006.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5267,7 +5260,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="upcoming"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/upcoming-005.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/upcoming-005.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5294,7 +5287,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="upcoming"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/upcoming-006.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/upcoming-006.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5350,7 +5343,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="016" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-016.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-016.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5366,7 +5359,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="015" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-015.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-015.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5382,7 +5375,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="014" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-014.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-014.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5398,7 +5391,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="013" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-013.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-013.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5414,7 +5407,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="012" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-012.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-012.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5430,7 +5423,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="011" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-011.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-011.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5446,7 +5439,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="010" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-010.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-010.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5462,7 +5455,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="008" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-008.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-008.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5478,7 +5471,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="009" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-009.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-009.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5494,7 +5487,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="007" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-007.gif"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-007.gif"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5510,7 +5503,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="006" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-006.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-006.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5526,7 +5519,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="003" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-003.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-003.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5542,7 +5535,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="002" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-002.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-002.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5558,7 +5551,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="001" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-001.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-001.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5574,7 +5567,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="004" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-004.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-004.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5590,7 +5583,7 @@ Indian organic cotton</p>
 				
 				<div class="g-store-each" data-id="005" data-page="blog">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/blog-005.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/blog-005.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -5613,7 +5606,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-016.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-016.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5640,7 +5633,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-015.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-015.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5668,7 +5661,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-014.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-014.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5696,7 +5689,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-013.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-013.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5724,7 +5717,7 @@ Indian organic cotton</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-012.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-012.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5753,7 +5746,7 @@ IN 鳩 WE TRUST💥</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-011.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-011.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5786,7 +5779,7 @@ MICHELSIN!!!!</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-010.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-010.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5814,7 +5807,7 @@ MICHELSIN!!!!</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-008.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-008.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5841,7 +5834,7 @@ MICHELSIN!!!!</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-009.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-009.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5869,7 +5862,7 @@ MICHELSIN!!!!</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-007.gif"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-007.gif"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5903,7 +5896,7 @@ MICHELSIN!!!!</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-006.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-006.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5952,7 +5945,7 @@ MICHELSIN!!!!</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-003.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-003.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -5981,7 +5974,7 @@ MICHELSIN!!!!</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-002.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-002.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6010,7 +6003,7 @@ MICHELSIN!!!!</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-001.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-001.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6037,7 +6030,7 @@ MICHELSIN!!!!</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-004.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-004.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6066,7 +6059,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					<div class="g-back" data-page="blog"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/blog-005.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/blog-005.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6113,7 +6106,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 				
 				<div class="g-store-each" data-id="001" data-page="wood">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/wood-001.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/wood-001.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -6129,7 +6122,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 				
 				<div class="g-store-each" data-id="002" data-page="wood">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/wood-002.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/wood-002.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -6145,7 +6138,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 				
 				<div class="g-store-each" data-id="003" data-page="wood">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/wood-003.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/wood-003.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -6161,7 +6154,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 				
 				<div class="g-store-each" data-id="004" data-page="wood">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/wood-004.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/wood-004.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -6177,7 +6170,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 				
 				<div class="g-store-each" data-id="005" data-page="wood">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/wood-005.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/wood-005.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -6193,7 +6186,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 				
 				<div class="g-store-each" data-id="006" data-page="wood">
 					
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/wood-006.png"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/wood-006.png"></div></div>
 					
 					<div class="g-img-dots">
 						
@@ -6202,6 +6195,38 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 						<div class="g-hed">
 							<span class="g-name">新 tee</span>
 							<span class="g-desc">阿叔賞識</span>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="g-store-each" data-id="007" data-page="wood">
+					
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/wood-007.png"></div></div>
+					
+					<div class="g-img-dots">
+						
+					</div>					
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name">人生於世上</span>
+							<span class="g-desc">有幾多人肯大熱天時同你行山</span>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="g-store-each" data-id="008" data-page="wood">
+					
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/wood-008.png"></div></div>
+					
+					<div class="g-img-dots">
+						
+					</div>					
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name">影腳</span>
+							<span class="g-desc">喂你悶唔悶</span>
 						</div>
 						
 					</div>
@@ -6216,7 +6241,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/wood-001.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/wood-001.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6264,7 +6289,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/wood-002.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/wood-002.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6311,7 +6336,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/wood-003.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/wood-003.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6354,7 +6379,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/wood-004.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/wood-004.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6390,7 +6415,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/wood-005.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/wood-005.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6436,7 +6461,7 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
 
 					
-						<div class="g-img"><img loading="lazy" src="img/wood-006.png"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/wood-006.png"></div></div>
 					 
 					
 					<div class="g-meta">
@@ -6456,6 +6481,98 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 我都想整番件</p><br><p>
 
 2021-04-10</p>
+						
+						</div>
+
+						
+					</div>
+				</div>
+
+				
+				<div class="g-stock-each g-store-buy g-hide g-wood-007" data-id="007">
+
+					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
+
+					
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/wood-007.png"></div></div>
+					 
+					
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="007">人生於世上</span>
+						</div>
+						<div class="g-desc"><p></p></div>
+						
+
+						<div class="g-details">
+						<p class="g-highlight-text">有幾多人肯大熱天時同你行山</p>
+						
+						
+						<p>飛鵝山上面嗰嚿石</p><p>
+係我嘅秘密基地</p><br><p>
+
+生活太忙碌</p><p>
+太多煩惱</p><p>
+都會享受一個人衝上山頂</p><p>
+靜靜哋坐喺呢嚿石上面沉思下</p><br><p>
+
+難得揾到人肯同我喺三十度高溫下</p><p>
+一齊行一齊坐一齊傾</p><p>
+都係一種享受</p><br><p>
+
+2021-05-16</p>
+						
+						</div>
+
+						
+					</div>
+				</div>
+
+				
+				<div class="g-stock-each g-store-buy g-hide g-wood-008" data-id="008">
+
+					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
+
+					
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/wood-008.png"></div></div>
+					 
+					
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="008">影腳</span>
+						</div>
+						<div class="g-desc"><p></p></div>
+						
+
+						<div class="g-details">
+						<p class="g-highlight-text">喂你悶唔悶</p>
+						
+						
+						<p>每次上山都會影下隻腳</p><p>
+send 俾朋友</p><br><p>
+
+有次朋友覆</p><p>
+其實你個個禮拜</p><p>
+send 同一張相嚟</p><p>
+都無話無可能</p><br><p>
+
+朋友問我</p><p>
+你成日行同一個山唔悶咩</p><br><p>
+
+每一次行</p><p>
+都有唔同嘅天氣</p><p>
+遇倒唔同嘅人</p><p>
+帶住唔同嘅煩腦</p><p>
+喺山上諗通唔同嘅野</p><br><p>
+
+我問朋友</p><p>
+你成日跟我行同一個山唔悶咩</p><br><p>
+
+佢話自己係路痴</p><p>
+次次跟我行</p><p>
+都好似行緊一條全新嘅路咁</p><br><p>
+
+2014-12-24</p>
 						
 						</div>
 

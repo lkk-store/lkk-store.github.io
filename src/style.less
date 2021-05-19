@@ -106,7 +106,7 @@ img {
 }
 
 .g-img {
-	padding-bottom: 100%;
+	// padding-bottom: 100%;
 	position: relative;
 	overflow: hidden;
 	img {
@@ -118,7 +118,7 @@ img {
 
 .g-store-buy .g-img.g-img-slideshow-cont {
 
-	padding-bottom: calc(100% + 70px);
+	// padding-bottom: calc(100% + 70px);
 
 	@media screen and (min-width: 600px) {
 		position: relative;
@@ -145,25 +145,34 @@ img {
 	}
 
 	.g-thumbnail-cont {
-		position: absolute;
-		top: calc(100% - 60px);
-		left: 10px;
+		// position: absolute;
+		// top: calc(100% - 60px);
+		// left: 10px;
 		cursor: pointer;
+		margin-top: 5px;
+		padding: 0 20px;
 
 		@media screen and (min-width: 600px) {
-			top: calc(100% - 60px);
-			left: 0;
+			padding: 0;
+		// 	top: calc(100% - 60px);
+		// 	left: 0;
 		}
 
-		@media screen and (min-width: 970px) {
-			top: calc(100% - 100px);
-		}
+
+		&:focus {outline:none;}
+
+
+		// @media screen and (min-width: 970px) {
+		// 	top: calc(100% - 100px);
+		// }
 
 		.g-img-thumbnail {
 			position: relative;
 
 			width: 50px;
-			margin-right: 5px;
+			height: 50px;
+			margin-right: 1px;
+			margin-bottom: 0px;
 
 			&:hover {
 				cursor: pointer;
@@ -593,14 +602,14 @@ input {
 	width: 100%;
 	padding-bottom: 100%;
 	display: block;
-	position: absolute;
+	// position: absolute;
 	transition: transform 0.3s;
 }
 
 .g-img-nav {
 	position: absolute;
 	padding-bottom: 100%;
-	width: 60px;
+	width: 30%;
 	left: 0;
 	top: 0;
 	z-index: 10;
@@ -983,25 +992,48 @@ input {
 	margin-top: 5px;
 }
 
+#g-img-store-002.g-img.g-img-slideshow-cont {
+
+	.g-img-inner-cont {
+		padding-bottom: 125%;
+		margin-bottom: 6px;
+	}
+	
+	.g-thumbnail-cont {
+		.g-img-thumbnail {
+			margin-right: 0;
+			height: auto;
+			margin-bottom: 5px;
+			width: calc(11.3% - 0.1px);
+			vertical-align: middle;
+
+			@media screen and (min-width: 600px) {
+				width: calc(11.3% + 1px);
+			}
+
+		}
+	}
+}
+
 
 .g-store-buy.g-upcoming-002 {
 	.g-img-nav {
 		
 	}
 	.g-img.g-img-slideshow-cont {
-		padding-bottom: calc(125% + 70px);
-		@media screen and (min-width: 600px) {
-			padding-bottom: calc(62% + 70px);	
-		}
+		// padding-bottom: calc(125% + 70px);
+		// @media screen and (min-width: 600px) {
+		// 	padding-bottom: calc(62% + 70px);	
+		// }
 	}
 
-	.g-meta {
-		padding: 20px 10px;
+	// .g-meta {
+	// 	padding: 20px 10px;
 
-		@media screen and (min-width: 600px) {
-			padding: 0;
-		}
+	// 	@media screen and (min-width: 600px) {
+	// 		padding: 0;
+	// 	}
 
-	}
+	// }
 }
 

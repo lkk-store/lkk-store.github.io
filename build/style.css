@@ -84,7 +84,6 @@ img {
   position: relative;
 }
 .g-img {
-  padding-bottom: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -92,9 +91,6 @@ img {
   background: #f7f7f7;
   position: absolute;
   top: 0;
-}
-.g-store-buy .g-img.g-img-slideshow-cont {
-  padding-bottom: calc(100% + 70px);
 }
 @media screen and (min-width: 600px) {
   .g-store-buy .g-img.g-img-slideshow-cont {
@@ -118,26 +114,24 @@ img {
   z-index: 1;
 }
 .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
-  position: absolute;
-  top: calc(100% - 60px);
-  left: 10px;
   cursor: pointer;
+  margin-top: 5px;
+  padding: 0 20px;
 }
 @media screen and (min-width: 600px) {
   .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
-    top: calc(100% - 60px);
-    left: 0;
+    padding: 0;
   }
 }
-@media screen and (min-width: 970px) {
-  .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont {
-    top: calc(100% - 100px);
-  }
+.g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont:focus {
+  outline: none;
 }
 .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
   position: relative;
   width: 50px;
-  margin-right: 5px;
+  height: 50px;
+  margin-right: 1px;
+  margin-bottom: 0px;
 }
 .g-store-buy .g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail:hover {
   cursor: pointer;
@@ -479,13 +473,12 @@ input {
   width: 100%;
   padding-bottom: 100%;
   display: block;
-  position: absolute;
   transition: transform 0.3s;
 }
 .g-img-nav {
   position: absolute;
   padding-bottom: 100%;
-  width: 60px;
+  width: 30%;
   left: 0;
   top: 0;
   z-index: 10;
@@ -784,19 +777,19 @@ input {
 .g-wood-list .g-meta {
   margin-top: 5px;
 }
-.g-store-buy.g-upcoming-002 .g-img.g-img-slideshow-cont {
-  padding-bottom: calc(125% + 70px);
+#g-img-store-002.g-img.g-img-slideshow-cont .g-img-inner-cont {
+  padding-bottom: 125%;
+  margin-bottom: 6px;
+}
+#g-img-store-002.g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
+  margin-right: 0;
+  height: auto;
+  margin-bottom: 5px;
+  width: calc(11.3% - 0.1px);
+  vertical-align: middle;
 }
 @media screen and (min-width: 600px) {
-  .g-store-buy.g-upcoming-002 .g-img.g-img-slideshow-cont {
-    padding-bottom: calc(62% + 70px);
-  }
-}
-.g-store-buy.g-upcoming-002 .g-meta {
-  padding: 20px 10px;
-}
-@media screen and (min-width: 600px) {
-  .g-store-buy.g-upcoming-002 .g-meta {
-    padding: 0;
+  #g-img-store-002.g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
+    width: calc(11.3% + 1px);
   }
 }

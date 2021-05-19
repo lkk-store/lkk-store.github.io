@@ -35,7 +35,7 @@
 					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
 					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					<% } else { %>
-					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div></div>
 					<% } %>
 					<div class="g-img-dots">
 						<% if (l.img) { %>
@@ -90,7 +90,7 @@
 
 					</div>
 					<% } else { %>
-						<div class="g-img"><img loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div></div>
 					<% } %> 
 					
 					<div class="g-meta">
