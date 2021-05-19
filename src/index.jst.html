@@ -28,14 +28,14 @@
 					<div class="g-img g-img-has-nav" id="g-img-<%= l.id %>" data-img="0" data-img-max="<%= l.img.length - 1 %>">
 						<div class="g-img-inner-cont">
 						<% l.img.forEach(function(a,ai){ %>
-							<img class="g-img-<%= ai %> <% if (ai == 0) { %>g-load-first g-active<% } %>" <% if (i > 4 || d.content != "store") { %>data-<% } %>src="img/<%= a %>" style="left: <%= ai*100 %>%;">
+							<img loading="lazy" class="g-img-<%= ai %> <% if (ai == 0) { %>g-load-first g-active<% } %>" src="img/<%= a %>" style="left: <%= ai*100 %>%;">
 						<% }) %>
 						</div>
 					</div>
 					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
 					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					<% } else { %>
-					<div class="g-img"><img class="g-load-first" <% if (i > 4 || d.content != "store") { %>data-<% } %>src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div>
+					<div class="g-img"><img class="g-load-first" loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div>
 					<% } %>
 					<div class="g-img-dots">
 						<% if (l.img) { %>
@@ -75,7 +75,7 @@
 					<div class="g-img g-img-slideshow-cont" id="g-img-store-<%= l.id %>" data-img="0" data-img-max="<%= l.img.length - 1 %>">
 						<div class="g-img-inner-cont">
 						<% l.img.forEach(function(a,ai){ %>
-							<img class="g-img-<%= ai %>" data-src="img/<%= a %>" style="left: <%= ai*100 %>%;">
+							<img class="g-img-<%= ai %>" loading="lazy" src="img/<%= a %>" style="left: <%= ai*100 %>%;">
 						<% }) %>
 						</div>
 
@@ -84,13 +84,13 @@
 
 						<div class="g-thumbnail-cont">
 							<% l.img.forEach(function(a){ %>
-								<img class="g-img-thumbnail" data-id="<%= l.id %>" data-item="<%= a.replace('.png', '') %>" data-src="img/<%= a %>">
+								<img class="g-img-thumbnail" loading="lazy" data-id="<%= l.id %>" data-item="<%= a.replace('.png', '') %>" src="img/<%= a %>">
 							<% }) %>
 						</div>
 
 					</div>
 					<% } else { %>
-						<div class="g-img"><img data-src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div>
+						<div class="g-img"><img loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div>
 					<% } %> 
 					
 					<div class="g-meta">
@@ -216,7 +216,7 @@
 				<div class="g-submitted g-hide">
 					<div class="g-thanks-text">payme 完 cap 圖 send 去 +85257280149 先會正式落單！</div>					
 					<!-- <img src="img/IMG_0412.JPG"> -->
-					<img src="img/payme-QR.png">
+					<img loading="lazy" src="img/payme-QR.png">
 					<div class="g-thanks-text g-thanks-usd"><div class="g-text-inner">If you're in the U.S., I'll email you to figure out how you can get these awesome tshirts! Your order total is <div class="g-item-usd"></div> USD (includes 35 USD for shipping).</div></div>
 				</div>
 
