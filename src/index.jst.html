@@ -51,7 +51,7 @@
 						</div>
 						<% if (l.price) { %>
 						<div class="g-price">
-							<sup class="g-agate">HKD</sup>
+							<% if (l.price != "Sold out") { %><sup class="g-agate">HKD</sup><% } %>
 							<% if (l.price == "10up") { %>
 							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
 							<% } else { %>
@@ -97,9 +97,8 @@
 						<div class="g-hed">
 							<span class="g-name" id="stock-name" data-id="<%= l.id %>"><%= l.name %></span>
 						</div>
-						<% if (l.type != '') { %><div class="g-desc"><p><% if (l.type == "Screen") { %>handmade  silkscreen tee<% } else if (l.type == "Print") { %>9-print tee<% } %></p></div><% } %>
 						<% if (l.price) { %><div class="g-price">
-							<sup class="g-agate">HKD</sup>
+							<% if (l.price != "Sold out") { %><sup class="g-agate">HKD</sup><% } %>
 							<% if (l.price == "10up") { %>
 							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
 							<% } else { %>
