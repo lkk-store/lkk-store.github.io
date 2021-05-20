@@ -194,6 +194,9 @@ img {
   left: -5%;
   transform: rotate(-13deg);
 }
+.g-price-num.g-sold-out {
+  color: #777;
+}
 .g-agate {
   font-size: 11px;
   vertical-align: top;

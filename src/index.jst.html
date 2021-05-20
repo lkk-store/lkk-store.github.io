@@ -56,7 +56,7 @@
 							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
 							<% } else { %>
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num"><%= l.price %></span>
+							<span class="g-price-num <% if (l.price == 'Sold out') { %>g-sold-out<% } %>"><%= l.price %></span>
 							<% } %>
 						</div>
 						<% } %>
@@ -103,7 +103,7 @@
 							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
 							<% } else { %>
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num"><%= l.price %></span>
+							<span class="g-price-num <% if (l.price == 'Sold out') { %>g-sold-out<% } %>"><%= l.price %></span>
 							<% } %>
 						</div><% } %>
 
