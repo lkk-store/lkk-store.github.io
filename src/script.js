@@ -749,7 +749,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  	keys.forEach(function(d,i){
 
 			  		var split = d.split("_");
-			  		item = split[1] + " " + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
+			  		item = split[1] + " " + split[0]  + " x " + shoppingcart[d];
+
+			  		if (split[2]) {
+			  			item += " x " + split[2];
+			  		}
 
 			  		if (split[3]) {
 			  			item += " x " + split[3].split("-")[1];
@@ -791,7 +795,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 							d3.select("#my-form").classed("g-submitted-form", true);
 
 							var navel = d3.select(".g-nav-list-store")
-							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
+							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + (+navel.select(".g-submitted-form").node().getBoundingClientRect().height) + "px")
 
 							dropbananas(".g-drop-banana.g-inside-form");
 

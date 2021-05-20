@@ -266,7 +266,6 @@ a {
 }
 .g-store-buy .g-buy {
   margin: 25px auto;
-  display: none;
 }
 .g-size {
   margin-bottom: 10px;
@@ -361,7 +360,6 @@ input {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
-  display: none;
   color: #fff;
   z-index: 10;
 }
@@ -643,7 +641,6 @@ input {
   display: none;
 }
 .g-shopping-cart-icon {
-  display: none;
   width: 16px;
   height: 16px;
   position: absolute;
@@ -783,9 +780,6 @@ input {
 #my-form .g-purchase-summary {
   margin-bottom: 30px;
 }
-#my-form .g-purchase-summary .g-submit {
-  display: none;
-}
 .g-wood-list .g-img-dots {
   display: none;
 }
@@ -807,6 +801,10 @@ input {
   #g-img-store-002.g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
     width: calc(11.3% + 1px);
   }
+}
+.g-buy,
+.g-shopping-cart-icon {
+  display: none;
 }
 </style>
 </head>
@@ -7310,7 +7308,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  	keys.forEach(function(d,i){
 
 			  		var split = d.split("_");
-			  		item = split[1] + " " + split[0]  + " x " + shoppingcart[d] + " x " + split[2];
+			  		item = split[1] + " " + split[0]  + " x " + shoppingcart[d];
+
+			  		if (split[2]) {
+			  			item += " x " + split[2];
+			  		}
 
 			  		if (split[3]) {
 			  			item += " x " + split[3].split("-")[1];
@@ -7352,7 +7354,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 							d3.select("#my-form").classed("g-submitted-form", true);
 
 							var navel = d3.select(".g-nav-list-store")
-							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px")
+							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + (+navel.select(".g-submitted-form").node().getBoundingClientRect().height) + "px")
 
 							dropbananas(".g-drop-banana.g-inside-form");
 
