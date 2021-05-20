@@ -35,8 +35,34 @@
     "type": "Screen",
     "description": "舊青年handmade silkscreen totebag//\n🔴⚪️classic白底紅字 / ⚫️⚫️低調black on black//\n100% indian organic cotton//\n35cm x 40cm",
     "price": "250",
-    "sizes": "",
+    "sizes": "S,M,L,XL,2XL",
     "colors": "001#ffffff,005#000000"
+  },
+  {
+    "hide": "",
+    "slug": "鳳凰不死鳥 tee 031",
+    "id": "031",
+    "name": "鳳凰不死鳥 tee",
+    "text": "華夏神功🔥鳳凰不死鳥🔥",
+    "category": "Tee",
+    "type": "Screen",
+    "description": "",
+    "price": "320",
+    "sizes": "S,M,L,XL,2XL",
+    "colors": ""
+  },
+  {
+    "hide": "",
+    "slug": "邪骨能勝正 tee 032",
+    "id": "032",
+    "name": "邪骨能勝正 tee",
+    "text": "✨處長親身認證✨",
+    "category": "Tee",
+    "type": "Screen",
+    "description": "正宗邪骨 無不道德\n✨處長親身認證✨",
+    "price": "320",
+    "sizes": "S,M,L,XL,2XL",
+    "colors": ""
   },
   {
     "hide": "",
@@ -241,7 +267,7 @@
     "text": "唔好啦",
     "category": "Tee",
     "type": "Print",
-    "description": "適合「問路樣」人士穿着",
+    "description": "適合「問路樣」人士穿着//*print有3M反光效果",
     "price": "290",
     "sizes": "S,M,L,XL,2XL",
     "colors": ""
