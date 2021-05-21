@@ -788,7 +788,3 @@ input {
     width: calc(11.3% + 1px);
   }
 }
-.g-buy,
-.g-shopping-cart-icon {
-  display: none;
-}
