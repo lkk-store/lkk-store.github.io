@@ -206,8 +206,8 @@ img {
 //.g-shopping-cart-inner
 .g-meta, #my-form, .g-shopping-cart .g-back {
 	padding: 5px 20px;
-	
 }
+
 
 @media screen and (min-width: 600px) {
 
@@ -584,7 +584,16 @@ input {
 .g-img-dots {
 	text-align: center;
 
+	&.g-img-dots-have-dots {
+		margin-bottom: -5px;
+
+		@media screen and (min-width: 600px) {
+			margin-bottom: 0;
+		}
+	}
+
 	@media screen and (min-width: 600px) {
+
 		margin-top: -4px;
 		height: 20px;
 	}

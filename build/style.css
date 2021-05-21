@@ -453,6 +453,14 @@ input {
 .g-img-dots {
   text-align: center;
 }
+.g-img-dots.g-img-dots-have-dots {
+  margin-bottom: -5px;
+}
+@media screen and (min-width: 600px) {
+  .g-img-dots.g-img-dots-have-dots {
+    margin-bottom: 0;
+  }
+}
 @media screen and (min-width: 600px) {
   .g-img-dots {
     margin-top: -4px;

@@ -37,7 +37,7 @@
 					<% } else { %>
 					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div></div>
 					<% } %>
-					<div class="g-img-dots">
+					<div class="g-img-dots <% if (l.img) { %>g-img-dots-have-dots<% } %>">
 						<% if (l.img) { %>
 							<% l.img.forEach(function(a,ai){ %>
 							<div class="g-dot g-dot-<%= ai %> <% if (ai == 0) { %>g-dot-active<% }%>"></div>
