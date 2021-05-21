@@ -194,7 +194,8 @@ img {
   transform: rotate(-13deg);
 }
 .g-price-num.g-sold-out {
-  color: #777;
+  color: #bf0000;
+  font-style: italic;
 }
 .g-agate {
   font-size: 11px;
@@ -787,4 +788,7 @@ input {
   #g-img-store-002.g-img.g-img-slideshow-cont .g-thumbnail-cont .g-img-thumbnail {
     width: calc(11.3% + 1px);
   }
+}
+.g-buy-sold-out {
+  display: none;
 }
