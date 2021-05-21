@@ -177,7 +177,7 @@ img {
   margin: 0 !important;
 }
 .g-price {
-  margin-top: 2px;
+  margin-top: 6px;
 }
 .g-price-num .g-price-old {
   position: relative;
@@ -791,4 +791,11 @@ input {
 }
 .g-buy-sold-out {
   display: none;
+}
+.g-new-img {
+  display: inline-block;
+  width: 42px;
+  vertical-align: middle;
+  margin-top: -9px;
+  margin-right: 2px;
 }
