@@ -706,7 +706,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	// form submission
 	$( document ).ready( function(){
 		var $form = $('form#my-form'),
-		    url = 'https://script.google.com/macros/s/AKfycbzyYUxhWKsfDJlVt6JP0Y6A-DB_YBFfTbnyBqAkd9-fWjkfpAxEZVPX/exec'
+		    url = 'https://script.google.com/macros/s/AKfycbxHCw8DUBjM3OMe9k-yewFaDLM8Zp43Q8i3lWqC4AvCof4eExIljQURrwOo-im_zIx5/exec'
 
 		$('#submit').on('click', function(e) {
 
@@ -744,7 +744,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  	var keys = Object.keys(shoppingcart);
 			  	keys.sort();
 
-			  	var successcount = [];
+			  	var orders = [];
 
 			  	keys.forEach(function(d,i){
 
@@ -758,7 +758,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		if (split[3]) {
 			  			item += " x " + split[3].split("-")[1];
 			  		}
-
 
 			  		var price = 280;
 			  		var pricecheck = stocklist.filter(d => d.id == split[0])[0];
@@ -774,38 +773,40 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  		var formdata = "name=" + name + "&phone=" + phone + "&email=" + email + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice + "&comment=" + comment;
 
-			  		//name	phone	item	price
-
-			  		var jqxhr = $.ajax({
-			  		  url: url,
-			  		  method: "GET",
-			  		  dataType: "json",
-			  		  data: formdata,
-			  		  success: function(){ 
-
-			  		  	successcount.push(i)
-
-			  		  	if (successcount.length == keys.length) {
-			  		  		localStorage.setItem('shoppingcart', '{}')
-							// $('#my-form').trigger("reset");
-							d3.select("#submit").classed("g-loading", false);
-							// d3.select("#my-form").classed("g-hide", true);
-							d3.select(".g-submitted").classed("g-hide", false);
-							d3.select(".g-buy-button").classed("g-hide", true);
-							d3.select("#my-form").classed("g-submitted-form", true);
-
-							var navel = d3.select(".g-nav-list-store")
-							navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + (+navel.select(".g-submitted-form").node().getBoundingClientRect().height) + "px")
-
-							dropbananas(".g-drop-banana.g-inside-form");
-
-							doneshopping = true;
-			  		  	}
-
-			  		  }
+			  		orders.push({
+			  			name: name,
+			  			phone: phone,
+			  			email: email,
+			  			date: formatTime(now),
+			  			item: item,
+			  			price: totalprice,
+			  			comment: comment
 			  		})
-
 			  	})
+
+	  	  		var jqxhr = $.ajax({
+	  	  		  url: url,
+	  	  		  method: "GET",
+	  	  		  dataType: "json",
+	  	  		  data: JSON.stringify(orders),
+	  	  		  success: function(res){ 
+
+	  	  		  	console.log(res);
+
+  	  		  		localStorage.setItem('shoppingcart', '{}')
+  					// $('#my-form').trigger("reset");
+  					d3.select("#submit").classed("g-loading", false);
+  					// d3.select("#my-form").classed("g-hide", true);
+  					d3.select(".g-submitted").classed("g-hide", false);
+  					d3.select(".g-buy-button").classed("g-hide", true);
+  					d3.select("#my-form").classed("g-submitted-form", true);
+  					var navel = d3.select(".g-nav-list-store")
+  					navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + (+navel.select(".g-submitted-form").node().getBoundingClientRect().height) + "px")
+  					dropbananas(".g-drop-banana.g-inside-form");
+  					doneshopping = true;
+	  	  		  }
+	  	  		})
+
 			  }
 
 		})

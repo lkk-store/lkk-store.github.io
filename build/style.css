@@ -96,7 +96,6 @@ img {
   .g-store-buy .g-img.g-img-slideshow-cont {
     position: relative;
     display: inline-block;
-    padding-bottom: calc(50% + 70px);
   }
 }
 .g-store-buy .g-img.g-img-slideshow-cont .g-img {
@@ -249,7 +248,6 @@ a {
     max-width: 460px;
     margin-right: 20px;
     width: 50%;
-    padding-bottom: 50%;
   }
 }
 .g-store-buy .g-buy {
