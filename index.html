@@ -384,6 +384,27 @@ input {
   width: calc(100% - 82px);
   margin-bottom: 10px;
 }
+.g-checkbox-cont {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px 0 5px 8px;
+}
+.g-type-checkbox input,
+.g-type-checkbox label {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  font-size: 15px;
+}
+.g-type-checkbox input {
+  transform: scale(1.4);
+  margin-right: 5px !important;
+  box-shadow: none;
+}
+.g-type-checkbox label {
+  margin: 0 20px 2px 5px;
+}
 .g-buy-popup.g-active {
   display: block;
 }
@@ -694,6 +715,7 @@ input {
 .g-shopping-cart .g-shopping-cart-inner.g-hide {
   display: none;
 }
+.g-shopping-cart .g-submitted-form .g-form-options,
 .g-shopping-cart .g-submitted-form input {
   border: none;
   user-select: none;
@@ -702,6 +724,9 @@ input {
 .g-shopping-cart .g-submitted-form .g-minus,
 .g-shopping-cart .g-submitted-form .g-add {
   display: none !important;
+}
+.g-shopping-cart .g-submitted-form label {
+  font-size: 13px !important;
 }
 .g-shopping-cart .g-tr {
   width: 100%;
@@ -5049,11 +5074,13 @@ Indian organic cotton</p>
 				</div>
 
 				<form class="" name="my-form" id="my-form">
-					<div class="g-form-options g-hide">
+					<!-- put this back <div class="g-form-options g-hide"> -->
+					<div class="g-form-options">
 						<div class="g-buy-each"><span class="g-lab">名字<br><i>name</i></span><input id="name" type="text" name="name"></div>
 						<div class="g-buy-each"><span class="g-lab">電話<br><i>phone</i></span><input id="phone" type="text" name="phone"></div>
 						<div class="g-buy-each"><span class="g-lab">留言<br><i>comment</i></span><input id="comment" type="text" name="comment"></div>
 						<div class="g-buy-each"><span class="g-lab">電郵<br><i>email</i></span><input id="email" type="text" name="email" placeholder="香港人唔駛填～"></div>
+						<div class="g-buy-each g-type-checkbox"><span class="g-lab">交收<br><i>deliver</i></span><div class="g-checkbox-cont"><input id="deliver1" type="checkbox" name="deliver" value="面交"><label for="deliver1">面交</label><input id="deliver2" type="checkbox" name="deliver" value="深水埗 storeroom 自取"><label for="deliver2">深水埗 storeroom 自取</label></div></div>
 					</div>
 
 					<div class="g-shopping-cart-inner">
@@ -8097,6 +8124,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var $form = $('form#my-form'),
 		    url = 'https://script.google.com/macros/s/AKfycbxHCw8DUBjM3OMe9k-yewFaDLM8Zp43Q8i3lWqC4AvCof4eExIljQURrwOo-im_zIx5/exec'
 
+		$('input[type="checkbox"]').on('change', function() {
+		   $('input[type="checkbox"]').not(this).prop('checked', false);
+		});
+
 		$('#submit').on('click', function(e) {
 
 			  e.preventDefault();
@@ -8109,8 +8140,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
 			  var email = d3.select("#email").property("value");
+			  var delivery = d3.select('input[name="deliver"]:checked');
 
-			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}") {
+
+			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}" || !delivery.node()) {
 			  	if (phone == "") {
 			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
@@ -8122,11 +8155,13 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
 
+			  	if (!delivery.node()) {
+			  		d3.select(".g-checkbox-cont").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")	
+			  	}
+
 			  } else {
 
 			  	d3.select("#submit").classed("g-loading", true);
-
-			  	var formdata = $form.serialize();
 
 			  	shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
 
@@ -8160,8 +8195,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		var totalprice = price*shoppingcart[d];
 			  		var comment = d3.select("#comment").property("value");
 
-			  		var formdata = "name=" + name + "&phone=" + phone + "&email=" + email + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice + "&comment=" + comment;
-
 			  		orders.push({
 			  			name: name,
 			  			phone: phone,
@@ -8169,7 +8202,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  			date: formatTime(now),
 			  			item: item,
 			  			price: totalprice,
-			  			comment: comment
+			  			comment: comment,
+			  			delivery: delivery.attr("value")
 			  		})
 			  	})
 

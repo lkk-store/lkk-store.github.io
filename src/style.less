@@ -484,6 +484,31 @@ input {
 	margin-bottom: 10px;
 }
 
+.g-checkbox-cont {
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px 0 5px 8px;
+}
+
+.g-type-checkbox input, .g-type-checkbox label {
+	width: auto;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	font-size: 15px;
+}
+
+.g-type-checkbox input {
+	transform: scale(1.4);
+	margin-right: 5px !important;
+	box-shadow: none;
+}
+
+.g-type-checkbox label {
+	margin: 0 20px 2px 5px;
+}
+
+
 .g-buy-popup.g-active {
 	display: block;
 }
@@ -873,7 +898,7 @@ input {
 	}
 
 	.g-submitted-form {
-		input {
+		.g-form-options, input {
 			border: none;
 			user-select: none;
 			pointer-events: none;
@@ -881,6 +906,10 @@ input {
 
 		.g-minus, .g-add {
 			display: none !important;
+		}
+
+		label {
+			font-size: 13px !important;
 		}
 
 

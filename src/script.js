@@ -708,6 +708,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var $form = $('form#my-form'),
 		    url = 'https://script.google.com/macros/s/AKfycbxHCw8DUBjM3OMe9k-yewFaDLM8Zp43Q8i3lWqC4AvCof4eExIljQURrwOo-im_zIx5/exec'
 
+		$('input[type="checkbox"]').on('change', function() {
+		   $('input[type="checkbox"]').not(this).prop('checked', false);
+		});
+
 		$('#submit').on('click', function(e) {
 
 			  e.preventDefault();
@@ -720,8 +724,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
 			  var email = d3.select("#email").property("value");
+			  var delivery = d3.select('input[name="deliver"]:checked');
 
-			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}") {
+
+			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}" || !delivery.node()) {
 			  	if (phone == "") {
 			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
@@ -733,11 +739,13 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
 
+			  	if (!delivery.node()) {
+			  		d3.select(".g-checkbox-cont").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")	
+			  	}
+
 			  } else {
 
 			  	d3.select("#submit").classed("g-loading", true);
-
-			  	var formdata = $form.serialize();
 
 			  	shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
 
@@ -771,8 +779,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		var totalprice = price*shoppingcart[d];
 			  		var comment = d3.select("#comment").property("value");
 
-			  		var formdata = "name=" + name + "&phone=" + phone + "&email=" + email + "&date=" + formatTime(now) + "&item=" + item + "&price=" + totalprice + "&comment=" + comment;
-
 			  		orders.push({
 			  			name: name,
 			  			phone: phone,
@@ -780,7 +786,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  			date: formatTime(now),
 			  			item: item,
 			  			price: totalprice,
-			  			comment: comment
+			  			comment: comment,
+			  			delivery: delivery.attr("value")
 			  		})
 			  	})
 
