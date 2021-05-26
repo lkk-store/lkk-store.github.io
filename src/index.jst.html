@@ -10,7 +10,7 @@
 	} %>
 
 	<div class="g-nav-list g-nav-list-<%= d.slug %>" data-id="<%= d.slug %>" data-state="hidden">
-		<div class="g-nav-name"><% if (d.page == 'UPCOMING') { %>9OOD PROJECT<% } else { %><%- d.page %><% } %><% if (d.page.indexOf("CLICK") > -1) { %><img id="g-clickhere-arrow" src="img/arrow-03.png"><% } %></div>
+		<div class="g-nav-name"><% if (d.page == 'UPCOMING') { %>9OOD PROJECT<% } else { %><%- d.page %><% } %><% if (d.page.indexOf("CLICK") > -1) { %><img id="g-clickhere-arrow" src="img/arrow-03.webp"><% } %></div>
 		<div class="g-nav-content">
 			<% if (d.text) { %>
 			<div class="g-about"><%= d.text %></div>
@@ -18,7 +18,7 @@
 			<% if (d.content == "store" || d.content == "upcoming" || d.content == "blog" || d.content == "wood") { %>
 			<% var list = d.content == "store" ? data.store : d.content == "upcoming" ? data.upcoming : d.content == "blog" ? data.blog : d.content == "wood" ? data.wood : []; %>
 			<% if (d.content == "store") { %>
-			<div class="g-shopping-cart-icon"><img src="img/cart.png"><div class="g-cart-count"></div></div>
+			<div class="g-shopping-cart-icon"><img src="img/cart.webp"><div class="g-cart-count"></div></div>
 			<% } %>
 			<div class="g-store g-stock-list g-<%= d.content %>-list">				
 
@@ -35,7 +35,7 @@
 					<div class="g-img-nav g-left"><div class="g-img-nav-inner"></div></div>
 					<div class="g-img-nav g-right g-active"><div class="g-img-nav-inner"></div></div>
 					<% } else { %>
-					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div></div>
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.webp<% } %>"></div></div>
 					<% } %>
 					<div class="g-img-dots <% if (l.img) { %>g-img-dots-have-dots<% } %>">
 						<% if (l.img) { %>
@@ -85,13 +85,13 @@
 
 						<div class="g-thumbnail-cont">
 							<% l.img.forEach(function(a){ %>
-								<img class="g-img-thumbnail" loading="lazy" data-id="<%= l.id %>" data-item="<%= a.replace('.png', '') %>" src="img/<%= a %>">
+								<img class="g-img-thumbnail" loading="lazy" data-id="<%= l.id %>" data-item="<%= a.replace('.webp', '') %>" src="img/<%= a %>">
 							<% }) %>
 						</div>
 
 					</div>
 					<% } else { %>
-						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.png<% } %>"></div></div>
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/<%= d.content %>-<%= l.id %><% if (l.gif && l.gif == 'y') { %>.gif<% } else { %>.webp<% } %>"></div></div>
 					<% } %> 
 					
 					<div class="g-meta">
@@ -216,7 +216,7 @@
 				<div class="g-submitted g-hide">
 					<div class="g-thanks-text">payme 完 cap 圖 send 去 +85257280149 先會正式落單！</div>					
 					<!-- <img src="img/IMG_0412.JPG"> -->
-					<img loading="lazy" src="img/payme-QR.png">
+					<img loading="lazy" src="img/payme-QR.webp">
 					<div class="g-thanks-text g-thanks-usd"><div class="g-text-inner">If you're in the U.S., I'll email you to figure out how you can get these awesome tshirts! Your order total is <div class="g-item-usd"></div> USD (includes 35 USD for shipping).</div></div>
 				</div>
 

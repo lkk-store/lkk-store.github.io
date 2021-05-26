@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var canvas = sel.append("canvas").attr("width", innerWidth).attr("height", innerHeight)
 
 		// var qrcode = sel.append("div.g-img").append("img").attr("src", "img/IMG_0412.JPG");
-		var qrcode = sel.append("div.g-img").append("img").attr("src", "img/payme-QR.png");
+		var qrcode = sel.append("div.g-img").append("img").attr("src", "img/payme-QR.webp");
 
 		var qrw = innerWidth*.8;
 		qrw = qrw > 460 ? 460 : qrw;
@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var ctx = canvas.node().getContext("2d");
 
 		var img = new Image();
-		img.src = "img/LKK-logo.png"
+		img.src = "img/LKK-logo.webp"
 
 		img.onload = function(){
 

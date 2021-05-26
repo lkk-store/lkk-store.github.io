@@ -221,10 +221,10 @@ footer .g-social-icon {
   margin-right: 10px;
 }
 footer .g-social-icon.g-ig {
-  background-image: url(img/ig.png);
+  background-image: url(img/ig.webp);
 }
 footer .g-social-icon.g-whatsapp {
-  background-image: url(img/whatsapp.png);
+  background-image: url(img/whatsapp.webp);
   margin-right: 0;
 }
 a {
