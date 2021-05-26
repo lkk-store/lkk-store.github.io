@@ -473,7 +473,7 @@ input {
 }
 
 .g-buy-each i, .g-shopping-cart-inner i {
-	font-size: 12px;
+	font-size: 11px;
 	color: #444;
 	font-style: normal;
 }
@@ -487,25 +487,43 @@ input {
 .g-checkbox-cont {
 	display: inline-block;
 	vertical-align: top;
-	padding: 5px 0 5px 8px;
+	padding: 0 0 5px 5px;
+	width: calc(100% - 82px);
 }
 
 .g-type-checkbox input, .g-type-checkbox label {
 	width: auto;
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 	margin: 0;
-	font-size: 15px;
+	font-size: 14px;
 }
 
 .g-type-checkbox input {
-	transform: scale(1.4);
-	margin-right: 5px !important;
+	transform: scale(1.2);
+	margin-right: 3px !important;
 	box-shadow: none;
+	margin-top: 3.9px;
+}
+
+.g-type-checkbox #deliver1-label {
+
+	@media screen and (min-width: 600px) {
+		margin-right: 20px;
+	}
 }
 
 .g-type-checkbox label {
-	margin: 0 20px 2px 5px;
+	margin: 0 0 12px 5px;
+	font-size: 14px;
+
+
+}
+
+.g-type-checkbox br {
+	@media screen and (min-width: 600px) {
+		display: none;
+	}
 }
 
 

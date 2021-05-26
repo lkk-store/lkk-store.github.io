@@ -375,7 +375,7 @@ input {
 }
 .g-buy-each i,
 .g-shopping-cart-inner i {
-  font-size: 12px;
+  font-size: 11px;
   color: #444;
   font-style: normal;
 }
@@ -387,23 +387,36 @@ input {
 .g-checkbox-cont {
   display: inline-block;
   vertical-align: top;
-  padding: 5px 0 5px 8px;
+  padding: 0 0 5px 5px;
+  width: calc(100% - 82px);
 }
 .g-type-checkbox input,
 .g-type-checkbox label {
   width: auto;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
 }
 .g-type-checkbox input {
-  transform: scale(1.4);
-  margin-right: 5px !important;
+  transform: scale(1.2);
+  margin-right: 3px !important;
   box-shadow: none;
+  margin-top: 3.9px;
+}
+@media screen and (min-width: 600px) {
+  .g-type-checkbox #deliver1-label {
+    margin-right: 20px;
+  }
 }
 .g-type-checkbox label {
-  margin: 0 20px 2px 5px;
+  margin: 0 0 12px 5px;
+  font-size: 14px;
+}
+@media screen and (min-width: 600px) {
+  .g-type-checkbox br {
+    display: none;
+  }
 }
 .g-buy-popup.g-active {
   display: block;
@@ -5074,13 +5087,13 @@ Indian organic cotton</p>
 				</div>
 
 				<form class="" name="my-form" id="my-form">
-					<!-- put this back <div class="g-form-options g-hide"> -->
-					<div class="g-form-options">
+					<div class="g-form-options g-hide">
+					<!-- <div class="g-form-options"> -->
 						<div class="g-buy-each"><span class="g-lab">名字<br><i>name</i></span><input id="name" type="text" name="name"></div>
 						<div class="g-buy-each"><span class="g-lab">電話<br><i>phone</i></span><input id="phone" type="text" name="phone"></div>
 						<div class="g-buy-each"><span class="g-lab">留言<br><i>comment</i></span><input id="comment" type="text" name="comment"></div>
 						<div class="g-buy-each"><span class="g-lab">電郵<br><i>email</i></span><input id="email" type="text" name="email" placeholder="香港人唔駛填～"></div>
-						<div class="g-buy-each g-type-checkbox"><span class="g-lab">交收<br><i>deliver</i></span><div class="g-checkbox-cont"><input id="deliver1" type="checkbox" name="deliver" value="面交"><label for="deliver1">面交</label><input id="deliver2" type="checkbox" name="deliver" value="深水埗 storeroom 自取"><label for="deliver2">深水埗 storeroom 自取</label></div></div>
+						<div class="g-buy-each g-type-checkbox"><span class="g-lab">交收<br><i>deliver</i></span><div class="g-checkbox-cont"><input id="deliver1" type="checkbox" name="deliver" value="面交"><label id="deliver1-label" for="deliver1">面交(時間地點我話事，唔準有意見)</label><br><input id="deliver2" type="checkbox" name="deliver" value="storeroom"><label for="deliver2">自取(深水埗大南街storeroom自己拎)</label></div></div>
 					</div>
 
 					<div class="g-shopping-cart-inner">
