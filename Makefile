@@ -12,3 +12,8 @@ go:
 
 run:
 	node bin/index.js
+
+webp:
+	for file in png/* ; do \
+		cwebp -q 80 $${file} -o "${file%}.webp" ; \
+	done
