@@ -15,5 +15,7 @@ run:
 
 webp:
 	for file in png/* ; do \
-		cwebp -q 80 png/鳳凰不死鳥.png -o png/鳳凰不死鳥.webp ; \
+		cwebp -q 80 $${file} -o "$${file%%.*}.webp" ; \
 	done
+	mv png/*.webp img
+	rm -rf png/*.webp
