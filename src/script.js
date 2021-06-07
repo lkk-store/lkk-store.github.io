@@ -728,7 +728,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
-			  var email = d3.select("#email").property("value");
+			  // var email = d3.select("#email").property("value");
 			  var delivery = d3.select('input[name="deliver"]:checked');
 
 
@@ -787,7 +787,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		orders.push({
 			  			name: name,
 			  			phone: phone,
-			  			email: email,
+			  			// email: email,
 			  			date: formatTime(now),
 			  			item: item,
 			  			price: totalprice,
