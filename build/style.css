@@ -178,6 +178,22 @@ img {
 }
 .g-price {
   margin-top: 6px;
+  position: relative;
+}
+.g-limited {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  font-size: 15px;
+  color: #bf0000;
+}
+.g-limited .g-limited-countdown {
+  display: inline;
+}
+.g-cur-stock .g-limited {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
 }
 .g-price-num .g-price-old {
   position: relative;

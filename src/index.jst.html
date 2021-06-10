@@ -1,4 +1,5 @@
 <div class="g-nav">
+	<% var limitedcount = d3.sum(data.orders.filter(d => d.item_no.indexOf("鳳凰不死鳥 tee 031") > -1 && d.整 == "✓"), d => d.volume) %>
 	<% data.pages.forEach(function(d){ %>
 
 	<% function convertToSlug(Text) {
@@ -59,6 +60,7 @@
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
 							<span class="g-price-num <% if (l.price == 'Sold out') { %>g-sold-out<% } %>"><%= l.price %></span>
 							<% } %>
+							<% if (l.limited != "") { %><div class="g-limited">限量 <div class="g-limited-countdown" data-count="<%- limitedcount %>">0</div> / <%- l.limited %> 件</div><% } %>
 						</div>
 						<% } %>
 					</div>
@@ -106,6 +108,7 @@
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
 							<span class="g-price-num <% if (l.price == 'Sold out') { %>g-sold-out<% } %>"><%= l.price %></span>
 							<% } %>
+							<% if (l.limited != "") { %><div class="g-limited">限量 <div class="g-limited-countdown" data-count="<%- limitedcount %>">0</div> / <%- l.limited %> 件</div><% } %>
 						</div><% } %>
 
 						<div class="g-details">

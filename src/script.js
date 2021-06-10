@@ -4,6 +4,64 @@ var buying = false;
 
 document.addEventListener("DOMContentLoaded", function(e) {
    	
+	var limitedcount = +d3.select(".g-limited-countdown").attr("data-count");
+	console.log(limitedcount)
+
+	runscrollyfunc();
+	window.addEventListener('scroll', runscrollyfunc);
+
+	function runscrollyfunc() {
+
+		// d3.selectAll(".g-limited-countdown").each(function(){
+			var el = d3.select(".g-limited-countdown");
+
+			if (elementInViewport2(el) && el.attr("data-onscreen") == "no" && el.attr("data-state") != "animating"){
+				el.attr("data-onscreen", "yes")
+				el.attr("data-state", "animating")
+				el.text(0).transition()
+				  .tween("text", function() {
+				     var selection = d3.select(this);    // selection of node being transitioned
+				     var start = d3.select(this).text(); // start value prior to transition
+				     var end = limitedcount;                     // specified end value
+				     var interpolator = d3.interpolateNumber(start,end); // d3 interpolator
+
+				     return function(t) { selection.text(Math.round(interpolator(t))); };  // return value
+				  })
+				  .duration(2000)
+				  .on("end", function(){
+				  	el.attr("data-state", "")
+				  });
+			} else if (!elementInViewport2(el)) {
+				el.attr("data-onscreen", "no")
+			}
+
+			d3.select(".g-store-031 .g-limited-countdown").text(limitedcount)
+		// })
+
+	}
+
+
+	function elementInViewport2(el) {
+		var el = el.node();
+	  var top = el.offsetTop;
+	  var left = el.offsetLeft;
+	  var width = el.offsetWidth;
+	  var height = el.offsetHeight;
+
+	  while(el.offsetParent) {
+	    el = el.offsetParent;
+	    top += el.offsetTop;
+	    left += el.offsetLeft;
+	  }
+
+	  return (
+	    top < (window.pageYOffset + window.innerHeight) &&
+	    left < (window.pageXOffset + window.innerWidth) &&
+	    (top + height) > window.pageYOffset &&
+	    (left + width) > window.pageXOffset
+	  );
+	}
+
    	function resize() {
    		d3.selectAll(".g-nav-list").each(function(){
    			var el = d3.select(this);
@@ -417,7 +475,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			el.transition().style("height", (+el.attr("data-h1") + +el.attr("data-h2")) + "px")
 			el.classed("g-show", true);
 			document.location.hash = el.attr("data-id");
-			window.scrollTo(0,el.node().getBoundingClientRect().top + window.scrollY - 5);
+			// window.scrollTo(0,el.node().getBoundingClientRect().top + window.scrollY - 5);
 
 		} else if (id != "lunch") {
 			stopbananas();

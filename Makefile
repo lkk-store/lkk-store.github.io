@@ -5,6 +5,9 @@ download:
 	node bin/dl-sheet.js 1wav5HPlGXmn3fPv90WF9noG6axFGkeyQFHJ28nvpai0 blog blog
 	node bin/dl-sheet.js 1wav5HPlGXmn3fPv90WF9noG6axFGkeyQFHJ28nvpai0 wood wood
 
+store: 
+	node bin/dl-sheet.js 1wav5HPlGXmn3fPv90WF9noG6axFGkeyQFHJ28nvpai0 store store
+	
 go:
 	git add .
 	git commit -m "$m"
@@ -19,3 +22,6 @@ webp:
 	done
 	mv png/*.webp img
 	rm -rf png/*.webp
+
+update:
+	node bin/dl-sheet.js 1CGgx70VsPdDyozhyu2xdsj4Hm9tPdyzF0FouvSYjjMo Sheet1 orders
