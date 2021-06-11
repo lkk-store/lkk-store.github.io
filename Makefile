@@ -25,3 +25,7 @@ webp:
 
 update:
 	node bin/dl-sheet.js 1CGgx70VsPdDyozhyu2xdsj4Hm9tPdyzF0FouvSYjjMo Sheet1 orders
+	node bin/index.js make
+	git add .
+	git commit -m "update"
+	git push
