@@ -1,5 +1,7 @@
 <div class="g-nav">
-	<% var limitedcount = d3.sum(data.orders.filter(d => d.item_no.indexOf("鳳凰不死鳥 tee 031") > -1 && d.整 == "✓"), d => d.volume) %>
+	<% var limitedcount = d3.sum(data.orders.filter(d => d.item_no.indexOf("鳳凰不死鳥 tee 031") > -1 && d.整 == "✓"), d => d.volume)
+		limitedcount = 300
+	 %>
 	<% data.pages.forEach(function(d){ %>
 
 	<% function convertToSlug(Text) {
