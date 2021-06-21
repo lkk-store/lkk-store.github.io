@@ -397,10 +397,10 @@ input {
   display: inline-block;
   vertical-align: top;
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
 }
 .g-type-checkbox input {
-  transform: scale(1.2);
+  transform: scale(1);
   margin-right: 3px !important;
   box-shadow: none;
   margin-top: 3.9px;
@@ -411,7 +411,7 @@ input {
   }
 }
 .g-type-checkbox label {
-  margin: 0 0 12px 5px;
+  margin: -1px 0 12px 1px;
   font-size: 14px;
 }
 @media screen and (min-width: 600px) {
