@@ -17,6 +17,7 @@ run:
 	node bin/index.js
 
 webp:
+	mogrify -resize 700x png/*
 	for file in png/* ; do \
 		cwebp -q 80 $${file} -o "$${file%%.*}.webp" ; \
 	done

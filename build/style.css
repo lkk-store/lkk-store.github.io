@@ -570,6 +570,10 @@ input {
 .g-details {
   margin-top: 14px;
 }
+.g-details a {
+  text-decoration: underline;
+  color: #bf0000;
+}
 .g-details .g-highlight-text {
   font-weight: 700;
   font-style: italic;
