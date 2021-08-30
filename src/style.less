@@ -552,7 +552,7 @@ input {
 	display: block;
 }
 
-.g-x {
+.g-x, .g-popup-x {
 	width: 100%;
     color: #fff;
     font-size: 30px;
@@ -566,7 +566,13 @@ input {
     padding: 20px 0;
 }
 
-.g-x:hover {
+.g-popup-x {
+	padding-top: 0;
+	margin-top: 0;
+	padding-right: 7%;
+}
+
+.g-x:hover, .g-popup-x:hover {
 	cursor: pointer;
 	opacity: 0.5;
 }
@@ -1141,4 +1147,50 @@ input {
 	    vertical-align: middle;
 	    margin-top: -9px;
 	    margin-right: 2px;
+}
+
+.g-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.7);
+
+	.g-popup-text {
+		text-align: center;
+		color: #fff;
+		position: absolute;
+		top: 20px;
+		width: 100%;
+		// font-weight: 700;1
+		
+
+		.g-popup-text-inner {
+			background: #000;
+			display: inline;
+			padding: 5px 0 5px 10px;	
+		}
+	}
+
+	.g-popup-inner {
+		width: 100%;
+		max-width: 800px;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+
+
+/* code for shutdown */
+.g-shopping-cart, .g-shopping-cart-icon, .g-buy {
+	display: none !important;
 }

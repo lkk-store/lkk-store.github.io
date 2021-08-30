@@ -437,7 +437,8 @@ input {
 .g-buy-popup.g-active {
   display: block;
 }
-.g-x {
+.g-x,
+.g-popup-x {
   width: 100%;
   color: #fff;
   font-size: 30px;
@@ -450,7 +451,13 @@ input {
   z-index: 100;
   padding: 20px 0;
 }
-.g-x:hover {
+.g-popup-x {
+  padding-top: 0;
+  margin-top: 0;
+  padding-right: 7%;
+}
+.g-x:hover,
+.g-popup-x:hover {
   cursor: pointer;
   opacity: 0.5;
 }
@@ -880,10 +887,55 @@ input {
   margin-top: -9px;
   margin-right: 2px;
 }
+.g-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+.g-popup .g-popup-text {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+}
+.g-popup .g-popup-text .g-popup-text-inner {
+  background: #000;
+  display: inline;
+  padding: 5px 0 5px 10px;
+}
+.g-popup .g-popup-inner {
+  width: 100%;
+  max-width: 800px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.g-popup img {
+  width: 100%;
+}
+/* code for shutdown */
+.g-shopping-cart,
+.g-shopping-cart-icon,
+.g-buy {
+  display: none !important;
+}
 </style>
 </head>
 <body>
-<a href="index.html"><div class="g-logo-cont"><img src="img/laikankee.webp"></div></a><div class="g-nav">
+<a href="index.html"><div class="g-logo-cont"><img src="img/laikankee.webp"></div></a><div class="g-popup">
+	<div class="g-popup-inner">
+		<div class="g-popup-text"><div class="g-popup-text-inner">我地去咗行山呀，暫時接唔到單，番嚟再話你知！</div></div>
+		<img src="alps.gif">
+	</div>
+	<div class="g-popup-x">X</div>
+</div>
+<div class="g-nav">
 	
 	
 
@@ -1360,7 +1412,7 @@ input {
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
 							<span class="g-price-num g-sold-out">Sold out</span>
 							
-							<div class="g-limited">限量 <div class="g-limited-countdown" data-count="300">0</div> / 300 件</div>
+							<div class="g-limited">限量 <div class="g-limited-countdown" data-count="300">300</div> / 300 件</div>
 						</div>
 						
 					</div>
@@ -9177,43 +9229,10 @@ var doneshopping = false;
 var buying = false;
 
 document.addEventListener("DOMContentLoaded", function(e) {
-   	
-	var limitedcount = +d3.select(".g-limited-countdown").attr("data-count");
-	console.log(limitedcount)
 
-	runscrollyfunc();
-	window.addEventListener('scroll', runscrollyfunc);
-
-	function runscrollyfunc() {
-
-		// d3.selectAll(".g-limited-countdown").each(function(){
-			var el = d3.select(".g-limited-countdown");
-
-			if (elementInViewport2(el) && el.attr("data-onscreen") == "no" && el.attr("data-state") != "animating"){
-				el.attr("data-onscreen", "yes")
-				el.attr("data-state", "animating")
-				el.text(0).transition()
-				  .tween("text", function() {
-				     var selection = d3.select(this);    // selection of node being transitioned
-				     var start = d3.select(this).text(); // start value prior to transition
-				     var end = limitedcount;                     // specified end value
-				     var interpolator = d3.interpolateNumber(start,end); // d3 interpolator
-
-				     return function(t) { selection.text(Math.round(interpolator(t))); };  // return value
-				  })
-				  .duration(2000)
-				  .on("end", function(){
-				  	el.attr("data-state", "")
-				  });
-			} else if (!elementInViewport2(el)) {
-				el.attr("data-onscreen", "no")
-			}
-
-			d3.select(".g-store-031 .g-limited-countdown").text(limitedcount)
-		// })
-
-	}
-
+	d3.select(".g-popup-x").on("click", function(){
+		d3.select(".g-popup").style("display", "none")
+	})
 
 	function elementInViewport2(el) {
 		var el = el.node();
