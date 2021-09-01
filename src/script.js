@@ -4,9 +4,9 @@ var buying = false;
 
 document.addEventListener("DOMContentLoaded", function(e) {
 
-	d3.select(".g-popup-x").on("click", function(){
-		d3.select(".g-popup").style("display", "none")
-	})
+	// d3.select(".g-popup-x").on("click", function(){
+	// 	d3.select(".g-popup").style("display", "none")
+	// })
 
 	function elementInViewport2(el) {
 		var el = el.node();
