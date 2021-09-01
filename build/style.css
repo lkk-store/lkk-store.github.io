@@ -905,8 +905,3 @@ input {
   width: 100%;
 }
 /* code for shutdown */
-.g-shopping-cart,
-.g-shopping-cart-icon,
-.g-buy {
-  display: none !important;
-}

@@ -736,7 +736,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	// form submission
 	$( document ).ready( function(){
 		var $form = $('form#my-form'),
-		    url = 'https://script.google.com/macros/s/AKfycbxHCw8DUBjM3OMe9k-yewFaDLM8Zp43Q8i3lWqC4AvCof4eExIljQURrwOo-im_zIx5/exec'
+		    // url = 'https://script.google.com/macros/s/AKfycbxHCw8DUBjM3OMe9k-yewFaDLM8Zp43Q8i3lWqC4AvCof4eExIljQURrwOo-im_zIx5/exec'
+		    url = 'https://script.google.com/macros/s/AKfycbyUf6jRR7u6cY2EFzeqoKFDpn1zAeWdoU6rWa4sNo5CnJkIQE4FVxaneJQ76Kr7ccN6/exec'
 
 		$('input[type="checkbox"]').on('change', function() {
 		   $('input[type="checkbox"]').not(this).prop('checked', false);
@@ -754,10 +755,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
 			  // var email = d3.select("#email").property("value");
-			  var delivery = d3.select('input[name="deliver"]:checked');
+			  // var delivery = d3.select('input[name="deliver"]:checked');
 
 
-			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}" || !delivery.node()) {
+			  // if (phone == "" || name == "" || localStorage.shoppingcart == "{}" || !delivery.node()) {
+			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}") {
 			  	if (phone == "") {
 			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
@@ -769,9 +771,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
 
-			  	if (!delivery.node()) {
-			  		d3.select(".g-checkbox-cont").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")	
-			  	}
+			  	// if (!delivery.node()) {
+			  	// 	d3.select(".g-checkbox-cont").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")	
+			  	// }
 
 			  } else {
 
@@ -817,7 +819,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  			item: item,
 			  			price: totalprice,
 			  			comment: comment,
-			  			delivery: delivery.attr("value")
+			  			// delivery: delivery.attr("value")
 			  		})
 			  	})
 
