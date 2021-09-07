@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var canvas = sel.append("canvas").attr("width", innerWidth).attr("height", innerHeight)
 
 		// var qrcode = sel.append("div.g-img").append("img").attr("src", "img/IMG_0412.JPG");
-		var qrcode = sel.append("div.g-img").append("img").attr("src", "img/payme-QR.webp");
+		var qrcode = sel.append("div.g-img").append("img").attr("src", "img/payme_heidi.webp");
 
 		var qrw = innerWidth*.8;
 		qrw = qrw > 460 ? 460 : qrw;
