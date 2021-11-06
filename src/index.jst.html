@@ -62,12 +62,12 @@
 						</div>
 						<% if (l.price) { %>
 						<div class="g-price">
-							<% if (l.price != "Sold out") { %><sup class="g-agate">HKD</sup><% } %>
+							<% if (l.soldout != "y") { %><sup class="g-agate">HKD</sup><% } %>
 							<% if (l.price == "10up") { %>
 							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
 							<% } else { %>
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num <% if (l.price == 'Sold out') { %>g-sold-out<% } %>"><%= l.price %></span>
+							<span class="g-price-num <% if (l.soldout == 'y') { %>g-sold-out<% } %>"><% if (l.soldout == 'y') { %>Sold out<% } else { %><%= l.price %><% } %></span>
 							<% } %>
 							<% if (l.limited != "") { %><div class="g-limited">限量 <div class="g-limited-countdown" data-count="<%- limitedcount %>"><%- limitedcount %></div> / <%- l.limited %> 件</div><% } %>
 						</div>
@@ -110,12 +110,12 @@
 							<span class="g-name" id="stock-name" data-id="<%= l.id %>"><%= l.name %></span>
 						</div>
 						<% if (l.price) { %><div class="g-price">
-							<% if (l.price != "Sold out") { %><sup class="g-agate">HKD</sup><% } %>
+							<% if (l.soldout != 'y') { %><sup class="g-agate">HKD</sup><% } %>
 							<% if (l.price == "10up") { %>
-							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
+							<span class="g-price-num"><span class="g-price-new"><% if (l.soldout == 'y') { %>Sold out<% } else  { %><%= l.price %><% } %></span></span>
 							<% } else { %>
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num <% if (l.price == 'Sold out') { %>g-sold-out<% } %>"><%= l.price %></span>
+							<span class="g-price-num <% if (l.soldout == 'y') { %>g-sold-out<% } %>"><% if (l.soldout == 'y') { %>Sold out<% } else { %><%= l.price %><% } %></span>
 							<% } %>
 							<% if (l.limited != "") { %><div class="g-limited">限量 <div class="g-limited-countdown" data-count="<%- limitedcount %>">0</div> / <%- l.limited %> 件</div><% } %>
 						</div><% } %>
@@ -174,14 +174,14 @@
 						<% } %>
 						
 						<br>
-						<% if (l.price != 'Sold out') { %><p><b><i>因屋企工場製作需時，落單後一般要20個工作天先有貨</i></b></p><% } %>
+						<% if (l.soldout != 'y') { %><p><b><i>因屋企工場製作需時，落單後一般要20個工作天先有貨</i></b></p><% } %>
 						<!-- <p><b><i>網上訂衫暫停～ 過多陣會重新開始接單 🍌🍌🍌</i></b></p> -->
 						<% if (l.colors == "x") { %><p><b><i>Out of stock</i></b></p><% } %>
 						<% } %>
 						</div>
 
 						<% if (d.content == "store" && l.category != "Cap" && l.colors != "x") { %>
-						<div class="g-buy <% if (l.price == 'Sold out') { %>g-buy-sold-out<% } %>">
+						<div class="g-buy <% if (l.soldout == 'y') { %>g-buy-sold-out<% } %>">
 							<div class="g-size" style="<% if (!l.sizes) { %>display: none;<% } %>">
 								<span class="g-label">尺碼 size</span>
 								<select id="size" name="size">
