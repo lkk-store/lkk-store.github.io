@@ -47,7 +47,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
    				el.attr("data-h2", nameheight + contentheight);
    				el.style("height", nameheight + "px");
    			}
+
    		})
+
+   		d3.select(".g-nav").classed("g-active", true)
+   		d3.select(".g-loader").classed("g-hide", true)
    	}
 
    	// hash function show function
