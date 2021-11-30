@@ -197,8 +197,12 @@
 								<span class="g-label">顏色</span>
 									<% var colors = l.colors.split(",") %>
 									<% var filtered = l.colors.split(",").filter(d => d.charAt(0) != "x") %>
+									<% var added = [] %>
 									<% colors.forEach(function(s,si){ %>
+									<% if (added.indexOf(s) == -1) { %>
 									<div class="g-color-circle <% if (s.charAt(0) == 'x') { %>g-color-not-available<% } %> <% if (filtered.indexOf(s) == 0) { %>g-picked<% } %>" data-store="<%= l.id %>" data-order="<%= (si+1) %>" data-color="<%= (si+1) %>-<%= s.split('#')[0] %>" style="background-color: <%= '#' + s.split('#')[1] %>;"></div>
+									<% added.push(s) %>
+									<% } %>
 									<% }) %>
 							</div>
 							<% } %>

@@ -544,12 +544,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		var parent = d3.select(el.node().parentNode.parentNode.parentNode);
 
-		var color = ((+item.split("-")[2])+1);
-		var colorel = parent.select(".g-color-circle:nth-child(" + ((+item.split("-")[2])+1) +")");
-		if (colorel.node() && colorel.attr("data-color").split("-")[1].charAt(0) != "x") {
-			parent.selectAll(".g-color-circle").classed("g-picked", false);
-			parent.select(".g-color-circle:nth-child(" + ((+item.split("-")[2])+1) +")").classed("g-picked", true);
-		}
+		// var color = ((+item.split("-")[2])+1);
+		// var colorel = parent.select(".g-color-circle:nth-child(" + ((+item.split("-")[2])+1) +")");
+		// if (colorel.node() && colorel.attr("data-color").split("-")[1].charAt(0) != "x") {
+		// 	parent.selectAll(".g-color-circle").classed("g-picked", false);
+		// 	parent.select(".g-color-circle:nth-child(" + ((+item.split("-")[2])+1) +")").classed("g-picked", true);
+		// }
 
 		var goto = +item.split("-")[2]-1;
 		console.log(goto)
