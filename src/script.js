@@ -759,11 +759,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
 			  // var email = d3.select("#email").property("value");
-			  // var delivery = d3.select('input[name="deliver"]:checked');
+			  var delivery = d3.select('input[name="deliver"]:checked');
 
 
-			  // if (phone == "" || name == "" || localStorage.shoppingcart == "{}" || !delivery.node()) {
-			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}") {
+			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}" || !delivery.node()) {
+			  // if (phone == "" || name == "" || localStorage.shoppingcart == "{}") {
 			  	if (phone == "") {
 			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
@@ -775,9 +775,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
 
-			  	// if (!delivery.node()) {
-			  	// 	d3.select(".g-checkbox-cont").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")	
-			  	// }
+			  	if (!delivery.node()) {
+			  		d3.select(".g-checkbox-cont").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  	}
 
 			  } else {
 
@@ -823,7 +823,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  			item: item,
 			  			price: totalprice,
 			  			comment: comment,
-			  			// delivery: delivery.attr("value")
+			  			delivery: delivery.attr("value")
 			  		})
 			  	})
 

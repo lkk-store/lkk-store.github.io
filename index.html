@@ -6166,7 +6166,7 @@ Indian organic cotton</p>
 						<div class="g-buy-each"><span class="g-lab">電話<br><i>phone</i></span><input id="phone" type="text" name="phone"></div>
 						<div class="g-buy-each"><span class="g-lab">留言<br><i>comment</i></span><input id="comment" type="text" name="comment"></div>
 						<!-- <div class="g-buy-each"><span class="g-lab">電郵<br><i>email</i></span><input id="email" type="text" name="email" placeholder="香港人唔駛填～"></div> -->
-						<!-- <div class="g-buy-each g-type-checkbox"><span class="g-lab">交收<br><i>deliver</i></span><div class="g-checkbox-cont"><input id="deliver1" type="checkbox" name="deliver" value="面交"><label id="deliver1-label" for="deliver1">面交(時間地點我話事，唔準有意見)</label><br><input id="deliver2" type="checkbox" name="deliver" value="storeroom"><label for="deliver2">自取(深水埗大南街storeroom自己拎)</label></div></div> -->
+						<div class="g-buy-each g-type-checkbox"><span class="g-lab">交收<br><i>deliver</i></span><div class="g-checkbox-cont"><input id="deliver1" type="checkbox" name="deliver" value="面交"><label id="deliver1-label" for="deliver1">面交(時間地點我話事，唔準有意見)</label><br><input id="deliver2" type="checkbox" name="deliver" value="storeroom"><label for="deliver2">自取(深水埗大南街storeroom自己拎)</label></div></div>
 					</div>
 
 					<div class="g-shopping-cart-inner">
@@ -9527,6 +9527,23 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 					</div>
 				</div>
 				
+				<div class="g-store-each" data-id="011" data-page="wood">
+					
+					<div class="g-img"><div class="g-img-inner-cont"><img class="g-load-first" loading="lazy" src="img/wood-011.webp"></div></div>
+					
+					<div class="g-img-dots ">
+						
+					</div>					
+					<div class="g-meta">
+						<div class="g-hed">
+							
+							<span class="g-name">一個人出發</span>
+							<span class="g-desc">遇上伯伯</span>
+						</div>
+						
+					</div>
+				</div>
+				
 			</div>
 
 			<div class="g-store g-stock-cont">
@@ -9939,6 +9956,53 @@ send 同一張相嚟</p><p>
 想要告訴我</p><p>
 蝙蝠俠有時也需要同伴</p><br><p>
 2021-07-13</p>
+						
+						</div>
+
+						
+					</div>
+				</div>
+
+				
+				<div class="g-stock-each g-store-buy g-hide g-wood-011" data-id="011">
+
+					<div class="g-back" data-page="wood"><div class="g-tri">◂</div>BACK</div>
+
+					
+						<div class="g-img"><div class="g-img-inner-cont"><img loading="lazy" src="img/wood-011.webp"></div></div>
+					 
+					
+					<div class="g-meta">
+						<div class="g-hed">
+							<span class="g-name" id="stock-name" data-id="011">一個人出發</span>
+						</div>
+						
+
+						<div class="g-details">
+						<p class="g-highlight-text">遇上伯伯</p>
+						
+						
+						<p>自己一個人到了瑞士行山</p><p>
+第一天一個人出發的時候</p><p>
+全身毛髲都豎起來</p><p>
+又緊張又害怕</p><br><p>
+
+走了好一會兒遇到不懂說英語的伯伯</p><p>
+在他的德文之間</p><p>
+聽到一些小鎮的名字</p><p>
+猜他想問我往那裡去</p><p>
+我說今天我要走到那個地方去</p><br><p>
+
+他露出一個配服的表情</p><p>
+然後豎起手指公</p><br><p>
+ 
+這對話我都記住了</p><p>
+害怕的時候想起來</p><p>
+心裡鎮定了一下</p><p>
+真的走了很遠的路</p><p>
+還真的不弱</p><br><p>
+
+2021-09-15</p>
 						
 						</div>
 
@@ -10732,11 +10796,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  var name = d3.select("#name").property("value");
 			  var phone = d3.select("#phone").property("value");
 			  // var email = d3.select("#email").property("value");
-			  // var delivery = d3.select('input[name="deliver"]:checked');
+			  var delivery = d3.select('input[name="deliver"]:checked');
 
 
-			  // if (phone == "" || name == "" || localStorage.shoppingcart == "{}" || !delivery.node()) {
-			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}") {
+			  if (phone == "" || name == "" || localStorage.shoppingcart == "{}" || !delivery.node()) {
+			  // if (phone == "" || name == "" || localStorage.shoppingcart == "{}") {
 			  	if (phone == "") {
 			  		d3.select("#phone").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
@@ -10748,9 +10812,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		d3.select(".g-tbody").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
 			  	}
 
-			  	// if (!delivery.node()) {
-			  	// 	d3.select(".g-checkbox-cont").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")	
-			  	// }
+			  	if (!delivery.node()) {
+			  		d3.select(".g-checkbox-cont").transition().style("background", "rgba(255,0,0,0.5)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+			  	}
 
 			  } else {
 
@@ -10796,7 +10860,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  			item: item,
 			  			price: totalprice,
 			  			comment: comment,
-			  			// delivery: delivery.attr("value")
+			  			delivery: delivery.attr("value")
 			  		})
 			  	})
 

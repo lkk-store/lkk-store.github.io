@@ -24,6 +24,13 @@ webp:
 	mv png/*.webp img
 	rm -rf png/*.webp
 
+pngs:
+	for file in img/store-*.webp ; do \
+		ffmpeg -i $${file} $${file%%.*}.png ; \
+	done
+	mogrify -resize 1000x png/* 
+
+
 update:
 	node bin/dl-sheet.js 1CGgx70VsPdDyozhyu2xdsj4Hm9tPdyzF0FouvSYjjMo Sheet1 orders
 	node bin/index.js make
