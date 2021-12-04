@@ -2715,5 +2715,43 @@
     "delivery": "storeroom",
     "comment": "",
     "delivered": ""
+  },
+  {
+    "date": "2021-12-05 00:00",
+    "name": "Cash",
+    "phone": "",
+    "覆ed": "",
+    "paid": "",
+    "payment": "",
+    "整": "✓",
+    "price": "",
+    "item": "倒轉地球 tee 039 x 7 x XL",
+    "": "",
+    "item_no": "倒轉地球 tee 039",
+    "volume": "7",
+    "size": "XL",
+    "color": "",
+    "delivery": "",
+    "comment": "",
+    "delivered": ""
+  },
+  {
+    "date": "2021-12-05 00:00",
+    "name": "Showroom",
+    "phone": "",
+    "覆ed": "whatsapp",
+    "paid": "$",
+    "payment": "payme",
+    "整": "✓",
+    "price": "",
+    "item": "倒轉地球 tee 039 x 3 x XL",
+    "": "",
+    "item_no": "倒轉地球 tee 039",
+    "volume": "3",
+    "size": "XL",
+    "color": "",
+    "delivery": "",
+    "comment": "",
+    "delivered": ""
   }
 ]
