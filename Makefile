@@ -32,7 +32,7 @@ pngs:
 
 
 update:
-	node bin/dl-sheet.js 1CGgx70VsPdDyozhyu2xdsj4Hm9tPdyzF0FouvSYjjMo Sheet1 orders
+	node bin/dl-sheet.js 1Yi8p5O_CIxtftE8IbLrftsUAV60_pIuXrxNfAgUMb-M Sheet1 orders
 	node bin/index.js make
 	git add .
 	git commit -m "update"
