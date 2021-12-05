@@ -7,7 +7,7 @@
 </div> -->
 <div class="g-loader"><div class="g-loader-inner"></div></div>
 <div class="g-nav">
-	<% var limitedcount = d3.sum(data.orders.filter(d => d.item_no.indexOf("倒轉地球 tee 039") > -1 && d.整 == "✓"), d => d.volume)
+	<% var limitedcount = d3.sum(data.orders.filter(d => d.item.indexOf("倒轉地球 tee 039") > -1 && d.整 == "✓"), d => d.volume)
 	 %>
 	<% data.pages.forEach(function(d){ %>
 
