@@ -357,9 +357,11 @@ input {
   box-shadow: none;
   border: 1px solid #ddd;
   padding: 8px 16px;
+  background: #000000;
+  color: #fff;
 }
 .g-button:hover {
-  background: #ddd;
+  background: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
 .g-buy-popup {
@@ -463,12 +465,13 @@ input {
   background: rgba(255, 255, 255, 0.5);
 }
 .g-buy-button {
-  background: rgba(255, 255, 255, 0.5);
+  background: #000;
+  color: #fff;
   margin: 0 auto;
   display: block;
 }
 .g-buy-button:hover {
-  background: #ddd;
+  background: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
 #my-form .g-note {
@@ -639,12 +642,12 @@ input {
   border-bottom: none;
 }
 #submit.g-loading {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #000000;
   background-image: url(img/loading-gif-png-5.gif);
   background-size: 30%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.1);
   pointer-events: none;
   user-select: none;
 }
