@@ -10,7 +10,7 @@
 		
 		html,
 		body {
-		  background: #333;
+		  background: #000;
 		  color: #fff;
 		  height: 100%;
 		  margin: 0;
@@ -27,7 +27,7 @@
 		}
 
 		.marquee img {
-			width:  200px;
+			height:  250px;
 		}
 
 		.g-background-cont {
@@ -225,7 +225,7 @@
 			// $(".g-inner-2").css("margin-top", (innerHeight/2 -  $(".g-inner-2").width()/2) + "px")
 
 			$('.marquee').marqueeify({
-				speed: 300
+				speed: 200
 			});
 		});
 
@@ -369,7 +369,7 @@
 			$('.marquee').remove();
 			$(".g-marquee-frame").append("<div class='marquee'><img src='" + texts[imcount] + "' /></div>");
 			$('.marquee').marqueeify({
-				speed: 300,
+				speed: 200,
 			});
 
 			if (imcount == images.length - 1) {
