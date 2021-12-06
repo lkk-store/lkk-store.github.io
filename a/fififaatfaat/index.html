@@ -212,6 +212,10 @@
 			$(".g-marquee-cont").css("height", renderedH + "px")
 			$(".g-marquee-cont").css("margin-top", (innerHeight/2 - renderedH/2) + "px")
 
+			var texth = (renderedH*0.5);
+			texth = texth > 250 ? 250 : texth;
+			$(".marquee img").css("height", (texth) + "px")
+
 			$(".g-marquee-frame").css("width", renderedW*(1300/1920) + "px");
 			$(".g-marquee-frame").css("top", innerHeight*(30/1080) + "px");
 			$(".g-marquee-frame").css("left", innerWidth*(308.8496/1920) + "px");
