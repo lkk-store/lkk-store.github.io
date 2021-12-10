@@ -1,0 +1,5 @@
+download:
+	node dl-sheet.js 18Y_2ri-40mC-5jE4u0elO-cpWKsj-rn2vRI6Jv4mLjk Sheet1 rows
+
+montage:
+	montage photos/am.png photos/alta.png photos/ama.png photos/angie.png photos/arnold-kala-hinny.png photos/calvin.png photos/david-ester.png photos/dotdotdot.png photos/fibi1.png photos/fibia1.png photos/fulon.png photos/hato.png photos/hill.png photos/i-do.png photos/jing.png photos/joyce.png photos/kermit.png photos/kidding-u.png photos/leo.png photos/leungmo.png photos/sandy.png photos/showroom.png photos/tiffany.png photos/toby-hill.png photos/wing1.png photos/但以理團1.png photos/佩虹1.png photos/全-Huey.png photos/哥哥1.png photos/嘉希.png photos/媽媽1.png photos/子龍.png photos/孔孔孔孔1.png photos/晴仔.png photos/歐陽.png photos/爸爸1.png photos/爸爸媽媽.png photos/發仔1.png photos/豆奶.png photos/豪1.png photos/開心壁球協會.png photos/阿嫂-山B.png photos/陳發濤1.png photos/陳發鴻1.png photos/魷魚.png -tile x1 -geometry 960x540+0+0 -background none people.jpg
