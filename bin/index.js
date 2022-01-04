@@ -106,7 +106,7 @@ function compile() {
 
 			out += ejs_rendered;
 
-			out += '<script src="https://interactive.thestandnews.com/scripts/d3_.js"></script>\n';
+			out += '<script src="d3_.js"></script>\n';
 			out += '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>\n';
 
 			out += "\n<script>\n";

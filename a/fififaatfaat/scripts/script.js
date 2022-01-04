@@ -129,7 +129,7 @@ function run(direction) {
 		var x = photoid/(photolookup.length-1)*100;
 		$(".g-background").css("background-position", x + "% 0");
 
-		var h = 150;
+		var h = 200;
 		var w = h*texts[textcount].width/texts[textcount].height;
 		$(".marquee").css({
 			width: w + "px",
