@@ -2,17 +2,17 @@
   {
     "hide": "",
     "new": "1",
-    "slug": "後會有期 crewneck 040",
-    "id": "040",
-    "name": "後會有期 crewneck",
-    "text": "goodbye, hello",
+    "slug": "苦中作樂 crewneck 041",
+    "id": "041",
+    "name": "苦中作樂 crewneck",
+    "text": "苦:D",
     "category": "totebag",
     "type": "Print",
-    "description": "「goodbye」「hello」//\n2022 - 繼續好好學習離別////CHEST 63 //LENGTH 78  //SHOULDER 54 //SLEEVE 63",
-    "price": "500",
+    "description": "one size only////CHEST 60 //LENGTH 75  //SHOULDER 51 //SLEEVE 62",
+    "price": "",
     "soldout": "",
     "limited": "",
-    "sizes": "2XL",
+    "sizes": "XL",
     "colors": ""
   },
   {
@@ -65,6 +65,22 @@
   },
   {
     "hide": "",
+    "new": "1",
+    "slug": "後會有期 crewneck 040",
+    "id": "040",
+    "name": "後會有期 crewneck",
+    "text": "goodbye, hello",
+    "category": "totebag",
+    "type": "Print",
+    "description": "「goodbye」「hello」//\n2022 - 繼續好好學習離別////CHEST 63 //LENGTH 78  //SHOULDER 54 //SLEEVE 63",
+    "price": "500",
+    "soldout": "",
+    "limited": "",
+    "sizes": "2XL",
+    "colors": ""
+  },
+  {
+    "hide": "",
     "new": "",
     "slug": "後會有期 tee 024",
     "id": "024",
@@ -92,7 +108,7 @@
     "price": "500",
     "soldout": "y",
     "limited": "",
-    "sizes": "XL",
+    "sizes": "L",
     "colors": ""
   },
   {
