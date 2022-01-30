@@ -490,9 +490,15 @@ input {
   max-width: 360px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
 }
 .g-thanks-text .g-item-usd {
   display: inline;
+}
+.g-thanks-text-inner {
+  background: #fff;
+  display: inline;
+  line-height: 1.2;
 }
 .g-thanks-usd {
   font-size: 11px;
