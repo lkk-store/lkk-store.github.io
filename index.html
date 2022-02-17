@@ -1001,6 +1001,7 @@ input {
   .g-mobile-grid-mode .g-store-each {
     width: calc(33.333% - 3px);
     display: inline-block;
+    margin-bottom: 0;
   }
   .g-mobile-grid-mode .g-img-dots,
   .g-mobile-grid-mode .g-meta,
@@ -13112,6 +13113,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			cont.selectAll(".g-mode-button").classed("g-mode-active", false);
 			el.classed("g-mode-active", true);
 			parent.attr("data-mode", selectedmode);
+			resize();
 
 		}
 

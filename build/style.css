@@ -986,6 +986,7 @@ input {
   .g-mobile-grid-mode .g-store-each {
     width: calc(33.333% - 3px);
     display: inline-block;
+    margin-bottom: 0;
   }
   .g-mobile-grid-mode .g-img-dots,
   .g-mobile-grid-mode .g-meta,

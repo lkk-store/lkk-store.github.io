@@ -959,6 +959,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			cont.selectAll(".g-mode-button").classed("g-mode-active", false);
 			el.classed("g-mode-active", true);
 			parent.attr("data-mode", selectedmode);
+			resize();
 
 		}
 
