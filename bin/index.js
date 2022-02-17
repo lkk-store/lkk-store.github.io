@@ -50,8 +50,6 @@ function compile() {
 
 	})
 
-	console.log(data.blog)
-
 	data.upcoming.forEach(function(d){
 		// console.log(d)
 
