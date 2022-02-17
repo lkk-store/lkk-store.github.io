@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    		d3.selectAll(".g-nav-list").each(function(){
    			var el = d3.select(this);
    			var nameheight = el.select(".g-nav-name").node().getBoundingClientRect().height;
-   			var contentheight = el.select(".g-stock-list").node() ? el.select(".g-stock-list").node().getBoundingClientRect().height : nameheight;
+   			var contentheight = el.select(".g-nav-content").node() ? el.select(".g-nav-content").node().getBoundingClientRect().height : nameheight;
    			el.attr("data-h1", nameheight)
    			
    			if (el.attr("data-incart") == "true") {
@@ -946,8 +946,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		var selectedmode = el.attr("data-mode");
 
-		console.log(selectedmode, currentmode)
-
 		if (selectedmode != currentmode) {
 
 			if (selectedmode == "grid") {
@@ -959,9 +957,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			cont.selectAll(".g-mode-button").classed("g-mode-active", false);
 			el.classed("g-mode-active", true);
 			parent.attr("data-mode", selectedmode);
-			resize();
+			
 
 		}
+
+		d3.selectAll(".g-nav-list").attr("data-instore", "false");
+		resize();
 
 
 	})
