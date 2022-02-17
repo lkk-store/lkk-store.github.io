@@ -590,7 +590,7 @@ input {
   background-position: 100%;
 }
 .g-details {
-  margin-top: 14px;
+  margin-top: 8px;
 }
 .g-details a {
   text-decoration: underline;
@@ -601,6 +601,7 @@ input {
   font-style: italic;
   color: #777;
   font-size: 15px;
+  margin-bottom: 15px;
 }
 .g-details .g-dotted {
   border-bottom: 1px dotted #d3d3d3;
