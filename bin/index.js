@@ -39,6 +39,19 @@ function compile() {
 
 	})
 
+	data.blog.forEach(function(d){
+		// console.log(d)
+
+		var match = imgdir.filter(a => a.indexOf("blog-" + d.id) > -1);
+
+		if (match.length > 1) {
+			d.img = match
+		}
+
+	})
+
+	console.log(data.blog)
+
 	data.upcoming.forEach(function(d){
 		// console.log(d)
 
