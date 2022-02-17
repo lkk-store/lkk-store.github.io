@@ -969,6 +969,46 @@ input {
     -webkit-transform: rotate(360deg);
   }
 }
+.g-mode-cont {
+  display: flex;
+}
+@media screen and (min-width: 600px) {
+  .g-mode-cont {
+    display: none;
+  }
+}
+.g-mode-cont .g-mode-button {
+  width: 50%;
+  text-align: center;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  padding: 1px 0 2px 0;
+  cursor: pointer;
+}
+.g-mode-cont .g-mode-button:first-child {
+  border-right: 1px solid #ececec;
+}
+.g-mode-cont .g-mode-button svg {
+  vertical-align: middle;
+  width: 10px;
+  fill: #999999;
+}
+.g-mode-cont .g-mode-active svg {
+  stroke: #68a5d6;
+  fill: #68a5d6;
+}
+@media screen and (max-width: 600px) {
+  .g-mobile-grid-mode .g-store-each {
+    width: calc(33.333% - 3px);
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .g-mobile-grid-mode .g-img-dots,
+  .g-mobile-grid-mode .g-meta,
+  .g-mobile-grid-mode .g-img-nav {
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
@@ -1008,7 +1048,26 @@ input {
 			
 			<div class="g-shopping-cart-icon"><img src="img/cart.webp"><div class="g-cart-count"></div></div>
 			
-			<div class="g-store g-stock-list g-store-list">				
+			<div class="g-store g-stock-list g-store-list g-mobile-grid-mode" data-mode="grid">
+
+				<div class="g-mode-cont">
+					<div class="g-mode-button g-mode-active" data-mode="grid">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.766,16.265H0.234V1.735h14.531V16.265z M1.234,15.265h12.531V2.735H1.234V15.265z"/>
+						<rect x="0.734" y="10.755" width="13.531" height="1"/>
+						<rect x="0.734" y="6.245" width="13.531" height="1"/>
+						<rect x="4.745" y="2.235" width="1" height="13.53"/>
+						<rect x="9.255" y="2.235" width="1" height="13.53"/>
+						</svg>
+					</div>
+					<div class="g-mode-button" data-mode="full">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.159,15.619H0.841V2.3h13.318V15.619z M1.841,14.619h11.318V3.3H1.841V14.619z"/>
+						<rect x="0.841" y="0.078" width="13.318" height="1.081"/>
+						<rect x="0.841" y="16.841" width="13.318" height="1.081"/>
+						</svg>
+					</div>
+				</div>
 
 				
 				<div class="g-store-each" data-id="042" data-page="store">
@@ -6984,7 +7043,26 @@ Indian organic cotton</p>
 			
 			
 			
-			<div class="g-store g-stock-list g-upcoming-list">				
+			<div class="g-store g-stock-list g-upcoming-list g-mobile-grid-mode" data-mode="grid">
+
+				<div class="g-mode-cont">
+					<div class="g-mode-button g-mode-active" data-mode="grid">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.766,16.265H0.234V1.735h14.531V16.265z M1.234,15.265h12.531V2.735H1.234V15.265z"/>
+						<rect x="0.734" y="10.755" width="13.531" height="1"/>
+						<rect x="0.734" y="6.245" width="13.531" height="1"/>
+						<rect x="4.745" y="2.235" width="1" height="13.53"/>
+						<rect x="9.255" y="2.235" width="1" height="13.53"/>
+						</svg>
+					</div>
+					<div class="g-mode-button" data-mode="full">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.159,15.619H0.841V2.3h13.318V15.619z M1.841,14.619h11.318V3.3H1.841V14.619z"/>
+						<rect x="0.841" y="0.078" width="13.318" height="1.081"/>
+						<rect x="0.841" y="16.841" width="13.318" height="1.081"/>
+						</svg>
+					</div>
+				</div>
 
 				
 				<div class="g-store-each" data-id="002" data-page="upcoming">
@@ -8127,7 +8205,26 @@ Then I thought, let me write a website that writes messages on a banana so that 
 			
 			
 			
-			<div class="g-store g-stock-list g-blog-list">				
+			<div class="g-store g-stock-list g-blog-list g-mobile-grid-mode" data-mode="grid">
+
+				<div class="g-mode-cont">
+					<div class="g-mode-button g-mode-active" data-mode="grid">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.766,16.265H0.234V1.735h14.531V16.265z M1.234,15.265h12.531V2.735H1.234V15.265z"/>
+						<rect x="0.734" y="10.755" width="13.531" height="1"/>
+						<rect x="0.734" y="6.245" width="13.531" height="1"/>
+						<rect x="4.745" y="2.235" width="1" height="13.53"/>
+						<rect x="9.255" y="2.235" width="1" height="13.53"/>
+						</svg>
+					</div>
+					<div class="g-mode-button" data-mode="full">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.159,15.619H0.841V2.3h13.318V15.619z M1.841,14.619h11.318V3.3H1.841V14.619z"/>
+						<rect x="0.841" y="0.078" width="13.318" height="1.081"/>
+						<rect x="0.841" y="16.841" width="13.318" height="1.081"/>
+						</svg>
+					</div>
+				</div>
 
 				
 				<div class="g-store-each" data-id="065" data-page="blog">
@@ -11249,7 +11346,26 @@ me：(弱弱哋)ok la👌🏻☹️</p>
 			
 			
 			
-			<div class="g-store g-stock-list g-wood-list">				
+			<div class="g-store g-stock-list g-wood-list g-mobile-grid-mode" data-mode="grid">
+
+				<div class="g-mode-cont">
+					<div class="g-mode-button g-mode-active" data-mode="grid">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.766,16.265H0.234V1.735h14.531V16.265z M1.234,15.265h12.531V2.735H1.234V15.265z"/>
+						<rect x="0.734" y="10.755" width="13.531" height="1"/>
+						<rect x="0.734" y="6.245" width="13.531" height="1"/>
+						<rect x="4.745" y="2.235" width="1" height="13.53"/>
+						<rect x="9.255" y="2.235" width="1" height="13.53"/>
+						</svg>
+					</div>
+					<div class="g-mode-button" data-mode="full">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.159,15.619H0.841V2.3h13.318V15.619z M1.841,14.619h11.318V3.3H1.841V14.619z"/>
+						<rect x="0.841" y="0.078" width="13.318" height="1.081"/>
+						<rect x="0.841" y="16.841" width="13.318" height="1.081"/>
+						</svg>
+					</div>
+				</div>
 
 				
 				<div class="g-store-each" data-id="001" data-page="wood">
@@ -12971,6 +13087,38 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	 //        }
 	 //    }
 	});
+
+
+	// grid mode
+
+	d3.selectAll(".g-mode-button").on("click", function(){
+
+		var el = d3.select(this);
+		var cont = d3.select(el.node().parentNode);
+		var parent = d3.select(el.node().parentNode.parentNode);
+		var currentmode = parent.attr("data-mode");
+
+		var selectedmode = el.attr("data-mode");
+
+		console.log(selectedmode, currentmode)
+
+		if (selectedmode != currentmode) {
+
+			if (selectedmode == "grid") {
+				parent.classed("g-mobile-grid-mode", true);
+			} else {
+				parent.classed("g-mobile-grid-mode", false);	
+			}
+			
+			cont.selectAll(".g-mode-button").classed("g-mode-active", false);
+			el.classed("g-mode-active", true);
+			parent.attr("data-mode", selectedmode);
+
+		}
+
+
+	})
+
 
 
 

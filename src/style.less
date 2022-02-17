@@ -1254,3 +1254,56 @@ input {
 
 	
 }
+
+
+.g-mode-cont {
+	display: flex;
+
+	@media screen and (min-width: 600px) {
+		display: none;
+	}
+
+	.g-mode-button {
+		width: 50%;
+		text-align: center;
+		border-top: 1px solid #ececec;
+		border-bottom: 1px solid #ececec;
+		padding: 1px 0 2px 0;
+		cursor: pointer;
+
+		&:first-child {
+			border-right: 1px solid #ececec;
+		}
+
+		svg {
+			vertical-align: middle;
+			width: 10px;
+			fill: #999999;
+		}
+
+	}
+
+	.g-mode-active {
+		svg {
+			stroke: #68a5d6;
+			fill: #68a5d6;
+		}
+	}
+
+}
+
+
+.g-mobile-grid-mode {
+	@media screen and (max-width: 600px) {
+
+		.g-store-each {
+			width: calc(33.333% - 3px);
+			display: inline-block;
+			margin-bottom: 4px;
+		}
+
+		.g-img-dots, .g-meta, .g-img-nav {
+			display: none;
+		}
+	}
+}

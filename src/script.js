@@ -935,6 +935,38 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	});
 
 
+	// grid mode
+
+	d3.selectAll(".g-mode-button").on("click", function(){
+
+		var el = d3.select(this);
+		var cont = d3.select(el.node().parentNode);
+		var parent = d3.select(el.node().parentNode.parentNode);
+		var currentmode = parent.attr("data-mode");
+
+		var selectedmode = el.attr("data-mode");
+
+		console.log(selectedmode, currentmode)
+
+		if (selectedmode != currentmode) {
+
+			if (selectedmode == "grid") {
+				parent.classed("g-mobile-grid-mode", true);
+			} else {
+				parent.classed("g-mobile-grid-mode", false);	
+			}
+			
+			cont.selectAll(".g-mode-button").classed("g-mode-active", false);
+			el.classed("g-mode-active", true);
+			parent.attr("data-mode", selectedmode);
+
+		}
+
+
+	})
+
+
+
 
 /* Your D3.js here */
 })

@@ -30,7 +30,26 @@
 			<% if (d.content == "store") { %>
 			<div class="g-shopping-cart-icon"><img src="img/cart.webp"><div class="g-cart-count"></div></div>
 			<% } %>
-			<div class="g-store g-stock-list g-<%= d.content %>-list">				
+			<div class="g-store g-stock-list g-<%= d.content %>-list g-mobile-grid-mode" data-mode="grid">
+
+				<div class="g-mode-cont">
+					<div class="g-mode-button g-mode-active" data-mode="grid">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.766,16.265H0.234V1.735h14.531V16.265z M1.234,15.265h12.531V2.735H1.234V15.265z"/>
+						<rect x="0.734" y="10.755" width="13.531" height="1"/>
+						<rect x="0.734" y="6.245" width="13.531" height="1"/>
+						<rect x="4.745" y="2.235" width="1" height="13.53"/>
+						<rect x="9.255" y="2.235" width="1" height="13.53"/>
+						</svg>
+					</div>
+					<div class="g-mode-button" data-mode="full">
+						<svg x="0px" y="0px" viewBox="0 0 15 18">
+						<path d="M14.159,15.619H0.841V2.3h13.318V15.619z M1.841,14.619h11.318V3.3H1.841V14.619z"/>
+						<rect x="0.841" y="0.078" width="13.318" height="1.081"/>
+						<rect x="0.841" y="16.841" width="13.318" height="1.081"/>
+						</svg>
+					</div>
+				</div>
 
 				<% list.forEach(function(l,i){ %>
 				<div class="g-store-each" data-id="<%= l.id %>" data-page="<%= d.content %>">
