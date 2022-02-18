@@ -1296,10 +1296,19 @@ input {
 .g-mobile-grid-mode {
 	@media screen and (max-width: 600px) {
 
+		.g-store-inner-wrap {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
 		.g-store-each {
-			width: calc(33.333% - 3px);
-			display: inline-block;
-			margin-bottom: 0;
+			width: calc(33.3333% - 0.7px);
+			margin-right: 1px;
+			margin-bottom: 1px;
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
 		}
 
 		.g-img-dots, .g-meta, .g-img-nav {
