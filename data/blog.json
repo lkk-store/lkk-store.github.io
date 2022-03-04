@@ -1,16 +1,37 @@
 [
   {
+    "id": "073",
+    "gif": "",
+    "name": "成語動畫廊",
+    "text": "2022 updated ver.",
+    "description": ""
+  },
+  {
+    "id": "072",
+    "gif": "",
+    "name": "NOT OK",
+    "text": "the world is not OK",
+    "description": "i am not OK//\nwe are not OK//\nthe world is not OK"
+  },
+  {
+    "id": "071",
+    "gif": "",
+    "name": "平安",
+    "text": "",
+    "description": ""
+  },
+  {
     "id": "070",
     "gif": "",
-    "name": "#standwithukraine 🇺🇦",
-    "text": "",
+    "name": "STOP PUTIN",
+    "text": "#standwithukraine 🇺🇦",
     "description": ""
   },
   {
     "id": "069",
     "gif": "",
-    "name": "#standwithukraine 🇺🇦",
-    "text": "",
+    "name": "HELP UKRAINE",
+    "text": "#standwithukraine 🇺🇦",
     "description": ""
   },
   {
