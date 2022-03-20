@@ -538,9 +538,11 @@ input {
 }
 
 .g-type-checkbox #deliver1-label {
+	width: calc(100% - 68px);
 
 	@media screen and (min-width: 600px) {
 		margin-right: 20px;
+		width: calc(100% - 85px);
 	}
 }
 
@@ -966,6 +968,10 @@ input {
 		&.g-hide {
 			display: none;
 		}
+	}
+
+	.g-form-options {
+		margin-bottom: 30px;
 	}
 
 	.g-submitted-form {

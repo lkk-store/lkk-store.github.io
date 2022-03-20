@@ -413,9 +413,13 @@ input {
   box-shadow: none;
   margin-top: 3.9px;
 }
+.g-type-checkbox #deliver1-label {
+  width: calc(100% - 68px);
+}
 @media screen and (min-width: 600px) {
   .g-type-checkbox #deliver1-label {
     margin-right: 20px;
+    width: calc(100% - 85px);
   }
 }
 .g-type-checkbox label {
@@ -755,6 +759,9 @@ input {
 .g-shopping-cart #my-form.g-hide,
 .g-shopping-cart .g-shopping-cart-inner.g-hide {
   display: none;
+}
+.g-shopping-cart .g-form-options {
+  margin-bottom: 30px;
 }
 .g-shopping-cart .g-submitted-form .g-form-options,
 .g-shopping-cart .g-submitted-form input {
