@@ -16,6 +16,10 @@ go:
 run:
 	node bin/index.js
 
+showroom:
+	node bin/dl-sheet.js 1wav5HPlGXmn3fPv90WF9noG6axFGkeyQFHJ28nvpai0 store store
+	node bin/showroom.js
+
 webp:
 	mogrify -resize 700x png/*
 	for file in png/* ; do \

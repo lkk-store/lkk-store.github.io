@@ -1,0 +1,53 @@
+<div>
+	<% data.store = data.store.filter(d => d.store == "1") %>
+	<div class="g-item-cont">
+	<div class="g-item" style="background-image: url(../img/custom.webp)" data-price="custom" data-count="0" data-slug="Custom">
+		<div class="g-item-name">CUSTOM</div>
+	</div>
+
+	<% data.store.forEach(function(d){ %>
+	<% 
+		var colors = d.colors.split(",");
+		var added = [];
+		colors.forEach(function(c,i){ 
+			if (added.indexOf(c) == -1) { %>
+		%>
+
+		<div class="g-item" style="background-image: url('../img/<% if (d.img) { %><%- d.img[i] %><% } else { %>store-<%- d.id %>.webp<% } %>');" data-price="<%- d.price %>" data-count="0" data-slug="<%- d.slug %>">
+			<div class="g-item-name"><%- d.name %></div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	<% 
+		}
+		added.push(c);
+		}) }) %>
+	</div>
+
+	<div class="g-total">
+		<div class="g-total-cont">$<div class="g-total-num">0</div></div>
+
+		<div class="g-right">
+		<select name="payment" id="payment">
+			<option disabled selected>點俾錢</option>
+		  <option value="octupus">Octupus</option>
+		  <option value="visa">Visa</option>
+		  <option value="mastercard">Mastercard</option>
+		  <option value="alipay">Alipay</option>
+		  <option value="unionpay">Unionpay</option>
+		  <option value="cash">Cash</option>
+		</select>
+
+		<form class="" name="my-form" id="my-form">
+			<div type="submit" id="submit" class="g-buy-button g-hide">BUY</div>
+		</form>
+		</div>
+	</div>
+
+	<div class="g-loading"></div>
+
+</div>
+
+<script>var stocklist = <%- JSON.stringify(data.store) -%></script>
+<script src="swiped-events.js"></script>
+

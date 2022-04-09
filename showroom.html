@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>黎根記</title>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+<link rel="shortcut icon" href="img/lkk-logo-06.webp" />
+<link rel="apple-touch-icon" sizes="128x128" href="app-icon.png">
+<link rel="stylesheet" href="https://use.typekit.net/nri5irx.css">
+<meta property="og:title" content="lkk.store"/>
+<meta property="og:type" content=""/>
+<meta property="og:url" content="http://lkk-store.com"/>
+<meta property="og:image" content="https://www.lkk-store.com/img/twitter.jpg"/>
+<meta property="og:site_name" content="lkk.store"/>
+<meta property="og:description" content="make something 9ood"/><style>
+html,
+body {
+  margin: 0;
+}
+body {
+  background: #fff;
+  font-family: "arial";
+}
+.g-item-cont {
+  margin-bottom: 100px;
+}
+.g-item {
+  width: calc(33.333% - 5px);
+  padding-bottom: 33%;
+  display: inline-block;
+  background: #ececec;
+  border: 1px solid #fff;
+  position: relative;
+  background-size: cover;
+}
+.g-item .g-item-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  color: #fff;
+  padding: 5px 0;
+  min-height: 20px;
+}
+.g-item .g-item-count {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: rgba(255, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 100%;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  display: none;
+}
+.g-item .g-item-count.g-active {
+  display: block;
+}
+.g-total {
+  position: fixed;
+  background: #fff;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 50px;
+  line-height: 1;
+  padding: 20px 0;
+}
+.g-total .g-total-num {
+  display: inline;
+}
+.g-total .g-total-cont {
+  padding-left: 10px;
+}
+.g-total .g-right {
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  font-size: 30px;
+}
+.g-total #payment {
+  margin-bottom: 5px;
+}
+.g-total #submit {
+  border: 1px solid #000;
+  padding: 5px;
+}
+.g-loading {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  background-image: url(../img/loading-gif-png-5.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: none;
+}
+.g-loading img {
+  width: 100%;
+}
+</style>
+</head>
+<body>
+<div>
+	
+	<div class="g-item-cont">
+	<div class="g-item" style="background-image: url(../img/custom.webp)" data-price="custom" data-count="0" data-slug="Custom">
+		<div class="g-item-name">CUSTOM</div>
+	</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-998.webp');" data-price="250" data-count="0" data-slug="黎膠">
+			<div class="g-item-name">黎膠</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-997.webp');" data-price="50" data-count="0" data-slug="次貨">
+			<div class="g-item-name">次貨</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-001.webp');" data-price="10" data-count="0" data-slug="一張貼紙">
+			<div class="g-item-name">一張貼紙</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-995.webp');" data-price="120" data-count="0" data-slug="點心紙">
+			<div class="g-item-name">點心紙</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-045-001.webp');" data-price="360" data-count="0" data-slug="NOT OK tee 045">
+			<div class="g-item-name">NOT OK tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-002-001.webp');" data-price="360" data-count="0" data-slug="舊青年 tee 002">
+			<div class="g-item-name">舊青年 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-003.webp');" data-price="360" data-count="0" data-slug="舊青年 tee 003">
+			<div class="g-item-name">舊青年 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-042-001.webp');" data-price="360" data-count="0" data-slug="心痛 tee 042">
+			<div class="g-item-name">心痛 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-023-001.webp');" data-price="320" data-count="0" data-slug="michelsin tee 023">
+			<div class="g-item-name">michelsin tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-023-002.webp');" data-price="320" data-count="0" data-slug="michelsin tee 023">
+			<div class="g-item-name">michelsin tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-023-003.webp');" data-price="320" data-count="0" data-slug="michelsin tee 023">
+			<div class="g-item-name">michelsin tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-008-001.webp');" data-price="320" data-count="0" data-slug="ok sad tee 008">
+			<div class="g-item-name">ok sad tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-044-001.webp');" data-price="360" data-count="0" data-slug="平安 tee 044">
+			<div class="g-item-name">平安 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-025-001.webp');" data-price="360" data-count="0" data-slug="健康welldone 025">
+			<div class="g-item-name">健康welldone</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-006-001.webp');" data-price="320" data-count="0" data-slug="我♥常餐 tee 006">
+			<div class="g-item-name">我♥常餐 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-040-001.webp');" data-price="480" data-count="0" data-slug="後會有期 crewneck 040">
+			<div class="g-item-name">後會有期 crewneck</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-037-001.webp');" data-price="360" data-count="0" data-slug="行路人 tee 037">
+			<div class="g-item-name">行路人 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-037-003.webp');" data-price="360" data-count="0" data-slug="行路人 tee 037">
+			<div class="g-item-name">行路人 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-024-001.webp');" data-price="360" data-count="0" data-slug="後會有期 tee 024">
+			<div class="g-item-name">後會有期 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-038-001.webp');" data-price="320" data-count="0" data-slug="阿窿alone tee 038">
+			<div class="g-item-name">阿窿alone tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-038-002.webp');" data-price="320" data-count="0" data-slug="阿窿alone tee 038">
+			<div class="g-item-name">阿窿alone tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-038-003.webp');" data-price="320" data-count="0" data-slug="阿窿alone tee 038">
+			<div class="g-item-name">阿窿alone tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-034-001.webp');" data-price="360" data-count="0" data-slug="好時光 tee 034">
+			<div class="g-item-name">好時光 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-035-001.webp');" data-price="320" data-count="0" data-slug="meme tee 035">
+			<div class="g-item-name">meme tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-015-001.webp');" data-price="320" data-count="0" data-slug="healthy horse tee 015">
+			<div class="g-item-name">healthy horse tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-015-002.webp');" data-price="320" data-count="0" data-slug="healthy horse tee 015">
+			<div class="g-item-name">healthy horse tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-033-001.webp');" data-price="360" data-count="0" data-slug="外賣協會 033">
+			<div class="g-item-name">外賣協會</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-036-001.webp');" data-price="320" data-count="0" data-slug="having a bed time tee 036">
+			<div class="g-item-name">having a bed time tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-007-001.webp');" data-price="320" data-count="0" data-slug="good-looking tee 007">
+			<div class="g-item-name">good-looking tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-009-001.webp');" data-price="320" data-count="0" data-slug="ok old tee 009">
+			<div class="g-item-name">ok old tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-032-001.webp');" data-price="320" data-count="0" data-slug="邪骨能勝正 tee 032">
+			<div class="g-item-name">邪骨能勝正 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-030.webp');" data-price="150" data-count="0" data-slug="LKK 9ood sticker pack 030">
+			<div class="g-item-name">LKK 9ood sticker pack</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-031-001.webp');" data-price="Sold out" data-count="0" data-slug="鳳凰不死鳥 tee 031">
+			<div class="g-item-name">鳳凰不死鳥 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-019-001.webp');" data-price="360" data-count="0" data-slug="keep rolling tee 019">
+			<div class="g-item-name">keep rolling tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-019-002.webp');" data-price="360" data-count="0" data-slug="keep rolling tee 019">
+			<div class="g-item-name">keep rolling tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-011-001.webp');" data-price="320" data-count="0" data-slug="ok love tee 011">
+			<div class="g-item-name">ok love tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-020-001.webp');" data-price="320" data-count="0" data-slug="hug hug tee 020">
+			<div class="g-item-name">hug hug tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-005-001.webp');" data-price="320" data-count="0" data-slug="sad banana tee 005">
+			<div class="g-item-name">sad banana tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-013.webp');" data-price="320" data-count="0" data-slug="good-looking tee 013">
+			<div class="g-item-name">good-looking tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-016-001.webp');" data-price="320" data-count="0" data-slug="Hon9 Kon9 9ulture tee 016">
+			<div class="g-item-name">Hon9 Kon9 9ulture tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-016-002.webp');" data-price="320" data-count="0" data-slug="Hon9 Kon9 9ulture tee 016">
+			<div class="g-item-name">Hon9 Kon9 9ulture tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-016-003.webp');" data-price="320" data-count="0" data-slug="Hon9 Kon9 9ulture tee 016">
+			<div class="g-item-name">Hon9 Kon9 9ulture tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-012.webp');" data-price="320" data-count="0" data-slug="歡迎問路 tee 012">
+			<div class="g-item-name">歡迎問路 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-010.webp');" data-price="320" data-count="0" data-slug="唔好問路 tee 010">
+			<div class="g-item-name">唔好問路 tee</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	
+		
+
+		<div class="g-item" style="background-image: url('../img/store-027.webp');" data-price="Sold out" data-count="0" data-slug="祝君早抖goodsleep毛巾 027">
+			<div class="g-item-name">祝君早抖goodsleep毛巾</div>
+			<div class="g-item-count">0</div>
+		</div>
+
+	
+	</div>
+
+	<div class="g-total">
+		<div class="g-total-cont">$<div class="g-total-num">0</div></div>
+
+		<div class="g-right">
+		<select name="payment" id="payment">
+			<option disabled selected>點俾錢</option>
+		  <option value="octupus">Octupus</option>
+		  <option value="visa">Visa</option>
+		  <option value="mastercard">Mastercard</option>
+		  <option value="alipay">Alipay</option>
+		  <option value="unionpay">Unionpay</option>
+		  <option value="cash">Cash</option>
+		</select>
+
+		<form class="" name="my-form" id="my-form">
+			<div type="submit" id="submit" class="g-buy-button g-hide">BUY</div>
+		</form>
+		</div>
+	</div>
+
+	<div class="g-loading"></div>
+
+</div>
+
+<script>var stocklist = [{"store":"1","hide":"1","new":"","slug":"黎膠","id":"998","name":"黎膠","text":"","category":"","type":"","description":"","price":"250","soldout":"","limited":"","sizes":"","colors":""},{"store":"1","hide":"1","new":"","slug":"次貨","id":"997","name":"次貨","text":"","category":"","type":"","description":"","price":"50","soldout":"","limited":"","sizes":"","colors":""},{"store":"1","hide":"1","new":"","slug":"一張貼紙","id":"001","name":"一張貼紙","text":"","category":"","type":"","description":"","price":"10","soldout":"","limited":"","sizes":"","colors":""},{"store":"1","hide":"1","new":"","slug":"點心紙","id":"995","name":"點心紙","text":"","category":"","type":"","description":"","price":"120","soldout":"","limited":"","sizes":"","colors":""},{"store":"1","hide":"","new":"1","slug":"NOT OK tee 045","id":"045","name":"NOT OK tee","text":"the world is not OK","category":"Tee","type":"Screen","description":"i am not OK//we are not OK//the world is not OK","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-045-001.webp","store-045-002.webp","store-045-003.webp"]},{"store":"1","hide":"","new":"","slug":"舊青年 tee 002","id":"002","name":"舊青年 tee","text":"NO MORE NEW YOUTH","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-002-001.webp","store-002-002.webp","store-002-003.webp","store-002-004.webp","store-002-005.webp","store-002-006.webp","store-002-007.webp"]},{"store":"1","hide":"","new":"","slug":"舊青年 tee 003","id":"003","name":"舊青年 tee","text":"壽終正寢 version","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":""},{"store":"1","hide":"","new":"1","slug":"心痛 tee 042","id":"042","name":"心痛 tee","text":"【特強心理痛】全香港人適合服用","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-042-001.webp","store-042-002.webp","store-042-003.webp","store-042-004.webp","store-042-005.webp","store-042-006.webp"]},{"store":"1","hide":"","new":"","slug":"michelsin tee 023","id":"023","name":"michelsin tee","text":"咪痴撚線！","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"032#004D82,001#ffffff,005#000000","img":["store-023-001.webp","store-023-002.webp","store-023-003.webp","store-023-004.webp"]},{"store":"1","hide":"","new":"","slug":"ok sad tee 008","id":"008","name":"ok sad tee","text":"it’s okay to feel sad","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-008-001.webp","store-008-002.webp"]},{"store":"1","hide":"","new":"1","slug":"平安 tee 044","id":"044","name":"平安 tee","text":"平安是福","category":"Tee","type":"Screen","description":"好人一世平安","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-044-001.webp","store-044-002.webp","store-044-003.webp","store-044-004.webp"]},{"store":"1","hide":"","new":"","slug":"健康welldone 025","id":"025","name":"健康welldone","text":"人生最緊要：鳩&健康♥️","category":"Tee","type":"Screen","description":"我只想身體健康~","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-025-001.webp","store-025-002.webp","store-025-003.webp","store-025-004.webp"]},{"store":"1","hide":"","new":"","slug":"我♥常餐 tee 006","id":"006","name":"我♥常餐 tee","text":"alldaymealh♥lic","category":"Tee","type":"Print","description":"同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-006-001.webp","store-006-002.webp","store-006-003.webp","store-006-004.webp"]},{"store":"1","hide":"","new":"","slug":"後會有期 crewneck 040","id":"040","name":"後會有期 crewneck","text":"goodbye, hello","category":"totebag","type":"Print","description":"「goodbye」「hello」//\n2022 - 繼續好好學習離別////CHEST 63 //LENGTH 78  //SHOULDER 54 //SLEEVE 63","price":"480","soldout":"","limited":"","sizes":"2XL","colors":"","img":["store-040-001.webp","store-040-002.webp","store-040-003.webp","store-040-004.webp","store-040-005.webp","store-040-006.webp","store-040-007.webp","store-040-008.webp","store-040-009.webp"]},{"store":"1","hide":"","new":"1","slug":"行路人 tee 037","id":"037","name":"行路人 tee","text":"let's walk the road 🤟🤟🤟","category":"Tee","type":"Screen","description":"「男人30歲仲要依賴交通工具是否悲哀」//當年高登有人應該手殘打漏「公共」交通工具//樓主開咗呢個post後 即刻俾人笑到黃////但我想力撐樓主 做人係應該腳踏實地//齊齊做個行路人 向搭車說不","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"001#ffffff,001#ffffff,005#000000,005#000000","img":["store-037-001.webp","store-037-002.webp","store-037-003.webp","store-037-004.webp","store-037-005.webp"]},{"store":"1","hide":"","new":"","slug":"後會有期 tee 024","id":"024","name":"後會有期 tee","text":"hello, goodbye","category":"Tee","type":"Screen","description":"「hello」「goodbye」//\n2021 - 不斷學習離別的一年////\n\nhong kong color edition://\n❤️red print on white tee\n","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-024-001.webp","store-024-002.webp","store-024-003.webp","store-024-004.webp","store-024-005.webp","store-024-006.webp"]},{"store":"1","hide":"","new":"","slug":"阿窿alone tee 038","id":"038","name":"阿窿alone tee","text":"當阿窿遇上alone嘅阿龍","category":"Tee","type":"Screen","description":"阿窿：i am a 窿//\n阿龍：i am alone 2////\n\n你係阿龍定阿窿？","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"001#ffffff,132#fbd4dd,134#f6e18d","img":["store-038-001.webp","store-038-002.webp","store-038-003.webp","store-038-004.webp"]},{"store":"1","hide":"","new":"","slug":"好時光 tee 034","id":"034","name":"好時光 tee","text":"back to the goodtime","category":"Tee","type":"Print","description":"","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-034-001.webp","store-034-002.webp"]},{"store":"1","hide":"","new":"","slug":"meme tee 035","id":"035","name":"meme tee","text":"要成為最愛自己嘅人","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-035-001.webp","store-035-002.webp"]},{"store":"1","hide":"","new":"","slug":"healthy horse tee 015","id":"015","name":"healthy horse tee","text":"嘟！嘟！嘟！","category":"Tee","type":"Screen","description":"健康馬/健康黑馬// 著健康馬保健康！// 做個健康香港人🐎🐎🐎","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"001#ffffff,005#000000","img":["store-015-001.webp","store-015-002.webp","store-015-003.webp","store-015-004.webp","store-015-005.webp"]},{"store":"1","hide":"","new":"","slug":"外賣協會 033","id":"033","name":"外賣協會","text":"sad meal club","category":"Tee","type":"Screen","description":"未必每個香港人都係外貌協會//\n但今時今日 肯肯定每個都係外賣協會//\n個個都食外賣 唔通個個都想食外賣咩//\n每一日每一次都食同一間餐廳同一個餐嘅舉手✋","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-033-001.webp","store-033-002.webp","store-033-003.webp","store-033-004.webp"]},{"store":"1","hide":"","new":"","slug":"having a bed time tee 036","id":"036","name":"having a bed time tee","text":"i am having a bed time","category":"Tee","type":"Screen","description":"good idea for sleeping tee💤🛌","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-036-001.webp","store-036-002.webp","store-036-003.webp"]},{"store":"1","hide":"","new":"","slug":"good-looking tee 007","id":"007","name":"good-looking tee","text":"初號夜光9ood","category":"Tee","type":"Print","description":"it's all 9ood// *print有夜光效果","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"188#bd94ca","img":["store-007-001.webp","store-007-002.webp","store-007-003.webp"]},{"store":"1","hide":"","new":"","slug":"ok old tee 009","id":"009","name":"ok old tee","text":"it’s okay to get old","category":"Tee","type":"Screen","description":"【職場日常】// 啱啱畢業入職嘅22歲新同事：唉，我老啦// 我：😬🚬","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-009-001.webp","store-009-002.webp"]},{"store":"1","hide":"","new":"","slug":"邪骨能勝正 tee 032","id":"032","name":"邪骨能勝正 tee","text":"✨處長親身認證✨","category":"Tee","type":"Screen","description":"正宗邪骨 無不道德\n✨處長親身認證✨","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-032-001.webp","store-032-002.webp"]},{"store":"1","hide":"","new":"","slug":"LKK 9ood sticker pack 030","id":"030","name":"LKK 9ood sticker pack","text":"一套20款","category":"","type":"Print","description":"一套有20款！係20個！//\n一pack你就有好多LKKdesignssss！//\n嘩！真係好抵！","price":"150","soldout":"","limited":"","sizes":"","colors":""},{"store":"1","hide":"","new":"","slug":"鳳凰不死鳥 tee 031","id":"031","name":"鳳凰不死鳥 tee","text":"🔥華夏神功🔥","category":"Tee","type":"Screen","description":"","price":"Sold out","soldout":"y","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-031-001.webp","store-031-002.webp","store-031-003.webp","store-031-004.webp","store-031-005.webp","store-031-006.webp"]},{"store":"1","hide":"","new":"","slug":"keep rolling tee 019","id":"019","name":"keep rolling tee","text":"just keep rolling","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"x025#03653e,001#ffffff","img":["store-019-001.webp","store-019-002.webp","store-019-003.webp"]},{"store":"1","hide":"","new":"","slug":"ok love tee 011","id":"011","name":"ok love tee","text":"it’s okay to love","category":"Tee","type":"Print","description":"","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-011-001.webp","store-011-002.webp"]},{"store":"1","hide":"","new":"","slug":"hug hug tee 020","id":"020","name":"hug hug tee","text":"hug hard in hard times","category":"Tee","type":"Print","description":"navy blue","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-020-001.webp","store-020-002.webp"]},{"store":"1","hide":"","new":"","slug":"sad banana tee 005","id":"005","name":"sad banana tee","text":"don't be a sad banana","category":"Tee","type":"Print","description":"","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"","img":["store-005-001.webp","store-005-002.webp"]},{"store":"1","hide":"","new":"","slug":"good-looking tee 013","id":"013","name":"good-looking tee","text":"姣婆粉紅9ood","category":"Tee","type":"Print","description":"it's all 9ood","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"132#fbd4dd"},{"store":"1","hide":"","new":"","slug":"Hon9 Kon9 9ulture tee 016","id":"016","name":"Hon9 Kon9 9ulture tee","text":"i love Hon9 Kong9","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":"G#00ff00,P#ff3dbb,O#ff5900","img":["store-016-001.webp","store-016-002.webp","store-016-003.webp"]},{"store":"1","hide":"","new":"","slug":"歡迎問路 tee 012","id":"012","name":"歡迎問路 tee","text":"Konnichi wa!","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":""},{"store":"1","hide":"","new":"","slug":"唔好問路 tee 010","id":"010","name":"唔好問路 tee","text":"唔好啦","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着//*print有3M反光效果","price":"320","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":""},{"store":"1","hide":"","new":"","slug":"祝君早抖goodsleep毛巾 027","id":"027","name":"祝君早抖goodsleep毛巾","text":"LKK x 黑店","category":"towel","type":"Screen","description":"【祝君早抖goodsleep毛巾】//\n\n未必吸水，可能甩色，限量發售🖤//\n30 x 70cm\n","price":"Sold out","soldout":"y","limited":"","sizes":"","colors":""}]</script>
+<script src="swiped-events.js"></script>
+
+<script src="d3_.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+console.log(stocklist)
+
+var total = 0;
+var shoppingcart = {};
+
+d3.selectAll(".g-item").on("click", function(){
+
+	var el = d3.select(this);
+	var price = el.attr("data-price");
+	var count = +el.attr("data-count");
+	var slug = el.attr("data-slug");
+
+	if (price == "custom") {
+
+		let price = prompt("幾錢", "0");
+		if (price != null) {
+			total += +price;
+		}
+
+	} else {
+		total += +price;
+	}
+
+	if (!shoppingcart[slug]) {
+		shoppingcart[slug] = 0;
+	}
+	shoppingcart[slug] += 1;
+
+	count += 1;
+	el.select(".g-item-count").classed("g-active", true);
+	el.select(".g-item-count").html(count);
+	el.attr("data-count", count);
+
+	d3.select(".g-total-num").html(total);
+})
+
+		// form submission
+		$( document ).ready( function(){
+			var $form = $('form#my-form'),
+			    // url = 'https://script.google.com/macros/s/AKfycbxHCw8DUBjM3OMe9k-yewFaDLM8Zp43Q8i3lWqC4AvCof4eExIljQURrwOo-im_zIx5/exec'
+			    url = 'https://script.google.com/macros/s/AKfycbwfZ1Jlkw_uD3XLRsdkvva2FWuQmAVa_RqY4XvobCKAVCuFYfGy93ZtQUgCITLvjW-0fA/exec'
+
+
+			$('#submit').on('click', function(e) {
+
+				  e.preventDefault();
+
+				  var now = new Date();
+				  var formatTime = d3.timeFormat("%Y-%m-%d %H:%M");
+				  var nowtime = formatTime(now);
+
+				  // if (no payment method) {
+				  
+				  // } else {
+				
+				  	var orders = [];
+
+				  	var keys = Object.keys(shoppingcart);
+				  	keys.sort();
+
+				  	var paymentel = document.getElementById("payment");
+				  	var payment = paymentel.value;
+
+				  	console.log(payment)
+
+				  	if (payment == "點俾錢") {
+
+				  		d3.select("#payment").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
+
+				  	} else {
+	  				  	keys.forEach(function(d,i){
+
+	  				  		var price = stocklist.filter(a => a.slug == d)[0].price;
+
+	  				  		orders.push({
+	  				  			datetime: nowtime,
+	  				  			date: nowtime.split(" ")[0],
+	  				  			time: nowtime.split(" ")[1],
+	  				  			item: d,
+	  				  			count: shoppingcart[d],
+	  				  			price: price*shoppingcart[d],
+	  				  			payment: payment
+	  				  		})
+	  				  	})
+
+	  				  	d3.select(".g-loading").style("display", "block");
+
+	  		  	  		var jqxhr = $.ajax({
+	  		  	  		  url: url,
+	  		  	  		  method: "GET",
+	  		  	  		  dataType: "json",
+	  		  	  		  data: JSON.stringify(orders),
+	  		  	  		  success: function(res){ 
+	  		  	  		  	console.log(res);
+	  		  	  		  	location.reload();
+	  		  	  		  }
+	  		  	  		})	
+				  	}
+
+				  	
+
+				  // }
+
+			})
+		})
+
+
+
+</script>
+</body>
+</html>

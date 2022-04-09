@@ -1,5 +1,74 @@
 [
   {
+    "store": "1",
+    "hide": "1",
+    "new": "",
+    "slug": "黎膠",
+    "id": "998",
+    "name": "黎膠",
+    "text": "",
+    "category": "",
+    "type": "",
+    "description": "",
+    "price": "250",
+    "soldout": "",
+    "limited": "",
+    "sizes": "",
+    "colors": ""
+  },
+  {
+    "store": "1",
+    "hide": "1",
+    "new": "",
+    "slug": "次貨",
+    "id": "997",
+    "name": "次貨",
+    "text": "",
+    "category": "",
+    "type": "",
+    "description": "",
+    "price": "50",
+    "soldout": "",
+    "limited": "",
+    "sizes": "",
+    "colors": ""
+  },
+  {
+    "store": "1",
+    "hide": "1",
+    "new": "",
+    "slug": "一張貼紙",
+    "id": "001",
+    "name": "一張貼紙",
+    "text": "",
+    "category": "",
+    "type": "",
+    "description": "",
+    "price": "10",
+    "soldout": "",
+    "limited": "",
+    "sizes": "",
+    "colors": ""
+  },
+  {
+    "store": "1",
+    "hide": "1",
+    "new": "",
+    "slug": "點心紙",
+    "id": "995",
+    "name": "點心紙",
+    "text": "",
+    "category": "",
+    "type": "",
+    "description": "",
+    "price": "120",
+    "soldout": "",
+    "limited": "",
+    "sizes": "",
+    "colors": ""
+  },
+  {
+    "store": "1",
     "hide": "",
     "new": "1",
     "slug": "NOT OK tee 045",
@@ -16,6 +85,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "舊青年 tee 002",
@@ -32,6 +102,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "舊青年 tee 003",
@@ -48,6 +119,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "1",
     "slug": "心痛 tee 042",
@@ -64,6 +136,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "michelsin tee 023",
@@ -80,6 +153,7 @@
     "colors": "032#004D82,001#ffffff,005#000000"
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "ok sad tee 008",
@@ -96,6 +170,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "1",
     "slug": "平安 tee 044",
@@ -112,6 +187,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "健康welldone 025",
@@ -128,6 +204,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "我♥常餐 tee 006",
@@ -144,6 +221,7 @@
     "colors": ""
   },
   {
+    "store": "",
     "hide": "",
     "new": "1",
     "slug": "苦中作樂 crewneck 041",
@@ -160,6 +238,7 @@
     "colors": ""
   },
   {
+    "store": "",
     "hide": "",
     "new": "1",
     "slug": "NFtee 043",
@@ -176,6 +255,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "後會有期 crewneck 040",
@@ -192,6 +272,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "1",
     "slug": "行路人 tee 037",
@@ -208,6 +289,7 @@
     "colors": "001#ffffff,001#ffffff,005#000000,005#000000"
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "後會有期 tee 024",
@@ -224,6 +306,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "阿窿alone tee 038",
@@ -240,6 +323,7 @@
     "colors": "001#ffffff,132#fbd4dd,134#f6e18d"
   },
   {
+    "store": "",
     "hide": "",
     "new": "",
     "slug": "倒轉地球 crewneck 039",
@@ -256,6 +340,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "好時光 tee 034",
@@ -272,6 +357,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "meme tee 035",
@@ -288,6 +374,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "healthy horse tee 015",
@@ -304,6 +391,7 @@
     "colors": "001#ffffff,005#000000"
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "外賣協會 033",
@@ -320,6 +408,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "having a bed time tee 036",
@@ -336,6 +425,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "good-looking tee 007",
@@ -352,6 +442,7 @@
     "colors": "188#bd94ca"
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "ok old tee 009",
@@ -368,6 +459,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "邪骨能勝正 tee 032",
@@ -384,6 +476,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "LKK 9ood sticker pack 030",
@@ -400,6 +493,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "鳳凰不死鳥 tee 031",
@@ -416,6 +510,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "keep rolling tee 019",
@@ -432,6 +527,7 @@
     "colors": "x025#03653e,001#ffffff"
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "ok love tee 011",
@@ -448,6 +544,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "hug hug tee 020",
@@ -464,6 +561,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "sad banana tee 005",
@@ -480,6 +578,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "good-looking tee 013",
@@ -496,6 +595,7 @@
     "colors": "132#fbd4dd"
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "Hon9 Kon9 9ulture tee 016",
@@ -512,6 +612,7 @@
     "colors": "G#00ff00,P#ff3dbb,O#ff5900"
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "歡迎問路 tee 012",
@@ -528,6 +629,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "唔好問路 tee 010",
@@ -544,6 +646,7 @@
     "colors": ""
   },
   {
+    "store": "",
     "hide": "1",
     "new": "",
     "slug": "大茄tee 014",
@@ -560,6 +663,7 @@
     "colors": ""
   },
   {
+    "store": "",
     "hide": "",
     "new": "",
     "slug": "舊青年 totebag 029",
@@ -576,6 +680,7 @@
     "colors": "001#ffffff,005#000000"
   },
   {
+    "store": "",
     "hide": "",
     "new": "",
     "slug": "ST-RD totebag 028",
@@ -592,6 +697,7 @@
     "colors": ""
   },
   {
+    "store": "1",
     "hide": "",
     "new": "",
     "slug": "祝君早抖goodsleep毛巾 027",
@@ -608,6 +714,7 @@
     "colors": ""
   },
   {
+    "store": "",
     "hide": "",
     "new": "",
     "slug": "自由 totebag 026",
@@ -624,6 +731,7 @@
     "colors": ""
   },
   {
+    "store": "",
     "hide": "",
     "new": "",
     "slug": "sun of a beach cap 021",
@@ -640,6 +748,7 @@
     "colors": "rice#fae8cb,black#000000"
   },
   {
+    "store": "",
     "hide": "",
     "new": "",
     "slug": "黎根記紙袋 017",
@@ -656,6 +765,7 @@
     "colors": ""
   },
   {
+    "store": "",
     "hide": "",
     "new": "",
     "slug": "人人有蕉吔基金 001",
@@ -672,6 +782,7 @@
     "colors": ""
   },
   {
+    "store": "",
     "hide": "",
     "new": "",
     "slug": "員工 tee 004",
@@ -688,6 +799,7 @@
     "colors": ""
   },
   {
+    "store": "",
     "hide": "1",
     "new": "",
     "slug": "Hon9 Kon9 9ulture tee 018",
@@ -704,6 +816,7 @@
     "colors": "G#00ff00,O#ff5900,B#00d5e0,Y#ffff01"
   },
   {
+    "store": "",
     "hide": "1",
     "new": "",
     "slug": "dont resize 022",
