@@ -380,6 +380,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
    	updateCartNum();
    	updateCart();
    	readHash();
+   	show("store")
+
 
    	function readHash() {
 	 	if (document.location.hash != "") {
