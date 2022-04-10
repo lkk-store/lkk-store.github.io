@@ -550,6 +550,8 @@ console.log(stocklist)
 
 var total = 0;
 var shoppingcart = {};
+var customprice = [];
+var customcount = 0;
 
 d3.selectAll(".g-item").on("click", function(){
 
@@ -560,10 +562,21 @@ d3.selectAll(".g-item").on("click", function(){
 
 	if (price == "custom") {
 
+		let item = prompt("買咩", "");
+		if (item != null) {
+			slug = item;
+		}
+
 		let price = prompt("幾錢", "0");
 		if (price != null) {
 			total += +price;
+			customprice.push(price);
 		}
+
+		stocklist.push({
+			slug: item,
+			price: price
+		})
 
 	} else {
 		total += +price;
@@ -609,8 +622,6 @@ d3.selectAll(".g-item").on("click", function(){
 				  	var paymentel = document.getElementById("payment");
 				  	var payment = paymentel.value;
 
-				  	console.log(payment)
-
 				  	if (payment == "點俾錢") {
 
 				  		d3.select("#payment").transition().style("background", "rgba(255,0,0,1)").transition().style("background", "rgba(255, 255, 255, 0.8)")
@@ -618,7 +629,7 @@ d3.selectAll(".g-item").on("click", function(){
 				  	} else {
 	  				  	keys.forEach(function(d,i){
 
-	  				  		var price = stocklist.filter(a => a.slug == d)[0].price;
+	  				  		var price = d.indexOf("custom") > -1 ? customprice[d.split('-')[1]] : stocklist.filter(a => a.slug == d)[0].price;
 
 	  				  		orders.push({
 	  				  			datetime: nowtime,
