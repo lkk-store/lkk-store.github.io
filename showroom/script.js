@@ -12,6 +12,12 @@ d3.selectAll(".g-item").on("click", function(){
 	var count = +el.attr("data-count");
 	var slug = el.attr("data-slug");
 
+	if (!shoppingcart[slug]) {
+		shoppingcart[slug] = 0;
+	}
+	shoppingcart[slug] += 1;
+
+
 	if (price == "custom") {
 
 		let item = prompt("買咩", "");
@@ -29,16 +35,20 @@ d3.selectAll(".g-item").on("click", function(){
 			slug: item,
 			price: price
 		})
+	} else if (slug == "黎膠") {
+
+		if (shoppingcart[slug] && shoppingcart[slug]%2 === 0) {
+			total += 112;
+		} else {
+			total += +price;
+		}
+
 
 	} else {
 		total += +price;
 	}
 
-	if (!shoppingcart[slug]) {
-		shoppingcart[slug] = 0;
-	}
-	shoppingcart[slug] += 1;
-
+	
 	count += 1;
 	el.select(".g-item-count").classed("g-active", true);
 	el.select(".g-item-count").html(count);
