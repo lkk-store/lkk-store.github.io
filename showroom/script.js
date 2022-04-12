@@ -2,7 +2,7 @@ console.log(stocklist)
 
 var total = 0;
 var shoppingcart = {};
-var customprice = [];
+var customprice = {};
 var customcount = 0;
 
 d3.selectAll(".g-item").on("click", function(){
@@ -11,11 +11,6 @@ d3.selectAll(".g-item").on("click", function(){
 	var price = el.attr("data-price");
 	var count = +el.attr("data-count");
 	var slug = el.attr("data-slug");
-
-	if (!shoppingcart[slug]) {
-		shoppingcart[slug] = 0;
-	}
-	shoppingcart[slug] += 1;
 
 
 	if (price == "custom") {
@@ -28,14 +23,24 @@ d3.selectAll(".g-item").on("click", function(){
 		let price = prompt("幾錢", "0");
 		if (price != null) {
 			total += +price;
-			customprice.push(price);
 		}
 
 		stocklist.push({
-			slug: item,
+			slug: slug,
 			price: price
 		})
+
+		if (!shoppingcart[slug]) {
+			shoppingcart[slug] = 0;
+		}
+		shoppingcart[slug] += 1;
+
 	} else if (slug == "黎膠") {
+
+		if (!shoppingcart[slug]) {
+			shoppingcart[slug] = 0;
+		}
+		shoppingcart[slug] += 1;
 
 		if (shoppingcart[slug] && shoppingcart[slug]%2 === 0) {
 			total += 112;
@@ -45,6 +50,12 @@ d3.selectAll(".g-item").on("click", function(){
 
 
 	} else {
+
+		if (!shoppingcart[slug]) {
+			shoppingcart[slug] = 0;
+		}
+		shoppingcart[slug] += 1;
+
 		total += +price;
 	}
 
@@ -90,8 +101,10 @@ d3.selectAll(".g-item").on("click", function(){
 
 				  	} else {
 	  				  	keys.forEach(function(d,i){
-
-	  				  		var price = d.indexOf("custom") > -1 ? customprice[d.split('-')[1]] : stocklist.filter(a => a.slug == d)[0].price;
+	  				  		console.log(d)
+	  				  		var price = stocklist.filter(a => a.slug == d)[0].price;
+	  				  		console.log("hi")
+	  				  		console.log(stocklist.filter(a => a.slug == d))
 
 	  				  		orders.push({
 	  				  			datetime: nowtime,
