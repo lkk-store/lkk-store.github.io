@@ -1261,9 +1261,39 @@ input {
 	
 }
 
+.g-note {
+	// text-align: center;
+	font-weight: 700;
+	padding-left: 20px;
+	font-size: 13px;
+	line-height: 1;
+	vertical-align: bottom;
+	margin: 5px auto 10px auto;
+
+	@media screen and (min-width: 600px) {
+		padding-left: 0;
+	}
+
+	.g-note-inner {
+		display: inline-block;
+		background: #000;
+		color: #fff;
+		padding: 3px 5px;
+		border-radius: 2px;
+	}
+
+	span {
+		font-size: 30px;
+		line-height: 0;
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
 
 .g-mode-cont {
 	display: flex;
+
+
 
 	@media screen and (min-width: 600px) {
 		display: none;
@@ -1311,14 +1341,79 @@ input {
 			width: calc(33.3333% - 0.7px);
 			margin-right: 1px;
 			margin-bottom: 1px;
+			position: relative;
 
 			&:nth-child(3n) {
 				margin-right: 0;
 			}
+
+			&.g-store-each-screen {
+				// &:after {
+				// 	content: "絲";
+				// 	display: block;
+				// 	position: absolute;
+				// 	bottom: 3px;
+				// 	right: 10px;
+				// 	color: #000;
+				// 	font-size: 40px;
+				// 	line-height: 0;
+				// 	text-shadow: 0px 0px 3px #000, 0px 0px 5px #000;
+				// 	color: #fff;		
+				// }
+			}
+			
 		}
 
 		.g-img-dots, .g-meta, .g-img-nav {
 			display: none;
 		}
+	}
+}
+
+.g-store-each {
+	&.g-store-each-screen {
+		.g-img {
+			&:after {
+				content: "絲";
+				display: block;
+				position: absolute;
+				top: 0;
+				right: -6px;
+				font-size: 15px;
+				line-height: 1;
+				color: rgba(255,255,255,0.7);
+				// background: #000;
+				width: 20px;
+				height: 20px;
+				padding: 5px;
+				z-index: 11;
+
+			}	
+
+			&:before {
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 10;
+				border-top: 40px solid rgba(0,0,0,0.6);
+				border-left: 40px solid transparent;
+
+			}
+		}
+		
+	}
+}
+
+#g-img-035, #g-img-016 {
+	&:after {
+		color: rgba(255,255,255,0.8);
+	}
+	&:before {
+		border-top: 40px solid rgba(255,255,255,0.3);
+		border-left: 40px solid transparent;
 	}
 }

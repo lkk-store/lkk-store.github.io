@@ -53,7 +53,7 @@
 
 				<div class="g-store-inner-wrap">
 				<% list.forEach(function(l,i){ %>
-				<div class="g-store-each" data-id="<%= l.id %>" data-page="<%= d.content %>">
+				<div class="g-store-each <% if (l.type == 'Screen'){ %>g-store-each-screen<% } %>" data-id="<%= l.id %>" data-page="<%= d.content %>">
 					<% if (l.img) { %>
 					<div class="g-img g-img-has-nav" id="g-img-<%= l.id %>" data-img="0" data-img-max="<%= l.img.length - 1 %>">
 						<div class="g-img-inner-cont">
