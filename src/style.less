@@ -1372,36 +1372,37 @@ input {
 
 .g-store-each {
 	&.g-store-each-screen {
-		.g-img {
-			&:after {
-				content: "絲";
-				display: block;
-				position: absolute;
-				top: 0;
-				right: -6px;
-				font-size: 15px;
-				line-height: 1;
-				color: rgba(255,255,255,0.7);
-				// background: #000;
-				width: 20px;
-				height: 20px;
-				padding: 5px;
-				z-index: 11;
 
-			}	
+		.g-screen-tag {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 20px;
+			height: 20px;
+			z-index: 10;
 
 			&:before {
 				content: "";
-				display: block;
-				width: 0;
-				height: 0;
 				position: absolute;
-				right: 0;
 				top: 0;
-				z-index: 10;
-				border-top: 40px solid rgba(0,0,0,0.6);
-				border-left: 40px solid transparent;
+				right: 0;
+				display: block;
+				border-top: 35px solid rgba(0,0,0,0.6);
+				border-left: 35px solid transparent;
+				z-index: 8;
+			}
 
+			svg {
+				width: 12px;
+				position: relative;
+				z-index: 10;
+				margin-right: -5px;
+				position: absolute;
+				top: 4px;
+				right: 9px;
+				path {
+					fill: rgba(255,255,255,0.5);
+				}
 			}
 		}
 		
@@ -1409,11 +1410,11 @@ input {
 }
 
 #g-img-035, #g-img-016 {
-	&:after {
-		color: rgba(255,255,255,0.8);
+	.g-screen-tag:before {
+		border-top: 35px solid rgba(255,255,255,0.2);
 	}
-	&:before {
-		border-top: 40px solid rgba(255,255,255,0.3);
-		border-left: 40px solid transparent;
+	.g-screen-tag svg path {
+		fill: rgba(255,255,255,0.5);
 	}
+
 }
