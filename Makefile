@@ -28,6 +28,12 @@ webp:
 	mv png/*.webp img
 	rm -rf png/*.webp
 
+pngggg:
+	for file in img/*.webp ; do \
+		/usr/local/bin/dwebp -o "$${file%%.*}.png" $${file} ; \
+	done
+	
+
 pngs:
 	for file in img/store-*.webp ; do \
 		ffmpeg -i $${file} $${file%%.*}.png ; \
