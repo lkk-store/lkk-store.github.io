@@ -68,7 +68,7 @@
     "colors": ""
   },
   {
-    "store": "",
+    "store": "1",
     "hide": "",
     "new": "1",
     "slug": "STAY NEAGTIVE tee 046",
@@ -111,7 +111,7 @@
     "text": "壽終正寢 version",
     "category": "Tee",
     "type": "Screen",
-    "description": "",
+    "description": "Screen",
     "price": "360",
     "soldout": "",
     "limited": "",
