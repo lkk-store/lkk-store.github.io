@@ -1092,3 +1092,6 @@ input {
     transform: rotate(359deg);
   }
 }
+.g-store-047 .g-buy {
+  display: none;
+}
