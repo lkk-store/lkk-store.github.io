@@ -1418,3 +1418,27 @@ input {
 	}
 
 }
+
+.g-cart-animation {
+	position: fixed;
+	// display: none;
+	top: 0;
+	left: 0;
+	// transition: all 1s;	
+	width: 0;
+
+	&.g-active {
+		width: 30px;
+		animation: rotation 2s infinite linear;
+	}
+
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
