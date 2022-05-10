@@ -707,25 +707,25 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		} else if (action == "add-to-cart-checkout") {
 
-			// var stockid = d3.select(".g-cur-stock").attr("data-id");
-			// var curstockel = d3.select(".g-store-" + stockid);
-			// var size = curstockel.select("#size").property("value");
-			// var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
-			// var count = curstockel.select(".g-count").text();
-			// var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
-			// var slug = stockid + "_" + name + "_" + size;
+			var stockid = d3.select(".g-cur-stock").attr("data-id");
+			var curstockel = d3.select(".g-store-" + stockid);
+			var size = curstockel.select("#size").property("value");
+			var name = curstockel.select("#stock-name").text().replace("(起碼三月先有貨)", "");
+			var count = curstockel.select(".g-count").text();
+			var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
+			var slug = stockid + "_" + name + "_" + size;
 
-			// if (color) {
-			// 	slug += "_" + color;
-			// }
+			if (color) {
+				slug += "_" + color;
+			}
 
-			// var is_adc_clicked = curstockel.select(".g-button-adc").attr("data-clicked") == "true";
-			// curstockel.select(".g-button-adc").attr("data-clicked", "");
+			var is_adc_clicked = curstockel.select(".g-button-adc").attr("data-clicked") == "true";
+			curstockel.select(".g-button-adc").attr("data-clicked", "");
 
-			// if (!is_adc_clicked) {
-			// 	updateCartNum(slug, count);
-			// 	updateCart();
-			// }
+			if (!is_adc_clicked) {
+				updateCartNum(slug, count);
+				updateCart();
+			}
 
 			goToCart();
 
