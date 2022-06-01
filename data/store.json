@@ -98,7 +98,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -115,16 +115,33 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
+  },
+  {
+    "store": "",
+    "hide": "1",
+    "new": "1",
+    "slug": "最後代 tee 050",
+    "id": "050",
+    "name": "最後代 tee",
+    "text": "LAST GENERATION",
+    "category": "Tee",
+    "type": "Screen",
+    "description": "【LAST GENERATION】//\n由細到大都會無聊諗下自己想早死定遲死//\n我好似偏好早死 但其實無咩特別原因//\n無咩諗法可能基於無咩想achieve 早遲都唔大分別////\n\n早幾年開始想遲d死//\n因為想鬥長命到睇到d仆街死先//\n但而家慢慢覺得我可能唔只睇到xx滅亡收皮先//\n好似甚至有機會睇到世界滅亡////\n\n其實都幾幸福 人類幾十萬年歷史//\n我係被選中可以見證到滅亡嘅一代",
+    "price": "320",
+    "soldout": "",
+    "limited": "",
+    "sizes": "S,M,L,XL,2XL",
+    "colors": "001#ffffff,005#000000"
   },
   {
     "store": "1",
     "hide": "",
     "new": "1",
-    "slug": "錦鯉想鵝點 049",
+    "slug": "錦鯉想鵝點 tee 049",
     "id": "049",
-    "name": "錦鯉想鵝點",
+    "name": "錦鯉想鵝點 tee",
     "text": "錦鯉買咗未？",
     "category": "Tee",
     "type": "Print",
@@ -132,7 +149,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -149,13 +166,13 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
     "store": "1",
     "hide": "",
-    "new": "1",
+    "new": "",
     "slug": "STAY NEAGTIVE tee 046",
     "id": "046",
     "name": "STAY NEAGTIVE tee",
@@ -166,13 +183,13 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
     "store": "1",
     "hide": "",
-    "new": "1",
+    "new": "",
     "slug": "心痛 tee 042",
     "id": "042",
     "name": "心痛 tee",
@@ -183,7 +200,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -200,7 +217,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": "032#004D82,001#ffffff,005#000000"
   },
   {
@@ -217,13 +234,13 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
     "store": "1",
     "hide": "",
-    "new": "1",
+    "new": "",
     "slug": "平安 tee 044",
     "id": "044",
     "name": "平安 tee",
@@ -234,7 +251,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -251,7 +268,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -268,7 +285,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": "001#ffffff,005#000000"
   },
   {
@@ -285,7 +302,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -302,7 +319,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": "001#ffffff,001#ffffff,005#000000,005#000000"
   },
   {
@@ -319,7 +336,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -336,7 +353,7 @@
     "price": "360",
     "soldout": "y",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -353,7 +370,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": "001#ffffff,132#fbd4dd,134#f6e18d"
   },
   {
@@ -387,7 +404,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,2XL",
+    "sizes": "XS,XL",
     "colors": ""
   },
   {
@@ -404,7 +421,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -421,7 +438,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -438,7 +455,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -455,7 +472,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": "188#bd94ca"
   },
   {
@@ -472,7 +489,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -489,7 +506,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -506,7 +523,7 @@
     "price": "150",
     "soldout": "",
     "limited": "",
-    "sizes": "",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -523,7 +540,7 @@
     "price": "Sold out",
     "soldout": "y",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -540,7 +557,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": "x025#03653e,001#ffffff"
   },
   {
@@ -557,7 +574,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -574,7 +591,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -591,7 +608,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -608,7 +625,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": "132#fbd4dd"
   },
   {
@@ -625,7 +642,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": "G#00ff00,P#ff3dbb,O#ff5900"
   },
   {
@@ -642,7 +659,7 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
@@ -659,13 +676,13 @@
     "price": "320",
     "soldout": "",
     "limited": "",
-    "sizes": "S,M,L,XL,2XL",
+    "sizes": "XS,S,M,L,XL",
     "colors": ""
   },
   {
     "store": "",
     "hide": "",
-    "new": "1",
+    "new": "",
     "slug": "苦中作樂 crewneck 041",
     "id": "041",
     "name": "苦中作樂 crewneck",
@@ -682,7 +699,7 @@
   {
     "store": "",
     "hide": "",
-    "new": "1",
+    "new": "",
     "slug": "NFtee 043",
     "id": "043",
     "name": "NFtee",
