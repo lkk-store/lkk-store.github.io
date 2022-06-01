@@ -350,7 +350,8 @@ input {
   background: rgba(255, 255, 255, 0.8);
 }
 .g-button,
-.g-buy-button {
+.g-buy-button,
+.g-reset-button {
   margin-top: 25px;
   background: none;
   border: none;
@@ -468,13 +469,15 @@ input {
 #g-form button {
   background: rgba(255, 255, 255, 0.5);
 }
-.g-buy-button {
+.g-buy-button,
+.g-reset-button {
   background: #000;
   color: #fff;
   margin: 0 auto;
   display: block;
 }
-.g-buy-button:hover {
+.g-buy-button:hover,
+.g-reset-button:hover {
   background: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }

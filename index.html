@@ -365,7 +365,8 @@ input {
   background: rgba(255, 255, 255, 0.8);
 }
 .g-button,
-.g-buy-button {
+.g-buy-button,
+.g-reset-button {
   margin-top: 25px;
   background: none;
   border: none;
@@ -483,13 +484,15 @@ input {
 #g-form button {
   background: rgba(255, 255, 255, 0.5);
 }
-.g-buy-button {
+.g-buy-button,
+.g-reset-button {
   background: #000;
   color: #fff;
   margin: 0 auto;
   display: block;
 }
-.g-buy-button:hover {
+.g-buy-button:hover,
+.g-reset-button:hover {
   background: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
@@ -8771,7 +8774,10 @@ Indian organic cotton</p>
 					<!-- <div class="g-note">可以俾多過$280，小費將全數撥捐《黎根記發展基金》</div> -->
 
 					<button type="submit" id="submit" class="g-buy-button g-hide">真係 REALLY BUY</button>
+					<button type="reset" id="reset" class="g-reset-button g-hide">重設 RESET</button>
 				</form>
+
+
 
 			</div>
 			
@@ -16119,8 +16125,12 @@ send 同一張相嚟</p><p>
 
 <script>
 var shoppingcart = {};
-var doneshopping = false;
+// var doneshopping = false;
 var buying = false;
+
+if (!localStorage.doneshopping) {
+	localStorage.doneshopping = false;
+}
 
 document.addEventListener("DOMContentLoaded", function(e) {
 
@@ -16200,10 +16210,28 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.select(".g-shopping-cart").classed("g-hide", false);
    			el.select(".g-buy-button").classed("g-hide", true);
    			el.selectAll(".g-store-buy").classed("g-hide", true);
-   			el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+   			
    			el.attr("data-incart", true);
 
    			window.scrollTo(0,d3.select(".g-nav-list-store").node().getBoundingClientRect().top + window.scrollY - 5);
+
+
+   			if (localStorage.doneshopping == "true") {
+
+				d3.select("#submit").classed("g-loading", false);
+				d3.select(".g-submitted").classed("g-hide", false);
+				d3.select(".g-buy-button").classed("g-hide", true);
+				d3.select("#my-form").classed("g-submitted-form", true);
+				var navel = d3.select(".g-nav-list-store")
+				navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + (+navel.select(".g-submitted-form").node().getBoundingClientRect().height) + "px")
+				d3.select(".g-submit").classed("g-hide", true);
+				dropbananas(".g-drop-banana.g-inside-form");
+				d3.select(".g-reset-button").classed("g-hide", false);
+				d3.select(".g-buy-button").classed("g-hide", true);
+   			} else {
+   				el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+   			}
+
    		} else if ((hash.indexOf("-") > -1 && hash != "#project-upcoming")) {
    			el.attr("data-instore", "true")
    			el.attr("data-incart", "false");
@@ -16415,6 +16443,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	// go to cart function
 	function goToCart() {
 		d3.select(".g-store-list").classed("g-hide", true);
+		d3.select(".g-shopping-cart").classed("g-hide", false);
 		d3.selectAll(".g-store-buy").classed("g-hide", true);
 		d3.select("#my-form").classed("g-hide", false);
 		d3.select(".g-nav-list-store").attr("data-instore", false);
@@ -16566,11 +16595,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			loadImages(el.select(".g-store-list"));
 		}
 
-		if (doneshopping) {
-			shoppingreset();
-			buying = false;
-			doneshopping = false;
-		}
+		// if (localStorage.doneshopping) {
+		// 	// shoppingreset();
+		// 	// buying = false;
+		// 	// doneshopping = false;
+		// }
 
 		if (instore || incart) {
 			back(el.attr("data-id"));
@@ -16641,11 +16670,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		nav.attr("data-incart", "false");
 		d3.select(".g-shopping-cart").classed("g-hide", true);
 
-		if (doneshopping) {
-			shoppingreset();
-			buying = false;
-			doneshopping = false;
-		}
+		// if (localStorage.doneshopping) {
+			// shoppingreset();
+			// buying = false;
+			// doneshopping = false;
+		// }
 
 		document.location.hash = el.attr("data-page") + "-" + el.attr("data-id");
 		resetimgnav();
@@ -16997,7 +17026,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 	  	  		  	console.log(res);
 
-  	  		  		localStorage.setItem('shoppingcart', '{}')
+  	  		  		// localStorage.setItem('shoppingcart', '{}')
   					// $('#my-form').trigger("reset");
   					d3.select("#submit").classed("g-loading", false);
   					// d3.select("#my-form").classed("g-hide", true);
@@ -17008,7 +17037,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
   					var navel = d3.select(".g-nav-list-store")
   					navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + (+navel.select(".g-submitted-form").node().getBoundingClientRect().height) + "px")
   					dropbananas(".g-drop-banana.g-inside-form");
-  					doneshopping = true;
+  					localStorage.doneshopping = true;
+  					d3.select(".g-reset-button").classed("g-hide", false);
 	  	  		  }
 	  	  		})
 
@@ -17019,24 +17049,32 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 	// shopping cart
 	d3.select(".g-submitted").on("click", function(){
-		d3.select(".g-submitted").classed("g-hide", true);
-		d3.select(".g-drop-banana.g-inside-form").html("");
-		if (doneshopping == true) {
-			shoppingreset();
-			buying = false;
-			doneshopping = false;
+		// d3.select(".g-submitted").classed("g-hide", true);
+		// d3.select(".g-drop-banana.g-inside-form").html("");
+		if (localStorage.doneshopping == true) {
+			// shoppingreset();
+			// buying = false;
+			// doneshopping = false;
 		}
-		show("store", "#store")
+		// show("store", "#store")
 	})
 
 	// shopping cart icon
 	d3.selectAll(".g-shopping-cart-icon").on("click", function(){
-		if (doneshopping == true) {
-			shoppingreset();
-			buying = false;
-			doneshopping = false;
-		}
-		show("store", "#store");
+		// console.log("hi")
+		// if (localStorage.doneshopping == true) {
+
+		// 	d3.select("#submit").classed("g-loading", false);
+		// 	// d3.select("#my-form").classed("g-hide", true);
+
+		// 	d3.select(".g-submitted").classed("g-hide", false);
+		// 	d3.select(".g-buy-button").classed("g-hide", true);
+		// 	d3.select("#my-form").classed("g-submitted-form", true);
+		// 	// shoppingreset();
+		// 	// buying = false;
+		// 	// doneshopping = false;
+		// }
+		// show("store", "#cart");
 		d3.select(".g-nav-list-lkk").style("height", d3.select(".g-nav-list-lkk").attr("data-h1") + "px");
 		d3.select(".g-nav-list-upcoming").style("height", d3.select(".g-nav-list-upcoming").attr("data-h1") + "px");
 		d3.select(".g-nav-list-wood").style("height", d3.select(".g-nav-list-wood").attr("data-h1") + "px");
@@ -17126,6 +17164,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.selectAll(".g-nav-list").attr("data-instore", "false");
 		resize();
 
+
+	})
+
+	d3.select(".g-reset-button").on("click", function(){
+		localStorage.doneshopping = false;
+  		localStorage.setItem('shoppingcart', '{}')
+		d3.select("#submit").classed("g-loading", false);
+		d3.select(".g-submitted").classed("g-hide", true);
+		d3.select(".g-buy-button").classed("g-hide", false);
+		d3.select("#my-form").classed("g-submitted-form", false);
+			shoppingreset();
+			buying = false;
+			doneshopping = false;
+			d3.select(".g-reset-button").classed("g-hide", true);
+			d3.select(".g-buy-button").classed("g-hide", true);
 
 	})
 
