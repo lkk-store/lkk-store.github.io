@@ -726,7 +726,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var action = el.attr("data-action");
 		var cart = d3.select(".g-shopping-cart-inner");
 
-		if (action == "add-to-cart" && localStorage.doneshopping == "false") {
+		if (action == "add-to-cart") {
+
+			if (localStorage.doneshopping == "true") {
+				resetshopping();
+				localStorage.doneshopping = false;
+			}
 
 			var stockid = d3.select(".g-cur-stock").attr("data-id");
 			var curstockel = d3.select(".g-store-" + stockid);
@@ -762,7 +767,13 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			el.attr("data-clicked", "true");
 
-		} else if (action == "add-to-cart-checkout" && localStorage.doneshopping == "false") {
+		} else if (action == "add-to-cart-checkout") {
+
+
+			if (localStorage.doneshopping == "true") {
+				resetshopping();
+				localStorage.doneshopping = false;
+			}
 
 			var stockid = d3.select(".g-cur-stock").attr("data-id");
 			var curstockel = d3.select(".g-store-" + stockid);
@@ -1056,7 +1067,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 	})
 
-	d3.select(".g-reset-button").on("click", function(){
+	function resetshopping() {
 		localStorage.doneshopping = false;
   		localStorage.setItem('shoppingcart', '{}')
 		d3.select("#submit").classed("g-loading", false);
@@ -1068,7 +1079,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			doneshopping = false;
 			d3.select(".g-reset-button").classed("g-hide", true);
 			d3.select(".g-buy-button").classed("g-hide", true);
+	}
 
+	d3.select(".g-reset-button").on("click", function(){
+		resetshopping();
 	})
 
 
