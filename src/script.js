@@ -84,6 +84,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
    			el.select(".g-shopping-cart").classed("g-hide", false);
    			el.select(".g-buy-button").classed("g-hide", true);
    			el.selectAll(".g-store-buy").classed("g-hide", true);
+
+   			d3.select(".g-shopping-cart").attr("data-height", d3.select(".g-shopping-cart").node().getBoundingClientRect().height)
    			
    			el.attr("data-incart", true);
 
@@ -96,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				d3.select(".g-submitted").classed("g-hide", false);
 				d3.select(".g-buy-button").classed("g-hide", true);
 				d3.select("#my-form").classed("g-submitted-form", true);
+				d3.select(".g-shopping-cart").classed("g-hide", false)
 				var navel = d3.select(".g-nav-list-store")
 				navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + (+navel.select(".g-submitted-form").node().getBoundingClientRect().height) + "px")
 				d3.select(".g-submit").classed("g-hide", true);
@@ -325,8 +328,18 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.select(".g-form-options").classed("g-hide", true);
 		d3.select(".g-buy-button").classed("g-hide", true);
 
+		console.log(d3.select(".g-shopping-cart").node().getBoundingClientRect().height)
+
 		var el = d3.select(".g-nav-list-store");
-		el.transition().style("height", (+el.attr("data-h1") + d3.select(".g-stock-cont").node().getBoundingClientRect().height + d3.select(".g-shopping-cart").node().getBoundingClientRect().height) + "px");
+
+		var cartheight = d3.select(".g-shopping-cart").node().getBoundingClientRect().height;
+
+		if (cartheight == 500 && d3.select(".g-shopping-cart").attr("data-height")) {
+			cartheight = d3.select(".g-shopping-cart").attr("data-height")
+		}
+
+		el.transition().style("height", (+el.attr("data-h1") + +d3.select(".g-stock-cont").node().getBoundingClientRect().height + +cartheight) + "px");
+
 
 		document.location.hash = "cart";
 
@@ -713,7 +726,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var action = el.attr("data-action");
 		var cart = d3.select(".g-shopping-cart-inner");
 
-		if (action == "add-to-cart") {
+		if (action == "add-to-cart" && localStorage.doneshopping == "false") {
 
 			var stockid = d3.select(".g-cur-stock").attr("data-id");
 			var curstockel = d3.select(".g-store-" + stockid);
@@ -749,7 +762,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			el.attr("data-clicked", "true");
 
-		} else if (action == "add-to-cart-checkout") {
+		} else if (action == "add-to-cart-checkout" && localStorage.doneshopping == "false") {
 
 			var stockid = d3.select(".g-cur-stock").attr("data-id");
 			var curstockel = d3.select(".g-store-" + stockid);
@@ -778,7 +791,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			// var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
 
 			var navel = d3.select(".g-nav-list-store");
-			navel.transition().style("height", (+navel.attr("data-h1") + navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
+			navel.transition().style("height", (+navel.attr("data-h1") + +navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
 
 		} else if (action == "buy") {
 
@@ -794,7 +807,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				// var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
 
 				var navel = d3.select(".g-nav-list-store");
-				navel.transition().style("height", (+navel.attr("data-h1") + navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
+				navel.transition().style("height", (+navel.attr("data-h1") + +navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
 
 			}
 
@@ -910,6 +923,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
   					d3.select("#my-form").classed("g-submitted-form", true);
   					var navel = d3.select(".g-nav-list-store")
   					navel.style("height", (+navel.attr("data-h1")) + (+navel.select(".g-shopping-cart").node().getBoundingClientRect().height) + (+navel.select(".g-submitted-form").node().getBoundingClientRect().height) + "px")
+
+  					d3.select(".g-shopping-cart").attr("data-height", +navel.select(".g-shopping-cart").node().getBoundingClientRect().height)
   					dropbananas(".g-drop-banana.g-inside-form");
   					localStorage.doneshopping = true;
   					d3.select(".g-reset-button").classed("g-hide", false);
