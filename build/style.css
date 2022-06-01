@@ -499,6 +499,9 @@ input {
 .g-thanks-text .g-item-usd {
   display: inline;
 }
+.g-thanks-text a {
+  text-decoration: underline;
+}
 .g-thanks-text-inner {
   background: #fff;
   display: inline;
@@ -1094,4 +1097,24 @@ input {
 }
 .g-store-047 .g-buy {
   display: none;
+}
+.g-payment {
+  text-align: center;
+  padding: 20px 0;
+}
+.g-payment .g-or {
+  padding: 20px 0;
+}
+.g-payment .g-credit-card {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  max-width: 280px;
+}
+.g-payment .g-credit-card img {
+  width: 100%;
 }

@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
 	}
 
-	function updateCart() {
+	function updateCart(updatehref) {
 
 		shoppingcart = JSON.parse(localStorage.getItem('shoppingcart'));
 
@@ -191,6 +191,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var tbody = d3.select(".g-tbody").html("");
 		var totalprice = 0;
 		var totalusdprice = 0;
+
+		var checkoutcount = {"tshirt360": 0, "tshirt320": 0, "sticker": 0};
 
 		keys.forEach(function(d){
 
@@ -224,12 +226,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				if (shoppingcart[d] > 1) {
 					shoppingcart[d] -= 1;
 					localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
-					updateCart();
+					updateCart(true);
 					updateCartNum();
 				} else {
 					delete shoppingcart[d];
 					localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
-					updateCart();
+					updateCart(true);
 					updateCartNum();
 				}
 			})
@@ -239,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				count.text(shoppingcart[d])
 				localStorage.setItem('shoppingcart', JSON.stringify(shoppingcart))
 
-				updateCart();
+				updateCart(true);
 				updateCartNum();
 			})
 
@@ -252,6 +254,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100;
 			} else if (pricecheck) {
 				price = +pricecheck.price;
+
+
+				if (price == 360) {
+					checkoutcount.tshirt360 += shoppingcart[d];
+				}
+
+				if (price == 320) {
+					checkoutcount.tshirt320 += shoppingcart[d];
+				}
+
+				if (price == 150) {
+					checkoutcount.sticker += shoppingcart[d];
+				}
 			}
 
 			if (price == 250) {
@@ -268,6 +283,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		d3.select(".g-total-price").text("$" + totalprice);
 		d3.select(".g-item-usd").text(totalusdprice + 35);
+
+
+		if (updatehref) {
+			var hrefstr = 'tshirt360=' + checkoutcount.tshirt360 + '&tshirt320=' + checkoutcount.tshirt320 + '&sticker=' + checkoutcount.sticker;
+			d3.select("#checkout-link").attr("href", "https://checkout.lkk-store.com/checkout.html?" + hrefstr)
+		}
 
 	}
 
@@ -379,7 +400,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    	// onload functions
    	resize();
    	updateCartNum();
-   	updateCart();
+   	updateCart(true);
    	readHash();
    	show("store")
 
@@ -701,7 +722,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 
 			updateCartNum(slug, count);
-			updateCart();
+			updateCart(true);
 
 			el.attr("data-clicked", "true");
 
@@ -724,7 +745,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			if (!is_adc_clicked) {
 				updateCartNum(slug, count);
-				updateCart();
+				updateCart(true);
 			}
 
 			goToCart();
@@ -860,6 +881,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
   					// $('#my-form').trigger("reset");
   					d3.select("#submit").classed("g-loading", false);
   					// d3.select("#my-form").classed("g-hide", true);
+
   					d3.select(".g-submitted").classed("g-hide", false);
   					d3.select(".g-buy-button").classed("g-hide", true);
   					d3.select("#my-form").classed("g-submitted-form", true);
