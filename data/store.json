@@ -149,7 +149,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "XS,S,M,L,XL",
+    "sizes": "M,L",
     "colors": ""
   },
   {
@@ -166,7 +166,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "XS,S,M,L,XL",
+    "sizes": "M,XL",
     "colors": ""
   },
   {
@@ -404,7 +404,7 @@
     "price": "360",
     "soldout": "",
     "limited": "",
-    "sizes": "XS,XL",
+    "sizes": "XS",
     "colors": ""
   },
   {
