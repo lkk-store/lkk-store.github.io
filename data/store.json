@@ -164,7 +164,7 @@
     "type": "Print",
     "description": "錦鯉買唔買?",
     "price": "360",
-    "soldout": "",
+    "soldout": "y",
     "limited": "",
     "sizes": "M,XL",
     "colors": ""
