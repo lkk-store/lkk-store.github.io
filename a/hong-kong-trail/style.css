@@ -1,0 +1,45 @@
+html,body {
+	padding:  0;
+	margin:  0;
+	background: #000;
+	color:  #999;
+	font-size: 30px;
+	font-family: 'arial', sans-serif;
+}
+
+.g-map {
+	/*border:  1px solid magenta;*/
+	position: fixed;
+	width:  100%;
+	bottom: 0;
+}
+
+.g-trail-path {
+	stroke-width:  2;
+	stroke: #fff;
+}
+
+.g-pts {
+	fill:  #000;
+	stroke:  #000;
+	stroke-width:  3;
+}
+
+.g-content {
+	width: 100vw;
+	height:  100vh;
+	position: absolute;
+	top:  0;
+	left: 0;
+	text-align: center;
+}
+
+.g-post {
+	width: 100vw;
+	height:  100vh;
+}
+
+.g-text {
+	font-size: 40px;
+	text-align: center;
+}
