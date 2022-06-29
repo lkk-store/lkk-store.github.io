@@ -68,21 +68,28 @@
 			max-width: 600px;
 		}
 
+		.g-item {
+			position: relative;
+		}
+
+		.g-taken:after {
+			position: absolute;
+			content:  "";
+			display:  block;
+			background-image:  url(cross-01.svg);
+			background-size: auto 100%;
+			min-width:  100%;
+			min-height:  100%;
+			top:  0;
+			left: 0;
+			background-repeat: no-repeat;
+
+		}
+
 
 	</style>
 </head>
 <body>
-
-	<div class="g-item">
-		<h1>TREE 實木飯枱 + bench + 兩張櫈</h1>
-		<h3><em>table</em> W150 x D80 x H78 cm</h3>
-		<h3><em>bench</em> W150 x D34 x H48 cm</h3>
-		<a href="https://tree.com.hk/furniture/dining-tables/husky-dining-table-rectangular">ORIGINAL</a>
-		<div class="g-img-cont">
-			<img src="dining_a.jpg">
-			<img src="dining_c.jpg">
-		</div>
-	</div>
 
 	<div class="g-item">
 		<h1>MUJI leather couch</h1>
@@ -94,42 +101,28 @@
 	</div>
 
 	<div class="g-item">
+		<h1>LG TV 43"</h1>
+		<a href="https://www.lg.com/hk/tv/lg-43UJ6300">ORIGINAL</a>
+		<div class="g-img-cont">
+			<img src="tv_bb.jpg">
+			<img src="tv_aa.jpg">
+		</div>
+	</div>
+
+	<div class="g-item">
+		<h1>Franc Franc 電視櫃（super heavily used)</h1>
+		<h3>W120 x D45 x H50 cm</h3>
+		<div class="g-img-cont g-img-single">
+			<img src="tv_shelf.jpg">
+		</div>
+	</div>
+
+
+	<div class="g-item">
 		<h1>實木書枱</h1>
 		<h3>W160 x D60 x H75 cm</h3>
 		<div class="g-img-cont g-img-single">
 			<img src="desk.jpg">
-		</div>
-	</div>
-
-	<div class="g-item">
-		<h1>中學圖書館書櫃 x 2</h1>
-		<h3>W90 x D25 x H200 cm</h3>
-		<!-- <a href="https://www.muji.com.hk/en/product/4550002404871">Original</a> -->
-		<div class="g-img-cont">
-			<img src="bookshelf_a.jpg">
-			<img src="bookshelf_b.jpg">
-		</div>
-	</div>
-
-	<div class="g-item">
-		<h1>MUJI drawer chest</h1>
-		<h3>W120 x D40 x H84 cm</h3>
-		<a href="https://www.muji.com/sg/img/pdf/2017Household_July.pdf">Original - PAGE 16. no longer available on MUJI website</a>
-		<div class="g-img-cont g-img-single">
-			<img src="dresser.jpg">
-		</div>
-	</div>
-
-	<div class="g-item">
-		<h1>MUJI 木製層架</h1>
-		<h3>W121 x D28 x H121 cm</h3>
-		<div class="links">
-			<a href="https://www.muji.com.hk/zh/product/4549337265691">Original Part A</a>
-			<a href="https://www.muji.com.hk/zh/product/4549337265660">Original Part B</a>
-			<a href="https://www.muji.com.hk/en/product/4549337414761">Original Drawers</a>
-		</div>
-		<div class="g-img-cont g-img-single">
-			<img src="shelf.jpg">
 		</div>
 	</div>
 
@@ -149,23 +142,54 @@
 		</div>
 	</div>
 
-	<div class="g-item">
-		<h1>Franc Franc 電視櫃（heavily used)</h1>
-		<h3>W120 x D45 x H50 cm</h3>
-		<div class="g-img-cont g-img-single">
-			<img src="tv_shelf.jpg">
-		</div>
-	</div>
 
-	<div class="g-item">
-		<h1>LG TV 43"</h1>
-		<a href="https://www.lg.com/hk/tv/lg-43UJ6300">ORIGINAL</a>
+	<div class="g-item g-taken">
+		<h1>TREE 實木飯枱 + bench + 兩張櫈</h1>
+		<h3><em>table</em> W150 x D80 x H78 cm</h3>
+		<h3><em>bench</em> W150 x D34 x H48 cm</h3>
+		<a href="https://tree.com.hk/furniture/dining-tables/husky-dining-table-rectangular">ORIGINAL</a>
 		<div class="g-img-cont">
-			<img src="tv_bb.jpg">
-			<img src="tv_aa.jpg">
+			<img src="dining_a.jpg">
+			<img src="dining_c.jpg">
 		</div>
 	</div>
 
+	<div class="g-item g-taken">
+		<h1>中學圖書館書櫃 x 2</h1>
+		<h3>W90 x D25 x H200 cm</h3>
+		<!-- <a href="https://www.muji.com.hk/en/product/4550002404871">Original</a> -->
+		<div class="g-img-cont">
+			<img src="bookshelf_a.jpg">
+			<img src="bookshelf_b.jpg">
+		</div>
+	</div>
+
+	<div class="g-item g-taken">
+		<h1>MUJI drawer chest</h1>
+		<h3>W120 x D40 x H84 cm</h3>
+		<a href="https://www.muji.com/sg/img/pdf/2017Household_July.pdf">Original - PAGE 16. no longer available on MUJI website</a>
+		<div class="g-img-cont g-img-single">
+			<img src="dresser.jpg">
+		</div>
+	</div>
+
+	<div class="g-item g-taken">
+		<h1>MUJI 木製層架</h1>
+		<h3>W121 x D28 x H121 cm</h3>
+		<div class="links">
+			<a href="https://www.muji.com.hk/zh/product/4549337265691">Original Part A</a>
+			<a href="https://www.muji.com.hk/zh/product/4549337265660">Original Part B</a>
+			<a href="https://www.muji.com.hk/en/product/4549337414761">Original Drawers</a>
+		</div>
+		<div class="g-img-cont g-img-single">
+			<img src="shelf.jpg">
+		</div>
+	</div>
+
+	
+	
+
+	
 
 
 
