@@ -2,15 +2,25 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hong Kong Trail</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
-	<div class="g-content"></div>
-
-	<div class="g-map"></div>
-
+	<!-- <div class="g-container"> -->
+	<div class="g-body">
+		<div class="g-content"></div>
+		<div class="g-map"></div>	
+		<div class="g-meta">
+			<div class="g-dp">H000</div>
+			<div class="g-time">07:25</div>
+		</div>
+		<div class="g-nav">
+			<div class="g-nav-button g-nav-left" data-dir="left"></div>
+			<div class="g-nav-button g-nav-right" data-dir="right"></div>
+		</div>
+	</div>
+	<!-- </div> -->
 
 	<script src="d3_.js"></script>
 	<script src="topojson.min.js"></script>
