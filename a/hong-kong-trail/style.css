@@ -34,6 +34,7 @@ html,body {
 	height:  100%;
 	top: 0;
 	pointer-events: none;
+	overflow: hidden;
 }
 
 .g-map-inner {
@@ -62,7 +63,7 @@ html,body {
 }
 
 .g-trail-path {
-	stroke-width: 1.5;
+	stroke-width: 2;
 	stroke: #c6c6c6;
 	fill:  none;
 }
@@ -204,8 +205,16 @@ html,body {
 	letter-spacing: 0.5px;
 }
 
+#g-post-cover .g-text-cont {
+	transform: scale(0.8) rotate(0deg) translate(0%, -5%);
+}
+
+#g-post-cover .g-text-cn {
+	max-width: 310px;
+}
+
 #g-post-000 .g-text-cont {
-	margin-top: 15vh;
+	transform: scale(1.5) rotate(2deg) translate(-5%, 11%);
 }
 
 #g-post-cover .g-text{
@@ -213,7 +222,7 @@ html,body {
 }
 
 #g-post-002 .g-text-cont {
-	transform: scale(0.9) rotate(-5deg) translate(-5%, 40%);
+	transform: scale(0.9) rotate(10deg) translate(10%, 40%);
 }
 
 #g-post-002 .g-text-cn {
@@ -438,7 +447,7 @@ html,body {
 }
 
 #g-post-045 .g-text-cont {
-	transform: scale(0.8) translate(-5%,-20%);
+	transform: scale(2) translate(0%,-8%);
 }
 
 #g-post-046 .g-text-cont {
@@ -492,12 +501,16 @@ html,body {
 }
 
 #g-post-051 .g-text-en {
-	max-width: 250px;
+	max-width: 260px;
 	margin-top: 10px;
 }
 
 #g-post-052 .g-text-cont {
 	transform: scale(0.9) rotate(-10deg) translate(-35%,30%);
+}
+
+#g-post-052 .g-text-cn {
+	display: none;
 }
 
 #g-post-052a .g-text-cont {
@@ -685,11 +698,11 @@ html,body {
 }
 
 #g-post-085a .g-text-cont {
-	transform: scale(1) rotate(0) translate(-5%, 40%);	
+	transform: scale(1) rotate(0) translate(-5%, 20%);	
 }
 
 #g-post-085b .g-text-cont {
-	transform: scale(0.8) rotate(0) translate(0%, 25%);	
+	transform: scale(0.8) rotate(0) translate(0%, 20%);	
 }
 
 #g-post-085b .g-text-cn {
@@ -775,14 +788,14 @@ html,body {
 	transform: scale(1.2) rotate(0) translate(0%, 30%);	
 }
 
-#g-post-101 .g-meta {
+#g-post-102 .g-meta {
 	display: none;
 }
 
-#g-post-101 .g-text-en {
+#g-post-102 .g-text-en {
 	display: none;
 }
 
-#g-post-101 .g-text-cont {
+#g-post-102 .g-text-cont {
 	transform: scale(2) rotate(10deg) translate(10%,4%);	
 }

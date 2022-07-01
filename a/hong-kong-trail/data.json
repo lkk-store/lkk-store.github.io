@@ -460,8 +460,8 @@
     "labeled": "",
     "id": "051",
     "time": "12:53",
-    "text_en": "back at it but missed 51!!! the next part with the Wilson Trail for a bit, its a 78-km hike that hopefully I'll attempt next",
-    "text_cn": "重新出發但 miss 咗51! 跟住嗰 part 會同衛徑重疊一小段, 遲下再番嚟行衛徑"
+    "text_en": "back at it but missed 51!!! the next part overlaps with the Wilson Trail for a bit, its a 78-km hike that hopefully I'll attempt next",
+    "text_cn": "重新出發但 miss 咗 51! 跟住嗰 part 會同衛徑重疊一小段, 遲下再番嚟行衛徑"
   },
   {
     "nodp": "",
@@ -516,7 +516,7 @@
     "labeled": "",
     "id": "056",
     "time": "13:20",
-    "text_en": "thanks tree for the shade",
+    "text_en": "thanks tree",
     "text_cn": "多謝樹"
   },
   {
@@ -692,7 +692,7 @@
     "labeled": "",
     "id": "077",
     "time": "15:31",
-    "text_en": "kind of feel like my soul left my body at this point",
+    "text_en": "kind of feel like my soul has left my body",
     "text_cn": "開始個人冇咗靈魂"
   },
   {
@@ -915,8 +915,16 @@
     "nodp": "",
     "labeled": "",
     "id": "101",
+    "time": "",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "nodp": "",
+    "labeled": "",
+    "id": "102",
     "time": "18:27",
     "text_en": "cheers",
-    "text_cn": "cheers"
+    "text_cn": ""
   }
 ]
