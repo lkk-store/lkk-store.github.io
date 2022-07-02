@@ -116,7 +116,8 @@ html,body {
 	background-repeat: no-repeat;
 	background-position: center;
 	/*opacity: 0;*/
-	transition: transform 1s;
+	transition: transform 0.4s;
+	transition-timing-function: ease-in-out;
 }
 
 .g-post:before {
@@ -824,12 +825,12 @@ html,body {
 
 
 #g-post-map .g-text-cn {
-	max-width: 220px;
+	max-width: 270px;
 }
 
 #g-post-map .g-text-en {
-	max-width: 300px;
-	line-height: 1.2;
+	max-width: 350px;
+	line-height: 1.4;
 	margin-top: 5px;
 }
 
