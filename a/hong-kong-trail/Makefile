@@ -1,2 +1,2 @@
 pics:
-	mogrify -resize 1050x photos/*.jpg
+	mogrify -resize 100x photos-100/*.jpg
