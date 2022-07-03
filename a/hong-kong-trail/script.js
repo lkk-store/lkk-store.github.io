@@ -2,6 +2,11 @@ console.clear();
 
 var sel = d3.select(".g-map").html("")
 sel = sel.append("div.g-map-inner");
+
+var hed = sel.append("div.g-hed-text")
+hed.append("div.g-text.g-text-cn.g-text-shadow").text("港島徑")
+hed.append("div.g-text.g-text-en.g-text-shadow").text("Hong Kong Trail")
+
 var width = 350;
 var height = width*0.4;
 
@@ -116,6 +121,7 @@ d3.queue()
 			})
 			.tspans(i == 0 ? ["山頂", "The Peak"] : ["大浪灣", "Big Wave Bay"], 10) 
 	})
+
 
 	if (document.location.hash) {
 		var id = document.location.hash.replace("#", "");
