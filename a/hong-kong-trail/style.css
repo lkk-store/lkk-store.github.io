@@ -39,7 +39,7 @@ html,body {
 	transition: opacity 0.5s;
 }
 
-.g-map.g-hide {
+.g-map.g-hide, .g-meta.g-hide {
 	opacity: 0;
 }
 
@@ -55,14 +55,22 @@ html,body {
 
 .g-hed-text {
 	position: absolute;
-	font-weight: 700;
 	line-height: 1;
 	width: 100%;
-	bottom: 20%;
+	top: 58%;
+	left: 25%;
 }
 
 .g-hed-text .g-text {
 	margin-bottom: 0;
+	text-align: left;
+	transform: scale(0.9);
+}
+
+.g-hed-text .g-text-cn, .g-hed-text .g-text-en {
+	line-height: 1.2;
+	/*font-size: 15px;*/
+
 }
 
 .g-map-inner svg {
@@ -73,18 +81,18 @@ html,body {
 	stroke-linecap:  round;
 }
 
-.g-map-inner text, .g-meta, .g-text-shadow {
+.g-detailed-map text, .g-map-inner text, .g-meta, .g-text-shadow {
 	text-shadow: 0px 0px 3px #000, 0px 0px 5px #000;
 }
 
-.g-map-inner text {
+.g-detailed-map text, .g-map-inner text {
 	fill: #c6c6c6;
 	font-size: 9px;
 }
 
 .g-trail-path {
 	stroke-width: 2;
-	stroke: #c6c6c6;
+	stroke: #ffcc00;
 	fill:  none;
 }
 
@@ -93,6 +101,8 @@ html,body {
 	stroke:  #000;
 	stroke-width:  3;
 }
+
+
 
 .g-content {
 	width: 100%;
@@ -213,7 +223,7 @@ html,body {
 @keyframes pulse-ring {
 
   100% {
-    transform: scale(2);
+    transform: scale(3);
     opacity: 0;
   }
 
@@ -229,26 +239,72 @@ html,body {
 	top:  10px;
 	right: 10px;
 	font-size: 11px;
+	width: 100%;
+	transition: opacity 0.5s;
 }
 
-.g-dp {
-	letter-spacing: 0.5px;
+.g-right {
+	text-align: right;
+	width: auto;
+	display: inline-block;
+	margin-right: 0;
+	margin-left: auto;
+	position: absolute;
+	right: 0;
+}
+
+.g-time, .g-dp {
+	position: relative;
+	padding-left: 16px;
+	display: inline-block;
+}
+
+.g-hour, .g-minute {
+	display: inline;
+}
+
+
+.g-time:before, .g-dp:before {
+		content: "";
+		background-image: url("clock.png");
+		display: block;
+		width: 13px;
+		height: 13px;
+		position: absolute;
+		background-size:  100%;
+		left: 0;
+		top: 1px;
+}
+
+.g-dp:before {
+	background-image:  url("sign.png");
+	background-size:  auto 100%;
+	background-repeat:  no-repeat;
+	width: 18px;
+	height: 18px;
+	left: -3px;
+	top: 1px;
 }
 
 #g-post-cover .g-text-cont {
-	transform: scale(0.8) rotate(0deg) translate(0%, -12%);
+	transform: scale(0.9) rotate(0deg) translate(0%, -12%);
 }
 
 #g-post-cover .g-text-cn {
-	max-width: 310px;
+	max-width: 260px;
 }
 
-#g-post-000 .g-text-cont {
-	transform: scale(1.5) rotate(2deg) translate(-5%, 11%);
+#g-post-cover .g-text-en {
+	max-width: 300px;
 }
 
 #g-post-cover .g-text{
-	margin-bottom: 15px;
+	margin-bottom: 10px;
+}
+
+
+#g-post-000 .g-text-cont {
+	transform: scale(1.5) rotate(2deg) translate(-5%, 11%);
 }
 
 #g-post-002 .g-text-cont {
@@ -832,7 +888,7 @@ html,body {
 
 
 #g-post-map .g-text-cont {
-	transform: scale(0.9) rotate(0) translate(0%,-42%);	
+	transform: scale(0.9) rotate(0) translate(0%,-37%);	
 }
 
 
@@ -849,4 +905,152 @@ html,body {
 #g-post-map .g-text-inner {
 	background: #fff;
 	color: #000;
+}
+
+.g-hint {
+	position: absolute;
+	bottom: 10%;
+	right:  6%;
+	text-align: right;
+}
+
+.g-hint-text{
+	max-width: 100px;
+	display: block;
+	font-size: 10px;
+	margin-top: -110%;
+	font-weight: 700;
+	text-align: right;
+	line-height: 1.6;
+}
+
+.g-hint img {
+	width: 50px;
+	animation: MoveUpDown 1s linear infinite;
+	position: absolute;
+	display: block;
+	right: 0;
+	bottom: 0;
+}
+
+
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 20px;
+  }
+}
+
+.g-num, .g-up, .g-down, .g-arr, .g-n {
+	display: inline-block;
+	position: relative;
+}
+
+.g-distance, .g-time, .g-dp {
+	font-size: 14px;
+}
+
+.g-dp {
+	font-size: 18px;
+	color:  #ffcc00;
+	font-weight: 700;
+	font-family: 'Varela Round', sans-serif;
+	position: relative;
+}
+
+
+.g-up {
+	margin-right: 5px;
+	color:  #ff5454;	
+}
+
+.g-down {
+	/*color:  #5bccff;*/
+}
+
+.g-up, .g-down {
+	padding-left: 8px;
+	position: relative;
+	font-size: 10px;
+}
+
+.g-up .g-n-bg, .g-down .g-n-bg, .g-dp-bg {
+	position: absolute;
+}
+
+.g-arr {
+	font-size: 8px;
+	position: absolute;
+	top: 1px;
+	left: 0;
+	font-weight: 700;
+}
+
+/*
+.g-n-bg {
+	animation: pulse-text 0.8s infinite;
+}
+
+
+@keyframes pulse-text {
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+
+  /*100% {
+  	transform: scale(1);
+  }*/
+/*}*/
+
+
+
+/* map styles */
+
+
+.g-detailed-map {
+	position: absolute;
+	top:  0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.g-detailed-map:after {
+	content: "";
+	display: block;
+	position: absolute;
+	/*background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 90%, rgba(0,0,0,1) 100%);*/
+	width: 100%;
+	height:  50%;
+	top:  0;	
+	left: 0;
+}
+
+.g-big-text-cn, .g-big-text-en {
+	color:  rgba(255,255,255,0.4);
+	/*text-shadow: none;*/
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+}
+
+.g-big-text-cn {
+	font-size: 12px;
+	letter-spacing: 36px;
+	top:  55%;
+	left: 5%;
+}
+
+.g-big-text-en {
+	font-size: 9px;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	top: 60%;
 }

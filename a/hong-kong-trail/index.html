@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hong Kong Trail</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
 	<!-- <div class="g-container"> -->
@@ -12,12 +15,33 @@
 		<div class="g-content"></div>
 		<div class="g-map"></div>	
 		<div class="g-meta">
-			<div class="g-dp">H000</div>
-			<div class="g-time">07:25</div>
+			<div class="g-right">
+				<div class="g-dp-cont"><div class="g-dp g-dp-bg">H000</div><div class="g-dp">H000</div></div>
+				<div class="g-time"><div class="g-hour">00</div>h<div class="g-minute">00</div>m</div>
+				<div class="g-distance"><div class="g-num">0</div> km</div>
+				<div class="g-altitude">
+					<div class="g-up">
+						<div class="g-arr">↑</div>
+						<div class="g-num"><div class="g-n g-n-bg">0</div><div class="g-n">0</div> m</div>
+					</div>
+					<div class="g-down">
+						<div class="g-arr">↓</div>
+						<div class="g-num"><div class="g-n g-n-bg">0</div><div class="g-n">0</div> m</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 		<div class="g-nav" id="g-nav">
 			<div class="g-nav-button g-nav-left" data-dir="left"></div>
 			<div class="g-nav-button g-nav-right" data-dir="right"></div>
+		</div>
+
+		<div class="g-hint">
+			<div class="g-hint-text g-text">
+				<div class="g-text-inner">Swipe or tap right to continue</div>
+			</div>
+			<img src="hand.png">
 		</div>
 	</div>
 	<!-- </div> -->
