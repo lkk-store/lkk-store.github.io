@@ -912,6 +912,7 @@ html,body {
 	bottom: 10%;
 	right:  6%;
 	text-align: right;
+	pointer-events: none;
 }
 
 .g-hint-text{
