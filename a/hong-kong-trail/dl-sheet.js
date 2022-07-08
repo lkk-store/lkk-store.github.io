@@ -79,7 +79,7 @@ function saveFile(auth) {
   const sheets = google.sheets({version: 'v4', auth});
   sheets.spreadsheets.values.get({
     spreadsheetId: '1z1cdAn9hz2KJMmM3L7LQFbPfH0R_wN1f6urIJ3G-voE',
-    range: 'Sheet1!A:Z',
+    range: 'v2!A:Z',
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;

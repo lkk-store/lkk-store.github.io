@@ -4,17 +4,17 @@ var sel = d3.select(".g-map").html("")
 sel = sel.append("div.g-map-inner");
 
 var hed = sel.append("div.g-hed-text")
-hed.append("div.g-text.g-text-cn.g-text-shadow").text("港島徑")
-hed.append("div.g-text.g-text-en.g-text-shadow").text("Hong Kong Trail")
+// hed.append("div.g-text.g-text-cn.g-text-shadow").text("港島徑")
+// hed.append("div.g-text.g-text-en.g-text-shadow").text("Hong Kong Trail")
 
 var width = 350;
 var height = width*0.4;
 
 d3.select(".g-body").style("margin-top", (innerHeight/2 - d3.select(".g-body").node().getBoundingClientRect().height/2) + "px")
 
-var dot, ids, wps, dotg, projection, trailpath, path, trailf, totalLength, wps, trackpts, totaldist, trailshape, hkg;
+var dot, ids, wps, dotg, projection, trailpath, path, trailf, totalLength, wps, trackpts, totaldist, trailshape, hkg, all;
 
-
+var dsvg, dw, dh, dproj, dpath, dline, dmap;
 
 var pts = {
 	"start": [114.14943400741993, 22.271377235993967],
@@ -38,10 +38,14 @@ d3.queue()
 	.defer(d3.json, "data.json")
 	.defer(d3.json, "parsed.json")
 	.defer(d3.json, "hkg.json")
+	.defer(d3.json, "contours.json")
+	.defer(d3.json, "all.json")
 	.awaitAll(function (err, res){
 
 		hkg = res[3];
+		contours = res[4];
 		trackpts = res[2];
+		all = res[5];
 		totaldist = trackpts[trackpts.length - 1].dist
 
 		var trail = res[0];
@@ -91,23 +95,26 @@ d3.queue()
 
 		var data = res[1];
 		ids = data.map(d => d.id);
-		var cont = d3.select(".g-content").html("");
+		var cont = d3.select(".g-content").html("")
 
 		var dp = cont.appendMany("div", data)	
 			.attr("data-time", d => d.time)
 			.attr("data-id", d => d.id)
+			.attr("data-labeled", d => d.labeled)
 			.attr("class", (d,i) => i == 0 ? "g-post g-post-active" : "g-post")
 			.attr("id", (d,i) => "g-post-" + d.id)
 			.style("background-image", d => "url(photos-100/h" + d.id + ".jpg)")
 
-		dmap = d3.select("#g-post-map").selectAppend("div.g-detailed-map");
-		drawDetailedMap();
-
-
-		var textcont = dp.append("div.g-text-cont").append("div.g-text-cont-inner");
-		textcont.append("div.g-text.g-text-cn").append("div.g-text-inner")
+		var textcont = dp.append("div.g-text-cont")
+			.style("opacity", d => !d.text_cn && !d.text_en ? "0" : "1")
+			.append("div.g-text-cont-inner");
+		textcont.append("div.g-text.g-text-cn")
+			.style("opacity", d => !d.text_cn ? "0" : "1")
+			.append("div.g-text-inner")
 			.text(d => addemojis(d.text_cn))
-		textcont.append("div.g-text.g-text-en").append("div.g-text-inner")
+		textcont.append("div.g-text.g-text-en")
+			.style("opacity", d => !d.text_en ? "0" : "1")
+			.append("div.g-text-inner")
 			.text(d => addemojis(d.text_en))
 
 	dotg = svg.append("g")
@@ -271,6 +278,7 @@ function move(id, hash) {
 
 	if (id == "cover") {
 		d3.select(".g-hint").style("display", "block")
+		d3.selectAll(".g-detailed-map").classed("g-hide", true)
 	} else {
 		d3.select(".g-hint").style("display", "none")
 	}
@@ -279,7 +287,7 @@ function move(id, hash) {
 	var n = ids.indexOf(id);
 	var el = d3.select("#g-post-" + id)
 
-	var duration = id == "cover" ? 6000 : 1000
+	var duration = id == "cover" ? 10000 : 1000
 
 	var prev = true;
 	
@@ -298,12 +306,16 @@ function move(id, hash) {
 
 	
 	var photoid = el.attr("data-id")
-	var time = el.attr("data-time")
+	var time = el.attr("data-time")	
 
-	el.style("background-image", "url(photos/h" + id + ".jpg)")
+	console.log()
+
+	var ext = el.attr("data-labeled") == "y" ? "-labeled" : "";
+
+	el.style("background-image", "url(photos/h" + id + ext + ".jpg)")
 
 	d3.select("#g-post-" + ids[n+1])
-		.style("background-image", "url(photos/h" + ids[n+1] + ".jpg)")
+		.style("background-image", "url(photos/h" + ids[n+1] + ext + ".jpg)")
 
 	// if (photoid == "cover" || photoid == "map") {
 	// 	d3.selectAll(".g-dp").text("H000");
@@ -319,10 +331,13 @@ function move(id, hash) {
 
 	// } else {
 		var idstring = id.substr(0,3);
-		idstring = idstring == "map" ? "000" : idstring == "101" || idstring == "102" ? "100" : idstring
+		idstring = idstring.indexOf("map") > -1 ? "000" : idstring == "101" || idstring == "102" ? "100" : idstring
 		d3.selectAll(".g-dp").transition().duration(0).text("H" + idstring);
 
-		if (id != "101" && id != "102") {
+		var previdstr = ids[prevcounter]
+		previdstr = !previdstr ? "000" : previdstr
+		previdstr = previdstr.substring(0,3)
+		if (id != "101" && id != "102" && previdstr != idstring) {
 			d3.select(".g-dp-bg")
 				.transition()	
 				.duration(0)
@@ -371,7 +386,9 @@ function move(id, hash) {
 		        	};
 			})
 
-		} else if (id != "map") {
+		} else if (id.indexOf("map") == -1) {
+
+			d3.select(".g-detailed-map").classed("g-hide", true);
 			d3.select(".g-time .g-hour").transition().duration(0).text(String(diffHrs).padStart(2, '0'));
 
 			var lastmin = d3.select(".g-time .g-minute").text();
@@ -398,17 +415,29 @@ function move(id, hash) {
 		}
 		
 
-	if (photoid == "map") {
+	if (photoid.indexOf("map") > -1) {
 
 		d3.select(".g-map").classed("g-hide", true)
 		d3.select(".g-meta").classed("g-hide", true)
+		d3.select(".g-detailed-map").classed("g-hide", false);
 		trailpath
 			.transition().duration(0)
+			.ease(d3.easeLinear)
 		  .attr("stroke-dasharray", totalLength + " " + totalLength)
 		  .attr("stroke-dashoffset", totalLength)
 
 
-		drawDetailedMap();
+
+		if (photoid == "map") {
+			drawDetailedMap();
+		} else {
+			if (!dmap) {
+				drawDetailedMap();
+			}
+			zoomMap();
+		}
+
+		
 
 	// } else if (photoid == "000") {
 
@@ -418,9 +447,12 @@ function move(id, hash) {
 	// 			  .attr("stroke-dasharray", totalLength + " " + totalLength)
 	// 			  .attr("stroke-dashoffset", totalLength)
 
+
+
 	} else {
 
 		d3.select(".g-map").classed("g-hide", false)
+		d3.select(".g-detailed-map").classed("g-hide", true)
 		d3.select(".g-meta").classed("g-hide", false)
 
 		var endnum = id == "cover" || id == "H000" ? 0: id.replace("H", "").slice(0, 3)
@@ -435,51 +467,49 @@ function move(id, hash) {
 		var startpt = trackpts.filter(d => d.dp == "H" + prevnum)[0];
 		var startpct = previd == "cover" || !startpt ? 0 : startpt.dist/totaldist;
 
-		var prevup = +d3.select(".g-up .g-n").html();
-		var prevdown = +d3.select(".g-down .g-n").html();
+		// var prevup = +d3.select(".g-up .g-n").html();
+		// var prevdown = +d3.select(".g-down .g-n").html();
 
-		dotg.transition()
-			.duration(duration)
-			.tween("pathTween", function(){return pathTween(trailpath)})
+		if (id == "102") {
+
+			dotg.transition()
+				.duration(0)
+				.ease(d3.easeLinear)
+				.tween("pathTween", function(){return pathTween(trailpath)})
+
+		} else {
+			dotg.transition()
+				.duration(duration)
+				.ease(d3.easeLinear)
+				.tween("pathTween", function(){return pathTween(trailpath)})
+		}
+		
 
 		if (endpt) {
 
 			var lastdist = d3.select(".g-distance .g-num").text();
-			d3.select(".g-distance .g-num")
-			.transition()
-			.ease(d3.easeLinear)
-			.duration(duration)
-			.tween("text", function(d) {
-			        var element = d3.select(this);
-			        var i = d3.interpolate(lastdist, Math.round(endpt.dist*10)/10);
-			        return function(t) {
-			            element.text( (Math.round(i(t)*10)/10).toFixed(1) );
-			        };
-			})
 
-			d3.selectAll(".g-up .g-n")
+			lastdist = id == "cover" ? 0 : lastdist;
+			endpt = id == "000" ? trackpts[0] : id == "100" ? trackpts[trackpts.length - 1] : endpt;
+
+			if (id == '000') {
+				d3.select(".g-distance .g-num")
+					.transition()
+					.text("0.0")
+			} else {
+
+				d3.select(".g-distance .g-num")
 				.transition()
 				.ease(d3.easeLinear)
 				.duration(duration)
-				.tween("text", function(d){
-					var element = d3.select(this);
-					var i = d3.interpolate(prevup, Math.round(endpt.totalup));
-					return function(t) {
-					    element.text( Math.round(i(t)) );
-					};
+				.tween("text", function(d) {
+				        var element = d3.select(this);
+				        var i = d3.interpolate(lastdist, Math.round(endpt.dist*10)/10);
+				        return function(t) {
+				            element.text( (Math.round(i(t)*10)/10).toFixed(1) );
+				        };
 				})
-
-			d3.selectAll(".g-down .g-n")
-				.transition()
-				.ease(d3.easeLinear)
-				.duration(duration)
-				.tween("text", function(d){
-					var element = d3.select(this);
-					var i = d3.interpolate(prevdown, Math.round(endpt.totaldown));
-					return function(t) {
-					    element.text( Math.round(i(t)) );
-					};
-				})
+			}
 
 			if (id == "cover") {
 				d3.selectAll(".g-dp")
@@ -500,10 +530,12 @@ function move(id, hash) {
 			var r = d3.interpolate(totalLength*startpct, totalLength*endpct);
 			return function(t){
 				if (!isNaN(r(t))) {
+
 					trailpath
 						.transition().duration(0)
 					  .attr("stroke-dasharray", (r(t)/totalLength)*totalLength + " " + totalLength)
 					  .transition()
+					  	.ease(d3.easeLinear)
 					    .attr("stroke-dashoffset", 0)
 
 					var point = trailpath.node().getPointAtLength(r(t));
@@ -519,19 +551,20 @@ function move(id, hash) {
 }
 
 
-
 function drawDetailedMap() {
 
-	dmap.html("");
+	dmap = d3.select(".g-detailed-map").html("");
 
-	var dw = dmap.node().getBoundingClientRect().width;
-	var dh = dmap.node().getBoundingClientRect().height;
-	var dsvg = dmap.append("svg").attr("width", dw).attr("height", dh);
+	dw = dmap.node().getBoundingClientRect().width;
+	dh = dmap.node().getBoundingClientRect().height;
+	dsvg = dmap.append("svg").attr("width", dw).attr("height", dh);
 
 	dsvg = dsvg.append("g").translate([dw*0.14,0])
 
-	var dproj = d3.geoMercator().fitSize([dw*0.7, dh], trailshape);
-	var dpath = d3.geoPath().projection(dproj);
+	var hkg_shape = topojson.feature(all, all.objects.hkg)
+
+	dproj = d3.geoMercator().fitSize([dw*0.7, dh], trailshape);
+	dpath = d3.geoPath().projection(dproj);
 	var dlabels = [
 		[114.14943400741993, 22.271377235993967, ["山頂","The Peak"], "start", 5, -10, 0],
 		[114.2455999, 22.2447003, ["大浪灣","Big Wave", "Bay"], "start", 8, -20, 2800],
@@ -540,22 +573,31 @@ function drawDetailedMap() {
 		[114.2436948721778, 22.235820773514856, ["打爛埕頂山", "Shek O", "Peak", "284m"], "start", 5, 10, 2200]
 	]
 
-	dsvg.appendMany("path", topojson.feature(hkg, hkg.objects["hkg-dissolved"]).features)
+	dsvg.appendMany("path.g-hkg-shape", hkg_shape.features)
 		.style("stroke-width", 0.3)
+		.style("fill", "none")
 		.style("stroke", "rgba(255,255,255,0.5)")
 		.attr("d", dpath)
 
-	var dline = d3.line()
+	// var contourf = topojson.feature(contours, contours.objects["contours100-clipped"]).features
+	// contourf = contourf.sort((a,b) => a.geometry.coordinates.length - b.geometry.coordinates.length)
+	// dsvg.append("g.g-contours").appendMany("path", contourf)
+	// 	.style("stroke-width", 0.3)
+	// 	.style("fill", "none")
+	// 	.style("stroke", "rgba(255,255,255,0.2)")
+	// 	.attr("d", dpath)
+
+	dline = d3.line()
       .x(function(d) { return dproj(d)[0]; })
       .y(function(d) { return dproj(d)[1]; })
       .curve(d3.curveBasis);
 		
-	var dpath = dsvg.append("path.g-trail-path")
+	dtrailpath = dsvg.append("path.g-trail-path")
 				.style("filter", "url(#drop-shadow)")
 				.attr("d", dline(trailf[0].geometry.coordinates))
 
-	var dtotalLength = dpath.node().getTotalLength();
-	dpath.transition()
+	var dtotalLength = dtrailpath.node().getTotalLength();
+	dtrailpath.transition()
 	.attr("stroke-dasharray", dtotalLength + " " + dtotalLength)
 	.attr("stroke-dashoffset", dtotalLength)
 	.transition()
@@ -589,4 +631,75 @@ function drawDetailedMap() {
 
 	dmap.append("div.g-big-text.g-big-text-en")
 		.text("Hong Kong Island")
+}
+
+function zoomMap() {
+
+	var duration = 2000;
+	dsvg.transition().duration(duration)
+		.attr("transform", "scale(0.28) translate(" + dw/0.52 + "," + dh/0.6 + ")")
+	d3.select(".g-hkg-shape")
+		.style("fill", "rgba(255,255,255,0")
+		.transition().duration(duration)
+		.style("stroke-width", 0.5).style("stroke", "rgba(255,255,255,1)")
+		.style("fill", "rgba(255,255,255,0.06")
+
+	dsvg.selectAll(".g-labels").remove();
+	dmap.selectAll(".g-big-text").remove();
+
+
+	var trails = ["t_hk", "t_lantau", "t_maclehose", "t_wilson"]
+	var trailnames = ["港島徑//Hong Kong Trail", "鳳凰徑//Lantau Trail", "麥理浩徑//MacLehose Trail", "衞奕信徑//Wilson Trail"]
+
+	trails.forEach(function(trail, ti){
+
+		var trailf = topojson.feature(all, all.objects[trail]).features
+
+		if (dtrailpath && trail == "t_hk") {
+			dtrailpath.transition().duration(0).attr("stroke-dashoffset", 0);	
+		} else {
+			dsvg.appendMany("path.g-trail-path.g-four-trail-path", trailf)
+				.attr("id", (d,i) => trail + "_" + i)
+				.style("stroke", trail == "t_hk" ? "#ffcc00" : "rgba(2555,255,255,0.7)")
+				.style("stroke-width", 4)
+				.attr("d", dpath)	
+		}
+
+		if (trail == "t_wilson") {
+			dsvg.append("path.g-trail-path.g-four-trail-path")
+				.attr("id", "hi")
+				.style("stroke", "rgba(2555,255,255,0.5)")
+				.style("stroke-width", 2)
+				.attr("d", dline([[114.214945,22.284631], [114.23487,22.30812]]))
+		}
+
+		var dd = dmap.append("div.g-trail-label.g-tl-" + trail)
+		
+		dd.style("opacity", 0)
+			.transition()
+			.delay(duration)
+			.duration(1000)
+			.style("opacity", 1)
+
+		dd.append("div.g-text-cn").text(trailnames[ti].split("//")[0])
+		dd.append("div.g-text-en").text(trailnames[ti].split("//")[1])
+	})
+
+	dsvg.selectAll(".g-four-trail-path").each(function(){
+
+		var el = d3.select(this)
+		var id = el.attr("id");
+		var dtotalLength = el.node().getTotalLength();
+
+		el.transition()
+		.attr("stroke-dasharray", dtotalLength + " " + dtotalLength)
+		.attr("stroke-dashoffset", dtotalLength)
+		.transition()
+			.delay(id == "hi" ? 300 : 0)
+		  .duration(id.indexOf("hk") > -1 ? 0 : id == "hi" ? 500 : duration)
+		  .ease(d3.easeLinear)
+		  .attr("stroke-dashoffset", 0);
+
+	})
+
 }

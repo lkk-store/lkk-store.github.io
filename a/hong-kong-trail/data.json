@@ -2,22 +2,34 @@
   {
     "nodp": "",
     "labeled": "",
+    "keep": "y",
     "id": "cover",
-    "time": "07:25",
-    "text_en": "It's June 27, 2022 and I hiked the 45-km Hong Kong Trail. This is the longest distance I've ever done in a single day. I'm hoping to walk the four long-distance trails in Hong Kong this year, so I'm starting with the easiest one.",
-    "text_cn": "2022 年 6 月 27 日，我去咗行45公里嘅港島徑。從來未試一嘢行咁多路，但今年想行哂四徑，今日由最簡單嗰條開始。"
+    "time": "",
+    "text_en": "Hiking the Hong Kong Trail",
+    "text_cn": "港島徑全走"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "map",
     "time": "",
-    "text_en": "A little detail about where the trail goes, it goes across Hong Kong Island from the Peak to Big Wave Bay on the southeast end. I'm also making a more detailed version of this map for print, if you want to see it call me!!",
-    "text_cn": "介紹番條路行邊, 成個香港島打橫由山頂行到去東南邊嘅大浪灣。我整緊一個 detail 嘅實體地圖, 如果你想睇就打俾我!!"
+    "text_en": "Hong Kong Trail is a 45-kilometer trail that traverses Hong Kong Island from Victoria Peak to Big Wave Bay.",
+    "text_cn": "介紹番條路線先，港島徑全程 45 公里，打橫由山頂行到去大浪灣。"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
+    "id": "map2",
+    "time": "",
+    "text_en": "This is one of four long distance hiking trails in Hong Kong. I'm hoping to hike all of them, so I'm starting with the easiest one.",
+    "text_cn": "呢條係香港四條長途遠足徑之一，我諗住行哂去，就由最簡單嗰條開始。"
+  },
+  {
+    "nodp": "",
+    "labeled": "",
+    "keep": "",
     "id": "000",
     "time": "07:25",
     "text_en": "Here we go!",
@@ -25,183 +37,206 @@
   },
   {
     "nodp": "",
-    "labeled": "",
+    "labeled": "y",
+    "keep": "",
     "id": "001",
     "time": "07:31",
-    "text_en": "First distance post!",
-    "text_cn": "第一個標距柱!"
+    "text_en": "The trail is marked by these distance posts every 500 meters. There are 100 of them, H001, H002, H003... H100. I'm gonna try to take a photo with each one.",
+    "text_cn": "港島徑每500米會有一個「標距柱」，成條徑有100個 H001, H002, H003... H100咁樣，我諗住試下每個標距柱都影張相作為記錄。"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "002",
     "time": "07:33",
-    "text_en": "Couldn't find the second distance post, I even backtracked to try to find it... Instead here's a pic of the million dollar view from the peak, and also my foot.",
-    "text_cn": "揾唔到第二個標距柱... 我番轉頭揾都揾唔到, 唯有拎隻腳同啲山頂風景合照"
+    "text_en": "But off to a bad start, I couldn't find the second distance post...",
+    "text_cn": "但係一嚟就揾唔到第二個標距柱... "
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "003",
     "time": "07:44",
-    "text_en": "Starting to think if I'm really going to take a pic at each of these distance posts... They put these every 500 meters, there are 100 of them.",
-    "text_cn": "開始考慮我係咪真係要每個影, 每 500 米一個, 總共有 100 個"
+    "text_en": "But found the third one!",
+    "text_cn": "第三個又揾得番!"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "004",
     "time": "07:49",
-    "text_en": "But look at that view!",
-    "text_cn": "風景好靚, 決定繼續影"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "005",
     "time": "07:57",
-    "text_en": "Ok I missed 5 but hey check out this sign explaning the distance posts!",
-    "text_cn": "Miss 咗 5 但影低咗呢個介紹啲標距柱嘅牌 :lol:"
+    "text_en": "Couldn't find the 5th one... But found a sign that explains the distance posts.",
+    "text_cn": "揾唔倒第五個... 但揾到一個介紹啲標距柱嘅牌"
   },
   {
     "nodp": "",
-    "labeled": "y",
+    "labeled": "",
+    "keep": "",
     "id": "006",
     "time": "08:05",
-    "text_en": "Ok I also missed 6, but took one of this beautiful view from Mount High West!",
-    "text_cn": "Miss 埋 6 :tear: 但喺西高山影低咗個靚景!"
+    "text_en": "Well, I couldn't find the 6th one either... But the view from High West was real nice.",
+    "text_cn": "又揾唔倒第六個... 不過西高山個景好靚"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "007",
     "time": "08:05",
-    "text_en": "I guess they had to change the map grid ID when they updated the maps recently... now there are these ugly pieces of paper covering parts of the sign...",
-    "text_cn": "我估係地政柱更新地圖嘅時候改咗啲坐標號碼, 啲標距柱會有啲核突紙痴喺上面..."
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "008",
     "time": "08:11",
-    "text_en": "Good weather, good views",
-    "text_cn": "好風景好天氣"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "009",
     "time": "08:17",
-    "text_en": "Blurry feet",
-    "text_cn": "隻腳郁咗"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "010",
     "time": "08:22",
-    "text_en": "Not blurry feet",
-    "text_cn": "呢張冇郁"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "011",
     "time": "08:28",
-    "text_en": "hi its me again",
-    "text_cn": "又係我"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "012",
     "time": "08:33",
-    "text_en": "same old",
-    "text_cn": "一樣"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "013",
     "time": "08:39",
-    "text_en": "hi",
-    "text_cn": "hi"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "014",
     "time": "08:44",
-    "text_en": "bored yet?",
-    "text_cn": "悶未"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "015",
     "time": "08:48",
-    "text_en": "honestly its kind of hard to get a pic of your feet at this angle",
-    "text_cn": "其實咁樣影隻腳都幾高難度"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "016",
     "time": "08:49",
-    "text_en": "missed 16 but here's a pic of a reservoir building from 1977, the type is really nice",
-    "text_cn": "miss 咗 16, 但影低咗水務處棟嘢, 我成日覺得呢啲樓個字體好靚"
+    "text_en": "Missed 16 :tear:",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "017",
     "time": "09:01",
-    "text_en": "missed 17! I thought I wasn't going to miss them again but here we are. but I snapped a pic of the beauitful sign posts of the Hong Kong Trail. These are scattered along the whole trail.",
-    "text_cn": "missed 17! 之前十幾個都冇 miss 以為好穩陣, 點知又 miss... 但影低咗呢個好靚嘅港島徑牌, 一路行都會間唔中見到"
+    "text_en": "Missed 17 :tear:",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "018",
     "time": "09:01",
-    "text_en": "back at it",
-    "text_cn": "又嚟"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "019",
     "time": "09:05",
-    "text_en": "woods",
-    "text_cn": "密林"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "020",
     "time": "09:09",
-    "text_en": "flat shady woods, good speed",
-    "text_cn": "呢段平路又有蔭涼, 行得勁快"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "021",
     "time": "09:13",
-    "text_en": "treeeeeessss",
-    "text_cn": "花草樹木"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "022",
     "time": "09:17",
-    "text_en": "oof the sun's back",
-    "text_cn": "曬"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "023",
     "time": "09:21",
     "text_en": "It's Aberdeen! Bye Jumbo Seafood Restaurant",
@@ -210,14 +245,16 @@
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "024",
     "time": "09:26",
-    "text_en": "more trees",
-    "text_cn": "好多草"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "025",
     "time": "09:31",
     "text_en": "a quarter of the way done!!!!!",
@@ -226,70 +263,70 @@
   {
     "nodp": "",
     "labeled": "",
-    "id": "025a",
-    "time": "09:35",
-    "text_en": "passed this foot massage park, but no time to stop!!!",
-    "text_cn": "經過個石春路公園但邊有時間玩, 趕路要緊"
-  },
-  {
-    "nodp": "",
-    "labeled": "",
+    "keep": "",
     "id": "026",
     "time": "09:39",
-    "text_en": "going up",
-    "text_cn": "上山中"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "027",
     "time": "09:44",
-    "text_en": "thought about quitting taking pics",
-    "text_cn": "有諗過放棄唔繼影"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "028",
     "time": "09:48",
-    "text_en": "but I've taken so many already!",
-    "text_cn": "但已經影咗好多張!!!"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "029",
     "time": "09:52",
-    "text_en": "ok not giving up",
-    "text_cn": "ok 唔放棄"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "030",
     "time": "09:58",
-    "text_en": "feeling pretty good so far",
-    "text_cn": "行到呢度暫時都輕鬆"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "031",
     "time": "10:02",
-    "text_en": "not too hot in the morning",
-    "text_cn": "朝早唔太熱"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "032",
     "time": "10:06",
-    "text_en": "the trail was mostly flat so far",
-    "text_cn": "暫時都平路多"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "033",
     "time": "10:14",
     "text_en": "A third of the way done just like that",
@@ -298,86 +335,88 @@
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "034",
     "time": "10:22",
-    "text_en": "So happy to see each distance post",
-    "text_cn": "每到一個標距柱其實都好開心"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "035",
     "time": "10:20",
-    "text_en": "They are like my new best friends",
-    "text_cn": "每一個都係我嘅好朋友"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "036",
     "time": "10:33",
-    "text_en": "Gotta snap a pic with each of them!!",
-    "text_cn": "每一個都要同佢地合照"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "037",
     "time": "10:41",
-    "text_en": "still feeling pretty good",
-    "text_cn": "暫時仲係輕鬆"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "038",
     "time": "10:46",
-    "text_en": "bamboo trees!",
-    "text_cn": "竹林"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "039",
     "time": "10:51",
-    "text_en": "flash foot",
-    "text_cn": "快閃腳"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "040",
     "time": "10:58",
-    "text_en": "its so good everytime i hit a 10th distance post",
-    "text_cn": "每次去到零尾都好 high"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "041",
     "time": "11:04",
-    "text_en": "then you're back at 1",
-    "text_cn": "又由 1 開始"
-  },
-  {
-    "nodp": "y",
-    "labeled": "",
-    "id": "041a",
-    "time": "10:56",
-    "text_en": "beautiful old stone bridge",
-    "text_cn": "古橋"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "042",
     "time": "11:13",
-    "text_en": "more foot",
-    "text_cn": "腳 again"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "y",
     "labeled": "",
+    "keep": "",
     "id": "042a",
     "time": "11:15",
     "text_en": "a lot of the trail goes along these catchment channels, its kind of boring but its easy walking",
@@ -386,110 +425,106 @@
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "043",
     "time": "11:18",
-    "text_en": "almost to the halfway point",
-    "text_cn": "就嚟行完一半"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "044",
     "time": "11:26",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "nodp": "",
+    "labeled": "",
+    "keep": "",
+    "id": "045",
+    "time": "11:37",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "nodp": "",
+    "labeled": "",
+    "keep": "",
+    "id": "046",
+    "time": "11:46",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "nodp": "y",
+    "labeled": "",
+    "keep": "",
+    "id": "047",
+    "time": "11:40",
+    "text_en": "Missed 47 :tear:",
+    "text_cn": ""
+  },
+  {
+    "nodp": "",
+    "labeled": "",
+    "keep": "",
+    "id": "048",
+    "time": "11:58",
     "text_en": "there's a gas station after 50",
     "text_cn": "50 之後會經過一個油站"
   },
   {
     "nodp": "",
     "labeled": "",
-    "id": "045",
-    "time": "11:37",
+    "keep": "",
+    "id": "049",
+    "time": "12:03",
     "text_en": "so looking forward to it",
     "text_cn": "好 x 期待"
   },
   {
     "nodp": "",
     "labeled": "",
-    "id": "046",
-    "time": "11:46",
-    "text_en": "am i there yet",
-    "text_cn": "幾時到"
-  },
-  {
-    "nodp": "y",
-    "labeled": "",
-    "id": "047",
-    "time": "11:40",
-    "text_en": "I WAS ON SUCH A ROLL BUT THEN I MISSED 47",
-    "text_cn": "不能相信 MISS 咗 47"
-  },
-  {
-    "nodp": "",
-    "labeled": "",
-    "id": "048",
-    "time": "11:58",
-    "text_en": "probably way too excited about my date with the gas station",
-    "text_cn": "應該係太期待去油站飲飲食食"
-  },
-  {
-    "nodp": "",
-    "labeled": "",
-    "id": "049",
-    "time": "12:03",
-    "text_en": "can you feel how sunny it is",
-    "text_cn": "feel 唔 feel 到有幾曬"
-  },
-  {
-    "nodp": "",
-    "labeled": "",
+    "keep": "",
     "id": "050",
     "time": "12:11",
-    "text_en": "i almost missed this one!!! it was hidden in the damn bushes!!!!!!",
-    "text_cn": "差啲 miss q 咗!!!! 收撚埋咗喺啲草叢入面!!!!"
+    "text_en": "i almost missed this one!!! it was hidden in the bushes!!!!!!",
+    "text_cn": "差啲 miss 咗!!!! 收埋咗喺啲草叢入面!!!!"
   },
   {
     "nodp": "y",
     "labeled": "",
+    "keep": "",
     "id": "050a",
     "time": "12:24",
     "text_en": "lunch!!!!!!!!!!",
     "text_cn": "飯呀!!!!!!!"
   },
   {
-    "nodp": "y",
-    "labeled": "",
-    "id": "050b",
-    "time": "12:26",
-    "text_en": "falling asleep while standing, i know how you feel man",
-    "text_cn": "企喺度都瞓得著我明呀"
-  },
-  {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "051",
     "time": "12:53",
-    "text_en": "back at it but missed 51!!! the next part overlaps with the Wilson Trail for a bit, its a 78-km hike that hopefully I'll attempt next",
-    "text_cn": "重新出發但 miss 咗 51! 跟住嗰 part 會同衛徑重疊一小段, 遲下再番嚟行衛徑"
+    "text_en": "back at it but missed 51 :tear: the next part overlaps with the Wilson Trail for a bit, its a 78-km hike that hopefully I'll attempt next",
+    "text_cn": "重新出發但 miss 咗 51 :tear: 跟住嗰 part 會同衛徑重疊一小段, 遲下再番嚟行衛徑"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "052",
     "time": "12:53",
-    "text_en": "hello 52",
-    "text_cn": "hello 52"
-  },
-  {
-    "nodp": "y",
-    "labeled": "",
-    "id": "052a",
-    "time": "12:57",
-    "text_en": "thanks canada",
-    "text_cn": "thanks canada"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "053",
     "time": "12:59",
     "text_en": "twinning!",
@@ -498,6 +533,7 @@
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "054",
     "time": "13:09",
     "text_en": "starting to get real hot",
@@ -506,38 +542,43 @@
   {
     "nodp": "y",
     "labeled": "y",
+    "keep": "",
     "id": "054a",
     "time": "13:12",
     "text_en": "look where i started this morning!!!!!!",
-    "text_cn": "今朝由呢撚度開始!!!!"
+    "text_cn": "今朝由呢度開始!!!!"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "055",
     "time": "13:16",
-    "text_en": "uphill, beating sun, no shelter",
-    "text_cn": "上斜, 曬, 冇遮冇掩 "
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "056",
     "time": "13:20",
-    "text_en": "thanks tree",
-    "text_cn": "多謝樹"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "057",
     "time": "13:32",
-    "text_en": "going up hill is ok, but its the sun thats killer",
-    "text_cn": "上斜唔緊要, 暴曬先最痛苦"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "057a",
     "time": "13:32",
     "text_en": "splitting up with wilson trail",
@@ -546,206 +587,232 @@
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "058",
     "time": "13:38",
-    "text_en": "on fire",
-    "text_cn": "曬"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "058a",
     "time": "13:42",
-    "text_en": "first peaks done!!!! 435m is not a lot but with the sun and the fact that i've done around 25km already, it was not easy. but someone made this sign that shows the date?? i guess someone comes up and turns it to the present date every morning? anyway, here's proof that I was on this mountain on June 27 2022.",
-    "text_cn": "上咗山!!! 435米雖然唔係好高, 但好 x 熱好曬同埋已經行咗 25km同埋食咗個飯太飽有啲想嘔, 所以都唔容易... 山頂有呢個好搞笑嘅日期牌, 我估每日邊個上嚟先就轉番去嗰日嘅日子..? anyway... 此相為證我喺 2022 年 6 月 27 日登上畢拿山"
+    "text_en": "Bagged a peak! 435m is not that high but with the sun and the fact that I've done around 25km already and I just ate a lot for lunch, it was not easy. Also, someone made a sign that shows the date! So here's proof that I was on this mountain on June 27 2022.",
+    "text_cn": "征服咗座山! 435米雖然唔係好高，但好熱好曬同埋已經行咗25km再食咗個飯太飽有啲想嘔，所以都唔容易... 山頂有呢個好搞笑嘅日期牌，此相為證我喺 2022 年 6 月 27 日登上畢拿山。"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "059",
     "time": "13:48",
-    "text_en": "running downhill",
-    "text_cn": "落山可以駛出我拿手嘅彈跳法"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "060",
     "time": "13:53",
-    "text_en": "bam! 60!",
-    "text_cn": "bam! 60!"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "061",
     "time": "13:59",
-    "text_en": "the sun burns",
-    "text_cn": "曬到盲咗"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "062",
     "time": "14:10",
-    "text_en": "missed 62!!! but here's a pic of the beauiful tai tam reservoir! weather is beautiful but real real real hot",
-    "text_cn": "missed 62!!! 但影低咗大潭水塘! 好 x 好天但好很熱"
+    "text_en": "missed 62 :tear: but took a pic of the beauiful tai tam reservoir",
+    "text_cn": "miss 咗 62 但影低咗大潭水塘"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "063",
     "time": "14:11",
-    "text_en": "i guess taking pics of the distance posts doesnt really show what the trail is like",
-    "text_cn": "發覺淨係影呢啲牌成日都影唔到其實條徑點樣"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "064",
     "time": "14:19",
-    "text_en": "but too tired to come up with a new strategy",
-    "text_cn": "但太攰廢事轉"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "065",
     "time": "14:25",
-    "text_en": "65 i guess thats almost 2/3",
-    "text_cn": "65好似開始見到家鄉"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "066",
     "time": "14:31",
-    "text_en": "33 more to go",
-    "text_cn": "仲有 33 個牌"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "067",
     "time": "14:38",
-    "text_en": "67 i dont care",
-    "text_cn": "67 i dont care"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "068",
     "time": "14:46",
-    "text_en": "hi 68",
-    "text_cn": "hello 68"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "069",
     "time": "14:52",
-    "text_en": "cant feel my legs",
-    "text_cn": "開始 feel 唔到對腳"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "070",
     "time": "14:58",
-    "text_en": "sevenfuckingty",
-    "text_cn": "70 呀 X 你老母"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "071",
     "time": "15:00",
-    "text_en": "shade",
-    "text_cn": "陰頂感動"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "072",
     "time": "15:06",
-    "text_en": "stay shady please",
-    "text_cn": "繼續陰唔該"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "074",
     "time": "15:16",
     "text_en": "wheres 73???",
-    "text_cn": "wheres 73???"
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "075",
     "time": "15:21",
-    "text_en": "sunny again",
-    "text_cn": "又曬"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "076",
     "time": "15:26",
-    "text_en": "cant see shit",
-    "text_cn": "盲了"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "077",
     "time": "15:31",
-    "text_en": "kind of feel like my soul has left my body",
-    "text_cn": "開始個人冇咗靈魂"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "078",
     "time": "15:36",
-    "text_en": "but i keep walking",
-    "text_cn": "但繼續行"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
-    "labeled": "y",
+    "labeled": "",
+    "keep": "",
     "id": "079",
     "time": "15:43",
-    "text_en": "there's this emergency phone next to 79 that's out of order",
-    "text_cn": "有個壞咗嘅求救電話喺 79 隔離"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "080",
     "time": "15:48",
-    "text_en": "20 left!!!!!!",
-    "text_cn": "得番20咋大佬"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "081",
     "time": "15:54",
-    "text_en": "this was probably the longest 10km of my life",
-    "text_cn": "應該係我成世人最難捱嘅10k"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "082",
     "time": "16:00",
-    "text_en": "the afternoon sun is brutal",
-    "text_cn": "下晝個太陽係最 x 猛"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "083",
     "time": "16:08",
     "text_en": "beautiful sign post",
@@ -754,118 +821,124 @@
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "084",
     "time": "16:18",
-    "text_en": "the sun is not a joke",
-    "text_cn": "曬到冇朋友"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "085",
     "time": "16:28",
-    "text_en": "this part is an uphill climb to dragons back",
-    "text_cn": "上緊山去龍脊"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "y",
     "labeled": "",
-    "id": "085a",
-    "time": "16:32",
-    "text_en": "one hill down but theres more",
-    "text_cn": "到咗但未上完"
-  },
-  {
-    "nodp": "y",
-    "labeled": "",
+    "keep": "",
     "id": "085b",
     "time": "16:42",
-    "text_en": "i didn't take a break between 0-50 and didnt take a break until now, but it was way too hot and the sun was way to strong and i saw this gazebo and i was like man i gotta take a break, really needed it",
+    "text_en": "I didn't take a break between 0-50 and didn't take a break until now, but it was way too hot and the sun was way to strong and I saw this gazebo and I was like man i gotta take a break, really needed it",
     "text_cn": "我由0-50都冇break, 跟住 lunch 之後都冇停過, 但呢 part 上山實在太太太熱同太太太曬, 跟住見到呢個涼亭忍唔住要唞下"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "086",
     "time": "16:46",
-    "text_en": "feeling much better after my break and some snacks, beautiful view",
-    "text_cn": "唞完食咗嘢開始有力繼續上, 個景好靚"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "087",
     "time": "16:55",
-    "text_en": "it was not easy",
-    "text_cn": "唔係咁易呀葉師傅"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "y",
     "labeled": "",
+    "keep": "",
     "id": "087a",
     "time": "16:58",
-    "text_en": "last peak mother******",
+    "text_en": "last peak :tear:",
     "text_cn": "最後一個山呀阿媽"
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "088",
     "time": "17:03",
-    "text_en": "there's like 10 layers of sweat on there",
-    "text_cn": "啲汗大概有十浸"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "089",
     "time": "17:09",
-    "text_en": "it was so hot you wont believe it",
-    "text_cn": "真係好曬唔係講笑"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "090",
     "time": "17:16",
-    "text_en": "90 holy shit",
-    "text_cn": "90 呀就嚟喊得出"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "091",
     "time": "17:24",
-    "text_en": "the last 10 felt like each were so so so far apart",
-    "text_cn": "最後10個牌每個都好似隔咗好x遠"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "092",
     "time": "17:27",
-    "text_en": "home stretch for real",
-    "text_cn": "真係望見家鄉"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "093",
     "time": "17:36",
-    "text_en": "when is this over",
-    "text_cn": "幾時完"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "094",
     "time": "17:43",
-    "text_en": "cant stop wont stop",
-    "text_cn": "不會停"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "095",
     "time": "17:51",
     "text_en": "last five!!!!",
@@ -874,46 +947,43 @@
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "096",
     "time": "17:56",
-    "text_en": "didnt even need that headlight i brought",
-    "text_cn": "頭燈都唔駛"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
-    "id": "096a",
-    "time": "17:58",
-    "text_en": "last stretch all the way down to the beach",
-    "text_cn": "最後直路衝落大浪灣"
-  },
-  {
-    "nodp": "",
-    "labeled": "",
+    "keep": "",
     "id": "097",
     "time": "18:00",
-    "text_en": "cant believe it",
-    "text_cn": "媽我真的要完成了"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "098",
     "time": "18:08",
-    "text_en": "running",
-    "text_cn": "跑緊落山"
+    "text_en": "",
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "099",
     "time": "18:12",
     "text_en": "99!",
-    "text_cn": "快!"
+    "text_cn": ""
   },
   {
     "nodp": "",
     "labeled": "",
+    "keep": "",
     "id": "100",
     "time": "18:16",
     "text_en": "FIN!!!!!!!!!!! the most unceremonious finish sign",
@@ -922,14 +992,7 @@
   {
     "nodp": "",
     "labeled": "",
-    "id": "101",
-    "time": "",
-    "text_en": "",
-    "text_cn": ""
-  },
-  {
-    "nodp": "",
-    "labeled": "",
+    "keep": "",
     "id": "102",
     "time": "18:27",
     "text_en": "cheers",
