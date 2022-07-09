@@ -14,7 +14,7 @@ d3.select(".g-body").style("margin-top", (innerHeight/2 - d3.select(".g-body").n
 
 var dot, ids, wps, dotg, projection, trailpath, path, trailf, totalLength, wps, trackpts, totaldist, trailshape, hkg, all;
 
-var dsvg, dw, dh, dproj, dpath, dline, dmap;
+var dsvg, dw, dh, dproj, dpath, dline, dmap, data;
 
 var pts = {
 	"start": [114.14943400741993, 22.271377235993967],
@@ -29,7 +29,7 @@ var prevcounter = 0;
 var totaltime = 0;
 
 function addemojis(x) {
-	return x.replace(":lol:", "😂").replace(":tear:", "🥲")
+	return x.replace(":lol:", "😂").replace(":tear:", "🥲").replace(":smile:", "🙂")
 }
 
 
@@ -93,7 +93,7 @@ d3.queue()
 
 		totalLength = Math.ceil(trailpath.node().getTotalLength());
 
-		var data = res[1];
+		data = res[1];
 		ids = data.map(d => d.id);
 		var cont = d3.select(".g-content").html("")
 
@@ -104,10 +104,20 @@ d3.queue()
 			.attr("class", (d,i) => i == 0 ? "g-post g-post-active" : "g-post")
 			.attr("id", (d,i) => "g-post-" + d.id)
 			.style("background-image", d => "url(photos-100/h" + d.id + ".jpg)")
+			.style("transform", (d,i) => "translate(" + i*100 + "% ,0)")
 
 		var textcont = dp.append("div.g-text-cont")
 			.style("opacity", d => !d.text_cn && !d.text_en ? "0" : "1")
 			.append("div.g-text-cont-inner");
+
+		d3.select("#g-post-cover .g-text-cont-inner")
+			.append("div.g-text.g-title.g-text-shadow")
+			.text("香港四徑")
+
+		d3.select("#g-post-cover .g-text-cont-inner")
+			.append("div.g-text.g-title.g-title-en.g-text-shadow")
+			.text("Hong Kong Four Trails")
+
 		textcont.append("div.g-text.g-text-cn")
 			.style("opacity", d => !d.text_cn ? "0" : "1")
 			.append("div.g-text-inner")
@@ -116,6 +126,8 @@ d3.queue()
 			.style("opacity", d => !d.text_en ? "0" : "1")
 			.append("div.g-text-inner")
 			.text(d => addemojis(d.text_en))
+
+
 
 	dotg = svg.append("g")
 		.translate(projection([pts.start[0], pts.start[1]]))
@@ -178,6 +190,18 @@ d3.selectAll(".g-nav-button").on("click", function(){
 	}
 
 	move(counter)
+})
+
+d3.selectAll(".g-fastforward").on("click", function(){
+
+	var next = data.filter((d,i) => i > counter && (d.text_en || d.text_cn) && d.id != "016" && d.id != "017" && d.id != "047" && d.id != "073")[0];
+
+	prevcounter = counter;
+	counter = data.indexOf(next);
+	move(counter)
+
+	d3.select(".g-hint-2").style("display", "none");
+
 })
 
 
@@ -269,11 +293,12 @@ function handleTouchMove(evt) {
 
 
 var starttime = new Date(2021,5,27,7,25);
-function move(id, hash) {
+function move(id, hash, fastforward) {
 
 	// d3.select("#g-post-" + ids[prevcounter]).classed("g-post-prev", false);
 	// d3.select(".g-post-active").classed("g-post-prev", true);
 	// d3.selectAll(".g-post").classed("g-post-active", false);
+
 
 
 	if (id == "cover") {
@@ -287,6 +312,18 @@ function move(id, hash) {
 	var n = ids.indexOf(id);
 	var el = d3.select("#g-post-" + id)
 
+	if (+(id.substr(0,3)) > 6 && id != "100" && id != "102" && id != "099" && id != "096" && id != "097" && id != "098"  && id != "095") {
+		d3.select(".g-fastforward").classed("g-active", true);
+	} else {
+		d3.select(".g-fastforward").classed("g-active", false);
+	}
+
+	if (id == "007") {
+		d3.select(".g-hint-2").style("display", "block");
+	} else if (+id < 7) {
+		d3.select(".g-hint-2").style("display", "none");
+	}
+
 	var duration = id == "cover" ? 10000 : 1000
 
 	var prev = true;
@@ -294,6 +331,7 @@ function move(id, hash) {
 	d3.selectAll(".g-post").each(function(){
 		var el = d3.select(this);
 		var dd = el.attr("id");
+
 		if (id == dd.replace("g-post-", "")) {
 			el.style("transform", "translate(0,0)")
 			prev = false;
@@ -307,9 +345,6 @@ function move(id, hash) {
 	
 	var photoid = el.attr("data-id")
 	var time = el.attr("data-time")	
-
-	console.log()
-
 	var ext = el.attr("data-labeled") == "y" ? "-labeled" : "";
 
 	el.style("background-image", "url(photos/h" + id + ext + ".jpg)")
@@ -429,7 +464,11 @@ function move(id, hash) {
 
 
 		if (photoid == "map") {
-			drawDetailedMap();
+			if (!dmap) {
+				drawDetailedMap();
+			}
+			zoomMap();
+			zoomMap2();
 		} else {
 			if (!dmap) {
 				drawDetailedMap();
@@ -466,9 +505,7 @@ function move(id, hash) {
 		var prevnum = previd == "cover" ? 0 : previd.replace("H", "").slice(0, 3)
 		var startpt = trackpts.filter(d => d.dp == "H" + prevnum)[0];
 		var startpct = previd == "cover" || !startpt ? 0 : startpt.dist/totaldist;
-
-		// var prevup = +d3.select(".g-up .g-n").html();
-		// var prevdown = +d3.select(".g-down .g-n").html();
+		startpct = id == "100" && startpct == 0 ? (trackpts[trackpts.length - 2].dist/totaldist) : startpct
 
 		if (id == "102") {
 
@@ -483,7 +520,7 @@ function move(id, hash) {
 				.ease(d3.easeLinear)
 				.tween("pathTween", function(){return pathTween(trailpath)})
 		}
-		
+
 
 		if (endpt) {
 
@@ -546,7 +583,7 @@ function move(id, hash) {
 
 	}
 
-	document.location.hash = id;	
+	// document.location.hash = id;	
 
 }
 
@@ -565,13 +602,6 @@ function drawDetailedMap() {
 
 	dproj = d3.geoMercator().fitSize([dw*0.7, dh], trailshape);
 	dpath = d3.geoPath().projection(dproj);
-	var dlabels = [
-		[114.14943400741993, 22.271377235993967, ["山頂","The Peak"], "start", 5, -10, 0],
-		[114.2455999, 22.2447003, ["大浪灣","Big Wave", "Bay"], "start", 8, -20, 2800],
-		[114.19838854860322, 22.266363543179235, ["渣甸山", "Jardine's" , "Lookout", "433m"], "end", -8, -30, 1500],
-		[114.21106306951931, 22.267696293070586, ["畢拿山", "Mount Butler", "435m"], "start", 5, -25, 1800],
-		[114.2436948721778, 22.235820773514856, ["打爛埕頂山", "Shek O", "Peak", "284m"], "start", 5, 10, 2200]
-	]
 
 	dsvg.appendMany("path.g-hkg-shape", hkg_shape.features)
 		.style("stroke-width", 0.3)
@@ -579,68 +609,20 @@ function drawDetailedMap() {
 		.style("stroke", "rgba(255,255,255,0.5)")
 		.attr("d", dpath)
 
-	// var contourf = topojson.feature(contours, contours.objects["contours100-clipped"]).features
-	// contourf = contourf.sort((a,b) => a.geometry.coordinates.length - b.geometry.coordinates.length)
-	// dsvg.append("g.g-contours").appendMany("path", contourf)
-	// 	.style("stroke-width", 0.3)
-	// 	.style("fill", "none")
-	// 	.style("stroke", "rgba(255,255,255,0.2)")
-	// 	.attr("d", dpath)
-
 	dline = d3.line()
       .x(function(d) { return dproj(d)[0]; })
       .y(function(d) { return dproj(d)[1]; })
       .curve(d3.curveBasis);
-		
-	dtrailpath = dsvg.append("path.g-trail-path")
-				.style("filter", "url(#drop-shadow)")
-				.attr("d", dline(trailf[0].geometry.coordinates))
-
-	var dtotalLength = dtrailpath.node().getTotalLength();
-	dtrailpath.transition()
-	.attr("stroke-dasharray", dtotalLength + " " + dtotalLength)
-	.attr("stroke-dashoffset", dtotalLength)
-	.transition()
-	  .duration(3000)
-	  .ease(d3.easeLinear)
-	  .attr("stroke-dashoffset", 0);	
-		
-	var dlabelsg = dsvg.append("g")
-	var dlabs = dlabelsg.appendMany("g.g-labels", dlabels)
-		.translate(d => dproj([d[0], d[1]]))
-	
-	dlabs.style("opacity", 0)
-		.transition()
-		.duration(1000)
-		.delay(d => d[6])
-		.style("opacity", 1)
-
-	dlabs.append("circle")
-		.attr("r", 3)
-		.style("fill", "#ffcc00")
-		.style("stroke", "#000")
-
-	dlabs.append("text")
-		.attr("text-anchor", d => d[3])
-		.translate(d => [d[4], d[5]])
-		.style("fill", "#c6c6c6")
-		.tspans(d => d[2], 10.5)
-
-	dmap.append("div.g-big-text.g-big-text-cn")
-		.text("香港島")
-
-	dmap.append("div.g-big-text.g-big-text-en")
-		.text("Hong Kong Island")
 }
 
 function zoomMap() {
 
 	var duration = 2000;
-	dsvg.transition().duration(duration)
+	dsvg.transition().duration(0)
 		.attr("transform", "scale(0.28) translate(" + dw/0.52 + "," + dh/0.6 + ")")
 	d3.select(".g-hkg-shape")
-		.style("fill", "rgba(255,255,255,0")
-		.transition().duration(duration)
+		// .style("fill", "rgba(255,255,255,1")
+		// .transition().duration(duration)
 		.style("stroke-width", 0.5).style("stroke", "rgba(255,255,255,1)")
 		.style("fill", "rgba(255,255,255,0.06")
 
@@ -651,19 +633,22 @@ function zoomMap() {
 	var trails = ["t_hk", "t_lantau", "t_maclehose", "t_wilson"]
 	var trailnames = ["港島徑//Hong Kong Trail", "鳳凰徑//Lantau Trail", "麥理浩徑//MacLehose Trail", "衞奕信徑//Wilson Trail"]
 
+
+	dsvg.selectAll(".g-trail-path").remove();
+
 	trails.forEach(function(trail, ti){
 
 		var trailf = topojson.feature(all, all.objects[trail]).features
 
-		if (dtrailpath && trail == "t_hk") {
-			dtrailpath.transition().duration(0).attr("stroke-dashoffset", 0);	
-		} else {
+		// if (dtrailpath && trail == "t_hk") {
+		// 	dtrailpath.transition().duration(0).attr("stroke-dashoffset", 0);	
+		// } else {
 			dsvg.appendMany("path.g-trail-path.g-four-trail-path", trailf)
 				.attr("id", (d,i) => trail + "_" + i)
 				.style("stroke", trail == "t_hk" ? "#ffcc00" : "rgba(2555,255,255,0.7)")
 				.style("stroke-width", 4)
 				.attr("d", dpath)	
-		}
+		// }
 
 		if (trail == "t_wilson") {
 			dsvg.append("path.g-trail-path.g-four-trail-path")
@@ -701,5 +686,84 @@ function zoomMap() {
 		  .attr("stroke-dashoffset", 0);
 
 	})
+
+}
+
+function zoomMap2() {
+
+	var duration = 2000;
+	dsvg.transition().duration(duration)
+		.attr("transform", "scale(1) translate(" + dw*0.16 + ",0)")
+
+	dmap.selectAll(".g-trail-label").remove();
+
+	dsvg.select(".g-hkg-shape")
+		.transition()
+		.duration(duration)
+		.delay(duration/8)
+		.style("stroke-width", 0.3)
+		// .style("fill", "none")
+		.style("stroke", "rgba(255,255,255,0.5)")
+
+
+	var dlabels = [
+		[114.14943400741993, 22.271377235993967, ["山頂","The Peak"], "start", 5, -10, 0],
+		[114.2455999, 22.2447003, ["大浪灣","Big Wave", "Bay"], "start", 8, -20, 2800],
+		[114.19838854860322, 22.266363543179235, ["渣甸山", "Jardine's" , "Lookout", "433m"], "end", -8, -30, 1500],
+		[114.21106306951931, 22.267696293070586, ["畢拿山", "Mount Butler", "435m"], "start", 5, -25, 1800],
+		[114.2436948721778, 22.235820773514856, ["打爛埕頂山", "Shek O", "Peak", "284m"], "start", 5, 10, 2200]
+	]
+
+	dsvg.selectAll(".g-trail-path").remove();
+	dsvg.selectAll(".g-trail-label").remove();
+
+	dtrailpath = dsvg.append("path.g-trail-path")
+				.style("filter", "url(#drop-shadow)")
+				.attr("d", dline(trailf[0].geometry.coordinates))
+
+	var dtotalLength = dtrailpath.node().getTotalLength();
+	dtrailpath.transition()
+	.attr("stroke-dasharray", dtotalLength + " " + dtotalLength)
+	.attr("stroke-dashoffset", dtotalLength)
+	.transition()
+	  .duration(3000)
+	  .ease(d3.easeLinear)
+	  .attr("stroke-dashoffset", 0);	
+		
+	var dlabelsg = dsvg.append("g")
+	var dlabs = dlabelsg.appendMany("g.g-labels", dlabels)
+		.translate(d => dproj([d[0], d[1]]))
+	
+	dlabs.style("opacity", 0)
+		.transition()
+		.duration(1000)
+		.delay(d => d[6])
+		.style("opacity", 1)
+
+	dlabs.append("circle")
+		.attr("r", 3)
+		.style("fill", "#ffcc00")
+		.style("stroke", "#000")
+
+	dlabs.append("text")
+		.attr("text-anchor", d => d[3])
+		.translate(d => [d[4], d[5]])
+		.style("fill", "#c6c6c6")
+		.tspans(d => d[2], 10.5)
+
+
+	dmap.append("div.g-big-text.g-big-text-cn")
+		.style("opacity", 0)
+		.text("香港島")
+
+	dmap.append("div.g-big-text.g-big-text-en")
+		.style("opacity", 0)
+		.text("Hong Kong Island")
+
+	dmap.selectAll(".g-big-text")
+		.transition()
+		.duration(duration)
+		.delay(duration/2)
+		.style("opacity", 1)
 
 }

@@ -5,17 +5,8 @@
     "keep": "y",
     "id": "cover",
     "time": "",
-    "text_en": "Hiking the Hong Kong Trail",
-    "text_cn": "港島徑全走"
-  },
-  {
-    "nodp": "",
-    "labeled": "",
-    "keep": "",
-    "id": "map",
-    "time": "",
-    "text_en": "Hong Kong Trail is a 45-kilometer trail that traverses Hong Kong Island from Victoria Peak to Big Wave Bay.",
-    "text_cn": "介紹番條路線先，港島徑全程 45 公里，打橫由山頂行到去大浪灣。"
+    "text_en": "The Hong Kong Trail",
+    "text_cn": "港島徑"
   },
   {
     "nodp": "",
@@ -23,8 +14,17 @@
     "keep": "",
     "id": "map2",
     "time": "",
-    "text_en": "This is one of four long distance hiking trails in Hong Kong. I'm hoping to hike all of them, so I'm starting with the easiest one.",
-    "text_cn": "呢條係香港四條長途遠足徑之一，我諗住行哂去，就由最簡單嗰條開始。"
+    "text_en": "There are four long distance hiking trails in Hong Kong. I'm hoping to hike all of them this summer.",
+    "text_cn": "香港有四條長途遠足徑，我希望今個暑假行哂去。"
+  },
+  {
+    "nodp": "",
+    "labeled": "",
+    "keep": "",
+    "id": "map",
+    "time": "",
+    "text_en": "I'm starting with the Hong Kong Trail, which is a 45-kilometer trail that traverses Hong Kong Island from Victoria Peak to Big Wave Bay.",
+    "text_cn": "我呢日就行港島徑，全程 45 公里，由山頂打橫行到去大浪灣。"
   },
   {
     "nodp": "",
@@ -42,7 +42,7 @@
     "id": "001",
     "time": "07:31",
     "text_en": "The trail is marked by these distance posts every 500 meters. There are 100 of them, H001, H002, H003... H100. I'm gonna try to take a photo with each one.",
-    "text_cn": "港島徑每500米會有一個「標距柱」，成條徑有100個 H001, H002, H003... H100咁樣，我諗住試下每個標距柱都影張相作為記錄。"
+    "text_cn": "港島徑每500米會有一個「標距柱」，成條徑有100個 H001, H002, H003... H100咁樣，我諗住試下每個標距柱都影張相記錄下。"
   },
   {
     "nodp": "",
@@ -68,7 +68,7 @@
     "keep": "",
     "id": "004",
     "time": "07:49",
-    "text_en": "",
+    "text_en": "No. 4!",
     "text_cn": ""
   },
   {
@@ -95,8 +95,8 @@
     "keep": "",
     "id": "007",
     "time": "08:05",
-    "text_en": "",
-    "text_cn": ""
+    "text_en": "A lot of these are more of the same, you can use this button to skip ahead to ones where I made comments, or feel free to keep clicking through each one :smile:",
+    "text_cn": "好多呢啲相都一樣，你可以㩒呢個制飛咁啲，或者繼續續張㩒都得 :smile:"
   },
   {
     "nodp": "",
@@ -732,9 +732,18 @@
     "nodp": "",
     "labeled": "",
     "keep": "",
+    "id": "073",
+    "time": "15:11",
+    "text_en": "where's 73 :tear:",
+    "text_cn": ""
+  },
+  {
+    "nodp": "",
+    "labeled": "",
+    "keep": "",
     "id": "074",
     "time": "15:16",
-    "text_en": "wheres 73???",
+    "text_en": "",
     "text_cn": ""
   },
   {
