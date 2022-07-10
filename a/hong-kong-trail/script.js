@@ -367,22 +367,22 @@ function move(id, hash, fastforward) {
 	// } else {
 		var idstring = id.substr(0,3);
 		idstring = idstring.indexOf("map") > -1 ? "000" : idstring == "101" || idstring == "102" ? "100" : idstring
-		d3.selectAll(".g-dp").transition().duration(0).text("H" + idstring);
+		// d3.selectAll(".g-dp").transition().duration(0).text("H" + idstring);
 
 		var previdstr = ids[prevcounter]
 		previdstr = !previdstr ? "000" : previdstr
 		previdstr = previdstr.substring(0,3)
-		if (id != "101" && id != "102" && previdstr != idstring) {
-			d3.select(".g-dp-bg")
-				.transition()	
-				.duration(0)
-				.style("transform", "scale(1)")
-				.style("opacity", "1")
-				.transition()	
-				.duration(1000)
-				.style("transform", "scale(2)")
-				.style("opacity", "0")	
-		}
+		// if (id != "101" && id != "102" && previdstr != idstring) {
+		// 	d3.select(".g-dp-bg")
+		// 		.transition()	
+		// 		.duration(0)
+		// 		.style("transform", "scale(1)")
+		// 		.style("opacity", "1")
+		// 		.transition()	
+		// 		.duration(1000)
+		// 		.style("transform", "scale(2)")
+		// 		.style("opacity", "0")	
+		// }
 
 		var dattime = el.attr("data-time");
 		
@@ -560,6 +560,28 @@ function move(id, hash, fastforward) {
 						    element.text( "H" + String(Math.round(i(t))).padStart(3,'0') );
 						};
 					})
+			} else {
+				var previd = d3.select(".g-dp").text().replace("H", "");
+
+				if (id == "000") {
+					d3.selectAll(".g-dp").transition().duration(0).text("H000");
+				} else {
+
+					d3.selectAll(".g-dp")
+						.transition()
+						.ease(d3.easeLinear)
+						.duration(duration)
+						.tween("text", function(d){
+							var element = d3.select(this);
+							var i = d3.interpolate(previd, id);
+							return function(t) {
+							    element.text( "H" + String(Math.round(i(t))).padStart(3,'0') );
+							};
+						})
+
+				}
+
+				
 			}
 		}
 
