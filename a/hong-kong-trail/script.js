@@ -12,6 +12,8 @@ var height = width*0.4;
 
 d3.select(".g-body").style("margin-top", (innerHeight/2 - d3.select(".g-body").node().getBoundingClientRect().height/2) + "px")
 
+var bodywidth = d3.select(".g-body").node().getBoundingClientRect().width;
+
 var dot, ids, wps, dotg, projection, trailpath, path, trailf, totalLength, wps, trackpts, totaldist, trailshape, hkg, all;
 
 var dsvg, dw, dh, dproj, dpath, dline, dmap, data;
@@ -331,13 +333,12 @@ function move(id, hash, fastforward) {
 		var dd = el.attr("id");
 
 		if (id == dd.replace("g-post-", "")) {
-			el.transition().duration(600).style("transform", "translate(0,0)")
-
+			el.transition().duration(600).ease(d3.easeLinear).style("transform", "translate(0,0)")
 			prev = false;
 		} else if (prev) {
-			el.transition().duration(600).style("transform", "translate(-100%,0)")
+			el.transition().duration(600).ease(d3.easeLinear).style("transform", "translate(-" + bodywidth + ",0)")
 		} else {
-			el.transition().duration(600).style("transform", "translate(100%,0)")
+			el.transition().duration(600).ease(d3.easeLinear).style("transform", "translate(" + bodywidth + "px,0)")
 		}
 	})
 
