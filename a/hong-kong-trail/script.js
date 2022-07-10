@@ -103,7 +103,7 @@ d3.queue()
 			.attr("data-labeled", d => d.labeled)
 			.attr("class", (d,i) => i == 0 ? "g-post g-post-active" : "g-post")
 			.attr("id", (d,i) => "g-post-" + d.id)
-			.style("background-image", d => "url(photos-100/h" + d.id + ".jpg)")
+			.style("background-image", (d,i) => i == 0 ? "url(photos/h" + d.id + ".jpg)" : "")// : "url(photos-100/h" + d.id + ".jpg)")
 			// .style("transform", (d,i) => "translate(" + i*100 + "% ,0)")
 
 		var textcont = dp.append("div.g-text-cont")
@@ -197,7 +197,7 @@ d3.selectAll(".g-fastforward").on("click", function(){
 
 	prevcounter = counter;
 	counter = data.indexOf(next);
-	move(counter)
+	move(counter, null, true)
 
 	d3.select(".g-hint-2").style("display", "none");
 
@@ -348,8 +348,16 @@ function move(id, hash, fastforward) {
 
 	el.style("background-image", "url(photos/h" + id + ext + ".jpg)")
 
+	var nextext = d3.select("#g-post-" + ids[n+1]).attr("data-labeled") == "y" ? "-labeled" : "";
 	d3.select("#g-post-" + ids[n+1])
-		.style("background-image", "url(photos/h" + ids[n+1] + ext + ".jpg)")
+		.style("background-image", "url(photos/h" + ids[n+1] + nextext + ".jpg)")
+
+
+	var next = data.filter((d,i) => i > n && (d.text_en || d.text_cn) && d.id != "016" && d.id != "017" && d.id != "047" && d.id != "073" && d.id != "062")[0];
+	var nextnextext = d3.select("#g-post-" + next.id).attr("data-labeled") == "y" ? "-labeled" : "";
+	d3.select("#g-post-" + next.id)
+		.style("background-image", "url(photos/h" + next.id + nextnextext + ".jpg)")
+
 
 	// if (photoid == "cover" || photoid == "map") {
 	// 	d3.selectAll(".g-dp").text("H000");

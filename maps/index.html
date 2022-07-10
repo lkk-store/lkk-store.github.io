@@ -12,224 +12,192 @@
 	<style type="text/css">
 		body, html {
 			margin:  0;
-			padding:  0 10px;
+			padding:  0;
 			background: #000;
 			color:  #999;
 			font-family: 'Varela Round', sans-serif;
 			text-align: center;
 		}
 
-		P {
-			margin:  0;
-			text-align: center;
+		p {
+			margin: 0;
+		}
+
+		.g-footer {
+			padding: 100px 0 50px 0;
 		}
 
 		.g-small {
-			font-size: 12px;
+			font-size: 8px;
 			opacity: 0.6;
 		}
 
 		.g-header {
-			padding: 100px 0 50px 0;
+			padding: 50px 0 50px 0;
+		}
+
+		.g-header .g-hed {
+			letter-spacing: 2px;
 		}
 
 		.g-hed-text {
 			padding:  25px 0 25px 0;
+		}
+
+		.g-hed {
 			font-size: 20px;
+			margin-bottom: 5px;
+			letter-spacing: 5px;
 		}
 
-		.g-hed-text p {
-			margin-bottom: 10px;
+		.g-text {
+			font-size: 11px;
+			opacity: 0.6;
+			margin-bottom: 3px;
 		}
 
-		.g-divider {
-			width:  20px;
-			height:  1px;
-			background: #999;
-			margin:  0 auto 50px auto;
+		.g-img-block {
+			display: flex;
+			flex-wrap: wrap;
 		}
 
 		img {
-			width:  100%;
+			width: 100%;
 		}
 
-		.g-cn-hed {
-			letter-spacing: 20px;
-			margin-left: 15px;
-		}
-
-		.g-body {
-			max-width: 460px;
-			margin:  0 auto 25px;
-			font-size: 12px;
-			line-height: 1.5;
-		}
-
-		.g-block-inner {
-			margin: 25px auto;
-		}
-
-		.g-block-inner .g-body {
-			margin-bottom: 0;
-		}
-
-		h2 {
-			margin:  0;
-		}
-
-		.g-map-block {
+		.g-img-block .g-img-bg {
+			width: calc(50% - 0px);
 			display: inline-block;
-			width: calc(50% - 5px);
 		}
 
-		.g-type-img {
-			max-width: 1050px;
+		.g-img-bg-inner {
+			padding-bottom: 100%;
+			width: 100%;
+			background-size:  cover;
+			background-position: center;
 		}
 
-		.g-margin {
-			margin-bottom: 25px;
+		@media screen and (min-width: 600px) {
+			.g-img-featured, .g-img-block {
+				width: calc(50% - 3px);
+				display: inline-block;
+				vertical-align: top;
+			}
+
+			.g-img-block .g-img-bg {
+				width: calc(33.333% - 3px);
+				display: inline-block;
+			}
+
+			.g-img-bg-inner {
+				padding-bottom: 151%;
+			}
 		}
 
-		.g-title {
-			font-size: 12px;
+		.g-project:after {
+			content: "";
+			display: block;
+			width: 20px; 
+			height: 1px; 
+			border-bottom: 5px solid rgba(255,255,255,0.2);
+			margin: 150px auto 100px auto;
 		}
 
-		.g-grid {
-			max-width: 460px;
-			margin:  0 auto;
+		a {
+			color:  #fff;
+			opacity: 0.6;
 		}
-
-		.g-grid img {
-			display: inline-block;
-			width: calc(50% - 10px);
-		}
-
-		.g-335 {
-			max-width: 335px;
-			margin-left:  auto;
-			margin-right:  auto;
-		}
-
+		
 
 	</style>
 </head>
 <body>
 
 	<div class="g-header">
-		<p class="g-small">INTRODUCING</p>
-		<p class="g-small">介紹番</p>
 		<div class="g-hed-text">
-			<p>LKK Maps</p>
+			<p class="g-hed">LKK MAPS</p>
+			<p class="g-text">it's the journey, not the place</p>
 		</div>
 	</div>
 
 
-	<div>
-
-		<div class="g-project-block">
-			<!-- <p class="g-small">Backstory</p>
-			<br>
-			<br> -->
-			<!-- <p class="g-body">When we went backpacking in high school, we would buy paper trail maps and wrap it in clear plastic and plan our trail on it with a Sharpie. When we hiked, we would place a compass on the map to navigate (we got lost a lot). I learned how to make maps when I grew up and I've always wanted to design and print my own trail maps. I recently saw a beautiful cloth map of the Everest trek in a friend's house and thought hey that's a good idea! I always see beautiful maps of places around the world but rarely see those of Hong Kong. This was the seed of this project.</p>
-
-			<p class="g-body">中學嘅時候玩 AYP， 去地政署買紙本地圖，揾啲包書膠包住，plan 路程嘅時候攞 marker 上面畫條虛線，行山嗰陣擺個指南針喺張地圖上面扭嚟扭去（期間多次行錯路）。長大後嘅工作，學識咗自己整地圖，亦一直好想將自己喜歡嘅山徑設計地圖印製，但係嗡咗成世都未做呢件事。早排喺朋友屋企見到一塊好靚嘅布地圖，係佢去珠峰行山時買嘅記念品。我成日都見到世界各地好靚嘅地圖，但好少見到香港嘅山徑地圖，所以開始咗呢個計劃。</p> -->
+	<div class="g-project">
+		<div class="g-hed-text">
+			<p class="g-hed">長咀地圖</p>
+			<p class="g-text">Cloth Map</p>
+			<p class="g-text">Silkscreen Printed on 100% Cotton</p>
+			<p class="g-text">18" x 18"</p>
 		</div>
 
-		<!-- <div class="g-divider"></div> -->
-
-		<div class="g-project-block">
-			<p class="g-small">Project #001</p>
-			<div class="g-hed-text">
-				<p>Black Cloth Trail Map</p>
-				<p class="g-cn-hed">黑布地圖</p>
+		<div class="g-img-cont">
+			<div class="g-img-featured">
+				<img src="cheung-tsui/IMG_5833.jpg" />
 			</div>
-
-			<div class="g-block-inner">
-				<p class="g-body g-335">Mapping two of my favorite hiking trails in Hong Kong – Kowloon Peak and Cheung Tsui</p>
-				<p class="g-body">Inspired by an Everest Trek souvenir.</p>
-				<br>
-				<p class="g-body">Silkscreen Printed on 100% Cotton</p>
-				<p class="g-body">22" x 22"</p>
-
-				<div class="g-block-inner">
-					<div class="g-map-block">
-						<div class="g-title">飛鵝山</div>
-						<div class="g-title g-margin">Kowloon Peak</div>
-						<img src="map2.png">
-					</div>
-					<div class="g-map-block">
-						<div class="g-title">長咀</div>
-						<div class="g-title g-margin">Cheung Tsui</div>
-						<img src="map1.jpg">
-					</div>
-				</div>
-			</div>
-
-			<br>
-			<br>
-			<br>
-			<div class="g-divider"></div>
-
-
-			<!-- <p class="g-small">Project #002</p>
-			<div class="g-hed-text">
-				<p>MacLehose Trail Map</p>
-				<p class="">麥理浩徑地圖</p>
-			</div>
-
-			<div class="g-block-inner">
-				<p class="g-body">Mapping the MacLehose trail</p>
-				<p class="g-body">Inspired by a set of trail maps of the Appalachian trail</p>
-				<p class="g-body">Waterproof paper</p>
-				<p class="g-body">11" x 36"</p>
-
-				<div class="g-block-inner">
-					<img src="maclehose.jpg">
-				</div>
-			</div> -->
-
-			<!-- <br>
-			<br>
-			<br> -->
-			<!-- <div class="g-divider"></div> -->
-
-
-
-			<div class="g-block">
-				
-				<div class="g-hed-text">Hong Kong Map Type</div>
-				<div class="g-small">Featuring</div>
-				<div class="g-small">Custom Typography by Fibi Kung</div>
-				<div class="g-block-inner g-type-img">
-					<img src="type.png">
-				</div>
-
-				<p class="g-body">Inspired by beauitful old maps of Hong Kong</p>
-
-				<div class="g-grid">
-					<img src="old1.jpg">
-					<img src="old2.jpg">
-					<img src="old3.jpg">
-					<img src="old4.jpg">
-				</div>
+			<div class="g-img-block">
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('cheung-tsui/IMG_2129.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('cheung-tsui/IMG_5900.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('cheung-tsui/IMG_5816.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('cheung-tsui/IMG_2458.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('cheung-tsui/IMG_2146.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('cheung-tsui/IMG_5836.jpg');" /></div></div>
 			</div>
 		</div>
-
-
-		
-
 	</div>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<div class="g-small">© LKK MAPS 2022</div>
-	<br>
-	<br>
-	<br>
-	<br>
+	<div class="g-project">
+		<div class="g-hed-text">
+			<p class="g-hed">港島徑</p>
+			<p class="g-text">我喺 2022 年 6 月 27 日 行咗港島徑，45 公里，人生第一次一日行咁多路。</p>
+			<p class="g-text">I hiked the Hong Kong Trail on June 27, 2022. 45 km. Longest hike I've done in a day.</p>
+			<p class="g-text"><a href="https://www.lkk-store.com/a/hong-kong-trail">Read more</a></p>
+		</div>
+
+		<div class="g-img-cont">
+			<div class="g-img-featured">
+				<img src="hk-trail/featured.jpg" />
+			</div>
+			<div class="g-img-block">
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('hk-trail/h073.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('hk-trail/h100.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('hk-trail/h102.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('hk-trail/h062.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('hk-trail/h023.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('hk-trail/h087.jpg');" /></div></div>
+			</div>
+		</div>
+	</div>
 
 
+	<div class="g-project">
+		<div class="g-hed-text">
+			<p class="g-hed">Via Alpina</p>
+			<p class="g-text">2020 年 10 月，打橫行咗瑞士一次，390 公里。</p>
+			<p class="g-text">In October 2020, I hiked across Switzerland, 390 km.</p>
+			<p class="g-text"><a href="lkk-store.com/a/via-alpina">Read more</a></p>
+		</div>
+
+		<div class="g-img-cont">
+			<div class="g-img-featured">
+				<img src="via-alpina/featured.jpg" />
+			</div>
+			<div class="g-img-block">
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('via-alpina/IMG_5755.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('via-alpina/IMG_1873.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('via-alpina/IMG_5180.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('via-alpina/99EF07FF-6E25-4E27-8B3B-096AC0E0A695.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('via-alpina/IMG_5289.jpg');" /></div></div>
+				<div class="g-img-bg"><div class="g-img-bg-inner" style="background-image:  url('via-alpina/B08B48DF-3B1E-477A-80F1-71281E8CC226.jpg');" /></div></div>
+			</div>
+		</div>
+	</div>
+	
+
+
+
+
+
+	<div class="g-footer">
+		<div class="g-small">© LKK MAPS 2022</div>
+	</div>
 </body>
 </html>
