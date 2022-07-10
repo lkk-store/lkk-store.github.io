@@ -104,7 +104,7 @@ d3.queue()
 			.attr("class", (d,i) => i == 0 ? "g-post g-post-active" : "g-post")
 			.attr("id", (d,i) => "g-post-" + d.id)
 			.style("background-image", d => "url(photos-100/h" + d.id + ".jpg)")
-			.style("transform", (d,i) => "translate(" + i*100 + "% ,0)")
+			// .style("transform", (d,i) => "translate(" + i*100 + "% ,0)")
 
 		var textcont = dp.append("div.g-text-cont")
 			.style("opacity", d => !d.text_cn && !d.text_en ? "0" : "1")
@@ -194,7 +194,7 @@ d3.selectAll(".g-nav-button").on("click", function(){
 
 d3.selectAll(".g-fastforward").on("click", function(){
 
-	var next = data.filter((d,i) => i > counter && (d.text_en || d.text_cn) && d.id != "016" && d.id != "017" && d.id != "047" && d.id != "073")[0];
+	var next = data.filter((d,i) => i > counter && (d.text_en || d.text_cn) && d.id != "016" && d.id != "017" && d.id != "047" && d.id != "073" && d.id != "062")[0];
 
 	prevcounter = counter;
 	counter = data.indexOf(next);
@@ -333,12 +333,13 @@ function move(id, hash, fastforward) {
 		var dd = el.attr("id");
 
 		if (id == dd.replace("g-post-", "")) {
-			el.style("transform", "translate(0,0)")
+			el.transition().duration(600).style("transform", "translate(0,0)")
+
 			prev = false;
 		} else if (prev) {
-			el.style("transform", "translate(-100%,0)")
+			el.transition().duration(600).style("transform", "translate(-100%,0)")
 		} else {
-			el.style("transform", "translate(100%,0)")
+			el.transition().duration(600).style("transform", "translate(100%,0)")
 		}
 	})
 
@@ -560,8 +561,10 @@ function move(id, hash, fastforward) {
 						    element.text( "H" + String(Math.round(i(t))).padStart(3,'0') );
 						};
 					})
-			} else {
-				var previd = d3.select(".g-dp").text().replace("H", "");
+			} else if (id != "101" && id != "102") {
+				var previd = d3.select(".g-dp").text().replace("H", "").substring(0,3);
+
+				console.log(previd, id)
 
 				if (id == "000") {
 					d3.selectAll(".g-dp").transition().duration(0).text("H000");
@@ -573,7 +576,7 @@ function move(id, hash, fastforward) {
 						.duration(duration)
 						.tween("text", function(d){
 							var element = d3.select(this);
-							var i = d3.interpolate(previd, id);
+							var i = d3.interpolate(previd, id.substring(0,3));
 							return function(t) {
 							    element.text( "H" + String(Math.round(i(t))).padStart(3,'0') );
 							};
