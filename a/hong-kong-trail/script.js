@@ -611,7 +611,7 @@ function move(id, hash, fastforward) {
 
 	}
 
-	document.location.hash = id;	
+	// document.location.hash = id;	
 
 }
 
