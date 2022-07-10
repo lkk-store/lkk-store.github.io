@@ -183,13 +183,12 @@ d3.selectAll(".g-nav-button").on("click", function(){
 
 	if (counter < 0) {
 		counter = 0;
-	}
-
-	if (counter > ids.length - 1) {
+	} else if (counter > (ids.length-1)) {
 		counter = ids.length - 1
+	} else {
+		move(counter)
 	}
 
-	move(counter)
 })
 
 d3.selectAll(".g-fastforward").on("click", function(){
@@ -225,10 +224,11 @@ function checkKey(e) {
 
 		if (counter < 0) {
 			counter = 0;
-		} else if (counter > ids.length - 1) {
+		} else if (counter > (ids.length-1)) {
 			counter = ids.length - 1
+		} else {
+			move(counter)	
 		}
-		move(counter)
     }
 
 }
@@ -274,10 +274,11 @@ function handleTouchMove(evt) {
 
         if (counter < 0) {
 			counter = 0;
-		} else if (counter > ids.length - 1) {
-			counter = ids.length - 1
+		} else if (counter > (ids.length - 1)) {
+			counter = (ids.length - 1)
+		} else {
+			move(counter)
 		}
-		move(counter)
 
     } else {
         if ( yDiff > 0 ) {
@@ -294,6 +295,8 @@ function handleTouchMove(evt) {
 
 var starttime = new Date(2021,5,27,7,25);
 function move(id, hash, fastforward) {
+
+	console.log(id)
 
 	// d3.select("#g-post-" + ids[prevcounter]).classed("g-post-prev", false);
 	// d3.select(".g-post-active").classed("g-post-prev", true);
@@ -608,7 +611,7 @@ function move(id, hash, fastforward) {
 
 	}
 
-	// document.location.hash = id;	
+	document.location.hash = id;	
 
 }
 

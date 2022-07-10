@@ -291,6 +291,7 @@ svg {
 		background-size:  100%;
 		left: 0;
 		top: 2px;
+		background-repeat: no-repeat;
 }
 
 .g-dp:before {
