@@ -334,12 +334,12 @@ function move(id, hash, fastforward) {
 		var dd = el.attr("id");
 
 		if (id == dd.replace("g-post-", "")) {
-			el.transition().duration(postduration).ease(d3.easeLinear).style("transform", "translate(0,0)")
+			el.transition().duration(postduration).style("transform", "translate(0,0)")
 			prev = false;
 		} else if (prev) {
-			el.transition().duration(postduration).ease(d3.easeLinear).style("transform", "translate(-" + bodywidth + "px,0)")
+			el.transition().duration(postduration).style("transform", "translate(-" + bodywidth + "px,0)")
 		} else {
-			el.transition().duration(postduration).ease(d3.easeLinear).style("transform", "translate(" + bodywidth + "px,0)")
+			el.transition().duration(postduration).style("transform", "translate(" + bodywidth + "px,0)")
 		}
 	})
 
@@ -662,7 +662,7 @@ function zoomMap() {
 
 
 	var trails = ["t_hk", "t_lantau", "t_maclehose", "t_wilson"]
-	var trailnames = ["港島徑//Hong Kong Trail", "鳳凰徑//Lantau Trail", "麥理浩徑//MacLehose Trail", "衞奕信徑//Wilson Trail"]
+	var trailnames = ["港島徑//Hong Kong Trail//45 km", "鳳凰徑//Lantau Trail//78 km", "麥理浩徑//MacLehose Trail//100 km", "衞奕信徑//Wilson Trail//78 km"]
 
 
 	dsvg.selectAll(".g-trail-path").remove();
@@ -699,6 +699,7 @@ function zoomMap() {
 
 		dd.append("div.g-text-cn").text(trailnames[ti].split("//")[0])
 		dd.append("div.g-text-en").text(trailnames[ti].split("//")[1])
+		dd.append("div.g-text-en").text(trailnames[ti].split("//")[2])
 	})
 
 	dsvg.selectAll(".g-four-trail-path").each(function(){
