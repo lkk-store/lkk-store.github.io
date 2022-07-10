@@ -295,14 +295,9 @@ function handleTouchMove(evt) {
 
 var starttime = new Date(2021,5,27,7,25);
 function move(id, hash, fastforward) {
-
-	console.log(id)
-
 	// d3.select("#g-post-" + ids[prevcounter]).classed("g-post-prev", false);
 	// d3.select(".g-post-active").classed("g-post-prev", true);
 	// d3.selectAll(".g-post").classed("g-post-active", false);
-
-
 
 	if (id == "cover") {
 		d3.select(".g-hint").style("display", "block")
@@ -566,8 +561,6 @@ function move(id, hash, fastforward) {
 					})
 			} else if (id != "101" && id != "102") {
 				var previd = d3.select(".g-dp").text().replace("H", "").substring(0,3);
-
-				console.log(previd, id)
 
 				if (id == "000") {
 					d3.selectAll(".g-dp").transition().duration(0).text("H000");
