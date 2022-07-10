@@ -327,18 +327,19 @@ function move(id, hash, fastforward) {
 	var duration = id == "cover" ? 10000 : 1000
 
 	var prev = true;
+	var postduration = hash ? 0 : 600;
 	
 	d3.selectAll(".g-post").each(function(){
 		var el = d3.select(this);
 		var dd = el.attr("id");
 
 		if (id == dd.replace("g-post-", "")) {
-			el.transition().duration(600).ease(d3.easeLinear).style("transform", "translate(0,0)")
+			el.transition().duration(postduration).ease(d3.easeLinear).style("transform", "translate(0,0)")
 			prev = false;
 		} else if (prev) {
-			el.transition().duration(600).ease(d3.easeLinear).style("transform", "translate(-" + bodywidth + ",0)")
+			el.transition().duration(postduration).ease(d3.easeLinear).style("transform", "translate(-" + bodywidth + "px,0)")
 		} else {
-			el.transition().duration(600).ease(d3.easeLinear).style("transform", "translate(" + bodywidth + "px,0)")
+			el.transition().duration(postduration).ease(d3.easeLinear).style("transform", "translate(" + bodywidth + "px,0)")
 		}
 	})
 
