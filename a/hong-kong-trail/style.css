@@ -180,7 +180,7 @@ svg {
 }
 
 .g-text-en {
-	line-height: 1.2;
+	line-height: 1.6;
 }
 
 /*.g-post-prev {
@@ -417,7 +417,7 @@ svg {
 }
 
 #g-post-007 .g-text-cont {
-	transform: scale(1) rotate(0) translate(0%, 28%);
+	transform: scale(1) rotate(0) translate(0%, 24%);
 }
 
 #g-post-007 .g-text-cn {
@@ -547,6 +547,10 @@ svg {
 	display: none;
 }
 
+#g-post-073 .g-text-cont {
+	transform: translate(0,-15%);
+}
+
 #g-post-074 .g-text-cont {
 	transform: scale(1) rotate(0) translate(-10%,0%);	
 }
@@ -629,7 +633,7 @@ svg {
 }
 
 .g-hint-text{
-	max-width: 100px;
+	max-width: 94px;
 	display: block;
 	font-size: 10px;
 	margin-top: -110%;
@@ -833,17 +837,18 @@ svg {
 
 .g-tl-t_maclehose {
 	top: 40%;
-	left: 20%;
+	left: 10%;
 }
 
 .g-tl-t_wilson {
-	top: 30%;
+	top: 28%;
 	left: 50%;
 	text-align: right;
 }
 
 .g-fastforward {
 	position: absolute;
+	width: 30%;
 	bottom:  20px;
 	right:  20px;
 	cursor: pointer;
@@ -853,6 +858,7 @@ svg {
 	pointer-events: none;
 	opacity: 0;
 	transition: opacity 0.5s;
+	padding-top: 20%;
 }
 
 .g-fastforward .g-inner {

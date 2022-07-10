@@ -575,7 +575,7 @@ function move(id, hash, fastforward) {
 					  	.ease(d3.easeLinear)
 					    .attr("stroke-dashoffset", 0)
 
-					var point = trailpath.node().getPointAtLength(r(t));
+					var point = trailpath.node().getPointAtLength(((r(t)/totalLength)*totalLength)+3);
 					dotg.attr("transform", "translate(" + point.x + "," + point.y + ")")
 				}
 			}
@@ -606,7 +606,7 @@ function drawDetailedMap() {
 	dsvg.appendMany("path.g-hkg-shape", hkg_shape.features)
 		.style("stroke-width", 0.3)
 		.style("fill", "none")
-		.style("stroke", "rgba(255,255,255,0.5)")
+		.style("stroke", "rgba(255,255,255,0.3)")
 		.attr("d", dpath)
 
 	dline = d3.line()
@@ -623,8 +623,8 @@ function zoomMap() {
 	d3.select(".g-hkg-shape")
 		// .style("fill", "rgba(255,255,255,1")
 		// .transition().duration(duration)
-		.style("stroke-width", 0.5).style("stroke", "rgba(255,255,255,1)")
-		.style("fill", "rgba(255,255,255,0.06")
+		.style("stroke-width", 0.4).style("stroke", "rgba(255,255,255,1)")
+		.style("fill", "rgba(255,255,255,0.02")
 
 	dsvg.selectAll(".g-labels").remove();
 	dmap.selectAll(".g-big-text").remove();
