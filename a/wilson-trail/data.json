@@ -1,0 +1,932 @@
+[
+  {
+    "id": "cover",
+    "time": "",
+    "text_en": "Wilson Trail",
+    "text_cn": "衞奕信徑"
+  },
+  {
+    "id": "map2",
+    "time": "",
+    "text_en": "There are four long distance hiking trails in Hong Kong. I'm trying to hike all of them this summer. I've done the 45-km Hong Kong Trail. The <b>Wilson Trail</b> is the second one I'm attempting.",
+    "text_cn": "香港有四條長途遠足徑，我諗住今個暑假行哂佢。上次行咗港島徑，<b>衞奕信徑</b>條係第二條。"
+  },
+  {
+    "id": "map",
+    "time": "",
+    "text_en": "The Wilson Trail is a 78-kilometer trail that travels from Stanley on Hong Kong Island to the northern tip of the city.",
+    "text_cn": "衞奕信徑全程 78 公里，由赤柱向北行到去新界北邊嘅南涌。"
+  },
+  {
+    "id": "intro",
+    "time": "",
+    "text_en": "Hiking the 45-km Hong Kong trail last time was really hard, but the Wilson Trail is about a thousand times harder. Possibly the hardest thing i've ever done. A friend once told me that their group quit the trail on day 2 before starting up Cloudy Hill. I only heard the story then but now I really understood why one would quit. The hike is really fucking hard. // When I seriously considered quitting at the end of day 1, a friend told me she would come the next morning and finish the rest of the hike with me. I would not have been able to finish this without her.",
+    "text_cn": "上次全走港島徑已經覺得好辛苦，但原來衞奕信徑再難一千一萬倍，崩潰嘅程度你想像唔到。之前有個朋友講話全走衞徑，第二日去到九龍坑山敗走。我而家終於明，原來真係會好想放棄，因為條路真係好X難行。// 第一日夜晚認真諗住 quit 嗰陣打俾個行山友。佢話你已經行咗咁多而家放棄好可惜，不如我聽日陪你完成埋佢。因為佢嘅陪伴，我先完成倒，多謝你。"
+  },
+  {
+    "id": "000",
+    "time": "07:23",
+    "text_en": "Here we go!",
+    "text_cn": "開波！"
+  },
+  {
+    "id": "001",
+    "time": "07:40",
+    "text_en": "The trail starts by going up the hill.",
+    "text_cn": "一嚟就上山"
+  },
+  {
+    "id": "002",
+    "time": "07:52",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "003",
+    "time": "08:06",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "004",
+    "time": "08:18",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "005",
+    "time": "08:27",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "006",
+    "time": "08:39",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "007",
+    "time": "08:58",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "007a",
+    "time": "08:59",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "008",
+    "time": "09:12",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "008a",
+    "time": "09:20",
+    "text_en": "This section overlaps with the Hong Kong Trail that I did last time!",
+    "text_cn": "呢 part 會同上次行過嘅港島徑重疊一小段"
+  },
+  {
+    "id": "009",
+    "time": "09:26",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "010",
+    "time": "09:40",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "011",
+    "time": "09:47",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "012",
+    "time": "09:53",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "012a",
+    "time": "09:55",
+    "text_en": "",
+    "text_cn": "nice view"
+  },
+  {
+    "id": "013",
+    "time": "10:07",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "013a",
+    "time": "10:09",
+    "text_en": "Splitting up with the Hong Kong Trail",
+    "text_cn": "同港島徑分道揚鑣"
+  },
+  {
+    "id": "014",
+    "time": "10:18",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "015",
+    "time": "10:31",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "016",
+    "time": "10:47",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "017",
+    "time": "10:57",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "018",
+    "time": "11:12",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "018a",
+    "time": "11:21",
+    "text_en": "The Wilson trail cuts across the Victoria Harbor, so you have to awkwardly take the train while you look like a crazy person and everyone else is going about their day.",
+    "text_cn": "衞奕信徑要好搞笑咁搭地鐵過海。當大家都正正常常搭緊車嘅時候，我就癲佬咁孭住個 pack 成身臭汗。"
+  },
+  {
+    "id": "018b",
+    "time": "11:27",
+    "text_en": "But no one cares cause it's Hong Kong.",
+    "text_cn": "但香港人見怪不怪。"
+  },
+  {
+    "id": "018c",
+    "time": "12:00",
+    "text_en": "lunch!!!!!!!!!!",
+    "text_cn": "飯呀!!!!!!!"
+  },
+  {
+    "id": "018d",
+    "time": "12:00",
+    "text_en": "My timing felt a little off at this point. When I did the Hong Kong Trail last time, I had done more than 20 km when I stopped for lunch around noon. This time I've only done about 10 km in more than 6 hours. But really I was doing my best... so onwards.",
+    "text_cn": "其實行到呢度已經開始覺得有啲唔對路... 上次行港島徑都係行到 12 點左右食晏，但當時已經行咗超過 20 km，而家行左六個半鐘只係 10 km 左右??? 但都廢事諗繼續行。"
+  },
+  {
+    "id": "019",
+    "time": "12:25",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "020",
+    "time": "12:35",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "020a",
+    "time": "12:39",
+    "text_en": "There are a lot of these spray paint signage along the way, it's really nice",
+    "text_cn": "沿路有好多呢個噴畫路牌，好靚"
+  },
+  {
+    "id": "021",
+    "time": "12:44",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "022",
+    "time": "12:51",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "023",
+    "time": "12:57",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "024",
+    "time": "13:14",
+    "text_en": "I missed W024! It's the first sign I missed.",
+    "text_cn": "第一個 miss 咗嘅牌... W024"
+  },
+  {
+    "id": "024a",
+    "time": "13:37",
+    "text_en": "It's around 1:30 pm and it's really hot. It took me more than half an hour to make it up the hill. I saw this man with his drawing supplies there. Turns out there were people as crazy as me. He hiked up this mountain on this hot ass day just to draw.",
+    "text_cn": "當時一點半左右，好熱，我龜速咁用咗大半個鐘先行到上山頂。喺山頂見到個準備畫畫嘅阿叔，發現原來呢個世界有好多同我一樣咁痴線嘅人，佢咁 x 熱行上山，就係為咗畫一幅畫。"
+  },
+  {
+    "id": "025",
+    "time": "13:48",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "026",
+    "time": "13:57",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "027",
+    "time": "14:03",
+    "text_en": "missed 27 :tear:",
+    "text_cn": ""
+  },
+  {
+    "id": "027a",
+    "time": "14:13",
+    "text_en": "Vending machine break!",
+    "text_cn": ""
+  },
+  {
+    "id": "028",
+    "time": "14:23",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "029",
+    "time": "14:23",
+    "text_en": "missed",
+    "text_cn": ""
+  },
+  {
+    "id": "030",
+    "time": "14:39",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "031",
+    "time": "14:47",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "032",
+    "time": "14:47",
+    "text_en": "missed",
+    "text_cn": ""
+  },
+  {
+    "id": "033",
+    "time": "15:04",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "034",
+    "time": "15:04",
+    "text_en": "missed",
+    "text_cn": ""
+  },
+  {
+    "id": "035",
+    "time": "15:34",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "035a",
+    "time": "15:35",
+    "text_en": "I think I sat here for about 15 minutes. There was beginning to be some desperation and fatigue and stomach ache. Progress was really slow and there were many more mountains to climb.",
+    "text_cn": "好似坐咗喺度 15 分鐘。開始有絕望虛脫肚痛。行得好慢好慢，仲有好多座山要行。"
+  },
+  {
+    "id": "036",
+    "time": "16:02",
+    "text_en": "But somehow I got up and kept walking",
+    "text_cn": "但唔知點解又再起身繼續行"
+  },
+  {
+    "id": "037",
+    "time": "16:02",
+    "text_en": "missed",
+    "text_cn": ""
+  },
+  {
+    "id": "038",
+    "time": "16:28",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "039",
+    "time": "17:28",
+    "text_en": "Note that an hour passed betweeen W038 and W039. This part was going up the 533m Tung Yeung Shan. I was pretty desperate but I took a long break and ate some snacks and the rest is just pure determination.",
+    "text_cn": "留意番，W038 同 W039 中間隔咗一粒鐘。呢段上緊 533 米嘅東洋山，我都幾絕望。最後停底坐咗大半個鐘食咗啲嘢，然後純意志咁起身繼續行落去。"
+  },
+  {
+    "id": "040",
+    "time": "17:46",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "041",
+    "time": "17:57",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "042",
+    "time": "18:05",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "043",
+    "time": "18:13",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "043a",
+    "time": "18:15",
+    "text_en": "This part on Shatin Pass Road overlaps with the 100-km MacLehose Trail, starting to think that I won't be able to do that other trail.",
+    "text_cn": "呢度行緊沙田坳道，同麥徑重疊，開始覺得之後行唔到麥徑。"
+  },
+  {
+    "id": "044",
+    "time": "18:21",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "045",
+    "time": "18:28",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "046",
+    "time": "18:35",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "046a",
+    "time": "18:43",
+    "text_en": "Somehow made it to the Lion Rock Pavilion. You could totally call a cab from this spot but a long chat with this 73-year-old Mr. Wong gave me some renewed energy to keep going.",
+    "text_cn": "捱捱下又俾我捱到去獅子亭。雖然呢個位好適合 call 車走，但同呢位自稱「獅子黃」嘅 73 歲阿叔傾咗陣，好似又有啲希望繼續行落去。"
+  },
+  {
+    "id": "047",
+    "time": "19:06",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "048",
+    "time": "19:15",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "049",
+    "time": "19:42",
+    "text_en": "Dark",
+    "text_cn": "天黑了"
+  },
+  {
+    "id": "050",
+    "time": "19:52",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "051",
+    "time": "20:00",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "052",
+    "time": "20:08",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "053",
+    "time": "20:18",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "054",
+    "time": "20:33",
+    "text_en": "missed",
+    "text_cn": ""
+  },
+  {
+    "id": "055",
+    "time": "20:34",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "056",
+    "time": "20:43",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "058",
+    "time": "21:00",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "058a",
+    "time": "21:25",
+    "text_en": "The trail cuts across Tai Po Road here. I sat on the side of the road and seriously considered going home. I called up a hiking buddy and she said don't give up now, what if I took a day off tomorrow and did the rest of the hike with you. I said you're crazy its so hot and there's still Cloudy Hill and Pat Sin Leng tomorrow. She said we got this, and so I picked myself up and kept walking.",
+    "text_cn": "呢個位喺獅子山公園穿出大埔公路，大大條路好多的士。我坐喺路邊認真考慮番屋企，有啲太辛苦太崩潰。打俾一個行山友，佢話你已經行咗咁多而家放棄好可惜，不如我聽日請假陪你行埋佢。我話你唔好癲啦真係好熱好辛苦，聽日仲有九龍坑山同八仙嶺唔係講笑。佢堅持話得架，就因為佢... 我又繼續行咗落去。"
+  },
+  {
+    "id": "062",
+    "time": "22:11",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "063",
+    "time": "22:24",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "064",
+    "time": "22:33",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "065",
+    "time": "22:46",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "067",
+    "time": "23:12",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "068",
+    "time": "23:20",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "069",
+    "time": "23:35",
+    "text_en": "Got to Shing Mun Reservoir, little more than halfway, calling a day",
+    "text_cn": "到咗城門水塘，過咗一半，明天再續"
+  },
+  {
+    "id": "070",
+    "time": "05:25",
+    "text_en": "Good morning :sun:",
+    "text_cn": ""
+  },
+  {
+    "id": "071",
+    "time": "05:44",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "072",
+    "time": "05:50",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "073",
+    "time": "05:57",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "074",
+    "time": "06:09",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "075",
+    "time": "06:17",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "076",
+    "time": "06:24",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "077",
+    "time": "06:36",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "078",
+    "time": "06:47",
+    "text_en": "moo",
+    "text_cn": ""
+  },
+  {
+    "id": "079",
+    "time": "06:53",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "080",
+    "time": "07:00",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "081",
+    "time": "07:07",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "082",
+    "time": "07:14",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "083",
+    "time": "07:24",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "083a",
+    "time": "07:28",
+    "text_en": "I told my friend I would meet her at 8 a.m., but it was already 7:30 a.m. and there was still 7 km to go... Told her I might be a bit late.",
+    "text_cn": "本身約個朋友 8 點喺太和，但去到鉛鑛坳已經 7 點半， 仲有 7 公里，同佢講話要遲啲到"
+  },
+  {
+    "id": "084",
+    "time": "07:37",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "085",
+    "time": "07:51",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "086",
+    "time": "07:59",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "087",
+    "time": "08:07",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "088",
+    "time": "08:13",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "090",
+    "time": "08:24",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "091",
+    "time": "08:37",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "092",
+    "time": "08:44",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "093",
+    "time": "08:52",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "094",
+    "time": "08:57",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "095",
+    "time": "09:02",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "096",
+    "time": "09:08",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "097",
+    "time": "09:15",
+    "text_en": "Found my friend :tear:",
+    "text_cn": "會合咗 :tear:"
+  },
+  {
+    "id": "097a",
+    "time": "10:02",
+    "text_en": "Stopped for breakfast and ready to bag peaks with my hiking companion",
+    "text_cn": "食埋早餐同戰友重新出發"
+  },
+  {
+    "id": "098",
+    "time": "10:05",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "099",
+    "time": "10:09",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "100",
+    "time": "10:31",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "101",
+    "time": "10:40",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "101a",
+    "time": "10:59",
+    "text_en": "Love a good signage",
+    "text_cn": ""
+  },
+  {
+    "id": "102",
+    "time": "11:04",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "103",
+    "time": "11:23",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "103a",
+    "time": "11:38",
+    "text_en": "all the way up",
+    "text_cn": ""
+  },
+  {
+    "id": "104",
+    "time": "11:38",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "105",
+    "time": "11:52",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "106",
+    "time": "11:54",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "107",
+    "time": "12:10",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "108",
+    "time": "12:19",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "109",
+    "time": "12:28",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "110",
+    "time": "12:36",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "111",
+    "time": "12:45",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "112",
+    "time": "13:21",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "113",
+    "time": "13:28",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "114",
+    "time": "13:42",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "115",
+    "time": "14:05",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "116",
+    "time": "14:49",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "117",
+    "time": "15:01",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "118",
+    "time": "15:12",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "119",
+    "time": "15:26",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "120",
+    "time": "15:41",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "121",
+    "time": "13:50",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "122",
+    "time": "16:06",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "123",
+    "time": "16:28",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "124",
+    "time": "16:58",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "125",
+    "time": "17:12",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "126",
+    "time": "17:26",
+    "text_en": "Ladies and gentlemen, last peak :tear:",
+    "text_cn": "各位觀眾，最後一座山 :tear:"
+  },
+  {
+    "id": "127",
+    "time": "17:50",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "128",
+    "time": "17:59",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "129",
+    "time": "18:11",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "130",
+    "time": "18:23",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "131",
+    "time": "18:31",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "132",
+    "time": "18:39",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "133",
+    "time": "18:47",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "134",
+    "time": "18:57",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "135",
+    "time": "19:02",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "136",
+    "time": "19:13",
+    "text_en": "",
+    "text_cn": ""
+  },
+  {
+    "id": "137",
+    "time": "19:19",
+    "text_en": "finished",
+    "text_cn": "完"
+  }
+]
