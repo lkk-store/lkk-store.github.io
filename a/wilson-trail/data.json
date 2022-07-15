@@ -116,8 +116,8 @@
   {
     "id": "012a",
     "time": "09:55",
-    "text_en": "",
-    "text_cn": "nice view"
+    "text_en": "Tai Tam Reservoir",
+    "text_cn": "大潭水塘"
   },
   {
     "id": "013",
@@ -171,7 +171,7 @@
     "id": "018b",
     "time": "11:27",
     "text_en": "But no one cares cause it's Hong Kong.",
-    "text_cn": "但香港人見怪不怪。"
+    "text_cn": "但香港人見怪不怪"
   },
   {
     "id": "018c",
@@ -224,7 +224,7 @@
   {
     "id": "024",
     "time": "13:14",
-    "text_en": "I missed W024! It's the first sign I missed.",
+    "text_en": "I missed W024!",
     "text_cn": "第一個 miss 咗嘅牌... W024"
   },
   {
@@ -309,7 +309,7 @@
     "id": "035a",
     "time": "15:35",
     "text_en": "I think I sat here for about 15 minutes. There was beginning to be some desperation and fatigue and stomach ache. Progress was really slow and there were many more mountains to climb.",
-    "text_cn": "好似坐咗喺度 15 分鐘。開始有絕望虛脫肚痛。行得好慢好慢，仲有好多座山要行。"
+    "text_cn": "好似坐咗喺度 15 分鐘。開始絕望虛脫肚痛。行得好慢好慢，仲有好多座山要行。"
   },
   {
     "id": "036",
@@ -704,7 +704,7 @@
   {
     "id": "101a",
     "time": "10:59",
-    "text_en": "Love a good signage",
+    "text_en": "Love a good sign",
     "text_cn": ""
   },
   {
@@ -829,9 +829,15 @@
   },
   {
     "id": "121",
-    "time": "13:50",
+    "time": "15:50",
     "text_en": "",
     "text_cn": ""
+  },
+  {
+    "id": "121a",
+    "time": "15:50",
+    "text_en": "Eight peaks coming up!",
+    "text_cn": "八仙嶺最後到數!"
   },
   {
     "id": "122",
@@ -918,6 +924,12 @@
     "text_cn": ""
   },
   {
+    "id": "135a",
+    "time": "19:10",
+    "text_en": "Can't believe I'm going to make it to the end",
+    "text_cn": "不能相信竟然完成到"
+  },
+  {
     "id": "136",
     "time": "19:13",
     "text_en": "",
@@ -926,7 +938,7 @@
   {
     "id": "137",
     "time": "19:19",
-    "text_en": "finished",
-    "text_cn": "完"
+    "text_en": "78 km Wilson Trail done",
+    "text_cn": "78 公里衞奕信徑 done"
   }
 ]

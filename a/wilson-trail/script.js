@@ -199,7 +199,7 @@ d3.selectAll(".g-nav-button").on("click", function(){
 
 d3.selectAll(".g-fastforward").on("click", function(){
 
-	var next = data.filter((d,i) => i > counter && (d.text_en || d.text_cn))[0];
+	var next = data.filter((d,i) => i > counter && (d.text_en || d.text_cn) && d.text_en.indexOf("missed") == -1)[0];
 
 	prevcounter = counter;
 	counter = data.indexOf(next);
@@ -315,7 +315,7 @@ function move(id, hash, fastforward) {
 	var n = ids.indexOf(id);
 	var el = d3.select("#g-post-" + id)
 
-	if (+(id.substr(0,3)) > 6 && id != enddp && id != "102" && id != "099" && id != "096" && id != "097" && id != "098"  && id != "095") {
+	if (+(id.substr(0,3)) > 6 && id != enddp) {
 		d3.select(".g-fastforward").classed("g-active", true);
 	} else {
 		d3.select(".g-fastforward").classed("g-active", false);
@@ -359,7 +359,7 @@ function move(id, hash, fastforward) {
 			.style("background-image", "url(photos/w" + ids[n+1] + nextext + ".jpg)")
 	}
 	
-	var next = data.filter((d,i) => i > n && (d.text_en || d.text_cn))[0];
+	var next = data.filter((d,i) => i > n && (d.text_en || d.text_cn) && d.text_en.indexOf("missed") == -1)[0];
 
 	if (!next) {
 		next = data[n+1];
@@ -368,7 +368,6 @@ function move(id, hash, fastforward) {
 	if (!next) {
 		next = data[data.length - 1]
 	}
-
 
 	var nextnextext = d3.select("#g-post-" + next.id).attr("data-labeled") == "y" ? "-labeled" : "";
 	d3.select("#g-post-" + next.id)
@@ -424,14 +423,27 @@ function move(id, hash, fastforward) {
 		var totalhr = 30
 		var totalmin = 6
 
-		var starttime = id < 70 ? new Date(2021,6,11,7,23) : new Date(2021,6,12,5,25);
-		var newday = id < 70 ? 11 : 12
+		var starttime = +id.substr(0,3) < 70 ? new Date(2021,6,11,7,23) : new Date(2021,6,12,5,25);
+		var newday = +id.substr(0,3) < 70 ? 11 : 12
 
 		var newtime = new Date(2021,6,newday,dattime.split(":")[0],dattime.split(":")[1]);
+
+
+
 		var diffMs = (newtime - starttime); // milliseconds between now & Christmas
 		var diffDays = Math.floor(diffMs / 86400000); // days
 		var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
+
+		if (+id.substr(0,3) >= 70) {
+			diffHrs += 16
+		}
+
 		var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+
+		if (id == "137") {
+			diffHrs = 30
+			diffMins = 6
+		}
 
 		if (id == "cover") {
 

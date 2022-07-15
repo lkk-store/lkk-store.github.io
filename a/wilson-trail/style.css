@@ -553,6 +553,23 @@ svg {
 	transform: scale(1) rotate(0) translate(0%, 11%);	
 }
 
+#g-post-008a .g-text-cont {
+	transform: scale(1) rotate(0) translate(0%, 20%);	
+}
+
+#g-post-008a .g-text-en {
+	max-width: 250px;
+}
+
+#g-post-012a .g-text-cont {
+	transform: scale(1) rotate(0) translate(0%, 15%);	
+}
+
+#g-post-013a .g-text-cont {
+	transform: scale(1) rotate(0) translate(0%, 16%);	
+}
+
+
 #g-post-018b .g-text-cont {
 	transform: scale(1) translate(0%,25%);
 }
@@ -709,6 +726,10 @@ svg {
 
 #g-post-126 .g-text-cont {
 	transform: scale(1) rotate(0) translate(0%, -20%);
+}
+
+#g-post-135a .g-text-cont {
+	transform: scale(1) rotate(0) translate(0%, 22%);
 }
 
 #g-post-137 .g-text-cont {
