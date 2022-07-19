@@ -46,8 +46,8 @@
 
 		.g-hed {
 			font-size: 20px;
-			margin-bottom: 5px;
-			letter-spacing: 5px;
+			margin-bottom: 10px;
+			letter-spacing: 3px;
 		}
 
 		.g-text {
@@ -66,9 +66,16 @@
 		}
 
 		.g-img-block .g-img-bg {
-			width: calc(50% - 0px);
+			width: calc(50% - 2.5px);
 			display: inline-block;
+			margin-right: 5px;
+			margin-bottom: 5px;
 		}
+
+		.g-img-block .g-img-bg:nth-child(even) {
+			margin-right: 0;
+		}
+
 
 		.g-img-bg-inner {
 			padding-bottom: 100%;
@@ -79,7 +86,7 @@
 
 		@media screen and (min-width: 600px) {
 			.g-img-featured, .g-img-block {
-				width: calc(50% - 3px);
+				width: calc(50% - 4px);
 				display: inline-block;
 				vertical-align: top;
 			}
@@ -87,6 +94,8 @@
 			.g-img-block .g-img-bg {
 				width: calc(33.333% - 3px);
 				display: inline-block;
+				margin-right: 0;
+				margin-bottom: 0;
 			}
 
 			.g-img-bg-inner {
@@ -107,7 +116,15 @@
 			color:  #fff;
 			opacity: 0.6;
 		}
+
+		.g-img-featured {
+			border: 1px solid rgba(255,255,255,0.1);
+		}
 		
+		.g-text {
+			max-width: 400px;
+			margin:  0 auto 10px auto;
+		}
 
 	</style>
 </head>
@@ -116,7 +133,22 @@
 	<div class="g-header">
 		<div class="g-hed-text">
 			<p class="g-hed">LKK MAPS</p>
-			<p class="g-text">it's the journey, not the place</p>
+			<p class="g-text">mapping my journeys</p>
+		</div>
+	</div>
+
+	<div class="g-project">
+		<div class="g-hed-text">
+			<p class="g-hed">HONG KONG FOUR TRAILS</p>
+			<p class="g-text">香港有四條長途遠足徑，我將會喺 2022 年呢嘅暑假，完成呢 4 條山徑，作為自己一個小小嘅挑戰。人生好似不外乎諗啲目標俾自己然後向住嗰毎目標進發。</p>
+			<p class="g-text">There are four long distance hiking trails in Hong Kong. I'm going to hike all of them this summer as a small personal challenge. Life seems like a coming up with goals for yourself and trying to accomplish them.</p>
+		</div>
+
+		<div class="g-img-cont">
+			<div class="g-img-featured">
+				<img src="four/four.jpg" />
+			</div>
+			
 		</div>
 	</div>
 
