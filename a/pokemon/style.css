@@ -76,7 +76,7 @@ html, body {
 
 .g-button-cont {
 	position: absolute;
-	bottom:  80px;
+	bottom:  40px;
 	text-align: center;
 	width: 100%;
 }
@@ -108,7 +108,7 @@ html, body {
 }
 
 .g-img-cont {
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
 }
 
