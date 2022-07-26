@@ -34,12 +34,14 @@ html, body {
 }
 
 .g-item {
-	width:  375px;
-	height:  667px;
+	width: 100vw;
+	height: 100%;
+	max-width:  375px;
+	max-height:  667px;
 	display: inline-block;
 	position: relative;
 	vertical-align:  top;
-	margin-right: -1px;
+	/*margin-right: -1px;*/
 	text-align: center;
 	user-select: none;
 }
@@ -48,6 +50,8 @@ html, body {
 	display: inline-block;
 	position: relative;
 	vertical-align:  top;
+	height: 100%;
+	/*margin-left: -1px;*/
 }
 
 .g-item-inner {
@@ -106,6 +110,22 @@ html, body {
 .g-img-cont {
 	width: 90%;
 	margin: 0 auto;
+}
+
+.g-img-cont-outer {
+	position: relative;
+}
+
+.g-img-answer {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition:  opacity 1s;
+}
+
+.g-img-answer.g-active {
+	opacity: 1;
 }
 
 .g-item-start .g-img-cont {
@@ -251,6 +271,8 @@ input:focus, button:focus {
 
 .g-failed {
 	display: none;
+	max-width: 318px;
+	margin:  0 auto;
 }
 
 .g-item-scoreboard div {

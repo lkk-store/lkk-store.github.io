@@ -1,6 +1,6 @@
 var list = ["獨角蟲","地鼠","奇異種子","小火龍","椰蛋怪","比卡超","波波","波波球","穿山鼠","超音蝠","車厘龜", ];
 
-var w = 375;
+var w = d3.select(".g-body").node().getBoundingClientRect().width;
 var h = 667;
 
 var sel = d3.select(".g-item-cont");
@@ -20,7 +20,8 @@ var inner = sel.select("div.g-item-cont-inner");
 d3.select(".g-body").style("height", innerHeight + "px")
 inner.style("width", ((list.length+3)*w + 100) + "px").style("height", innerHeight + "px");
 
-var cont = d3.select(".g-item-play").style("width", (list.length*w) + "px").html("");
+var cont = d3.select(".g-item-play")
+// .style("width", (list.length*w) + "px").html("");
 
 list.forEach(function(item,i){
 
@@ -28,7 +29,10 @@ list.forEach(function(item,i){
 
 	if (item != "start" && item != "end") {
 
-		div.append("div.g-img-cont").append("div.g-img").style("background-image", "url(img/" + item + "_s.png)")
+		var imgcont = div.append("div.g-img-cont-outer");
+		imgcont.append("div.g-img-cont").append("div.g-img").style("background-image", "url(img/" + item + "_s.png)")
+		imgcont.append("div.g-img-cont.g-img-answer").append("div.g-img.g-img-answer").style("background-image", "url(img/" + item + ".png)")
+
 		div.append("input").attr("id", "input-" + item)
 		div.append("div.g-button-cont")
 			.append("div")
