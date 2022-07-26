@@ -1,7 +1,9 @@
 var list = ["獨角蟲","地鼠","奇異種子","小火龍","椰蛋怪","比卡超","波波","波波球","穿山鼠","超音蝠","車厘龜", ];
 
-var w = d3.select(".g-body").node().getBoundingClientRect().width;
+var w = d3.select(".g-item-cont").node().getBoundingClientRect().width;
 var h = 667;
+
+var contleft = d3.select(".g-item-cont").node().getBoundingClientRect().left;
 
 var sel = d3.select(".g-item-cont");
 
@@ -19,13 +21,13 @@ d3.shuffle(list);
 var inner = sel.select("div.g-item-cont-inner");
 d3.select(".g-body").style("height", innerHeight + "px")
 inner.style("width", ((list.length+3)*w + 100) + "px").style("height", innerHeight + "px");
-
-var cont = d3.select(".g-item-play")
 // .style("width", (list.length*w) + "px").html("");
+
+var cont = d3.select(".g-item-cont-inner");
 
 list.forEach(function(item,i){
 
-	var div = cont.append("div.g-item.g-item-" + item).append("div.g-item-inner");
+	var div = cont.insert("div.g-item.g-item-" + item, ".g-item-end").append("div.g-item-inner");
 
 	if (item != "start" && item != "end") {
 
@@ -48,14 +50,27 @@ list.forEach(function(item,i){
 
 		div.append("div.g-correct-answer")
 			.text(item)
-
 	}
 })
 
+
+var left = 0;
+d3.selectAll(".g-item").each(function(el,eli){
+	var el = d3.select(this);
+	el.classed("g-item-" + eli, true);
+	el.attr("data-left", left)
+
+	left += el.node().getBoundingClientRect().width;
+})
+
+
 d3.selectAll(".g-button-next").on("click", function(){
 	counter += 1;
-	inner.transition().style("transform", "translate(-" + w*counter + "px,0)");
-	d3.select(".g-n-bg").classed("g-animate", false);
+
+	var targetel = d3.select(".g-item-" + counter);
+	var targetleft = targetel.attr("data-left");
+	inner.transition().style("transform", "translate(-" + targetleft + "px,0)");
+	d3.select(".g-n-bg").classed("g-animate", false);	
 })
 
 d3.selectAll(".g-button-play").on("click", function(){
@@ -121,7 +136,9 @@ $( document ).ready( function(){
 					success: function(res){ 
 						d3.select(".g-loading").style("display", "none");
 						counter +=1 
-						inner.transition().style("transform", "translate(-" + w*counter + "px,0)");
+
+						var endleft = d3.select(".g-item-scoreboard").attr("data-left");
+						inner.transition().style("transform", "translate(-" + endleft + "px,0)");
 
 						var scoreboardel = d3.select(".g-item-scoreboard");
 						scoreboardel.select(".g-score-name").text(name)
