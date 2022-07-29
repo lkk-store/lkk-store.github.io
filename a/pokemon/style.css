@@ -16,15 +16,20 @@ html, body {
 }
 
 .g-item-cont {
-	border: 1px solid rgba(255,255,255,0.2);
 	width: 100vw;
 	height: 100%;
-	max-width:  375px;
-	max-height:  667px;
 	margin:  0 auto;
 	overflow: hidden;
 	text-align: center;
 	position: relative;
+}
+
+@media screen and (min-width:  460px) {
+	.g-item-cont {
+		border: 1px solid rgba(255,255,255,0.2);
+		max-width:  375px;
+		max-height:  667px;
+	}
 }
 
 .g-item-cont-inner {
@@ -38,14 +43,19 @@ html, body {
 .g-item {
 	width: 100vw;
 	height: 100%;
-	max-width:  375px;
-	max-height:  667px;
 	display: inline-block;
 	position: relative;
 	vertical-align:  top;
 	/*margin-right: -1px;*/
 	text-align: center;
 	user-select: none;
+}
+
+@media screen and (min-width:  460px) {
+	.g-item {
+		max-width:  375px;
+		max-height:  667px;
+	}
 }
 
 .g-item-play {
@@ -63,6 +73,7 @@ html, body {
 	background-size: 100% auto;
 	background-position: top;
 	background-image: url("img/bg.png");
+	background-repeat: no-repeat;
 }
 
 .g-input-cont.g-correct:after, .g-input-cont.g-wrong:after {
@@ -171,7 +182,7 @@ html, body {
 
 .g-input-cont {
 	position: absolute;
-	top:  67%;
+	top:  63%;
 	width: 100%;
 }
 
@@ -333,6 +344,10 @@ input:focus, button:focus {
 	margin-left: 5px;
 }
 
+.g-score-dot.g-now {
+	border:  2px solid rgba(255,255,255,1);
+}
+
 .g-score-dot.g-correct {
 	background: #24b34b;
 	border: 2px solid black;
@@ -341,4 +356,22 @@ input:focus, button:focus {
 .g-score-dot.g-wrong {
 	background: #ee3224;
 	border: 2px solid black;
+}
+
+.g-nav-button {
+	position: absolute;
+	bottom:  27px;
+	left: 12px;
+	padding:  8px 12px;
+	font-size: 18px;
+	display: none;
+}
+
+.g-nav-button.g-active {
+	display: block;
+}
+
+.g-nav-button.g-next {
+	left: auto;
+	right:  12px;
 }

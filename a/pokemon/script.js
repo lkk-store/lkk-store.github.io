@@ -7,7 +7,7 @@ var contleft = d3.select(".g-item-cont").node().getBoundingClientRect().left;
 
 var sel = d3.select(".g-item-cont");
 
-if (innerHeight > h) {
+if (innerHeight > h && innerWidth > 460) {
 	sel.style("margin-top", (innerHeight/2 - h/2) + "px");
 }
 
@@ -54,7 +54,7 @@ list.forEach(function(item,i){
 			.append("div")
 			.attr("class", "g-button g-button-next")
 			.attr("data-id", itemname)
-			.text("下題");
+			.text(i == list.length - 1 ? "計分" : "下題");
 
 		inputcont.append("div.g-correct-answer")
 			.text(itemname)
@@ -74,12 +74,56 @@ d3.selectAll(".g-item").each(function(el,eli){
 
 d3.selectAll(".g-button-next").on("click", function(){
 	counter += 1;
+	move();
+})
 
+d3.selectAll(".g-nav-button").on("click", function(){
+
+	var el = d3.select(this);
+	var dir = el.attr("data-dir");
+
+	if (dir == "next") {
+		counter += 1;
+	} else {
+		counter -= 1;
+	}
+
+	if (counter < 0) {
+		counter = 0;
+	} else if (counter > (list.length)) {
+		counter = list.length;
+	}
+
+	move();
+})
+
+function move() {
 	var targetel = d3.select(".g-item-" + counter);
 	var targetleft = targetel.attr("data-left");
 	inner.transition().style("transform", "translate(-" + (+targetleft+3.5) + "px,0)");
-	d3.select(".g-n-bg").classed("g-animate", false);	
-})
+
+	d3.selectAll(".g-score-dot").classed("g-now", false);
+	d3.select(".g-score-dot-" + (counter-1)).classed("g-now", true);
+
+	if (counter > 0) {
+		d3.selectAll(".g-nav-button").classed("g-active", true);
+	}
+
+	if (counter == 0) {
+		d3.selectAll(".g-nav-button").classed("g-active", false);
+	}
+
+	if (counter == (list.length+1)) {
+		d3.selectAll(".g-nav-button").classed("g-active", true);
+		d3.select(".g-nav-button.g-next").classed("g-active", false);
+	}
+
+	if (counter == list.length) {
+		d3.select(".g-nav-button.g-next").classed("g-active", false);
+	}
+
+}
+
 
 d3.selectAll(".g-button-play").on("click", function(){
 	var el = d3.select(this);
@@ -96,7 +140,6 @@ d3.selectAll(".g-button-play").on("click", function(){
 		inputel.classed("g-correct", true)
 		score += 1;
 		d3.selectAll(".g-n").text(score);
-		d3.select(".g-n-bg").classed("g-animate", true);
 		d3.select(".g-score-dot-" + (counter-1)).classed("g-correct", true);
 
 		if (score > 4) {
