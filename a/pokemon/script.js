@@ -1,4 +1,4 @@
-var list = ["獨角蟲","地鼠","奇異種子","小火龍","椰蛋怪","比卡超","波波","波波球","穿山鼠","超音蝠","車厘龜", ];
+var list = ["1綠毛蟲","2車厘龜","3波波球","5爛泥怪","6蛋蛋","7精靈球","9比卡超"];
 
 var w = d3.select(".g-item-cont").node().getBoundingClientRect().width;
 var h = 667;
@@ -12,11 +12,16 @@ if (innerHeight > h) {
 }
 
 var score = 0;
-
 var counter = 0;
 var length = list.length;
-d3.selectAll(".g-n-count").text(length);
-d3.shuffle(list);
+
+var scorecont = d3.select(".g-score-cont").html("");
+list.forEach(function(d,i){
+	scorecont.append("div.g-score-dot.g-score-dot-" + i);
+})
+
+
+// d3.shuffle(list);
 
 var inner = sel.select("div.g-item-cont-inner");
 d3.select(".g-body").style("height", innerHeight + "px")
@@ -27,29 +32,32 @@ var cont = d3.select(".g-item-cont-inner");
 
 list.forEach(function(item,i){
 
-	var div = cont.insert("div.g-item.g-item-" + item, ".g-item-end").append("div.g-item-inner");
+	var itemname = item.substring(1,item.length);
+	var div = cont.insert("div.g-item.g-item-" + itemname, ".g-item-end").append("div.g-item-inner");
 
 	if (item != "start" && item != "end") {
 
 		var imgcont = div.append("div.g-img-cont-outer");
-		imgcont.append("div.g-img-cont").append("div.g-img").style("background-image", "url(img/" + item + "_s.png)")
-		imgcont.append("div.g-img-cont.g-img-answer").append("div.g-img.g-img-answer").style("background-image", "url(img/" + item + ".png)")
+		imgcont.append("div.g-img-cont").style("background-image", "url(img/" + item + "b.png)")
+		imgcont.append("div.g-img-cont.g-img-answer").style("background-image", "url(img/" + item + ".png)")
 
-		div.append("input").attr("id", "input-" + item)
+		var inputcont = div.append("div.g-input-cont");
+		inputcont.append("input.g-input").attr("id", "input-" + itemname);
+
 		div.append("div.g-button-cont")
 			.append("div")
 			.attr("class", "g-button g-button-play")
-			.attr("data-id", item)
+			.attr("data-id", itemname)
 			.text("開估");
 
 		div.append("div.g-button-cont")
 			.append("div")
 			.attr("class", "g-button g-button-next")
-			.attr("data-id", item)
+			.attr("data-id", itemname)
 			.text("下題");
 
-		div.append("div.g-correct-answer")
-			.text(item)
+		inputcont.append("div.g-correct-answer")
+			.text(itemname)
 	}
 })
 
@@ -69,7 +77,7 @@ d3.selectAll(".g-button-next").on("click", function(){
 
 	var targetel = d3.select(".g-item-" + counter);
 	var targetleft = targetel.attr("data-left");
-	inner.transition().style("transform", "translate(-" + targetleft + "px,0)");
+	inner.transition().style("transform", "translate(-" + (+targetleft+3.5) + "px,0)");
 	d3.select(".g-n-bg").classed("g-animate", false);	
 })
 
@@ -78,28 +86,32 @@ d3.selectAll(".g-button-play").on("click", function(){
 	var answer = el.attr("data-id");
 	var itemel = d3.select(".g-item-" + answer);
 
-	var input = d3.select("#input-" + answer).node().value;
+	var inputel = itemel.select(".g-input-cont");
+	var input = itemel.select("input").node().value;
 
-	// if (input == "") {
-	// 	console.log("no input")
-	// 	itemel.select("input").transition().style("background", "red").transition().style("background", "#181818")
-	// } else {
-		itemel.select(".g-img").style("background-image", "url(img/" + answer + ".png)")
+	itemel.select(".g-img-answer").classed("g-active", true)
 
-		if (input.trim() == answer) {
-			console.log("correct")
-			itemel.classed("g-correct", true)
-			score += 1;
-			d3.selectAll(".g-n").text(score);
-			d3.select(".g-n-bg").classed("g-animate", true);
-		} else {
-			console.log("wrong")
-			itemel.classed("g-wrong", true)
-			itemel.select(".g-correct-answer").style("display", "block");
+	if (input.trim() == answer) {
+		console.log("correct")
+		inputel.classed("g-correct", true)
+		score += 1;
+		d3.selectAll(".g-n").text(score);
+		d3.select(".g-n-bg").classed("g-animate", true);
+		d3.select(".g-score-dot-" + (counter-1)).classed("g-correct", true);
+
+		if (score > 4) {
+			d3.select(".g-item-end .g-item-inner").style("background-image", "url(img/prize.png");
 		}
+	} else {
+		console.log("wrong")
+		inputel.classed("g-wrong", true)
+		itemel.select(".g-correct-answer").style("display", "block");
 
-		itemel.select(".g-button-play").style("display", "none")
-		itemel.select(".g-button-next").style("display", "block")
+		d3.select(".g-score-dot-" + (counter-1)).classed("g-wrong", true);
+	}
+
+	itemel.select(".g-button-play").style("display", "none")
+	itemel.select(".g-button-next").style("display", "block")
 	
 })
 
@@ -138,7 +150,7 @@ $( document ).ready( function(){
 						counter +=1 
 
 						var endleft = d3.select(".g-item-scoreboard").attr("data-left");
-						inner.transition().style("transform", "translate(-" + endleft + "px,0)");
+						inner.transition().style("transform", "translate(-" + (endleft+3) + "px,0)");
 
 						var scoreboardel = d3.select(".g-item-scoreboard");
 						scoreboardel.select(".g-score-name").text(name)
