@@ -6,7 +6,7 @@ html, body {
 	font-family: 'Noto Sans TC', sans-serif;
 	overflow-y:hidden;
 	/*position: fixed;*/
-	background-image:  url(img/bbg.png);
+	background-image:  url(img/red.png);
 	background-size:  cover;
 }
 
@@ -71,8 +71,8 @@ html, body {
 	position: relative;
 	height: 100%;
 	background-size: 100% auto;
-	background-position: top;
-	background-image: url("img/bg.png");
+	background-position: 0 15%;
+	background-image: url("img/light.png");
 	background-repeat: no-repeat;
 }
 
@@ -97,6 +97,7 @@ html, body {
 	bottom:  25px;
 	text-align: center;
 	width: 100%;
+	cursor: pointer;
 }
 
 .g-button {
@@ -128,14 +129,29 @@ html, body {
 .g-img-cont-outer {
 	width: 100%;
 	height: 100%;
+	position: relative;
+}
+
+.g-img-cont-outer:after {
+	content: "";
+	display: block;
+	background-image: url(img/q.png);
+	width: 80px;
+	height: 100px;
+	position: absolute;
+	top: 1%;
+	left: 40%;
+	z-index: 10;
+	background-size: 100%;
+	transform: rotate(15deg);
 }
 
 .g-img-cont {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	top: 0%;
+  left: 0%;
+  width: 130%;
+  height: 130%;
 	margin: 0 auto;
 	background-size: 100% auto;
 	background-position: top;
@@ -149,8 +165,6 @@ html, body {
 .g-img-answer {
 	opacity: 0;
 	position: absolute;
-	top: 0;
-	left: 0;
 }
 
 .g-img-answer.g-active {
@@ -178,6 +192,42 @@ html, body {
 
 .g-item-start .g-button-next {
 	display: block;
+}
+
+.g-item-start .g-item-inner {
+	background-position: center;
+}
+
+.g-item-start .g-logo {
+		margin-top: 20%;
+}
+
+.g-item-start .g-text {
+	max-width: 350px;
+	margin: 0 auto;
+}
+
+.g-shadow {
+	width: 72%;
+	/*animation-name: flashflashflash;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;*/
+	transform: rotate(-10deg);
+}
+
+/*@keyframes flashflashflash {
+	0% { opacity: 1;}
+	5% { opacity: 0;}
+	10% { opacity: 1;}
+	15% { opacity: 0;}
+	20% { opacity: 1;}
+	25% { opacity: 0;}
+	30% { opacity: 1;}
+	35% { opacity: 0;}
+}*/
+
+img {
+	width: 100%;
 }
 
 .g-input-cont {
@@ -365,6 +415,8 @@ input:focus, button:focus {
 	padding:  8px 12px;
 	font-size: 18px;
 	display: none;
+	user-select: none;
+	cursor: pointer;
 }
 
 .g-nav-button.g-active {
