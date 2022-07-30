@@ -198,7 +198,7 @@ html, body {
 	background-position: center;
 }
 
-.g-item-start .g-logo {
+.g-logo {
 		margin-top: 20%;
 }
 
@@ -334,6 +334,10 @@ input:focus, button:focus {
 	font-size: 60px;
 }
 
+.g-item-end .g-item-inner {
+	background-image:  url("");
+}
+
 .g-input-title {
 	margin-top: 50px;
 }
@@ -426,4 +430,8 @@ input:focus, button:focus {
 .g-nav-button.g-next {
 	left: auto;
 	right:  12px;
+}
+
+.g-good {
+	display: none;
 }
