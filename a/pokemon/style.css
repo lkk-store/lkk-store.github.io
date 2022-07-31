@@ -213,6 +213,7 @@ html, body {
 	animation-duration: 2s;
 	animation-iteration-count: infinite;*/
 	transform: rotate(-10deg);
+	margin-top: -10px;
 }
 
 /*@keyframes flashflashflash {
@@ -434,4 +435,8 @@ input:focus, button:focus {
 
 .g-good {
 	display: none;
+}
+
+.g-start-text {
+	width: 90%;
 }
