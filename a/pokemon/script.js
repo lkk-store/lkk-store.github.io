@@ -1,4 +1,4 @@
-var list = ["1綠毛蟲","2車厘龜","3波波球","5爛泥怪","6蛋蛋","7精靈球","9比卡超"];
+var list = ["1綠毛蟲","2車厘龜","3波波球","4鬼斯","5爛泥怪","6蛋蛋","7精靈球","8百變怪","9比卡超"];
 
 var w = d3.select(".g-item-cont").node().getBoundingClientRect().width;
 var h = 667;

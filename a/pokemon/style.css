@@ -208,12 +208,13 @@ html, body {
 }
 
 .g-shadow {
-	width: 72%;
+	/*width: 72%;*/
 	/*animation-name: flashflashflash;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;*/
-	transform: rotate(-10deg);
-	margin-top: -10px;
+	/*transform: rotate(-10deg);*/
+	/*margin-top: -10px;*/
+	margin-top: 20px;
 }
 
 /*@keyframes flashflashflash {
@@ -241,7 +242,7 @@ input {
 	box-shadow: none;
 	border: 1px solid #999;
 	border-radius: 10px;
-	width: 80%;
+	/*width: 80%;*/
 	padding: 20px;
 	background: #181818;
 	color:  #fff;
