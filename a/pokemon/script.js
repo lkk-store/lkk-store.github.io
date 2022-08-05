@@ -1,4 +1,4 @@
-var list = ["1綠毛蟲","2車厘龜","3波波球","4鬼斯","5爛泥怪","6蛋蛋","7精靈球","8百變怪","9比卡超"];
+var list = ["1綠毛蟲" ,"2車厘龜","3波波球","4鬼斯","5爛泥怪","6蛋蛋","7精靈球","8百變怪","9比卡超"];
 
 var w = d3.select(".g-item-cont").node().getBoundingClientRect().width;
 var h = 667;
@@ -14,6 +14,7 @@ if (innerHeight > h && innerWidth > 460) {
 var score = 0;
 var counter = 0;
 var length = list.length;
+d3.select(".g-score-total").text(length)
 
 var scorecont = d3.select(".g-score-cont").html("");
 list.forEach(function(d,i){
@@ -143,7 +144,9 @@ d3.selectAll(".g-button-play").on("click", function(){
 		d3.select(".g-score-dot-" + (counter-1)).classed("g-correct", true);
 
 		if (score > 4) {
-			d3.select(".g-item-end .g-item-inner").style("background-image", "url(img/prize.png");
+			d3.select(".g-end-logo").attr("src", "img/logo.png");
+			d3.select(".g-item-end").classed("g-item-failed", false);
+			d3.select(".g-final-img").attr("src", "img/prize.png")
 		}
 	} else {
 		console.log("wrong")
