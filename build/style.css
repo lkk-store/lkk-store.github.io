@@ -637,25 +637,30 @@ input {
 .g-details .g-expand-size-chart:hover {
   background: #f7f7f7;
 }
-.g-details .g-size-chart {
+.g-details .g-size-chart,
+.g-details .g-stock-table {
   font-size: 11px;
   overflow: hidden;
   transition: 0.2s height;
 }
-.g-details .g-size-chart table {
+.g-details .g-size-chart table,
+.g-details .g-stock-table table {
   width: 100%;
   max-width: 225px;
   padding-top: 15px;
 }
-.g-details .g-size-chart table td {
+.g-details .g-size-chart table td,
+.g-details .g-stock-table table td {
   border-bottom: 1px solid #f7f7f7;
   text-align: center;
   width: 32px;
 }
-.g-details .g-size-chart table td:first-child {
+.g-details .g-size-chart table td:first-child,
+.g-details .g-stock-table table td:first-child {
   text-align: left;
 }
-.g-details .g-size-chart table tr:last-child td {
+.g-details .g-size-chart table tr:last-child td,
+.g-details .g-stock-table table tr:last-child td {
   border-bottom: none;
 }
 #submit.g-loading {
@@ -1120,4 +1125,38 @@ input {
 }
 .g-payment .g-credit-card img {
   width: 100%;
+}
+.g-size-chart .g-stock {
+  border-top: 1px solid #000;
+}
+.g-size-chart .g-stock td {
+  padding: 4px 0;
+  font-weight: 700;
+  background: #fff8dc;
+  background-image: url("loading.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+.g-size-chart .g-stock td.g-loaded {
+  background-image: none;
+}
+.g-size-chart .g-stock .g-no-bg {
+  background-image: none;
+}
+.g-stock-table {
+  margin-top: 6px;
+  max-width: 225px;
+}
+.g-stock-table table {
+  padding-top: 0 !important;
+}
+.g-stock-table .g-stock-title {
+  padding-left: 3px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
+}
+.g-stock-table .g-no-bg {
+  width: 45px !important;
 }

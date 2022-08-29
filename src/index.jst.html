@@ -206,6 +206,43 @@
 								</table>
 
 							</div>
+
+							<% if (l.soldout != 'y') { %>
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										<% var colorlist = ["001", "005", "032"]
+											var colorname = ["white", "black", "blue"]
+										%>
+
+										<% var colors = l.colors.split(",") %>
+										<% var filtered = l.colors.split(",").filter(d => d.charAt(0) != "x") %>
+										<% var added = [] %>
+										<% colors.forEach(function(s,si){ %>
+										<% if (added.indexOf(s) == -1) { %>
+
+										<% var col = s.split('#')[0]
+											coldisplay = colorlist.indexOf(col) > -1 ? colorname[colorlist.indexOf(col)] : ""
+											colid = colorlist.indexOf(col) > -1 ? col : "";
+										%>
+
+										<tr class='g-stock g-color-<%- colid %>'>
+										<td class='g-no-bg'><%- coldisplay %></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										<% added.push(s) %>
+										<% } %>
+										<% }) %>
+									</tbody>
+								</table>
+							</div>
+							<% } %>
 						<% } %>
 						
 						<br>
@@ -217,12 +254,14 @@
 
 						<% if (d.content == "store" && l.category != "Cap" && l.colors != "x") { %>
 						<div class="g-buy <% if (l.soldout == 'y') { %>g-buy-sold-out<% } %>">
+
 							<div class="g-size" style="<% if (!l.sizes) { %>display: none;<% } %>">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="<%- l.sizes %>">
+									<option disabled selected value> - </option>
 									<% var sizes = l.sizes.split(",") %>
 									<% sizes.forEach(function(s){ %>
-									<option value="<%= s %>" <% if (s == 'S') { %>selected="selected"<% } %>><%= s %></option>
+									<option value="<%= s %>"><%= s %></option>
 									<% }) %>
 								</select>
 							</div>

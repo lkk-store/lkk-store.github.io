@@ -652,25 +652,30 @@ input {
 .g-details .g-expand-size-chart:hover {
   background: #f7f7f7;
 }
-.g-details .g-size-chart {
+.g-details .g-size-chart,
+.g-details .g-stock-table {
   font-size: 11px;
   overflow: hidden;
   transition: 0.2s height;
 }
-.g-details .g-size-chart table {
+.g-details .g-size-chart table,
+.g-details .g-stock-table table {
   width: 100%;
   max-width: 225px;
   padding-top: 15px;
 }
-.g-details .g-size-chart table td {
+.g-details .g-size-chart table td,
+.g-details .g-stock-table table td {
   border-bottom: 1px solid #f7f7f7;
   text-align: center;
   width: 32px;
 }
-.g-details .g-size-chart table td:first-child {
+.g-details .g-size-chart table td:first-child,
+.g-details .g-stock-table table td:first-child {
   text-align: left;
 }
-.g-details .g-size-chart table tr:last-child td {
+.g-details .g-size-chart table tr:last-child td,
+.g-details .g-stock-table table tr:last-child td {
   border-bottom: none;
 }
 #submit.g-loading {
@@ -1135,6 +1140,40 @@ input {
 }
 .g-payment .g-credit-card img {
   width: 100%;
+}
+.g-size-chart .g-stock {
+  border-top: 1px solid #000;
+}
+.g-size-chart .g-stock td {
+  padding: 4px 0;
+  font-weight: 700;
+  background: #fff8dc;
+  background-image: url("loading.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+.g-size-chart .g-stock td.g-loaded {
+  background-image: none;
+}
+.g-size-chart .g-stock .g-no-bg {
+  background-image: none;
+}
+.g-stock-table {
+  margin-top: 6px;
+  max-width: 225px;
+}
+.g-stock-table table {
+  padding-top: 0 !important;
+}
+.g-stock-table .g-stock-title {
+  padding-left: 3px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
+}
+.g-stock-table .g-no-bg {
+  width: 45px !important;
 }
 </style>
 </head>
@@ -2790,10 +2829,10 @@ input {
 						</div>
 						
 						<div class="g-price">
-							<sup class="g-agate">HKD</sup>
+							
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num ">320</span>
+							<span class="g-price-num g-sold-out">Sold out</span>
 							
 							
 						</div>
@@ -3336,10 +3375,10 @@ input {
 						</div>
 						
 						<div class="g-price">
-							<sup class="g-agate">HKD</sup>
+							
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num ">500</span>
+							<span class="g-price-num g-sold-out">Sold out</span>
 							
 							
 						</div>
@@ -3447,6 +3486,38 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -3458,20 +3529,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -3593,6 +3666,38 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -3604,20 +3709,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -3699,6 +3806,38 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -3710,20 +3849,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -3838,6 +3979,8 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
 						
 						
 						<br>
@@ -3849,12 +3992,14 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="display: none;">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="" ></option>
+									<option value=""></option>
 									
 								</select>
 							</div>
@@ -3961,6 +4106,8 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
 						
 						
 						<br>
@@ -3972,12 +4119,14 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
 								</select>
 							</div>
@@ -4079,6 +4228,38 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -4090,20 +4271,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -4221,6 +4404,38 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -4232,20 +4447,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -4355,6 +4572,68 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-032'>
+										<td class='g-no-bg'>blue</td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-001'>
+										<td class='g-no-bg'>white</td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-005'>
+										<td class='g-no-bg'>black</td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -4366,20 +4645,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -4504,6 +4785,38 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -4515,20 +4828,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -4639,6 +4954,38 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -4650,20 +4997,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -4774,6 +5123,38 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -4785,20 +5166,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -4913,6 +5296,53 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-001'>
+										<td class='g-no-bg'>white</td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-005'>
+										<td class='g-no-bg'>black</td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -4924,20 +5354,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -5066,6 +5498,38 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -5077,20 +5541,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -5205,6 +5671,57 @@ a polite way to say "DLLM"</p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-001'>
+										<td class='g-no-bg'>white</td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-005'>
+										<td class='g-no-bg'>black</td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -5216,20 +5733,22 @@ a polite way to say "DLLM"</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -5375,6 +5894,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -5386,20 +5937,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -5506,6 +6059,8 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
 						
 						
 						<br>
@@ -5517,20 +6072,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -5644,6 +6201,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-001'>
+										<td class='g-no-bg'>white</td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -5655,20 +6244,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -5681,16 +6272,6 @@ hong kong color edition:</p><p>
 									
 									
 									<div class="g-color-circle  g-picked" data-store="038" data-order="1" data-color="1-001" style="background-color: #ffffff;"></div>
-									
-									
-									
-									
-									<div class="g-color-circle  " data-store="038" data-order="2" data-color="2-132" style="background-color: #fbd4dd;"></div>
-									
-									
-									
-									
-									<div class="g-color-circle  " data-store="038" data-order="3" data-color="3-134" style="background-color: #f6e18d;"></div>
 									
 									
 									
@@ -5765,12 +6346,14 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="L">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
 								</select>
 							</div>
@@ -5872,6 +6455,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -5883,12 +6498,14 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
 								</select>
 							</div>
@@ -5990,6 +6607,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -6001,20 +6650,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -6128,6 +6779,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -6139,20 +6822,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -6259,6 +6944,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -6270,20 +6987,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -6390,6 +7109,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -6401,20 +7152,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -6530,6 +7283,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -6541,20 +7326,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -6658,6 +7445,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -6669,20 +7488,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -6736,20 +7557,14 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
-							<div class="g-size" style="">
+
+							<div class="g-size" style="display: none;">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
-									
-									<option value="S" selected="selected">S</option>
-									
-									<option value="M" >M</option>
-									
-									<option value="L" >L</option>
-									
-									<option value="XL" >XL</option>
+									<option value=""></option>
 									
 								</select>
 							</div>
@@ -6867,6 +7682,8 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
 						
 						
 						<br>
@@ -6878,20 +7695,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -6997,6 +7816,53 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-001'>
+										<td class='g-no-bg'>white</td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -7008,20 +7874,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -7141,6 +8009,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -7152,20 +8052,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -7268,6 +8170,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -7279,20 +8213,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -7394,6 +8330,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -7405,20 +8373,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -7501,6 +8471,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -7512,20 +8514,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -7596,10 +8600,10 @@ hong kong color edition:</p><p>
 							<span class="g-name" id="stock-name" data-id="016">Hon9 Kon9 9ulture tee</span>
 						</div>
 						<div class="g-price">
-							<sup class="g-agate">HKD</sup>
+							
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num ">320</span>
+							<span class="g-price-num g-sold-out">Sold out</span>
 							
 							
 						</div>
@@ -7644,31 +8648,35 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
 						
 						
 						<br>
-						<p><b><i>因蚊型工場製作需時，落單後一般要14個工作天先有貨</i></b></p>
+						
 						<!-- <p><b><i>網上訂衫暫停～ 過多陣會重新開始接單 🍌🍌🍌</i></b></p> -->
 						
 						
 						</div>
 
 						
-						<div class="g-buy ">
+						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -7774,6 +8782,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -7785,20 +8825,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -7881,6 +8923,38 @@ hong kong color edition:</p><p>
 								</table>
 
 							</div>
+
+							
+							<div class="g-stock-table">
+								<div class="g-stock-title">stock</div>
+								<table>
+									<tbody>
+
+										
+
+										
+										
+										
+										
+										
+
+										
+
+										<tr class='g-stock g-color-'>
+										<td class='g-no-bg'></td>
+										<td id='xs'></td>
+										<td id='s'></td>
+										<td id='m'></td>
+										<td id='l'></td>
+										<td id='xl'></td>
+										</tr>
+										
+										
+										
+									</tbody>
+								</table>
+							</div>
+							
 						
 						
 						<br>
@@ -7892,20 +8966,22 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XS,S,M,L,XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XS" >XS</option>
+									<option value="XS">XS</option>
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -7993,12 +9069,14 @@ hong kong color edition:</p><p>
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -8109,12 +9187,14 @@ A：係可以直接買新！非常歡迎👋🏻</p><br><p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="display: none;">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="" ></option>
+									<option value=""></option>
 									
 								</select>
 							</div>
@@ -8197,12 +9277,14 @@ SLEEVE 62</p>
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
 								</select>
 							</div>
@@ -8303,12 +9385,14 @@ SLEEVE 62</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="2XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="2XL" >2XL</option>
+									<option value="2XL">2XL</option>
 									
 								</select>
 							</div>
@@ -8383,12 +9467,14 @@ SLEEVE 62</p>
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="35cm x 40cm">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="35cm x 40cm" >35cm x 40cm</option>
+									<option value="35cm x 40cm">35cm x 40cm</option>
 									
 								</select>
 							</div>
@@ -8487,12 +9573,14 @@ The theme of this project is “hilly with little flat land”. The design featu
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="display: none;">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="" ></option>
+									<option value=""></option>
 									
 								</select>
 							</div>
@@ -8548,12 +9636,14 @@ The theme of this project is “hilly with little flat land”. The design featu
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="display: none;">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="" ></option>
+									<option value=""></option>
 									
 								</select>
 							</div>
@@ -8608,12 +9698,14 @@ Indian organic cotton</p>
 
 						
 						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="display: none;">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="" ></option>
+									<option value=""></option>
 									
 								</select>
 							</div>
@@ -8711,12 +9803,14 @@ Indian organic cotton</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="display: none;">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="" ></option>
+									<option value=""></option>
 									
 								</select>
 							</div>
@@ -8767,16 +9861,18 @@ Indian organic cotton</p>
 
 						
 						<div class="g-buy ">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="小小心意,多多益善,大手入股">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="小小心意" >小小心意</option>
+									<option value="小小心意">小小心意</option>
 									
-									<option value="多多益善" >多多益善</option>
+									<option value="多多益善">多多益善</option>
 									
-									<option value="大手入股" >大手入股</option>
+									<option value="大手入股">大手入股</option>
 									
 								</select>
 							</div>
@@ -8810,10 +9906,10 @@ Indian organic cotton</p>
 							<span class="g-name" id="stock-name" data-id="004">員工 tee</span>
 						</div>
 						<div class="g-price">
-							<sup class="g-agate">HKD</sup>
+							
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num ">500</span>
+							<span class="g-price-num g-sold-out">Sold out</span>
 							
 							
 						</div>
@@ -8858,31 +9954,35 @@ Indian organic cotton</p>
 								</table>
 
 							</div>
+
+							
 						
 						
 						<br>
-						<p><b><i>因蚊型工場製作需時，落單後一般要14個工作天先有貨</i></b></p>
+						
 						<!-- <p><b><i>網上訂衫暫停～ 過多陣會重新開始接單 🍌🍌🍌</i></b></p> -->
 						
 						
 						</div>
 
 						
-						<div class="g-buy ">
+						<div class="g-buy g-buy-sold-out">
+
 							<div class="g-size" style="">
 								<span class="g-label">尺碼 size</span>
-								<select id="size" name="size">
+								<select id="size" name="size" data-size="S,M,L,XL,2XL">
+									<option disabled selected value> - </option>
 									
 									
-									<option value="S" selected="selected">S</option>
+									<option value="S">S</option>
 									
-									<option value="M" >M</option>
+									<option value="M">M</option>
 									
-									<option value="L" >L</option>
+									<option value="L">L</option>
 									
-									<option value="XL" >XL</option>
+									<option value="XL">XL</option>
 									
-									<option value="2XL" >2XL</option>
+									<option value="2XL">2XL</option>
 									
 								</select>
 							</div>
@@ -16298,7 +17398,7 @@ send 同一張相嚟</p><p>
 	<div class="g-tm">© 2021 黎根記.<br>All rights reserved.</div>
 </footer>
 
-<script>var stocklist = [{"store":"1","hide":"","new":"1","slug":"I AM YOUR FATHER tee 051","id":"051","name":"I AM YOUR FATHER tee","text":"no one cares about Father's Day","category":"Tee","type":"Screen","description":"I AM YOUR FATHER = //\na polite way to say \"DLLM\"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-051-001.webp","store-051-002.webp","store-051-003.webp","store-051-004.webp","store-051-005.webp"]},{"store":"1","hide":"","new":"","slug":"舊青年 tee 002","id":"002","name":"舊青年 tee","text":"NO MORE NEW YOUTH","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-002-001.webp","store-002-002.webp","store-002-003.webp","store-002-004.webp","store-002-005.webp","store-002-006.webp","store-002-007.webp"]},{"store":"1","hide":"","new":"","slug":"舊青年 tee 003","id":"003","name":"舊青年 tee","text":"壽終正寢 version","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":""},{"store":"1","hide":"","new":"1","slug":"錦鯉有咩高見 tee 048","id":"048","name":"錦鯉有咩高見 tee","text":"錦鯉買唔買?","category":"Tee","type":"Print","description":"錦鯉買唔買?","price":"360","soldout":"y","limited":"","sizes":"","colors":"","img":["store-048-001.webp","store-048-002.webp","store-048-003.webp","store-048-004.webp","store-048-005.webp"]},{"store":"1","hide":"","new":"1","slug":"錦鯉想鵝點 tee 049","id":"049","name":"錦鯉想鵝點 tee","text":"錦鯉買咗未？","category":"Tee","type":"Print","description":"錦鯉買咗未？","price":"360","soldout":"y","limited":"","sizes":"XS","colors":"","img":["store-049-001.webp","store-049-002.webp","store-049-003.webp"]},{"store":"1","hide":"","new":"","slug":"STAY NEAGTIVE tee 046","id":"046","name":"STAY NEAGTIVE tee","text":"stay negative stay positve","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-046-001.webp","store-046-002.webp"]},{"store":"1","hide":"","new":"","slug":"心痛 tee 042","id":"042","name":"心痛 tee","text":"【特強心理痛】全香港人適合服用","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-042-001.webp","store-042-002.webp","store-042-003.webp","store-042-004.webp","store-042-005.webp","store-042-006.webp"]},{"store":"1","hide":"","new":"","slug":"michelsin tee 023","id":"023","name":"michelsin tee","text":"咪痴撚線！","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"032#004D82,001#ffffff,005#000000","img":["store-023-001.webp","store-023-002.webp","store-023-003.webp","store-023-004.webp"]},{"store":"1","hide":"","new":"","slug":"ok sad tee 008","id":"008","name":"ok sad tee","text":"it’s okay to feel sad","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-008-001.webp","store-008-002.webp"]},{"store":"1","hide":"","new":"","slug":"平安 tee 044","id":"044","name":"平安 tee","text":"平安是福","category":"Tee","type":"Screen","description":"好人一世平安","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-044-001.webp","store-044-002.webp","store-044-003.webp","store-044-004.webp"]},{"store":"1","hide":"","new":"","slug":"健康welldone 025","id":"025","name":"健康welldone","text":"人生最緊要：鳩&健康♥️","category":"Tee","type":"Screen","description":"我只想身體健康~","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-025-001.webp","store-025-002.webp","store-025-003.webp","store-025-004.webp"]},{"store":"1","hide":"","new":"","slug":"healthy horse tee 015","id":"015","name":"healthy horse tee","text":"嘟！嘟！嘟！","category":"Tee","type":"Screen","description":"健康馬/健康黑馬// 著健康馬保健康！// 做個健康香港人🐎🐎🐎","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"001#ffffff,005#000000","img":["store-015-001.webp","store-015-002.webp","store-015-003.webp","store-015-004.webp","store-015-005.webp"]},{"store":"1","hide":"","new":"","slug":"我♥常餐 tee 006","id":"006","name":"我♥常餐 tee","text":"alldaymealh♥lic","category":"Tee","type":"Print","description":"同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-006-001.webp","store-006-002.webp","store-006-003.webp","store-006-004.webp"]},{"store":"1","hide":"","new":"","slug":"行路人 tee 037","id":"037","name":"行路人 tee","text":"let's walk the road 🤟🤟🤟","category":"Tee","type":"Screen","description":"「男人30歲仲要依賴交通工具是否悲哀」//當年高登有人應該手殘打漏「公共」交通工具//樓主開咗呢個post後 即刻俾人笑到黃////但我想力撐樓主 做人係應該腳踏實地//齊齊做個行路人 向搭車說不","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"001#ffffff,001#ffffff,005#000000,005#000000","img":["store-037-001.webp","store-037-002.webp","store-037-003.webp","store-037-004.webp","store-037-005.webp"]},{"store":"1","hide":"","new":"","slug":"後會有期 tee 024","id":"024","name":"後會有期 tee","text":"hello, goodbye","category":"Tee","type":"Screen","description":"「hello」「goodbye」//\n2021 - 不斷學習離別的一年////\n\nhong kong color edition://\n❤️red print on white tee\n","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-024-001.webp","store-024-002.webp","store-024-003.webp","store-024-004.webp","store-024-005.webp","store-024-006.webp"]},{"store":"1","hide":"","new":"","slug":"NOT OK tee 045","id":"045","name":"NOT OK tee","text":"the world is not OK","category":"Tee","type":"Screen","description":"i am not OK//we are not OK//the world is not OK","price":"360","soldout":"y","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-045-001.webp","store-045-002.webp","store-045-003.webp"]},{"store":"1","hide":"","new":"","slug":"阿窿alone tee 038","id":"038","name":"阿窿alone tee","text":"當阿窿遇上alone嘅阿龍","category":"Tee","type":"Screen","description":"阿窿：i am a 窿//\n阿龍：i am alone 2////\n\n你係阿龍定阿窿？","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"001#ffffff,132#fbd4dd,134#f6e18d","img":["store-038-001.webp","store-038-002.webp","store-038-003.webp","store-038-004.webp"]},{"store":"","hide":"","new":"","slug":"倒轉地球 crewneck 039","id":"039","name":"倒轉地球 crewneck","text":"那些年錯過的大宇","category":"totebag","type":"Print","description":"聖誕送禮鳩品 自用抹地亦一流//那些年已錯過的大宇//陶寶們預購從速 勿失良機////\n\n(真心提醒 貨到起碼要2星期)////CHEST 57 //LENGTH 72  //SHOULDER 48 //SLEEVE 61","price":"500","soldout":"y","limited":"","sizes":"L","colors":"","img":["store-039-001.webp","store-039-002.webp"]},{"store":"1","hide":"","new":"","slug":"好時光 tee 034","id":"034","name":"好時光 tee","text":"back to the goodtime","category":"Tee","type":"Print","description":"","price":"360","soldout":"","limited":"","sizes":"XS","colors":"","img":["store-034-001.webp","store-034-002.webp"]},{"store":"1","hide":"","new":"","slug":"meme tee 035","id":"035","name":"meme tee","text":"要成為最愛自己嘅人","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-035-001.webp","store-035-002.webp"]},{"store":"1","hide":"","new":"","slug":"外賣協會 033","id":"033","name":"外賣協會","text":"sad meal club","category":"Tee","type":"Screen","description":"未必每個香港人都係外貌協會//\n但今時今日 肯肯定每個都係外賣協會//\n個個都食外賣 唔通個個都想食外賣咩//\n每一日每一次都食同一間餐廳同一個餐嘅舉手✋","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-033-001.webp","store-033-002.webp","store-033-003.webp","store-033-004.webp"]},{"store":"1","hide":"","new":"","slug":"having a bed time tee 036","id":"036","name":"having a bed time tee","text":"i am having a bed time","category":"Tee","type":"Screen","description":"good idea for sleeping tee💤🛌","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-036-001.webp","store-036-002.webp","store-036-003.webp"]},{"store":"1","hide":"","new":"","slug":"good-looking tee 007","id":"007","name":"good-looking tee","text":"初號夜光9ood","category":"Tee","type":"Print","description":"it's all 9ood// *print有夜光效果","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"188#bd94ca","img":["store-007-001.webp","store-007-002.webp","store-007-003.webp"]},{"store":"1","hide":"","new":"","slug":"ok old tee 009","id":"009","name":"ok old tee","text":"it’s okay to get old","category":"Tee","type":"Screen","description":"【職場日常】// 啱啱畢業入職嘅22歲新同事：唉，我老啦// 我：😬🚬","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-009-001.webp","store-009-002.webp"]},{"store":"1","hide":"","new":"","slug":"邪骨能勝正 tee 032","id":"032","name":"邪骨能勝正 tee","text":"✨處長親身認證✨","category":"Tee","type":"Screen","description":"正宗邪骨 無不道德\n✨處長親身認證✨","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-032-001.webp","store-032-002.webp"]},{"store":"1","hide":"","new":"","slug":"LKK 9ood sticker pack 030","id":"030","name":"LKK 9ood sticker pack","text":"一套20款","category":"","type":"Print","description":"一套有20款！係20個！//\n一pack你就有好多LKKdesignssss！//\n嘩！真係好抵！","price":"150","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":""},{"store":"1","hide":"","new":"","slug":"鳳凰不死鳥 tee 031","id":"031","name":"鳳凰不死鳥 tee","text":"🔥華夏神功🔥","category":"Tee","type":"Screen","description":"","price":"Sold out","soldout":"y","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-031-001.webp","store-031-002.webp","store-031-003.webp","store-031-004.webp","store-031-005.webp","store-031-006.webp"]},{"store":"1","hide":"","new":"","slug":"keep rolling tee 019","id":"019","name":"keep rolling tee","text":"just keep rolling","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"x025#03653e,001#ffffff","img":["store-019-001.webp","store-019-002.webp","store-019-003.webp"]},{"store":"1","hide":"","new":"","slug":"ok love tee 011","id":"011","name":"ok love tee","text":"it’s okay to love","category":"Tee","type":"Print","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-011-001.webp","store-011-002.webp"]},{"store":"1","hide":"","new":"","slug":"hug hug tee 020","id":"020","name":"hug hug tee","text":"hug hard in hard times","category":"Tee","type":"Print","description":"navy blue","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-020-001.webp","store-020-002.webp"]},{"store":"1","hide":"","new":"","slug":"sad banana tee 005","id":"005","name":"sad banana tee","text":"don't be a sad banana","category":"Tee","type":"Print","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-005-001.webp","store-005-002.webp"]},{"store":"1","hide":"","new":"","slug":"good-looking tee 013","id":"013","name":"good-looking tee","text":"姣婆粉紅9ood","category":"Tee","type":"Print","description":"it's all 9ood","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"132#fbd4dd"},{"store":"1","hide":"","new":"","slug":"Hon9 Kon9 9ulture tee 016","id":"016","name":"Hon9 Kon9 9ulture tee","text":"i love Hon9 Kong9","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"G#00ff00,P#ff3dbb,O#ff5900","img":["store-016-001.webp","store-016-002.webp","store-016-003.webp"]},{"store":"1","hide":"","new":"","slug":"歡迎問路 tee 012","id":"012","name":"歡迎問路 tee","text":"Konnichi wa!","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":""},{"store":"1","hide":"","new":"","slug":"唔好問路 tee 010","id":"010","name":"唔好問路 tee","text":"唔好啦","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着//*print有3M反光效果","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":""},{"store":"","hide":"","new":"","slug":"苦中作樂 crewneck 041","id":"041","name":"苦中作樂 crewneck","text":"苦:D","category":"totebag","type":"Print","description":"【最快2月尾先有貨!】////9print on 350 fleece crewneck////one size only//CHEST 60 //LENGTH 75  //SHOULDER 51 //SLEEVE 62","price":"480","soldout":"y","limited":"","sizes":"XL","colors":"","img":["store-041-001.webp","store-041-002.webp","store-041-003.webp","store-041-004.webp","store-041-005.webp","store-041-006.webp"]},{"store":"","hide":"","new":"","slug":"舊衫新印 047","id":"047","name":"舊衫新印","text":"只限門市！","category":"","type":"Screen","description":"黎根記9ood project 006 - 舊衫新印//\n【你出舊衫 我出手】////\n一直都好想叫人拎舊衫俾我印//\n唔係人人都想買新衫 又或者中意自己件衫多d//\n但礙於以前自己屋企工場 要同人交接舊衣//\n印好再要約交收 實在係太太太太麻煩//\n而家有舖頭就可以做呢個project🤟🏻////\n\n我幻想人哋會問嘅問題//\nQ：係咪點印？印咩、印喺邊都得？//\nA：我只係會印到本身有嘅網版(已有嘅設計)，而我都想大家可以盡量尊重我原本成個design(擺位/顏色...)，合理嘅要求都會盡做////\n\nQ：嘩！我俾埋衫你印，都收返原價？你fatfat啦//\nA：先唔講即場印開壇印一件衫嘅額外功夫，我覺得成件事最值錢本身係個諗法同design，而每次印前我要有準備工夫、印後亦都要做清洗工序，收返原價係我諗完覺得合理嘅價錢////\n\nQ：收返原價點解我唔直接買新？//\nA：係可以直接買新！非常歡迎👋🏻////\n\n一件衫嘅價值有人可能覺得係擁有//\n有人可能覺得係同賣衫者嘅交流////\n\n先小人rulesss：//\n📌自帶舊衫請先清潔乾淨//\n📌舊衫暫時只限綿質物料 可先dm查詢//\n📌印刷圖案尺寸跟黎根記設計 不是自訂圖案/不能自訂尺寸//\n📌圖案位置、顏色可商量//\n📌人手絲印會有合理誤差 不設退換 請先自行評估風險//\n📌有權拒絕印製 黎根記保留一切最終決定權//","price":"320up","soldout":"","limited":"","sizes":"","colors":"","img":["store-047-001.webp","store-047-002.webp","store-047-003.webp","store-047-004.webp","store-047-005.webp"]},{"store":"","hide":"","new":"","slug":"NFtee 043","id":"043","name":"NFtee","text":"Nothing Forever Tee","category":"totebag","type":"Print","description":"【人出我又出 有錢齊齊搵】//\n震撼800萬人 LKK 推出首款NFTee//\nNothing Forever Tee//\n限量只推出50件！(最快2022年3月尾先有貨!)////\n\n9print on 350 fleece crewneck////\n\none size only//\nCHEST 60 //\nLENGTH 75  //\nSHOULDER 51 //\nSLEEVE 62","price":"480","soldout":"y","limited":"","sizes":"XL","colors":"","img":["store-043-001.webp","store-043-002.webp"]},{"store":"1","hide":"","new":"","slug":"後會有期 crewneck 040","id":"040","name":"後會有期 crewneck","text":"goodbye, hello","category":"totebag","type":"Print","description":"「goodbye」「hello」//\n2022 - 繼續好好學習離別////CHEST 63 //LENGTH 78  //SHOULDER 54 //SLEEVE 63","price":"480","soldout":"","limited":"","sizes":"2XL","colors":"","img":["store-040-001.webp","store-040-002.webp","store-040-003.webp","store-040-004.webp","store-040-005.webp","store-040-006.webp","store-040-007.webp","store-040-008.webp","store-040-009.webp"]},{"store":"","hide":"","new":"","slug":"舊青年 totebag 029","id":"029","name":"舊青年 totebag","text":"NO MORE NEW YOUTH","category":"totebag","type":"Screen","description":"舊青年handmade silkscreen totebag//\n🔴⚪️classic白底紅字 / ⚫️⚫️低調black on black//\n100% indian organic cotton//\n35cm x 40cm","price":"Sold out","soldout":"y","limited":"","sizes":"35cm x 40cm","colors":"001#ffffff,005#000000","img":["store-029-001.webp","store-029-002.webp"]},{"store":"","hide":"","new":"","slug":"ST-RD totebag 028","id":"028","name":"ST-RD totebag","text":"LKK x fibikung","category":"totebag","type":"Screen","description":"【ST-RD silkscreen tote bag】//\n雙面絲印 限量50個//\n\n香港在開埠前是沒有街道的。//換言之香港街道是隨著1841年開埠而出現，直至現在全港已經超過四千條街道。//從街道結構、路牌、和街名的轉變，彷彿看到這個城市至今180歲的成長故事。////\n\n「水深港闊，山多平地少」是香港小學常識教科書對香港的描述，人人都耳熟能詳。//這個計劃以 「山多平地少」 作主題，分別選了香港七條街和道作為設計。////\n\nThere were no streets and roads in Hong Kong before the city opened its first port in 1841. Now, Hong Kong has more than 4,000 streets and roads. The changes in streets and roads structure, their signs and their names reflect the story of this 180-year-old city.////\n\nThe theme of this project is “hilly with little flat land”. The design features seven streets and seven roads in Hong Kong that illustrate the city's unique terrain.","price":"Sold out","soldout":"y","limited":"","sizes":"","colors":"","img":["store-028-001.webp","store-028-002.webp"]},{"store":"1","hide":"","new":"","slug":"祝君早抖goodsleep毛巾 027","id":"027","name":"祝君早抖goodsleep毛巾","text":"LKK x 黑店","category":"towel","type":"Screen","description":"【祝君早抖goodsleep毛巾】//\n\n未必吸水，可能甩色，限量發售🖤//\n30 x 70cm\n","price":"120","soldout":"y","limited":"","sizes":"","colors":""},{"store":"","hide":"","new":"","slug":"自由 totebag 026","id":"026","name":"自由 totebag","text":"LKK x lauyanhin","category":"totebag","type":"Print","description":"【自由定價totebag】限量51個//\nwhite print on black tote//\n40 cm x 35cm//\nIndian organic cotton","price":"Sold out","soldout":"y","limited":"","sizes":"","colors":""},{"store":"","hide":"","new":"","slug":"sun of a beach cap 021","id":"021","name":"sun of a beach cap","text":"每日每日都是sunny day","category":"Cap","type":"","description":"研發中，暫未有售","price":"","soldout":"","limited":"","sizes":"","colors":"rice#fae8cb,black#000000","img":["store-021-001.webp","store-021-002.webp"]},{"store":"","hide":"","new":"","slug":"黎根記紙袋 017","id":"017","name":"黎根記紙袋","text":"LKK chicken skin paper bag","category":"","type":"","description":"","price":"30","soldout":"","limited":"","sizes":"","colors":""},{"store":"","hide":"","new":"","slug":"人人有蕉吔基金 001","id":"001","name":"人人有蕉吔基金","text":"純純粹粹俾錢店主","category":"","type":"","description":"【DONT THINK, JUST DONATE!】// 黎根記®有一個願望：「人人都可以有蕉吔！」// 如果您都認同我哋，// 事不宜遲，請立即捐款到\"人人有蕉吔基金\" // 你將會收到香蕉.png一條","price":"10up","soldout":"","limited":"","sizes":"小小心意,多多益善,大手入股","colors":""},{"store":"","hide":"","new":"","slug":"員工 tee 004","id":"004","name":"員工 tee","text":"非賣品","category":"Tee","type":"Screen","description":"","price":"500","soldout":"","limited":"","sizes":"S,M,L,XL,2XL","colors":""}]</script>
+<script>var stocklist = [{"store":"1","hide":"","new":"1","slug":"I AM YOUR FATHER tee 051","id":"051","name":"I AM YOUR FATHER tee","text":"no one cares about Father's Day","category":"Tee","type":"Screen","description":"I AM YOUR FATHER = //\na polite way to say \"DLLM\"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-051-001.webp","store-051-002.webp","store-051-003.webp","store-051-004.webp","store-051-005.webp"]},{"store":"1","hide":"","new":"","slug":"舊青年 tee 002","id":"002","name":"舊青年 tee","text":"NO MORE NEW YOUTH","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-002-001.webp","store-002-002.webp","store-002-003.webp","store-002-004.webp","store-002-005.webp","store-002-006.webp","store-002-007.webp"]},{"store":"1","hide":"","new":"","slug":"舊青年 tee 003","id":"003","name":"舊青年 tee","text":"壽終正寢 version","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":""},{"store":"1","hide":"","new":"1","slug":"錦鯉有咩高見 tee 048","id":"048","name":"錦鯉有咩高見 tee","text":"錦鯉買唔買?","category":"Tee","type":"Print","description":"錦鯉買唔買?","price":"360","soldout":"y","limited":"","sizes":"","colors":"","img":["store-048-001.webp","store-048-002.webp","store-048-003.webp","store-048-004.webp","store-048-005.webp"]},{"store":"1","hide":"","new":"1","slug":"錦鯉想鵝點 tee 049","id":"049","name":"錦鯉想鵝點 tee","text":"錦鯉買咗未？","category":"Tee","type":"Print","description":"錦鯉買咗未？","price":"360","soldout":"y","limited":"","sizes":"XS","colors":"","img":["store-049-001.webp","store-049-002.webp","store-049-003.webp"]},{"store":"1","hide":"","new":"","slug":"STAY NEAGTIVE tee 046","id":"046","name":"STAY NEAGTIVE tee","text":"stay negative stay positve","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-046-001.webp","store-046-002.webp"]},{"store":"1","hide":"","new":"","slug":"心痛 tee 042","id":"042","name":"心痛 tee","text":"【特強心理痛】全香港人適合服用","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-042-001.webp","store-042-002.webp","store-042-003.webp","store-042-004.webp","store-042-005.webp","store-042-006.webp"]},{"store":"1","hide":"","new":"","slug":"michelsin tee 023","id":"023","name":"michelsin tee","text":"咪痴撚線！","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"032#004D82,001#ffffff,005#000000","img":["store-023-001.webp","store-023-002.webp","store-023-003.webp","store-023-004.webp"]},{"store":"1","hide":"","new":"","slug":"ok sad tee 008","id":"008","name":"ok sad tee","text":"it’s okay to feel sad","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-008-001.webp","store-008-002.webp"]},{"store":"1","hide":"","new":"","slug":"平安 tee 044","id":"044","name":"平安 tee","text":"平安是福","category":"Tee","type":"Screen","description":"好人一世平安","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-044-001.webp","store-044-002.webp","store-044-003.webp","store-044-004.webp"]},{"store":"1","hide":"","new":"","slug":"健康welldone 025","id":"025","name":"健康welldone","text":"人生最緊要：鳩&健康♥️","category":"Tee","type":"Screen","description":"我只想身體健康~","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-025-001.webp","store-025-002.webp","store-025-003.webp","store-025-004.webp"]},{"store":"1","hide":"","new":"","slug":"healthy horse tee 015","id":"015","name":"healthy horse tee","text":"嘟！嘟！嘟！","category":"Tee","type":"Screen","description":"健康馬/健康黑馬// 著健康馬保健康！// 做個健康香港人🐎🐎🐎","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"001#ffffff,005#000000","img":["store-015-001.webp","store-015-002.webp","store-015-003.webp","store-015-004.webp","store-015-005.webp"]},{"store":"1","hide":"","new":"","slug":"我♥常餐 tee 006","id":"006","name":"我♥常餐 tee","text":"alldaymealh♥lic","category":"Tee","type":"Print","description":"同朋友去茶餐廳// 佢哋拎起個餐牌左諗右諗// 我喺隔離笑而不語，一秒都無諗猶豫大叫// \"伙記，沙嗲牛麵烘底炒蛋凍檸茶走甜，唔該“","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-006-001.webp","store-006-002.webp","store-006-003.webp","store-006-004.webp"]},{"store":"1","hide":"","new":"","slug":"行路人 tee 037","id":"037","name":"行路人 tee","text":"let's walk the road 🤟🤟🤟","category":"Tee","type":"Screen","description":"「男人30歲仲要依賴交通工具是否悲哀」//當年高登有人應該手殘打漏「公共」交通工具//樓主開咗呢個post後 即刻俾人笑到黃////但我想力撐樓主 做人係應該腳踏實地//齊齊做個行路人 向搭車說不","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"001#ffffff,001#ffffff,005#000000,005#000000","img":["store-037-001.webp","store-037-002.webp","store-037-003.webp","store-037-004.webp","store-037-005.webp"]},{"store":"1","hide":"","new":"","slug":"後會有期 tee 024","id":"024","name":"後會有期 tee","text":"hello, goodbye","category":"Tee","type":"Screen","description":"「hello」「goodbye」//\n2021 - 不斷學習離別的一年////\n\nhong kong color edition://\n❤️red print on white tee\n","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-024-001.webp","store-024-002.webp","store-024-003.webp","store-024-004.webp","store-024-005.webp","store-024-006.webp"]},{"store":"1","hide":"","new":"","slug":"NOT OK tee 045","id":"045","name":"NOT OK tee","text":"the world is not OK","category":"Tee","type":"Screen","description":"i am not OK//we are not OK//the world is not OK","price":"360","soldout":"y","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-045-001.webp","store-045-002.webp","store-045-003.webp"]},{"store":"1","hide":"","new":"","slug":"阿窿alone tee 038","id":"038","name":"阿窿alone tee","text":"當阿窿遇上alone嘅阿龍","category":"Tee","type":"Screen","description":"阿窿：i am a 窿//\n阿龍：i am alone 2////\n\n你係阿龍定阿窿？","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"001#ffffff","img":["store-038-001.webp","store-038-002.webp","store-038-003.webp","store-038-004.webp"]},{"store":"","hide":"","new":"","slug":"倒轉地球 crewneck 039","id":"039","name":"倒轉地球 crewneck","text":"那些年錯過的大宇","category":"totebag","type":"Print","description":"聖誕送禮鳩品 自用抹地亦一流//那些年已錯過的大宇//陶寶們預購從速 勿失良機////\n\n(真心提醒 貨到起碼要2星期)////CHEST 57 //LENGTH 72  //SHOULDER 48 //SLEEVE 61","price":"500","soldout":"y","limited":"","sizes":"L","colors":"","img":["store-039-001.webp","store-039-002.webp"]},{"store":"1","hide":"","new":"","slug":"好時光 tee 034","id":"034","name":"好時光 tee","text":"back to the goodtime","category":"Tee","type":"Print","description":"","price":"360","soldout":"","limited":"","sizes":"XS","colors":"","img":["store-034-001.webp","store-034-002.webp"]},{"store":"1","hide":"","new":"","slug":"meme tee 035","id":"035","name":"meme tee","text":"要成為最愛自己嘅人","category":"Tee","type":"Screen","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-035-001.webp","store-035-002.webp"]},{"store":"1","hide":"","new":"","slug":"外賣協會 033","id":"033","name":"外賣協會","text":"sad meal club","category":"Tee","type":"Screen","description":"未必每個香港人都係外貌協會//\n但今時今日 肯肯定每個都係外賣協會//\n個個都食外賣 唔通個個都想食外賣咩//\n每一日每一次都食同一間餐廳同一個餐嘅舉手✋","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-033-001.webp","store-033-002.webp","store-033-003.webp","store-033-004.webp"]},{"store":"1","hide":"","new":"","slug":"having a bed time tee 036","id":"036","name":"having a bed time tee","text":"i am having a bed time","category":"Tee","type":"Screen","description":"good idea for sleeping tee💤🛌","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-036-001.webp","store-036-002.webp","store-036-003.webp"]},{"store":"1","hide":"","new":"","slug":"good-looking tee 007","id":"007","name":"good-looking tee","text":"初號夜光9ood","category":"Tee","type":"Print","description":"it's all 9ood// *print有夜光效果","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"188#bd94ca","img":["store-007-001.webp","store-007-002.webp","store-007-003.webp"]},{"store":"1","hide":"","new":"","slug":"ok old tee 009","id":"009","name":"ok old tee","text":"it’s okay to get old","category":"Tee","type":"Screen","description":"【職場日常】// 啱啱畢業入職嘅22歲新同事：唉，我老啦// 我：😬🚬","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-009-001.webp","store-009-002.webp"]},{"store":"1","hide":"","new":"","slug":"邪骨能勝正 tee 032","id":"032","name":"邪骨能勝正 tee","text":"✨處長親身認證✨","category":"Tee","type":"Screen","description":"正宗邪骨 無不道德\n✨處長親身認證✨","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-032-001.webp","store-032-002.webp"]},{"store":"1","hide":"","new":"","slug":"LKK 9ood sticker pack 030","id":"030","name":"LKK 9ood sticker pack","text":"一套20款","category":"","type":"Print","description":"一套有20款！係20個！//\n一pack你就有好多LKKdesignssss！//\n嘩！真係好抵！","price":"150","soldout":"","limited":"","sizes":"","colors":""},{"store":"1","hide":"","new":"","slug":"鳳凰不死鳥 tee 031","id":"031","name":"鳳凰不死鳥 tee","text":"🔥華夏神功🔥","category":"Tee","type":"Screen","description":"","price":"Sold out","soldout":"y","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-031-001.webp","store-031-002.webp","store-031-003.webp","store-031-004.webp","store-031-005.webp","store-031-006.webp"]},{"store":"1","hide":"","new":"","slug":"keep rolling tee 019","id":"019","name":"keep rolling tee","text":"just keep rolling","category":"Tee","type":"Screen","description":"","price":"360","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"x025#03653e,001#ffffff","img":["store-019-001.webp","store-019-002.webp","store-019-003.webp"]},{"store":"1","hide":"","new":"","slug":"ok love tee 011","id":"011","name":"ok love tee","text":"it’s okay to love","category":"Tee","type":"Print","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-011-001.webp","store-011-002.webp"]},{"store":"1","hide":"","new":"","slug":"hug hug tee 020","id":"020","name":"hug hug tee","text":"hug hard in hard times","category":"Tee","type":"Print","description":"navy blue","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-020-001.webp","store-020-002.webp"]},{"store":"1","hide":"","new":"","slug":"sad banana tee 005","id":"005","name":"sad banana tee","text":"don't be a sad banana","category":"Tee","type":"Print","description":"","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"","img":["store-005-001.webp","store-005-002.webp"]},{"store":"1","hide":"","new":"","slug":"good-looking tee 013","id":"013","name":"good-looking tee","text":"姣婆粉紅9ood","category":"Tee","type":"Print","description":"it's all 9ood","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":"132#fbd4dd"},{"store":"1","hide":"","new":"","slug":"Hon9 Kon9 9ulture tee 016","id":"016","name":"Hon9 Kon9 9ulture tee","text":"i love Hon9 Kong9","category":"Tee","type":"Screen","description":"","price":"320","soldout":"y","limited":"","sizes":"XS,S,M,L,XL","colors":"G#00ff00,P#ff3dbb,O#ff5900","img":["store-016-001.webp","store-016-002.webp","store-016-003.webp"]},{"store":"1","hide":"","new":"","slug":"歡迎問路 tee 012","id":"012","name":"歡迎問路 tee","text":"Konnichi wa!","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":""},{"store":"1","hide":"","new":"","slug":"唔好問路 tee 010","id":"010","name":"唔好問路 tee","text":"唔好啦","category":"Tee","type":"Print","description":"適合「問路樣」人士穿着//*print有3M反光效果","price":"320","soldout":"","limited":"","sizes":"XS,S,M,L,XL","colors":""},{"store":"","hide":"","new":"","slug":"苦中作樂 crewneck 041","id":"041","name":"苦中作樂 crewneck","text":"苦:D","category":"totebag","type":"Print","description":"【最快2月尾先有貨!】////9print on 350 fleece crewneck////one size only//CHEST 60 //LENGTH 75  //SHOULDER 51 //SLEEVE 62","price":"480","soldout":"y","limited":"","sizes":"XL","colors":"","img":["store-041-001.webp","store-041-002.webp","store-041-003.webp","store-041-004.webp","store-041-005.webp","store-041-006.webp"]},{"store":"","hide":"","new":"","slug":"舊衫新印 047","id":"047","name":"舊衫新印","text":"只限門市！","category":"","type":"Screen","description":"黎根記9ood project 006 - 舊衫新印//\n【你出舊衫 我出手】////\n一直都好想叫人拎舊衫俾我印//\n唔係人人都想買新衫 又或者中意自己件衫多d//\n但礙於以前自己屋企工場 要同人交接舊衣//\n印好再要約交收 實在係太太太太麻煩//\n而家有舖頭就可以做呢個project🤟🏻////\n\n我幻想人哋會問嘅問題//\nQ：係咪點印？印咩、印喺邊都得？//\nA：我只係會印到本身有嘅網版(已有嘅設計)，而我都想大家可以盡量尊重我原本成個design(擺位/顏色...)，合理嘅要求都會盡做////\n\nQ：嘩！我俾埋衫你印，都收返原價？你fatfat啦//\nA：先唔講即場印開壇印一件衫嘅額外功夫，我覺得成件事最值錢本身係個諗法同design，而每次印前我要有準備工夫、印後亦都要做清洗工序，收返原價係我諗完覺得合理嘅價錢////\n\nQ：收返原價點解我唔直接買新？//\nA：係可以直接買新！非常歡迎👋🏻////\n\n一件衫嘅價值有人可能覺得係擁有//\n有人可能覺得係同賣衫者嘅交流////\n\n先小人rulesss：//\n📌自帶舊衫請先清潔乾淨//\n📌舊衫暫時只限綿質物料 可先dm查詢//\n📌印刷圖案尺寸跟黎根記設計 不是自訂圖案/不能自訂尺寸//\n📌圖案位置、顏色可商量//\n📌人手絲印會有合理誤差 不設退換 請先自行評估風險//\n📌有權拒絕印製 黎根記保留一切最終決定權//","price":"320up","soldout":"","limited":"","sizes":"","colors":"","img":["store-047-001.webp","store-047-002.webp","store-047-003.webp","store-047-004.webp","store-047-005.webp"]},{"store":"","hide":"","new":"","slug":"NFtee 043","id":"043","name":"NFtee","text":"Nothing Forever Tee","category":"totebag","type":"Print","description":"【人出我又出 有錢齊齊搵】//\n震撼800萬人 LKK 推出首款NFTee//\nNothing Forever Tee//\n限量只推出50件！(最快2022年3月尾先有貨!)////\n\n9print on 350 fleece crewneck////\n\none size only//\nCHEST 60 //\nLENGTH 75  //\nSHOULDER 51 //\nSLEEVE 62","price":"480","soldout":"y","limited":"","sizes":"XL","colors":"","img":["store-043-001.webp","store-043-002.webp"]},{"store":"1","hide":"","new":"","slug":"後會有期 crewneck 040","id":"040","name":"後會有期 crewneck","text":"goodbye, hello","category":"totebag","type":"Print","description":"「goodbye」「hello」//\n2022 - 繼續好好學習離別////CHEST 63 //LENGTH 78  //SHOULDER 54 //SLEEVE 63","price":"480","soldout":"","limited":"","sizes":"2XL","colors":"","img":["store-040-001.webp","store-040-002.webp","store-040-003.webp","store-040-004.webp","store-040-005.webp","store-040-006.webp","store-040-007.webp","store-040-008.webp","store-040-009.webp"]},{"store":"","hide":"","new":"","slug":"舊青年 totebag 029","id":"029","name":"舊青年 totebag","text":"NO MORE NEW YOUTH","category":"totebag","type":"Screen","description":"舊青年handmade silkscreen totebag//\n🔴⚪️classic白底紅字 / ⚫️⚫️低調black on black//\n100% indian organic cotton//\n35cm x 40cm","price":"Sold out","soldout":"y","limited":"","sizes":"35cm x 40cm","colors":"001#ffffff,005#000000","img":["store-029-001.webp","store-029-002.webp"]},{"store":"","hide":"","new":"","slug":"ST-RD totebag 028","id":"028","name":"ST-RD totebag","text":"LKK x fibikung","category":"totebag","type":"Screen","description":"【ST-RD silkscreen tote bag】//\n雙面絲印 限量50個//\n\n香港在開埠前是沒有街道的。//換言之香港街道是隨著1841年開埠而出現，直至現在全港已經超過四千條街道。//從街道結構、路牌、和街名的轉變，彷彿看到這個城市至今180歲的成長故事。////\n\n「水深港闊，山多平地少」是香港小學常識教科書對香港的描述，人人都耳熟能詳。//這個計劃以 「山多平地少」 作主題，分別選了香港七條街和道作為設計。////\n\nThere were no streets and roads in Hong Kong before the city opened its first port in 1841. Now, Hong Kong has more than 4,000 streets and roads. The changes in streets and roads structure, their signs and their names reflect the story of this 180-year-old city.////\n\nThe theme of this project is “hilly with little flat land”. The design features seven streets and seven roads in Hong Kong that illustrate the city's unique terrain.","price":"Sold out","soldout":"y","limited":"","sizes":"","colors":"","img":["store-028-001.webp","store-028-002.webp"]},{"store":"1","hide":"","new":"","slug":"祝君早抖goodsleep毛巾 027","id":"027","name":"祝君早抖goodsleep毛巾","text":"LKK x 黑店","category":"towel","type":"Screen","description":"【祝君早抖goodsleep毛巾】//\n\n未必吸水，可能甩色，限量發售🖤//\n30 x 70cm\n","price":"120","soldout":"y","limited":"","sizes":"","colors":""},{"store":"","hide":"","new":"","slug":"自由 totebag 026","id":"026","name":"自由 totebag","text":"LKK x lauyanhin","category":"totebag","type":"Print","description":"【自由定價totebag】限量51個//\nwhite print on black tote//\n40 cm x 35cm//\nIndian organic cotton","price":"Sold out","soldout":"y","limited":"","sizes":"","colors":""},{"store":"","hide":"","new":"","slug":"sun of a beach cap 021","id":"021","name":"sun of a beach cap","text":"每日每日都是sunny day","category":"Cap","type":"","description":"研發中，暫未有售","price":"","soldout":"","limited":"","sizes":"","colors":"rice#fae8cb,black#000000","img":["store-021-001.webp","store-021-002.webp"]},{"store":"","hide":"","new":"","slug":"黎根記紙袋 017","id":"017","name":"黎根記紙袋","text":"LKK chicken skin paper bag","category":"","type":"","description":"","price":"30","soldout":"","limited":"","sizes":"","colors":""},{"store":"","hide":"","new":"","slug":"人人有蕉吔基金 001","id":"001","name":"人人有蕉吔基金","text":"純純粹粹俾錢店主","category":"","type":"","description":"【DONT THINK, JUST DONATE!】// 黎根記®有一個願望：「人人都可以有蕉吔！」// 如果您都認同我哋，// 事不宜遲，請立即捐款到\"人人有蕉吔基金\" // 你將會收到香蕉.png一條","price":"10up","soldout":"","limited":"","sizes":"小小心意,多多益善,大手入股","colors":""},{"store":"","hide":"","new":"","slug":"員工 tee 004","id":"004","name":"員工 tee","text":"非賣品","category":"Tee","type":"Screen","description":"","price":"500","soldout":"y","limited":"","sizes":"S,M,L,XL,2XL","colors":""}]</script>
 <script src="swiped-events.js"></script><script src="d3_.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -16306,6 +17406,7 @@ send 同一張相嚟</p><p>
 var shoppingcart = {};
 // var doneshopping = false;
 var buying = false;
+var stock = [];
 
 if (!localStorage.doneshopping) {
 	localStorage.doneshopping = false;
@@ -16633,8 +17734,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		d3.select(".g-form-options").classed("g-hide", true);
 		d3.select(".g-buy-button").classed("g-hide", true);
 
-		console.log(d3.select(".g-shopping-cart").node().getBoundingClientRect().height)
-
 		var el = d3.select(".g-nav-list-store");
 
 		var cartheight = d3.select(".g-shopping-cart").node().getBoundingClientRect().height;
@@ -16884,18 +17983,42 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var id = d3.select(el.node().parentNode).attr("data-id");
 		var type = el.attr("data-type");
 
-		var parentel = d3.select(el.node().parentNode);
+		var stockid = d3.select(".g-cur-stock").attr("data-id");
+		var curstockel = d3.select(".g-store-" + stockid);
+		var size = curstockel.select("#size").property("value");
 
-		var count = +parentel.select(".g-count").text();
+		if (!size && curstockel.select("#size").attr("data-size")) {
+			curstockel.select("#size").transition().style("background", "red").transition().style("background","none")
+		} else {
+			var parentel = d3.select(el.node().parentNode);
+			var count = +parentel.select(".g-count").text();
 
-		if (type == "minus") {
-			count -= 1;
-		} else if (type == "add") {
-			count += 1;
+			var stockcount = stock.filter(d => d.values[0].id == stockid)
+			var countcheck;
+
+			if (stockcount[0]) {
+				if (stockcount[0].values.length == 1) {
+					countcheck = stockcount[0].values[0];
+				} else {
+					var color = curstockel.select(".g-color-circle.g-picked").attr("data-color").split('-')[1];
+					countcheck = stockcount[0].values.filter(d => d.color == color)[0]
+				}
+			}
+
+			if (type == "minus") {
+				count -= 1;
+			} else if (type == "add") {
+				count += 1;
+				if (countcheck && count > countcheck[size.toLowerCase()]) {
+					count = countcheck[size.toLowerCase()]
+				}
+			}
+
+			count = count < 1 ? 1 : count;
+			parentel.select(".g-count").text(count);	
 		}
 
-		count = count < 1 ? 1 : count;
-		parentel.select(".g-count").text(count);
+		
 	})
 
 
@@ -16917,7 +18040,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		// }
 
 		var goto = +item.split("-")[2]-1;
-		console.log(goto)
 		var parentel = d3.select(el.node().parentNode.parentNode);
 		imgnavfunc(parentel, null, goto);
 
@@ -17046,34 +18168,38 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
 			var slug = stockid + "_" + name + "_" + size;
 
-			if (color) {
-				slug += "_" + color;
+			if (size == '') {
+
+				d3.select(".g-store-" + stockid + " #size").transition().style("background", "red").transition().style("background", "none")
+
+			} else {
+				if (color) {
+					slug += "_" + color;
+				}
+
+				var bb = el.node().getBoundingClientRect();
+				var tshirt = d3.select(".g-cart-animation");
+				tshirt.style("top", (bb.y+3) + "px").style("left", (bb.x + bb.width/2 - 15) + "px");
+				tshirt.classed("g-active", true);
+				
+				var cart = d3.select(".g-shopping-cart-icon").node().getBoundingClientRect();
+
+				tshirt.transition()
+					.delay(100)
+					.style("top", cart.y + "px")
+					.style("left", cart.x + "px")
+					.on("end", function(){
+						tshirt.classed("g-active", false);
+					});
+
+
+				updateCartNum(slug, count);
+				updateCart(true);
+
+				el.attr("data-clicked", "true");
 			}
 
-
-			var bb = el.node().getBoundingClientRect();
-			var tshirt = d3.select(".g-cart-animation");
-			tshirt.style("top", (bb.y+3) + "px").style("left", (bb.x + bb.width/2 - 15) + "px");
-			tshirt.classed("g-active", true);
-			
-			var cart = d3.select(".g-shopping-cart-icon").node().getBoundingClientRect();
-
-			tshirt.transition()
-				.delay(100)
-				.style("top", cart.y + "px")
-				.style("left", cart.x + "px")
-				.on("end", function(){
-					tshirt.classed("g-active", false);
-				});
-
-
-			updateCartNum(slug, count);
-			updateCart(true);
-
-			el.attr("data-clicked", "true");
-
 		} else if (action == "add-to-cart-checkout") {
-
 
 			if (localStorage.doneshopping == "true") {
 				resetshopping();
@@ -17088,27 +18214,37 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
 			var slug = stockid + "_" + name + "_" + size;
 
-			if (color) {
-				slug += "_" + color;
+
+			if (size == '') {
+
+				d3.select(".g-store-" + stockid + " #size").transition().style("background", "red").transition().style("background", "none")
+
+			} else {
+
+				if (color) {
+					slug += "_" + color;
+				}
+
+				var is_adc_clicked = curstockel.select(".g-button-adc").attr("data-clicked") == "true";
+				curstockel.select(".g-button-adc").attr("data-clicked", "");
+
+				if (!is_adc_clicked) {
+					updateCartNum(slug, count);
+					updateCart(true);
+				}
+
+				goToCart();
+
+				// cart.classed("g-hide", true);
+				d3.select("#my-form").classed("g-hide", false);
+				// var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
+
+				var navel = d3.select(".g-nav-list-store");
+				navel.transition().style("height", (+navel.attr("data-h1") + +navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
+
 			}
 
-			var is_adc_clicked = curstockel.select(".g-button-adc").attr("data-clicked") == "true";
-			curstockel.select(".g-button-adc").attr("data-clicked", "");
-
-			if (!is_adc_clicked) {
-				updateCartNum(slug, count);
-				updateCart(true);
-			}
-
-			goToCart();
-
-			// cart.classed("g-hide", true);
-			d3.select("#my-form").classed("g-hide", false);
-			// var summary = d3.select("#my-form .g-purchase-summary").html(d3.select(".g-shopping-cart-inner").html());
-
-			var navel = d3.select(".g-nav-list-store");
-			navel.transition().style("height", (+navel.attr("data-h1") + +navel.select(".g-nav-content").node().getBoundingClientRect().height) + "px")
-
+			
 		} else if (action == "buy") {
 
 			if (localStorage.shoppingcart == "{}") {
@@ -17227,8 +18363,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	  	  		  data: JSON.stringify(orders),
 	  	  		  success: function(res){ 
 
-	  	  		  	console.log(res);
-
   	  		  		// localStorage.setItem('shoppingcart', '{}')
   					// $('#my-form').trigger("reset");
   					d3.select("#submit").classed("g-loading", false);
@@ -17305,11 +18439,25 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	})
 
 
+	// check if size selector changed
+	var elems = document.getElementsByTagName('select')
+	for (var i = 0; i < elems.length; i++) {
+			elems[i].onchange = function() {
+		  var index = this.selectedIndex;
+		  var inputText = this.children[index].innerHTML.trim();
+		  d3.selectAll(".g-count").html(1)
+		}	
+	}
+
+
 	// color picker
 	d3.selectAll(".g-color-circle").on("click", function(){
 
 		var el = d3.select(this);
 		var parent = d3.select(el.node().parentNode);
+		var stockid = d3.select(".g-cur-stock").attr("data-id");
+
+		$(".g-store-" + stockid + " #size").val('-')
 
 		if (el.attr("class").indexOf("g-color-not-available") == -1) {
 			parent.selectAll(".g-color-circle").classed("g-picked", false);
@@ -17317,6 +18465,23 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 			var parentel = d3.select(".g-store-" + el.attr("data-store") + " .g-img.g-img-slideshow-cont");
 			imgnavfunc(parentel, null, el.attr("data-order")-1);
+
+
+			var color = el.attr("data-color").split("-")[1];
+			var stockid = d3.select(".g-cur-stock").attr("data-id");
+			var d = stock.filter(d => d.values[0].id == stockid)[0].values.filter(d => d.color == color)[0];
+
+			var sizes = ["xs", "s", "m", "l", "xl"];
+			document.querySelectorAll(".g-store-" + d.id + " #size option").forEach(opt => {
+				var check = d[opt.value.toLowerCase()]
+			    if (!check) {
+			        opt.disabled = true;
+			    } else {
+			    	opt.disabled = false;
+			    }
+			});
+
+
 		}
 
 
@@ -17389,6 +18554,73 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	d3.select(".g-reset-button").on("click", function(){
 		resetshopping();
 	})
+
+
+	function readsheet() {
+
+		var url = "https://script.google.com/macros/s/AKfycbxZ7UiO2vyBbx-8cAJDh1F7dRdrqiHujQ719Bz6c-rUCIXKyMe9G9Hof78EFJrW7JrSww/exec"
+		var jqxhr = $.ajax({
+		  url: url,
+		  // method: "GET",
+		  // dataType: "json",
+		  // data: JSON.stringify(orders),
+		  success: function(res){ 
+
+		  	stock = [];
+		  	res.data.forEach(function(d){
+
+		  		if (d[0] != "item") {
+		  			stock.push({
+		  				item: d[0].trim(),
+		  				color: d[3],
+		  				id: d[0].trim().split(' ')[d[0].trim().split(' ').length - 1],
+		  				xs: d[4],
+		  				s: d[5],
+		  				m: d[6],
+		  				l: d[7],
+		  				xl: d[8],
+		  				total: +d[4] + +d[5] + +d[6] + +d[7] + +d[8]
+		  			})	
+		  		}
+		  		
+		  	})
+
+		  	stock = stock.filter(d => d.total > 0)
+		  	stock = d3.nest().key(d => d.item).entries(stock)
+
+		  	var sizes = ["xs", "s", "m", "l", "xl"];
+
+		  	stock.forEach(function(st){
+		  		st.values.forEach(function(d){
+		  			sizes.forEach(function(size){
+		  				var text = d[size] == '' ? '-' : d[size]
+		  				d3.select(".g-store-" + d.id + " .g-color-" + d.color + " #" + size).text(text)
+		  				d3.select(".g-store-" + d.id + " .g-color-" + d.color + " #" + size).classed("g-loaded", true);
+		  			})
+		  		})
+
+		  		sizes.forEach(function(size){
+		  			var text = st.values[0][size] == '' ? '-' : st.values[0][size]
+		  			if (text == '-') {
+		  				document.querySelectorAll(".g-store-" + st.values[0].id + " #size option").forEach(opt => {
+		  				    if (opt.value.toLowerCase() == size) {
+		  				        opt.disabled = true;
+		  				    }
+		  				});
+		  			}
+		  		})
+
+		  	})
+
+
+		  
+		  }
+		})
+
+
+	}
+
+	readsheet();
 
 
 

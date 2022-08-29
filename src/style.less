@@ -807,7 +807,7 @@ input {
 		}
 	}
 
-	.g-size-chart {
+	.g-size-chart, .g-stock-table {
 
 		font-size: 11px;
 
@@ -1479,5 +1479,48 @@ input {
 		img {
 			width: 100%;
 		}
+	}
+}
+
+.g-size-chart {
+	.g-stock {
+		border-top: 1px solid #000;
+
+		td {
+			padding: 4px 0;
+			font-weight: 700;
+			background: #fff8dc;
+			background-image: url("loading.jpeg");
+			background-size: cover;
+			background-position: center;
+
+			&.g-loaded {
+				background-image: none;
+			}
+		}
+
+		.g-no-bg {
+			background-image: none;
+		}
+	}
+}
+
+.g-stock-table {
+	margin-top: 6px;
+	max-width: 225px;
+
+	table {
+		padding-top: 0 !important;
+	}
+	.g-stock-title {
+		padding-left: 3px;
+		font-weight: 700;
+		margin-bottom: 3px;
+		padding-bottom: 2px;
+		border-bottom: 1px solid;
+	}
+
+	.g-no-bg {
+		width: 45px !important;
 	}
 }
