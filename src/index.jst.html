@@ -209,7 +209,7 @@
 
 							<% if (l.soldout != 'y') { %>
 							<div class="g-stock-table">
-								<div class="g-stock-title">stock</div>
+								<% if (l.colors) { %><div class="g-stock-title">stock</div><% } %>
 								<table>
 									<tbody>
 
@@ -224,7 +224,7 @@
 										<% if (added.indexOf(s) == -1) { %>
 
 										<% var col = s.split('#')[0]
-											coldisplay = colorlist.indexOf(col) > -1 ? colorname[colorlist.indexOf(col)] : ""
+											coldisplay = colorlist.indexOf(col) > -1 ? colorname[colorlist.indexOf(col)] : "<b>stock</b>"
 											colid = colorlist.indexOf(col) > -1 ? col : "";
 										%>
 

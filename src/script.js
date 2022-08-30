@@ -437,7 +437,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
    	updateCartNum();
    	updateCart(true);
    	readHash();
-   	show("store")
+   	// show("store")
 
 
    	function readHash() {
