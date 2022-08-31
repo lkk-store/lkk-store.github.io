@@ -770,7 +770,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
 			var slug = stockid + "_" + name + "_" + size;
 
-			if (size == '') {
+			console.log(slug)
+
+			if (size == '' && slug.indexOf('sticker') == -1) {
 
 				d3.select(".g-store-" + stockid + " #size").transition().style("background", "red").transition().style("background", "none")
 

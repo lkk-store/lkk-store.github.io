@@ -90,7 +90,7 @@
 							<span class="g-price-num"><span class="g-price-new"><%= l.price %></span></span>
 							<% } else { %>
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num <% if (l.soldout != 'y') { %>g-discount<% } %> <% if (l.soldout == 'y') { %>g-sold-out<% } %>"><% if (l.soldout == 'y') { %>Sold out<% } else { %><%= l.price %><% } %></span>
+							<span class="g-price-num <% if (l.soldout != 'y' && l.category == 'Tee') { %>g-discount<% } %> <% if (l.soldout == 'y') { %>g-sold-out<% } %>"><% if (l.soldout == 'y') { %>Sold out<% } else { %><%= l.price %><% } %></span>
 							<% } %>
 							<% if (l.limited != "") { %><div class="g-limited">限量 <div class="g-limited-countdown" data-count="<%- limitedcount %>"></div> <%- l.limited %> 件</div><% } %>
 						</div>
@@ -139,7 +139,7 @@
 							<span class="g-price-num"><span class="g-price-new"><% if (l.soldout == 'y') { %>Sold out<% } else  { %><%= l.price %><% } %></span></span>
 							<% } else { %>
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num <% if (l.soldout != 'y') { %>g-discount<% } %> <% if (l.soldout == 'y') { %>g-sold-out<% } %>"><% if (l.soldout == 'y') { %>Sold out<% } else { %><%= l.price %><% } %></span>
+							<span class="g-price-num <% if (l.soldout != 'y' && l.category == 'Tee') { %>g-discount<% } %> <% if (l.soldout == 'y') { %>g-sold-out<% } %>"><% if (l.soldout == 'y') { %>Sold out<% } else { %><%= l.price %><% } %></span>
 							<% } %>
 							<% if (l.limited != "") { %><div class="g-limited">限量 <div class="g-limited-countdown" data-count="<%- limitedcount %>"></div><%- l.limited %> 件, 仲有 <%- l.limited - limitedcount %> 件</div><% } %>
 						</div><% } %>

@@ -2537,7 +2537,7 @@ input {
 							<sup class="g-agate">HKD</sup>
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num g-discount ">150</span>
+							<span class="g-price-num  ">150</span>
 							
 							
 						</div>
@@ -3079,7 +3079,7 @@ input {
 							<sup class="g-agate">HKD</sup>
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num g-discount ">480</span>
+							<span class="g-price-num  ">480</span>
 							
 							
 						</div>
@@ -3286,7 +3286,7 @@ input {
 							<sup class="g-agate">HKD</sup>
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num g-discount ">30</span>
+							<span class="g-price-num  ">30</span>
 							
 							
 						</div>
@@ -7473,7 +7473,7 @@ hong kong color edition:</p><p>
 							<sup class="g-agate">HKD</sup>
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num g-discount ">150</span>
+							<span class="g-price-num  ">150</span>
 							
 							
 						</div>
@@ -9184,7 +9184,7 @@ SLEEVE 62</p>
 							<sup class="g-agate">HKD</sup>
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num g-discount ">480</span>
+							<span class="g-price-num  ">480</span>
 							
 							
 						</div>
@@ -9604,7 +9604,7 @@ Indian organic cotton</p>
 							<sup class="g-agate">HKD</sup>
 							
 							<!-- <span class="g-price-num"><span class="g-price-old"></span> <span class="g-price-new"></span></span> -->
-							<span class="g-price-num g-discount ">30</span>
+							<span class="g-price-num  ">30</span>
 							
 							
 						</div>
@@ -18169,7 +18169,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			var color = curstockel.select(".g-color-circle.g-picked").node() ? curstockel.select(".g-color-circle.g-picked").attr("data-color") : "";
 			var slug = stockid + "_" + name + "_" + size;
 
-			if (size == '') {
+			console.log(slug)
+
+			if (size == '' && slug.indexOf('sticker') == -1) {
 
 				d3.select(".g-store-" + stockid + " #size").transition().style("background", "red").transition().style("background", "none")
 
