@@ -453,7 +453,7 @@
     "type": "Screen",
     "description": "good idea for sleeping tee💤🛌",
     "price": "320",
-    "soldout": "",
+    "soldout": "y",
     "limited": "",
     "sizes": "XS,S,M,L,XL",
     "colors": ""
