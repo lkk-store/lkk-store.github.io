@@ -419,7 +419,7 @@
     "type": "Screen",
     "description": "",
     "price": "320",
-    "soldout": "",
+    "soldout": "y",
     "limited": "",
     "sizes": "XS,S,M,L,XL",
     "colors": ""
