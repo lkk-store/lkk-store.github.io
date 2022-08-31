@@ -402,7 +402,7 @@
     "type": "Print",
     "description": "",
     "price": "360",
-    "soldout": "",
+    "soldout": "y",
     "limited": "",
     "sizes": "XS",
     "colors": ""
