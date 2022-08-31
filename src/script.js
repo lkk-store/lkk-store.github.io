@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			} else if (pricecheck) {
 				price = +pricecheck.price;
 
-				if (price == 360 || price == 320) {
+				if (price == 360 || price == 320 || price == 480) {
 					price = 280
 				}
 
@@ -941,11 +941,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  			price = +pricecheck.price;
 			  		}
 
-			  		if (price == 360) {
-			  			price = 280
-			  		}
-
-			  		if (price == 320) {
+			  		if (price == 360 || price == 320 || price == 480) {
 			  			price = 280
 			  		}
 
