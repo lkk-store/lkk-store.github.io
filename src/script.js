@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		var totalprice = 0;
 		var totalusdprice = 0;
 
-		var checkoutcount = {"tshirt360": 0, "tshirt320": 0, "sticker": 0};
+		var checkoutcount = {"tshirt360": 0, "tshirt320": 0, "tshirt280": 0, "sticker": 0};
 
 		keys.forEach(function(d){
 
@@ -281,6 +281,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			} else if (pricecheck) {
 				price = +pricecheck.price;
 
+				if (price == 360 || price == 320) {
+					price = 280
+				}
 
 				if (price == 360) {
 					checkoutcount.tshirt360 += shoppingcart[d];
@@ -292,6 +295,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 				if (price == 150) {
 					checkoutcount.sticker += shoppingcart[d];
+				}
+
+				if (price == 280) {
+					checkoutcount.tshirt280 += shoppingcart[d];
 				}
 			}
 
@@ -312,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 
 		if (updatehref) {
-			var hrefstr = 'tshirt360=' + checkoutcount.tshirt360 + '&tshirt320=' + checkoutcount.tshirt320 + '&sticker=' + checkoutcount.sticker;
+			var hrefstr = 'tshirt360=' + checkoutcount.tshirt360 + '&tshirt320=' + checkoutcount.tshirt320  + '&tshirt280=' + checkoutcount.tshirt280 + '&sticker=' + checkoutcount.sticker;
 			d3.select("#checkout-link").attr("href", "https://checkout.lkk-store.com/checkout.html?" + hrefstr)
 		}
 
@@ -933,6 +940,15 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			  		if (pricecheck) {
 			  			price = +pricecheck.price;
 			  		}
+
+			  		if (price == 360) {
+			  			price = 280
+			  		}
+
+			  		if (price == 320) {
+			  			price = 280
+			  		}
+
 
 			  		if (split[0] == "001") { price = split[2] == "小小心意" ? 10 : split[2] == "多多益善" ? 50 : 100; };
 

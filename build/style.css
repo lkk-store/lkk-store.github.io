@@ -1160,3 +1160,23 @@ input {
 .g-stock-table .g-no-bg {
   width: 45px !important;
 }
+.g-discount {
+  position: relative;
+}
+.g-discount:before {
+  content: "280";
+  position: absolute;
+  top: 0;
+  left: 120%;
+  color: #cc0000;
+}
+.g-discount:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 125%;
+  height: 2px;
+  background: #cc0000;
+  transform: translate(-10%, 410%) rotate(-20deg);
+}
