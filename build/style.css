@@ -1180,3 +1180,7 @@ input {
   background: #cc0000;
   transform: translate(-10%, 410%) rotate(-20deg);
 }
+.g-buy,
+.g-stock-table {
+  display: none;
+}
