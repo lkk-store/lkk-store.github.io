@@ -742,7 +742,7 @@
     "type": "Print",
     "description": "「goodbye」「hello」//\n2022 - 繼續好好學習離別////CHEST 63 //LENGTH 78  //SHOULDER 54 //SLEEVE 63",
     "price": "480",
-    "soldout": "",
+    "soldout": "y",
     "limited": "",
     "sizes": "2XL",
     "colors": ""
