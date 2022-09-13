@@ -61,6 +61,7 @@ function compile() {
 
 	})
 
+	data.wood = data.wood.filter(d => d.id.indexOf("-") == -1);
 	data.store = data.store.filter(d => d.hide != "1");
 
 	var pages = ["index"]
